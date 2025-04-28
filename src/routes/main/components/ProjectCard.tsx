@@ -10,14 +10,14 @@ export default function ProjectCard(props: ProjectCardProps) {
   return (
     <a
       href={url}
-      class={`flex flex-col gap-2 sm:hover:scale-95 transition-all relative project-card-content flex flex-col bg-[#2B251F] rounded-md ${ongoing ? "min-w-52" : "min-w-70"}`}
+      class={`flex flex-col gap-2 sm:hover:scale-95 transition-all relative project-card-content flex flex-col bg-[#2B251F] rounded-md ${ongoing ? "sm:min-w-42 min-w-52" : "min-w-60 max-w-70"}`}
       rel="noopener noreferrer"
       target="_blank"
     >
       <div>
         <img
           src={preview}
-          class="object-cover rounded-md aspect-video w-full h-full w-70 max-w-100"
+          class="object-cover rounded-md aspect-video w-full h-full w-70"
           alt={title}
         />
         <Show when={preview === "https://tarakoshka.tech/static/github.png"}>

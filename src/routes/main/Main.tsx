@@ -1,6 +1,7 @@
 "use client";
 
-import { createSignal } from "solid-js";
+import { createSignal, Show } from "solid-js";
+import { Download } from "./components/Icons";
 import AccordionSection from "./components/AccordionSection";
 import ProjectCard from "./components/ProjectCard";
 import SocialIcon from "./components/SocialIcon";
@@ -31,27 +32,48 @@ export default function App() {
       exit={{ x: 0, opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <main class="page min-h-screen bg-[#1a1611] text-[#f5e9c9] py-6 flex flex-col relative z-0 overflow-x-clip">
+      <main class="page min-h-screen bg-[#1a1611] text-[#f5e9c9] py-6 sm:pt-0 flex flex-col relative z-0 overflow-x-clip">
         <img
-          src="/static/icons/star.svg"
-          class="w-full sm:hidden"
+          src="https://tarakoshka.tech/static/icons/star.svg"
+          class={`w-96 sm:w-128 top-[-40%] sm:top-[-${expanded() === "" ? "15" : "60"}%] duration-300 transition-all left-[50%] translate-x-[-50%] scale-180 sm:scale-120`}
           style="
           animation: rotate-animation 90s infinite linear;
-          top: -45%;
           position: absolute;
-          z-index: -1;
+          z-index: -6;
           background-size: cover;
-          object-fit: fill;
-          scale: 2;"
+          object-fit: fill;"
         ></img>
-        <header class="py-8 text-center z-1">
+        <header
+          class="flex sm:items-center justify-center max-sm:mb-4 md:py-6 text-center z-[-4]"
+          style={`flex-grow: ${expanded() === "" ? "1" : "0"}; transition: flex-grow 0.3s ease-in-out;`}
+        >
           <a href="https://tarakoshka.tech">
-            <h1 class="text-4xl italic font-light">tarakoshka.tech</h1>
+            <h1 class="text-5xl sm:text-5xl italic font-light">
+              tarakoshka.tech
+            </h1>
           </a>
         </header>
-        <div
-          style={`flex-grow: ${expanded() === "" ? "1" : "0"}; transition: flex-grow 0.3s ease-in-out;`}
-        ></div>
+        <a
+          class={`sm:hover:scale-125 absolute top-[20%] left-[12%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
+          style="z-index: -3;"
+          href="https://tarakoshka.tech/static/cv.pdf"
+        >
+          <img
+            src="https://tarakoshka.tech/static/icons/cv_star.svg"
+            class={`w-32 sm:w-28 transition-all`}
+            style="
+              animation: rotate-animation-back 20s infinite linear;
+              background-size: cover;
+              object-fit: fill;"
+          ></img>
+          <div class="flex sm:gap-0 gap-1 items-center justify-center flex-col sm:text-lg text-2xl font-bold text-black absolute top-[55%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+            <Download />
+            <p class="font-[Inter] text-2xl">CV</p>
+          </div>
+        </a>
+        {/* <div
+          style={`z-index: -100; flex-grow: ${expanded() === "" ? "1" : "0"}; transition: flex-grow 0.3s ease-in-out;`}
+        ></div> */}
         <AccordionSection
           id="done"
           title="DONE"
@@ -124,7 +146,7 @@ export default function App() {
                   >
                     <img
                       class="transition-all size-6 sm:scale-175"
-                      src="/static/icons/music.svg"
+                      src="https://tarakoshka.tech/static/icons/music.svg"
                       alt={useMusic()?.items()?.title}
                     ></img>
                   </a>

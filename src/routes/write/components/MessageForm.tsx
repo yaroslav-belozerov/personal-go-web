@@ -27,7 +27,7 @@ const MessageForm: Component = () => {
       onsubmit={async (e) => {
         e.preventDefault();
       }}
-      class="flex sm:flex-wrap sm:flex-row w-screen gap-4 px-4 flex-col bg-linear-[0deg,#2B251F00_0%,#2B251F_15%,#2B251F_85%,#2B251F00_100%] relative py-8 z-2"
+      class="flex py-4 bg-[#2B251F] mt-8 px-8 mb-8 sm:flex-wrap sm:flex-row gap-4 flex-col z-2 py-8"
     >
       <textarea
         value={text()}
