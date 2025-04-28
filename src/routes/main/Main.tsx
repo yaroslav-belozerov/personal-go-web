@@ -35,16 +35,15 @@ export default function App() {
       <main class="page min-h-screen bg-[#1a1611] text-[#f5e9c9] py-6 sm:pt-0 flex flex-col relative z-0 overflow-x-clip">
         <img
           src="https://tarakoshka.tech/static/icons/star.svg"
-          class={`w-96 sm:w-128 top-[-40%] sm:top-[-${expanded() === "" ? "15" : "60"}%] duration-300 transition-all left-[50%] translate-x-[-50%] scale-180 sm:scale-120`}
+          class={`w-96 absolute sm:w-128 top-[-50%] duration-300 transition-all left-[50%] translate-x-[-50%] scale-180 sm:scale-120`}
           style="
           animation: rotate-animation 90s infinite linear;
-          position: absolute;
           z-index: -6;
           background-size: cover;
           object-fit: fill;"
         ></img>
         <header
-          class="flex sm:items-center justify-center max-sm:mb-4 md:py-6 text-center z-[-4]"
+          class="flex sm:items-center justify-center max-sm:mb-4 sm:py-2 text-center z-[-4]"
           style={`flex-grow: ${expanded() === "" ? "1" : "0"}; transition: flex-grow 0.3s ease-in-out;`}
         >
           <a href="https://tarakoshka.tech">
@@ -129,7 +128,7 @@ export default function App() {
                       <img
                         src={useMusic()?.items()?.image}
                         alt={useMusic()?.items()?.title}
-                        class="size-12 sm:size-18 rounded-md sm:group-hover:scale-90 transition-all"
+                        class="size-12 rounded-md sm:group-hover:scale-90 transition-all"
                       />
                       <div class="flex flex-col">
                         <h3 class="sm:text-xl">{useMusic()?.items()?.title}</h3>
