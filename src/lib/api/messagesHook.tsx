@@ -4,7 +4,7 @@ export type Message = {
   id: number;
   text: string;
   creator: string;
-  time: Date;
+  time: string;
 };
 
 const { Provider, useRESTApi } = createRESTApiHook<Message>();

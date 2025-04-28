@@ -22,7 +22,7 @@ export default function Write() {
           </a>
           <h1 class="text-2xl sm:text-5xl">Write a message</h1>
         </nav>
-        <AllMessagesProvider baseURL="http://localhost:1333/messages">
+        <AllMessagesProvider baseURL="https://tarakoshka.tech/api/messages">
           <MessageForm />
           <div
             class="flex sm:flex-row sm:flex-wrap flex-col max-sm:h-full gap-4 mx-6 overflow-scroll relative -mt-12 pt-12 pb-6"
@@ -33,14 +33,14 @@ export default function Write() {
                 ?.items()
                 ?.map((message) => (
                   <div class="flex group flex-col justify-center rounded-md p-3 sm:p-6 bg-[#2B251F] transition-all">
-                    <p class="text-white text-xl sm:text-4xl">{message.text}</p>
-                    <i class="sm:text-3xl">
+                    <p class="text-white text-xl sm:text-3xl">{message.text}</p>
+                    <i class="sm:text-2xl">
                       <span class="text-white sm:group-hover:decoration-white decoration-transparent sm:underline transition-all">
                         {message.creator}
                       </span>{" "}
                       on
                       {" " +
-                        new Date().toLocaleString("en-US", {
+                        new Date(message.time ?? "").toLocaleString("en-US", {
                           timeStyle: "short",
                           dateStyle: "long",
                           hour12: false,

@@ -46,9 +46,7 @@ export default function App() {
         ></img>
         <header class="py-8 text-center z-1">
           <a href="https://tarakoshka.tech">
-            <h1 class="text-4xl sm:text-8xl italic font-light">
-              tarakoshka.tech
-            </h1>
+            <h1 class="text-4xl italic font-light">tarakoshka.tech</h1>
           </a>
         </header>
         <div
@@ -66,7 +64,7 @@ export default function App() {
             style="scrollbar-width: none;"
           >
             <div class="w-0 px-1"></div>
-            <ProjectsProvider baseURL="http://localhost:1333/projects/finished">
+            <ProjectsProvider baseURL="https://tarakoshka.tech/api/projects/finished">
               {useProjects().items() &&
                 useProjects()
                   ?.items()
@@ -88,7 +86,7 @@ export default function App() {
               style="scrollbar-width: none;"
             >
               <div class="w-0 px-1"></div>
-              <ProjectsProvider baseURL="http://localhost:1333/projects/ongoing">
+              <ProjectsProvider baseURL="https://tarakoshka.tech/api/projects/ongoing">
                 {useProjects().items() &&
                   useProjects()
                     ?.items()
@@ -97,10 +95,10 @@ export default function App() {
               <div class="w-0 px-1"></div>
             </div>
           </div>
-          <MusicProvider baseURL="http://localhost:1333/music">
+          <MusicProvider baseURL="https://tarakoshka.tech/api/music">
             {useMusic().items() && (
-              <div class="flex flex-col mt-4">
-                <p class="ms-6 text-xl sm:text-4xl italic text-[#ffffff] mb-2">
+              <div class="flex flex-col mt-3">
+                <p class="ms-6 text-xl italic text-[#ffffff] mb-2">
                   listening to
                 </p>
                 <div class="flex flex-row justify-between me-6">
@@ -109,20 +107,18 @@ export default function App() {
                       <img
                         src={useMusic()?.items()?.image}
                         alt={useMusic()?.items()?.title}
-                        class="size-12 sm:size-24 rounded-md sm:group-hover:scale-90 transition-all"
+                        class="size-12 sm:size-18 rounded-md sm:group-hover:scale-90 transition-all"
                       />
                       <div class="flex flex-col">
-                        <h3 class="sm:text-2xl">
-                          {useMusic()?.items()?.title}
-                        </h3>
-                        <p class="italic sm:text-2xl">
+                        <h3 class="sm:text-xl">{useMusic()?.items()?.title}</h3>
+                        <p class="italic sm:text-xl">
                           {useMusic()?.items()?.artist}
                         </p>
                       </div>
                     </div>
                   </a>
                   <a
-                    class="flex justify-center sm:hover:scale-90 transition-all items-center rounded-md p-3 sm:p-8 sm:aspect-square bg-[#2B251F] transition-all"
+                    class="flex justify-center sm:hover:scale-90 transition-all items-center rounded-md p-3 sm:aspect-square bg-[#2B251F] transition-all"
                     href="https://www.last.fm/user/Lemurr4ik_"
                     target="_blank"
                   >
@@ -168,7 +164,7 @@ export default function App() {
           ]}
         >
           <div class="flex flex-col">
-            <div class="w-full pe-12 grid grid-cols-3 gap-4 ms-6">
+            <div class="w-full pe-12 grid grid-cols-3 gap-4 ms-6 sm:grid-cols-6">
               <SocialIcon
                 path="https://t.me/yaabelozerov"
                 icon="telegram.svg"
@@ -194,23 +190,25 @@ export default function App() {
                 icon="bluesky.svg"
               ></SocialIcon>
             </div>
-            <MessageProvider baseURL="http://localhost:1333/messages/first">
+            <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
               {useLastMessage().items() && (
                 <div class="mt-2 flex flex-col">
-                  <p class="ms-6 text-xl sm:text-4xl italic text-[#ffffff] mb-2">
+                  <p class="ms-6 text-xl italic text-[#ffffff] mb-2">
                     your messages
                   </p>
                   <div class="flex flex-col justify-center rounded-md p-3 bg-[#2B251F] transition-all mx-6">
-                    <p class="text-white text-xl sm:text-4xl">
+                    <p class="text-white text-xl">
                       {useLastMessage().items()?.text}
                     </p>
-                    <i class="sm:text-2xl">
+                    <i class="">
                       <span class="text-white">
                         {useLastMessage().items()?.creator}
                       </span>{" "}
                       on
                       {" " +
-                        new Date().toLocaleString(undefined, {
+                        new Date(
+                          useLastMessage().items()?.time ?? "",
+                        ).toLocaleString("en-US", {
                           timeStyle: "short",
                           dateStyle: "long",
                           hour12: false,

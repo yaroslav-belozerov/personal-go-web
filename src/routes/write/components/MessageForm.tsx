@@ -27,7 +27,7 @@ const MessageForm: Component = () => {
       onsubmit={async (e) => {
         e.preventDefault();
       }}
-      class="flex sm:flex-row w-screen gap-4 px-4 justify-center flex-col bg-linear-[0deg,#2B251F00_0%,#2B251F_15%,#2B251F_85%,#2B251F00_100%] relative py-8 z-2"
+      class="flex sm:flex-wrap sm:flex-row w-screen gap-4 px-4 flex-col bg-linear-[0deg,#2B251F00_0%,#2B251F_15%,#2B251F_85%,#2B251F00_100%] relative py-8 z-2"
     >
       <textarea
         value={text()}
@@ -35,7 +35,7 @@ const MessageForm: Component = () => {
         maxlength="256"
         id="message"
         onChange={(e) => setText(e.target.value)}
-        class="flex sm:grow-1 sm:text-2xl justify-center rounded-md p-3 bg-[#1A1611] transition-all outline-none"
+        class="flex sm:grow-1 sm:text-xl justify-center rounded-md p-3 bg-[#1A1611] transition-all outline-none"
         placeholder="Your message"
       />
       <input
@@ -44,7 +44,7 @@ const MessageForm: Component = () => {
         maxlength="64"
         type="text"
         onChange={(e) => setCreator(e.target.value)}
-        class="flex sm:text-2xl justify-center rounded-md p-3 bg-[#1A1611] transition-all outline-none"
+        class="flex sm:text-xl justify-center rounded-md p-3 bg-[#1A1611] transition-all outline-none"
         placeholder="You (may be blank)"
       />
       {sent() ? (
@@ -54,7 +54,7 @@ const MessageForm: Component = () => {
       ) : (
         <button
           type="submit"
-          class="flex sm:px-6 sm:pe-8 sm:hover:scale-90 transition-all justify-center rounded-md p-3 bg-[#1A1611] transition-all"
+          class="flex cursor-pointer sm:px-6 sm:pe-8 sm:hover:scale-95 transition-all justify-center rounded-md p-3 bg-[#1A1611] transition-all"
           onClick={sendMessage}
         >
           <div class="flex sm:gap-4 flex-row items-center text-white">
