@@ -33,7 +33,7 @@ export default function App() {
       exit={{ x: 0, opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <main class="page min-h-screen bg-[#1a1611] text-[#f5e9c9] py-6 sm:pt-0 flex flex-col relative z-0 overflow-x-clip">
+      <main class="page bg-[#1a1611] text-[#f5e9c9] py-6 sm:pt-0 flex flex-col relative z-0 overflow-x-clip">
         <img
           src="https://tarakoshka.tech/static/icons/star.svg"
           class={`w-96 absolute sm:w-128 top-[-50%] duration-300 transition-all left-[50%] translate-x-[-50%] scale-180 sm:scale-120`}
@@ -57,6 +57,8 @@ export default function App() {
           class={`sm:hover:scale-125 absolute top-[20%] left-[15%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
           style="z-index: -3;"
           href="https://tarakoshka.tech/static/cv.pdf"
+	  target="_blank"
+          rel="noopener noreferrer"
         >
           <img
             src="https://tarakoshka.tech/static/icons/cv_star.svg"

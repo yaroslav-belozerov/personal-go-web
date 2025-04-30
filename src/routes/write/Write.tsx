@@ -15,7 +15,7 @@ export default function Write() {
       exit={{ x: 300, opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <main class="page bg-[#1a1611] h-screen relative flex flex-col overflow-y-clip">
+      <main class="bg-[#1a1611] min-h-dvh relative flex flex-col overflow-y-clip">
         <nav class="flex flex-row gap-4 mx-6 mt-10 items-center sm:gap-8">
           <a href="/" class="sm:hover:scale-90 transition-all sm:ms-8">
             <BackArrow />
