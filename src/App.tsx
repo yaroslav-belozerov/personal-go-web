@@ -4,6 +4,7 @@ import { Motion, Presence } from "solid-motionone";
 import Main from "./routes/main/Main";
 import Write from "./routes/write/Write";
 import Lesya from "./routes/lesya/Lesya";
+import PDFViewer from "./routes/main/components/PDFViewer";
 
 export default function App() {
   return (

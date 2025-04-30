@@ -2,17 +2,16 @@ import { Project } from "../../../lib/api/projectsHook";
 import { Show } from "solid-js";
 
 interface ProjectCardProps {
+  onClick: () => void;
   project: Project;
 }
 
 export default function ProjectCard(props: ProjectCardProps) {
   const { title, description, preview, url, ongoing } = props.project;
   return (
-    <a
-      href={url}
-      class={`flex flex-col gap-2 sm:hover:scale-95 transition-all relative project-card-content flex flex-col bg-[#2B251F] rounded-md ${ongoing ? "sm:min-w-42 min-w-52 max-w-60" : "min-w-60 max-w-80"}`}
-      rel="noopener noreferrer"
-      target="_blank"
+    <button
+      onClick={props.onClick}
+      class={`flex cursor-pointer flex-col gap-2 sm:hover:scale-95 transition-all relative project-card-content flex flex-col bg-[#2B251F] rounded-md ${ongoing ? "sm:min-w-42 min-w-52 max-w-60" : "min-w-60 max-w-80"}`}
     >
       <div>
         <img
@@ -27,6 +26,6 @@ export default function ProjectCard(props: ProjectCardProps) {
       <Show when={ongoing === false}>
         <p class="text-lg mx-4 mb-2 mt-1">{title}</p>
       </Show>
-    </a>
+    </button>
   );
 }

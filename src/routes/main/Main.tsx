@@ -1,7 +1,7 @@
 "use client";
 
 import { createSignal, Show } from "solid-js";
-import { Cat, Download } from "./components/Icons";
+import { Cat, Close, Download, Share } from "./components/Icons";
 import AccordionSection from "./components/AccordionSection";
 import ProjectCard from "./components/ProjectCard";
 import SocialIcon from "./components/SocialIcon";
@@ -12,9 +12,12 @@ import { MessageProvider, useLastMessage } from "../../lib/api/messagesHook";
 import { ArrowDown, ExternalLink, SendMessage } from "./components/Icons";
 import { Motion, Presence } from "solid-motionone";
 import { A } from "@solidjs/router";
+import PDFViewer from "./components/PDFViewer";
 
 export default function App() {
   const [expanded, setExpanded] = createSignal<string>("");
+  const [preview, setPreview] = createSignal<string>("");
+  const [previewPageNum, setPreviewPageNum] = createSignal<number>(1);
 
   const toggleSection = (id: string) => {
     if (expanded() === id) {
@@ -34,6 +37,67 @@ export default function App() {
       transition={{ duration: 0.3 }}
     >
       <main class="page bg-[#1a1611] text-[#f5e9c9] py-6 sm:pt-0 flex flex-col relative z-0 overflow-x-clip">
+        <div class="z-100">
+          <Presence>
+            <Show when={preview()}>
+              <Motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <div
+                  class="bg-black/75 fixed top-0 left-0 w-screen h-screen z-10 p-4"
+                  style="align-content: center;"
+                >
+                  <div
+                    class="absolute z-[-10] top-0 left-0 w-screen h-screen"
+                    onClick={() => {
+                      setPreview("");
+                      setPreviewPageNum(1);
+                    }}
+                  ></div>
+                  <div class="rounded-xl overflow-hidden flex flex-col bg-[#1a1611]">
+                    <div class="flex flex-row">
+                      <button
+                        class="p-4 bg-[#2B251F]"
+                        onClick={() => {
+                          setPreview("");
+                          setPreviewPageNum(1);
+                        }}
+                      >
+                        <Close></Close>
+                      </button>
+                      <div class="grow-1"></div>
+                      <a href={preview()} class="p-4 bg-[#2B251F]">
+                        <Share></Share>
+                      </a>
+                      <button
+                        class="p-4 bg-[#2B251F] text-3xl"
+                        onClick={() => setPreviewPageNum(previewPageNum() - 1)}
+                      >
+                        <div class=" rotate-90">
+                          <ArrowDown></ArrowDown>
+                        </div>
+                      </button>
+                      <button
+                        class="p-4 bg-[#2B251F] text-3xl"
+                        onClick={() => setPreviewPageNum(previewPageNum() + 1)}
+                      >
+                        <div class=" rotate-270">
+                          <ArrowDown></ArrowDown>
+                        </div>
+                      </button>
+                    </div>
+                    <PDFViewer
+                      url={preview()}
+                      pageNum={previewPageNum}
+                    ></PDFViewer>
+                  </div>
+                </div>
+              </Motion.div>
+            </Show>
+          </Presence>
+        </div>
         <img
           src="https://tarakoshka.tech/static/icons/star.svg"
           class={`w-96 absolute sm:w-128 top-[-50%] duration-300 transition-all left-[50%] translate-x-[-50%] scale-180 sm:scale-120`}
@@ -57,7 +121,7 @@ export default function App() {
           class={`sm:hover:scale-125 absolute top-[20%] left-[15%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
           style="z-index: -3;"
           href="https://tarakoshka.tech/static/cv.pdf"
-	  target="_blank"
+          target="_blank"
           rel="noopener noreferrer"
         >
           <img
@@ -110,7 +174,15 @@ export default function App() {
               {useProjects().items() &&
                 useProjects()
                   ?.items()
-                  ?.map((project) => <ProjectCard project={project} />)}
+                  ?.map((project) => (
+                    <ProjectCard
+                      onClick={() => {
+                        setPreview(project.url);
+                        console.log(project.url);
+                      }}
+                      project={project}
+                    />
+                  ))}
             </ProjectsProvider>
             <div class="w-0 px-1"></div>
           </div>
@@ -132,7 +204,12 @@ export default function App() {
                 {useProjects().items() &&
                   useProjects()
                     ?.items()
-                    ?.map((project) => <ProjectCard project={project} />)}
+                    ?.map((project) => (
+                      <ProjectCard
+                        onClick={() => setPreview(project.url)}
+                        project={project}
+                      />
+                    ))}
               </ProjectsProvider>
               <div class="w-0 px-1"></div>
             </div>
