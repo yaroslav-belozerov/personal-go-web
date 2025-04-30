@@ -1,7 +1,7 @@
 "use client";
 
 import { createSignal, Show } from "solid-js";
-import { Download } from "./components/Icons";
+import { Cat, Download } from "./components/Icons";
 import AccordionSection from "./components/AccordionSection";
 import ProjectCard from "./components/ProjectCard";
 import SocialIcon from "./components/SocialIcon";
@@ -11,6 +11,7 @@ import { ProjectsProvider, useProjects } from "../../lib/api/projectsHook";
 import { MessageProvider, useLastMessage } from "../../lib/api/messagesHook";
 import { ArrowDown, ExternalLink, SendMessage } from "./components/Icons";
 import { Motion, Presence } from "solid-motionone";
+import { A } from "@solidjs/router";
 
 export default function App() {
   const [expanded, setExpanded] = createSignal<string>("");
@@ -53,7 +54,7 @@ export default function App() {
           </a>
         </header>
         <a
-          class={`sm:hover:scale-125 absolute top-[20%] left-[12%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
+          class={`sm:hover:scale-125 absolute top-[20%] left-[15%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
           style="z-index: -3;"
           href="https://tarakoshka.tech/static/cv.pdf"
         >
@@ -70,6 +71,24 @@ export default function App() {
             <p class="font-[Inter] text-2xl">CV</p>
           </div>
         </a>
+        <A
+          class={`sm:hover:scale-125 absolute top-[25%] left-[50%] sm:left-[75%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
+          style="z-index: -3;"
+          href="/lesya"
+        >
+          <img
+            src="https://tarakoshka.tech/static/icons/lesya_star.svg"
+            class={`w-38 sm:w-32 transition-all`}
+            style="
+              animation: rotate-animation 20s infinite linear;
+              background-size: cover;
+              object-fit: fill;"
+          ></img>
+          <div class="flex sm:gap-0 gap-1 items-center justify-center flex-col sm:text-lg text-2xl font-bold text-black absolute top-[55%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+            <Cat />
+            <p class="font-[Inter] text-2xl">Cat</p>
+          </div>
+        </A>
         {/* <div
           style={`z-index: -100; flex-grow: ${expanded() === "" ? "1" : "0"}; transition: flex-grow 0.3s ease-in-out;`}
         ></div> */}

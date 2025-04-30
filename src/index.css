@@ -1,6 +1,21 @@
 @import "tailwindcss";
 
 @font-face {
+    font-family: "Oi";
+    src: url("/static/fonts/Oi-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Sora";
+    src: url("/static/fonts/Sora.ttf") format("truetype-variations");
+    font-weight: 100 900; /* Variable font weight range */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: "Libre Bodoni";
     src: url("/static/fonts/LibreBodoni.ttf") format("truetype-variations");
     font-weight: 100 900; /* Variable font weight range */
@@ -40,6 +55,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #1a1611;
     color: #f5e9c9;
+}
+
+html {
+    scrollbar-gutter: stable;
 }
 
 .slide-over-enter {
@@ -118,6 +137,7 @@ body {
 
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 @keyframes rotate-animation {
