@@ -38,9 +38,6 @@ importers:
       solid-motionone:
         specifier: ^1.0.3
         version: 1.0.3(solid-js@1.9.5)
-      solid-slider:
-        specifier: ^1.3.18
-        version: 1.3.18(solid-js@1.9.5)
       solid-transition-group:
         specifier: ^0.3.0
         version: 0.3.0(solid-js@1.9.5)
@@ -437,11 +434,6 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
-  '@solid-primitives/timer@1.4.1':
-    resolution: {integrity: sha512-M7xrZ/rIq2qEas3fZHLoKQjvseRgNH5IGOl7ZkDxlSJDa5RxAcnzdNPmJiMZH/9+PWrViCrnO0RxLs8w/YIOpg==}
-    peerDependencies:
-      solid-js: ^1.6.12
-
   '@solid-primitives/transition-group@1.1.0':
     resolution: {integrity: sha512-pL1sEPCHuC4V+Yh+SQsKSPuGDYrZbLJYSkk3AB4TZrWhptEJUS0IHoi7BAynYcMiULbvMMVKFbeFHqINZq0+ig==}
     peerDependencies:
@@ -684,9 +676,6 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  keen-slider@6.8.6:
-    resolution: {integrity: sha512-dcEQ7GDBpCjUQA8XZeWh3oBBLLmyn8aoeIQFGL/NTVkoEOsmlnXqA4QykUm/SncolAZYGsEk/PfUhLZ7mwMM2w==}
-
   lightningcss-darwin-arm64@1.29.2:
     resolution: {integrity: sha512-cK/eMabSViKn/PG8U/a7aCorpeKLMlK0bQeNHmdb7qUnBkNPnL+oV5DjJUo0kqWsJUapZsM4jCfYItbqBDvlcA==}
     engines: {node: '>= 12.0.0'}
@@ -846,11 +835,6 @@ packages:
     resolution: {integrity: sha512-F3aPsX6hVw9ttm5LYlth8Q15x6MlI/J3Dn+o3EQyRTtTxidepSTwAYdozt01/YA+7ObcciagGEyXIopGZzQtbA==}
     peerDependencies:
       solid-js: ^1.3
-
-  solid-slider@1.3.18:
-    resolution: {integrity: sha512-7lSGAp1Qt0HBYJ0T9akGjJIfgzcqmvzLVUWCJmLlTVoUk0ocSwW+NW3tGbcJDFAPXMq7W3Tq+ts/aTpCYVoLwQ==}
-    peerDependencies:
-      solid-js: ^1.8.5
 
   solid-transition-group@0.3.0:
     resolution: {integrity: sha512-gzFbtxkEnA8Hgi7UzmEjPPRl4rodoKLs+AGIXA7kJgjOr4j4qFRw39npu+WpdNSDV7aDKr+K0LFcoT9Kbm5PBA==}
@@ -1260,10 +1244,6 @@ snapshots:
       '@solid-primitives/utils': 6.3.0(solid-js@1.9.5)
       solid-js: 1.9.5
 
-  '@solid-primitives/timer@1.4.1(solid-js@1.9.5)':
-    dependencies:
-      solid-js: 1.9.5
-
   '@solid-primitives/transition-group@1.1.0(solid-js@1.9.5)':
     dependencies:
       solid-js: 1.9.5
@@ -1471,8 +1451,6 @@ snapshots:
 
   json5@2.2.3: {}
 
-  keen-slider@6.8.6: {}
-
   lightningcss-darwin-arm64@1.29.2:
     optional: true
 
@@ -1622,13 +1600,6 @@ snapshots:
       solid-js: 1.9.5
     transitivePeerDependencies:
       - supports-color
-
-  solid-slider@1.3.18(solid-js@1.9.5):
-    dependencies:
-      '@solid-primitives/timer': 1.4.1(solid-js@1.9.5)
-      '@solid-primitives/utils': 6.3.1(solid-js@1.9.5)
-      keen-slider: 6.8.6
-      solid-js: 1.9.5
 
   solid-transition-group@0.3.0(solid-js@1.9.5):
     dependencies:

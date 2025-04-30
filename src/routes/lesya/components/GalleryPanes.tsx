@@ -1,5 +1,4 @@
 import { BackArrow } from "../../write/components/Icons";
-import "solid-slider/slider.css";
 import { Motion, Presence } from "solid-motionone";
 import { Happy, Heart, HeartPlus, Photos, RoundCheck } from "./Icons";
 import { onMount } from "solid-js";
