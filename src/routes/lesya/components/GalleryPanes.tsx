@@ -68,7 +68,7 @@ export function GalleryPage1() {
         </div>
 
         {/* Right two columns spanned by the large image */}
-        <div class="w-[60%] overflow-hidden rounded-xl">
+        <div class="w-[60%] max-sm:max-h-90 overflow-hidden rounded-xl">
           <img
             draggable="false"
             src={images[2]}
