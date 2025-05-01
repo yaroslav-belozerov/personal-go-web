@@ -68,7 +68,7 @@ export default function App() {
                         <Close></Close>
                       </button>
                       <div class="grow-1"></div>
-                      <a href={preview()} class="p-4 bg-[#2B251F]">
+                      <a href={preview()} class="p-4 bg-[#2B251F]" target="_blank" rel="noopener noreferrer">
                         <Share></Share>
                       </a>
                       <button
