@@ -68,7 +68,12 @@ export default function App() {
                         <Close></Close>
                       </button>
                       <div class="grow-1"></div>
-                      <a href={preview()} class="p-4 bg-[#2B251F]" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={preview()}
+                        class="p-4 bg-[#2B251F]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Share></Share>
                       </a>
                       <button
@@ -100,25 +105,26 @@ export default function App() {
         </div>
         <img
           src="https://tarakoshka.tech/static/icons/star.svg"
-          class={`w-96 absolute sm:w-128 top-[-50%] duration-300 transition-all left-[50%] translate-x-[-50%] scale-180 sm:scale-120`}
-          style="
+          class={`w-96 absolute sm:w-128 top-[-50%] duration-300 transition-all left-[50%] translate-x-[-50%] scale-150 sm:scale-130`}
+          style={`
+          top: ${expanded() === "" ? "-15%" : "-50%"};
           animation: rotate-animation 90s infinite linear;
           z-index: -6;
           background-size: cover;
-          object-fit: fill;"
+          object-fit: fill;`}
         ></img>
         <header
-          class="flex sm:items-center justify-center max-sm:mb-4 sm:py-2 text-center z-[-4]"
-          style={`flex-grow: ${expanded() === "" ? "1" : "0"}; transition: flex-grow 0.3s ease-in-out;`}
+          class="flex sm:items-center justify-center max-sm:mb-4 sm:py-6 text-center z-[-4]"
+          style={`z-index: 10; flex-grow: ${expanded() === "" ? "1" : "0"}; transition: flex-grow 0.3s ease-in-out;`}
         >
           <a href="https://tarakoshka.tech">
-            <h1 class="text-5xl sm:text-5xl italic font-light">
+            <h1 class="text-5xl sm:hover:bg-[#1A1611] p-4 rounded-xl sm:hover:font-black sm:hover:scale-120 duration-350 transition-all sm:text-5xl italic font-light">
               tarakoshka.tech
             </h1>
           </a>
         </header>
         <a
-          class={`sm:hover:scale-125 absolute top-[20%] left-[15%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
+          class={`sm:hover:scale-125 absolute top-[15%] sm:top-[20%] left-[12%] sm:left-[15%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
           style="z-index: -3;"
           href="https://tarakoshka.tech/static/cv.pdf"
           target="_blank"
@@ -138,7 +144,7 @@ export default function App() {
           </div>
         </a>
         <A
-          class={`sm:hover:scale-125 absolute top-[25%] left-[50%] sm:left-[75%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
+          class={`sm:hover:scale-125 absolute top-[20%] sm:top-[25%] left-[50%] sm:left-[75%] ${expanded() === "" ? "opacity-100 sm:scale-150 scale-100" : "opacity-0 scale-0"} transition-all`}
           style="z-index: -3;"
           href="/lesya"
         >
@@ -216,21 +222,21 @@ export default function App() {
           </div>
           <MusicProvider baseURL="https://tarakoshka.tech/api/music">
             {useMusic().items() && (
-              <div class="flex flex-col mt-3">
-                <p class="ms-6 text-xl italic text-[#ffffff] mb-2">
+              <div class="flex flex-col mt-4">
+                {/* <p class="ms-6 text-xl sm:text-2xl italic text-[#ffffff] mb-2">
                   listening to
-                </p>
+                </p> */}
                 <div class="flex flex-row justify-between me-6">
-                  <a href={useMusic()?.items()?.url} class="group">
-                    <div class="flex flex-row ms-6 items-center gap-4">
+                  <a href={useMusic()?.items()?.url} class="">
+                    <div class="flex flex-row ms-6 items-center gap-4 sm:hover:scale-90 transition-all">
                       <img
                         src={useMusic()?.items()?.image}
                         alt={useMusic()?.items()?.title}
-                        class="size-12 rounded-md sm:group-hover:scale-90 transition-all"
+                        class="size-12 rounded-md transition-all"
                       />
                       <div class="flex flex-col">
-                        <h3 class="sm:text-xl">{useMusic()?.items()?.title}</h3>
-                        <p class="italic sm:text-xl">
+                        <h3 class="sm:text-lg">{useMusic()?.items()?.title}</h3>
+                        <p class="italic sm:text-lg">
                           {useMusic()?.items()?.artist}
                         </p>
                       </div>
@@ -242,7 +248,7 @@ export default function App() {
                     target="_blank"
                   >
                     <img
-                      class="transition-all size-6 sm:scale-175"
+                      class="transition-all size-6 sm:scale-150"
                       src="https://tarakoshka.tech/static/icons/music.svg"
                       alt={useMusic()?.items()?.title}
                     ></img>
@@ -259,13 +265,20 @@ export default function App() {
           isExpanded={isExpanded("about")}
           onToggle={() => toggleSection("about")}
         >
+          {/* <p class="ms-6 text-xl sm:text-2xl italic text-[#ffffff] mb-2">
+            hi everyone, I'm Iaroslav ♥
+          </p> */}
           <div class="pe-12 ms-6">
             <div class="flex flex-wrap gap-2 sm:gap-4 flex-row">
               <SocialTag text="17 y/o" />
               <SocialTag text="ru/eng" />
+              <SocialTag text="dms open" />
               <SocialTag text="mobile developer" />
+              <SocialTag text="kotlin" />
               <SocialTag text="designer" />
-              <SocialTag text="open-source advocate" />
+              <SocialTag text="nvim" />
+              <SocialTag text="fedora" />
+              <SocialTag text="hyprland" />
             </div>
           </div>
         </AccordionSection>
@@ -275,12 +288,7 @@ export default function App() {
           subtitle="contact information"
           isExpanded={isExpanded("touch")}
           onToggle={() => toggleSection("touch")}
-          actionButtons={[
-            {
-              icon: <SendMessage />,
-              href: "/write-to-me",
-            },
-          ]}
+          actionButtons={[]}
         >
           <div class="flex flex-col">
             <div class="w-full pe-12 grid grid-cols-3 gap-4 ms-6 sm:grid-cols-6">
@@ -311,11 +319,11 @@ export default function App() {
             </div>
             <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
               {useLastMessage().items() && (
-                <div class="mt-2 flex flex-col">
-                  <p class="ms-6 text-xl italic text-[#ffffff] mb-2">
-                    your messages
-                  </p>
-                  <div class="flex flex-col justify-center rounded-md p-3 bg-[#2B251F] transition-all mx-6">
+                <div class="mt-2 flex flex-row mt-4 justify-between mx-6 gap-4">
+                  {/* <p class="ms-6 text-xl sm:text-2xl italic text-[#ffffff] mb-2">
+                      your messages
+                    </p> */}
+                  <div class="flex w-full flex-col justify-center rounded-md p-3 bg-[#2B251F] transition-all">
                     <p class="text-white text-xl">
                       {useLastMessage().items()?.text}
                     </p>
@@ -334,6 +342,14 @@ export default function App() {
                         })}
                     </i>
                   </div>
+                  <a
+                    class="flex justify-center sm:hover:scale-90 transition-all items-center rounded-md p-3 sm:aspect-square bg-[#2B251F] transition-all"
+                    href="/write-to-me"
+                  >
+                    <div class="transition-all size-6 sm:scale-90">
+                      <SendMessage></SendMessage>
+                    </div>
+                  </a>
                 </div>
               )}
             </MessageProvider>

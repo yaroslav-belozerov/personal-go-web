@@ -18,7 +18,7 @@ export default function ProjectCard(props: ProjectCardProps) {
           <div>
             <img
               src={preview}
-              class="object-cover rounded-md aspect-video w-full h-full w-70 max-h-30"
+              class="object-cover rounded-md aspect-video w-full h-full w-70 max-h-40"
               alt={title}
             />
             <Show
@@ -39,12 +39,12 @@ export default function ProjectCard(props: ProjectCardProps) {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          class={`flex cursor-pointer flex-col gap-2 sm:hover:scale-95 transition-all relative project-card-content flex flex-col bg-[#2B251F] rounded-md ${ongoing ? "sm:min-w-42 min-w-52 max-w-60" : "min-w-60 max-w-80"}`}
+          class={`flex cursor-pointer flex-col gap-2 sm:hover:scale-95 transition-all relative project-card-content flex flex-col bg-[#2B251F] rounded-md ${ongoing ? "sm:min-w-52 min-w-52 max-w-60" : "min-w-60 max-w-80"}`}
         >
           <div>
             <img
               src={preview}
-              class="object-cover rounded-md aspect-video w-full h-full w-70 max-h-30"
+              class="object-cover rounded-md aspect-video w-full h-full w-70 max-h-40"
               alt={title}
             />
             <Show

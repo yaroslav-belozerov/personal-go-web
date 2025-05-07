@@ -44,9 +44,16 @@ export default function AccordionSection(props: AccordionSectionProps) {
             aria-expanded={props.isExpanded}
             aria-controls={`content-${props.id}`}
           >
-            <h2 class="text-4xl sm:text-3xl font-light text-[#f5e9c9]">
-              {props.title}
-            </h2>
+            <div class="flex flex-row gap-2">
+              <h2 class="text-4xl sm:text-4xl font-light text-[#f5e9c9] sm:text-[#ffffff]">
+                {props.title}
+              </h2>
+              {props.subtitle && (
+                <p class="ms-6 hidden sm:block text-xl sm:text-2xl italic text-[#f5e9c9] mb-2">
+                  {props.subtitle}
+                </p>
+              )}
+            </div>
             <div class="flex items-center space-x-4 sm:space-x-8 pb-2">
               {props.actionButtons &&
                 props.actionButtons.map((button, index) => (
@@ -78,11 +85,6 @@ export default function AccordionSection(props: AccordionSectionProps) {
         // @ts-ignore
         style={contentStyle()}
       >
-        {props.subtitle && (
-          <p class="ms-6 text-xl italic text-[#ffffff] mb-2">
-            {props.subtitle}
-          </p>
-        )}
         {props.children}
       </div>
     </div>
