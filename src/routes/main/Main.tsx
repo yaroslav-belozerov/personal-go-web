@@ -115,10 +115,13 @@ export default function App() {
         ></img>
         <header
           class="flex sm:items-center justify-center max-sm:mb-4 sm:py-6 text-center z-[-4]"
-          style={`z-index: 10; flex-grow: ${expanded() === "" ? "1" : "0"}; transition: flex-grow 0.3s ease-in-out;`}
+          style={`flex-grow: ${expanded() === "" ? "1" : "0"}; transition: flex-grow 0.3s ease-in-out;`}
         >
           <a href="https://tarakoshka.tech">
-            <h1 class="text-5xl sm:hover:bg-[#1A1611] p-4 rounded-xl sm:hover:font-black sm:hover:scale-120 duration-350 transition-all sm:text-5xl italic font-light">
+            <h1
+              style="z-index: 10;"
+              class="text-5xl sm:hover:bg-[#1A1611] p-4 rounded-xl sm:hover:font-black sm:hover:scale-120 duration-350 transition-all sm:text-5xl italic font-light"
+            >
               tarakoshka.tech
             </h1>
           </a>
