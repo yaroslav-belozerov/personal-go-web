@@ -274,14 +274,15 @@ export default function App() {
           <div class="pe-12 ms-6">
             <div class="flex flex-wrap gap-2 sm:gap-4 flex-row">
               <SocialTag text="17 y/o" />
-              <SocialTag text="ru/eng" />
-              <SocialTag text="dms open" />
-              <SocialTag text="mobile developer" />
-              <SocialTag text="kotlin" />
-              <SocialTag text="designer" />
-              <SocialTag text="nvim" />
-              <SocialTag text="fedora" />
-              <SocialTag text="hyprland" />
+              <SocialTag text="Ru/Eng" />
+              <SocialTag text="DMs open" />
+              <SocialTag text="Moscow" />
+              <SocialTag text="Android developer" />
+              <SocialTag text="Kotlin" />
+              <SocialTag text="Designer" />
+              <SocialTag text="Neovim" />
+              <SocialTag text="Fedora" />
+              <SocialTag text="Hyprland" />
             </div>
           </div>
         </AccordionSection>
