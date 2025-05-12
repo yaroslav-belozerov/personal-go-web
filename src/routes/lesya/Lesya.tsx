@@ -20,16 +20,12 @@ export default function Lesya() {
       <main id="catstart" class="flex flex-col page relative w-full">
         <img
           src="https://tarakoshka.tech/static/kitty/kitty3.jpg"
+          style="opacity: 0;"
           alt="Cat"
-          class="w-full min-h-screen max-h-screen object-cover opacity-0 transition-all"
+          class="w-full min-h-screen max-h-screen object-cover transition-all"
           onLoad="this.style.opacity = 1;"
         />
 
-        <div class="bg-green-900 flex flex-col items-center justify-center py-6 pt-8">
-          <h1 class="text-5xl font-[Oi] text-white">
-            Lesya <span class="text-green-400 text-xl align-super">TM</span>
-          </h1>
-        </div>
         <div class="flex p-4 flex-col items-end absolute top-0 right-0 max-sm:gap-4 sm:justify-evenly min-h-screen max-h-screen">
           <div class="flex flex-row w-screen sm:ps-16 ps-8 max-sm:pt-2 justify-between">
             <a
@@ -38,7 +34,7 @@ export default function Lesya() {
             >
               <BackArrow />
             </a>
-            <h1 class="text-5xl sm:text-8xl font-[Oi] text-white">
+            <h1 class="text-4xl sm:text-8xl font-[Oi] text-white text-nowrap">
               Lesya{" "}
               <span class="text-green-400 text-3xl sm:text-6xl align-super">
                 TM

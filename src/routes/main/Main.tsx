@@ -6,28 +6,20 @@ import AccordionSection from "./components/AccordionSection";
 import ProjectCard from "./components/ProjectCard";
 import SocialIcon from "./components/SocialIcon";
 import SocialTag from "./components/SocialTag";
-import { MusicProvider, useMusic } from "../../lib/api/musicHook";
 import { ProjectsProvider, useProjects } from "../../lib/api/projectsHook";
 import { MessageProvider, useLastMessage } from "../../lib/api/messagesHook";
 import { ArrowDown, ExternalLink, SendMessage } from "./components/Icons";
 import { Motion, Presence } from "solid-motionone";
 import { A } from "@solidjs/router";
 import PDFViewer from "./components/PDFViewer";
+import Landing from "./pages/Landing";
+import Current from "./pages/Current";
+import Touch from "./pages/Touch";
+import Meta from "./pages/Meta";
+import Done from "./pages/Done";
 
 export default function App() {
   const [expanded, setExpanded] = createSignal<string>("");
-  const [preview, setPreview] = createSignal<string>("");
-  const [previewPageNum, setPreviewPageNum] = createSignal<number>(1);
-
-  const toggleSection = (id: string) => {
-    if (expanded() === id) {
-      setExpanded("");
-    } else {
-      setExpanded(id);
-    }
-  };
-
-  const isExpanded = (id: string) => expanded() === id;
 
   return (
     <Motion.main
@@ -36,6 +28,7 @@ export default function App() {
       exit={{ x: 0, opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
+<<<<<<< HEAD
       <main class="page bg-[#1a1611] text-[#f5e9c9] py-6 sm:pt-0 flex flex-col relative z-0 overflow-x-clip">
         <div class="z-100">
           <Presence>
@@ -359,6 +352,14 @@ export default function App() {
             </MessageProvider>
           </div>
         </AccordionSection>
+=======
+      <main class="page bg-[#1a1611] text-[#f5e9c9] sm:pt-0 flex flex-col relative overflow-x-clip">
+        <Landing></Landing>
+        <Touch></Touch>
+        <Current></Current>
+        <Done></Done>
+        <Meta></Meta>
+>>>>>>> 0a4f1ff (some changes)
       </main>
     </Motion.main>
   );
