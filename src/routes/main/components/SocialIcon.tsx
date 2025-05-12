@@ -6,7 +6,7 @@ interface SocialIconProps {
 export default function SocialIcon(props: SocialIconProps) {
   return (
     <a
-      class="group flex justify-center aspect-square sm:h-20 sm:hover:scale-95 items-center rounded-2xl p-3 bg-[#2B251F] transition-all"
+      class="group flex sm:w-full justify-center aspect-square sm:h-20 sm:hover:scale-95 items-center rounded-2xl p-3 bg-[#2B251F] transition-all"
       href={props.path}
     >
       <img
