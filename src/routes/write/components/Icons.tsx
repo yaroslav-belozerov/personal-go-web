@@ -2,7 +2,7 @@ export function BackArrow() {
   return (
     <svg
       viewBox="0 0 24 24"
-      class="sm:scale-175"
+      class="md:scale-175"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -23,7 +23,7 @@ export function BackArrow() {
 export function SendIcon() {
   return (
     <svg
-      class="sm:scale-175"
+      class="md:scale-175"
       xmlns="http://www.w3.org/2000/svg"
       height="24px"
       viewBox="0 -960 960 960"

@@ -27,7 +27,7 @@ const MessageForm: Component = () => {
       onsubmit={async (e) => {
         e.preventDefault();
       }}
-      class="flex py-4 bg-[#2B251F] mt-8 px-8 mb-8 sm:flex-wrap sm:flex-row gap-4 flex-col z-2 py-8"
+      class="flex font-[Overpass] py-4 bg-[#2B251F] mt-8 px-8 mb-8 md:flex-wrap md:flex-row gap-4 flex-col z-2 py-8"
     >
       <textarea
         value={text()}
@@ -35,7 +35,7 @@ const MessageForm: Component = () => {
         maxlength="256"
         id="message"
         onChange={(e) => setText(e.target.value)}
-        class="flex sm:grow-1 sm:text-xl justify-center rounded-md p-3 bg-[#1A1611] transition-all outline-none"
+        class="flex md:grow-1 md:text-xl justify-center rounded-xl p-3 bg-[#1A1611] transition-all outline-none"
         placeholder="Your message"
       />
       <input
@@ -44,21 +44,21 @@ const MessageForm: Component = () => {
         maxlength="64"
         type="text"
         onChange={(e) => setCreator(e.target.value)}
-        class="flex sm:text-xl justify-center rounded-md p-3 bg-[#1A1611] transition-all outline-none"
+        class="flex md:text-xl justify-center rounded-xl p-3 bg-[#1A1611] transition-all outline-none"
         placeholder="You (may be blank)"
       />
       {sent() ? (
-        <div class="flex justify-center rounded-md p-3 bg-[#2B251F] transition-all">
+        <div class="flex justify-center rounded-xl p-3 bg-[#2B251F] transition-all">
           <i class="px-2 py-1 text-lg">Thank you!</i>
         </div>
       ) : (
         <button
           type="submit"
-          class="flex cursor-pointer sm:px-6 sm:pe-8 sm:hover:scale-95 transition-all justify-center rounded-md p-3 bg-[#1A1611] transition-all"
+          class="flex cursor-pointer md:px-6 md:pe-8 md:hover:scale-95 transition-all justify-center rounded-xl p-3 bg-[#1A1611] transition-all"
           onClick={sendMessage}
         >
-          <div class="flex sm:gap-4 flex-row items-center text-white">
-            <b class="px-2 sm:text-2xl py-1 text-lg">Send</b>
+          <div class="flex md:gap-4 flex-row items-center text-white">
+            <p class="px-2 md:text-2xl py-1 text-lg">Send</p>
             <SendIcon />
           </div>
         </button>

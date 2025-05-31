@@ -23,13 +23,13 @@ const LikePane: Component = () => {
         <div class="flex flex-row gap-2">
           <HeartPlus></HeartPlus>
         </div>
-        <h2 class="sm:block hidden font-[Oi] text-2xl md:text-4xl whitespace-nowrap">
+        <h2 class="md:block hidden font-[Oi] text-2xl md:text-4xl whitespace-nowrap">
           The Meowcounter
         </h2>
         <div class="flex flex-row gap-4">
           <a
             href="#happy-page"
-            class="rotate-90 sm:hover:scale-90 transition-all sm:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-90 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
@@ -69,7 +69,7 @@ const LikePane: Component = () => {
               </div>
             </Motion.div>
           </Show>
-          <p class="font-[Sora] text-center sm:text-4xl text-2xl">
+          <p class="font-[Sora] text-center md:text-4xl text-2xl">
             Click to meow and send
             <br /> respect to this kitty <br /> ({
               useCatLikes().items()?.likes
@@ -78,7 +78,7 @@ const LikePane: Component = () => {
           </p>
         </div>
       </div>
-      <h2 class="text-green-900 block absolute bottom-8 sm:hidden font-[Oi] text-2xl">
+      <h2 class="text-green-900 block absolute bottom-8 md:hidden font-[Oi] text-2xl">
         The Meowcounter
       </h2>
     </div>

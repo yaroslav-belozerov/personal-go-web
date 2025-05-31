@@ -26,13 +26,13 @@ export function GalleryPage1() {
         <div class="flex flex-row gap-4">
           <a
             href="#catstart"
-            class="rotate-90 sm:hover:scale-90 transition-all sm:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-90 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
           <a
             href="#gallery-page-2"
-            class="rotate-270 sm:hover:scale-90 transition-all sm:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-270 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
@@ -68,7 +68,7 @@ export function GalleryPage1() {
         </div>
 
         {/* Right two columns spanned by the large image */}
-        <div class="w-[60%] max-sm:max-h-90 overflow-hidden rounded-xl">
+        <div class="w-[60%] max-md:max-h-90 overflow-hidden rounded-xl">
           <img
             draggable="false"
             src={images[2]}
@@ -104,20 +104,20 @@ export function GalleryPage2() {
         <div class="flex flex-row gap-4">
           <a
             href="#gallery-page-1"
-            class="rotate-90 sm:hover:scale-90 transition-all sm:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-90 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
           <a
             href="#happy-page"
-            class="rotate-270 sm:hover:scale-90 transition-all sm:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-270 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
         </div>
       </div>
 
-      <div class="sm:flex hidden flex-row items-center gap-4 grow-1">
+      <div class="md:flex hidden flex-row items-center gap-4 grow-1">
         <div class="overflow-hidden rounded-xl flex-1">
           <img
             draggable="false"
@@ -148,7 +148,7 @@ export function GalleryPage2() {
       </div>
 
       <div
-        class="sm:hidden relative block min-w-full rounded-4xl flex flex-row overflow-scroll"
+        class="md:hidden relative block min-w-full rounded-4xl flex flex-row overflow-scroll"
         style="scrollbar-width: none;"
       >
         <img
@@ -194,20 +194,20 @@ export function HappyPane() {
         <div class="flex flex-row gap-4">
           <a
             href="#gallery-page-2"
-            class="rotate-90 sm:hover:scale-90 transition-all sm:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-90 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
           <a
             href="#like-page"
-            class="rotate-270 sm:hover:scale-90 transition-all sm:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-270 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
         </div>
       </div>
 
-      <div class="sm:hidden mb-8 flex flex-col gap-4">
+      <div class="md:hidden mb-8 flex flex-col gap-4">
         <div class="relative w-full mb-4">
           <img
             draggable="false"
@@ -258,7 +258,7 @@ export function HappyPane() {
         </ShowWhenInView>
       </div>
 
-      <div class="sm:flex hidden items-center grow-1 pb-16 justify-center relative bg-green-900">
+      <div class="md:flex hidden items-center grow-1 pb-16 justify-center relative bg-green-900">
         {/* Main content */}
         <div class="relative flex flex-col items-center me-8 mb-8">
           {/* Cat image in center */}

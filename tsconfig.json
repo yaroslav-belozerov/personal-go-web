@@ -5,7 +5,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "esModuleOverpassop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "types": ["vite/client"],

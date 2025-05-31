@@ -14,7 +14,7 @@ export default function ShowWhenInView(props: ShowWhenInViewProps) {
 
   onMount(() => {
     inView(elRef, (el, entry) => {
-      setIsInView(entry.isIntersecting);
+      setIsInView(entry.isOverpasssecting);
     });
   });
 

@@ -1,6 +1,20 @@
 @import "tailwindcss";
 
 @font-face {
+    font-family: "Instrument";
+    src: url("/static/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Instrument";
+    src: url("/static/fonts/InstrumentSerif-Italic.ttf") format("truetype");
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
     font-family: "Oi";
     src: url("/static/fonts/Oi-Regular.ttf") format("truetype");
     font-style: normal;
@@ -33,16 +47,16 @@
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("/static/fonts/Inter.ttf") format("truetype-variations");
+    font-family: "Overpass";
+    src: url("/static/fonts/Overpass.ttf") format("truetype-variations");
     font-weight: 100 900; /* Variable font weight range */
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("/static/fonts/Inter-Italic.ttf") format("truetype-variations");
+    font-family: "Overpass";
+    src: url("/static/fonts/Overpass-Italic.ttf") format("truetype-variations");
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;
@@ -50,7 +64,7 @@
 
 body {
     margin: 0;
-    font-family: "Libre Bodoni", Times, serif;
+    font-family: "Instrument", Times, serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #1a1611;
