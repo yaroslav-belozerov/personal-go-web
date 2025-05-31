@@ -33,7 +33,7 @@ export default function Write() {
                 useMessages()
                   ?.items()
                   ?.map((message) => (
-                    <div class="font-[Overpass] flex flex-col border justify-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
+                    <div class="font-[Overpass] flex flex-col border justify-center rounded-xl p-6 bg-[#1A1611] transition-all">
                       <p class="text-white text-2xl">{message.text}</p>
                       <p class="text-xl">
                         <span class="text-white">{message.creator}</span> on
