@@ -4,7 +4,6 @@ import {
 } from "../../lib/api/allMessagesHook";
 import { BackArrow } from "./components/Icons";
 import { Motion, Presence } from "solid-motionone";
-import { useContext } from "solid-js";
 import MessageForm from "./components/MessageForm";
 import ShowWhenInView from "../lesya/components/ShowWhenInView";
 
@@ -25,7 +24,7 @@ export default function Write() {
         </nav>
         <AllMessagesProvider baseURL="https://tarakoshka.tech/api/messages">
           <MessageForm />
-          <ShowWhenInView index={0}>
+          <ShowWhenInView index={1}>
             <div
               class="flex md:flex-row md:flex-wrap flex-col max-md:h-full gap-4 mx-6 overflow-scroll relative -mt-12 pt-12 pb-6"
               style="scrollbar-color: #F5E9C9 transparent; scrollbar-width: none;"
@@ -34,7 +33,7 @@ export default function Write() {
                 useMessages()
                   ?.items()
                   ?.map((message) => (
-                    <div class="font-[Overpass] flex w-full flex-col justify-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
+                    <div class="font-[Overpass] flex flex-col border justify-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
                       <p class="text-white text-2xl">{message.text}</p>
                       <p class="text-xl">
                         <span class="text-white">{message.creator}</span> on

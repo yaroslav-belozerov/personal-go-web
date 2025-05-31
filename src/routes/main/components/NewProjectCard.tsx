@@ -22,7 +22,10 @@ export default function NewProjectCard(props: ProjectCardProps) {
           alt={title}
         />
       </Show>
-      <h4 class="text-xl text-white py-3 px-5">{title}</h4>
+      <div class="flex flex-col py-3 px-5">
+        <h4 class="text-xl text-white">{title}</h4>
+        <p class="text-sm max-sm:hidden">{description}</p>
+      </div>
     </a>
   );
 }

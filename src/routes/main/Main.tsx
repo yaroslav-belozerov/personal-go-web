@@ -16,7 +16,6 @@ import Landing from "./pages/Landing";
 import Current from "./pages/Current";
 import Touch from "./pages/Touch";
 import Meta from "./pages/Meta";
-import Done from "./pages/Done";
 import { MusicProvider, useMusic } from "../../lib/api/musicHook";
 import NewProjectCard from "./components/NewProjectCard";
 
