@@ -1,17 +1,12 @@
 "use client";
 
 import { createSignal, Match, Show, Switch } from "solid-js";
-import { Cat, Close, Download, Share } from "./components/Icons";
-import AccordionSection from "./components/AccordionSection";
-import ProjectCard from "./components/ProjectCard";
+import { Cat, Download } from "./components/Icons";
 import SocialIcon from "./components/SocialIcon";
 import SocialTag from "./components/SocialTag";
 import { ProjectsProvider, useProjects } from "../../lib/api/projectsHook";
 import { MessageProvider, useLastMessage } from "../../lib/api/messagesHook";
-import { ArrowDown, ExternalLink, SendMessage } from "./components/Icons";
 import { Motion, Presence } from "solid-motionone";
-import { A } from "@solidjs/router";
-import PDFViewer from "./components/PDFViewer";
 import Landing from "./pages/Landing";
 import Current from "./pages/Current";
 import Touch from "./pages/Touch";
@@ -122,7 +117,7 @@ export default function App() {
                           useProjects()
                             ?.items()
                             ?.filter((it) => it.description != "")
-                            ?.slice(0, projectsExpanded() ? 10 : 3)
+                            ?.slice(0, projectsExpanded() ? 7 : 3)
                             ?.map((project) => (
                               <NewProjectCard
                                 showPreview={!projectsExpanded()}
