@@ -79,8 +79,12 @@ export default function App() {
               <h2 class="text-5xl">Doing stuff</h2>
               <div class="flex flex-row font-[Overpass] gap-2">
                 <button
-                  class="grow-1 py-1 bg-[#1A1611] rounded-full"
-                  style={isCurrentProjects() ? "" : "background: transparent;"}
+                  class="cursor-pointer outline transition-all outline-transparent md:hover:outline-[#F5E9C9] grow-1 py-1 bg-[#1A1611] rounded-full"
+                  style={
+                    isCurrentProjects()
+                      ? "outline: #F5E9C900;"
+                      : "background: transparent;"
+                  }
                   onClick={() => {
                     setIsCurrentProjects(true);
                   }}
@@ -88,8 +92,12 @@ export default function App() {
                   Current
                 </button>
                 <button
-                  class="grow-1 py-1 bg-[#1A1611] rounded-full"
-                  style={isCurrentProjects() ? "background: transparent;" : ""}
+                  class="cursor-pointer outline transition-all outline-transparent md:hover:outline-[#F5E9C9] grow-1 py-1 bg-[#1A1611] rounded-full"
+                  style={
+                    isCurrentProjects()
+                      ? "background: transparent;"
+                      : "outline: #F5E9C900;"
+                  }
                   onClick={() => {
                     setIsCurrentProjects(false);
                   }}
