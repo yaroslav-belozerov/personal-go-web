@@ -24,7 +24,7 @@ export default function NewProjectCard(props: ProjectCardProps) {
       </Show>
       <div class="flex flex-col py-3 px-5">
         <h4 class="text-xl text-white">{title}</h4>
-        <p class="text-sm max-sm:hidden">{description}</p>
+        <p class="text-sm">{description}</p>
       </div>
     </a>
   );

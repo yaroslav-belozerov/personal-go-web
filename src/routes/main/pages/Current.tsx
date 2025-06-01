@@ -1,13 +1,7 @@
-import { createSignal } from "solid-js";
 import { ProjectsProvider, useProjects } from "../../../lib/api/projectsHook";
-import ProjectCard from "../components/ProjectCard";
-import { MusicProvider, useMusic } from "../../../lib/api/musicHook";
 import NewProjectCard from "../components/NewProjectCard";
 
 export default function Current() {
-  const [preview, setPreview] = createSignal<string>("");
-  const [previewPageNum, setPreviewPageNum] = createSignal<number>(1);
-
   return (
     <section id="projects" class="flex flex-col pt-6 gap-4 min-h-[100dvh]">
       <h2 class="ms-6 text-white text-4xl">Current stuff</h2>

@@ -1,12 +1,19 @@
 import { A } from "@solidjs/router";
-import { Cat, Download } from "../components/Icons";
+import {
+  ArrowDown,
+  Cat,
+  Download,
+  Meta,
+  Projects,
+  Touch,
+} from "../components/Icons";
 import CVStar from "../components/CVStar";
 import KoshkaStar from "../components/KoshkaStar";
 import LandingLink from "../components/LandingLink";
 
 export default function Landing() {
   return (
-    <section class="min-h-[100dvh] flex items-center flex-col">
+    <section class="min-h-[100vh] flex items-center flex-col">
       <img
         src="https://tarakoshka.tech/static/icons/star.svg"
         class={`absolute scale-200 top-[-1.5%] md:scale-230`}
@@ -21,15 +28,21 @@ export default function Landing() {
           <h1 class="">tarakoshka.tech</h1>
         </a>
       </header>
-      <nav class="flex flex-col grow-1 justify-between">
+      <nav class="flex flex-col w-full grow-1 justify-between">
         <div class="flex flex-row gap-4 justify-center">
           <CVStar />
           <KoshkaStar />
         </div>
-        <div class="flex flex-col gap-4 justify-center flex-wrap mb-6">
-          <LandingLink title="TOUCH" href="#touch" />
-          <LandingLink title="PROJECTS" href="#projects" />
-          <LandingLink title="META" href="#meta" />
+        <div class="flex flex-col px-6 gap-4 justify-center flex-wrap mb-6">
+          <LandingLink href="#touch" title="TOUCH" icon={<Touch />} />
+          <LandingLink href="#projects" title="PROJECTS" icon={<Projects />} />
+          <LandingLink href="#meta" title="META" icon={<Meta />} />
+          <div class="flex flex-row gap-1 items-center justify-center">
+            <p class="text-xl">Or scroll down</p>
+            <marquee direction="down" class="size-fit" scrolldelay="300">
+              <ArrowDown />
+            </marquee>
+          </div>
         </div>
       </nav>
     </section>
