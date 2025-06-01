@@ -3,7 +3,7 @@ import SocialTag from "../components/SocialTag";
 
 export default function Meta() {
   return (
-    <section id="meta" class="min-h-[100dvh] flex justify-between flex-col">
+    <section id="meta" class="min-h-[100svh] flex justify-between flex-col">
       <div class="flex flex-col">
         <h2 class="ms-6 text-white text-4xl mt-6">About me and website</h2>
         <div class="flex flex-wrap gap-4 mx-6 mt-4 flex-row">

@@ -3,7 +3,7 @@ import NewProjectCard from "../components/NewProjectCard";
 
 export default function Current() {
   return (
-    <section id="projects" class="flex flex-col pt-6 gap-4 min-h-[100dvh]">
+    <section id="projects" class="flex flex-col pt-6 gap-4 min-h-[100svh]">
       <h2 class="ms-6 text-white text-4xl">Current stuff</h2>
       <div
         class="flex flex-row gap-6 w-full overflow-x-scroll"

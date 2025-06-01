@@ -13,7 +13,7 @@ import LandingLink from "../components/LandingLink";
 
 export default function Landing() {
   return (
-    <section class="min-h-[100vh] flex items-center flex-col">
+    <section class="min-h-[100svh] flex items-center flex-col">
       <img
         src="https://tarakoshka.tech/static/icons/star.svg"
         class={`absolute scale-200 top-[-1.5%] md:scale-230`}

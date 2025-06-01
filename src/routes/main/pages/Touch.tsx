@@ -5,7 +5,7 @@ import SocialIcon from "../components/SocialIcon";
 
 export default function Touch() {
   return (
-    <section id="touch" class="flex flex-col min-h-[100dvh] pt-6 gap-2">
+    <section id="touch" class="flex flex-col min-h-[100svh] pt-6 gap-2">
       <h2 class="ms-6 text-white text-4xl mt-2">Get in touch</h2>
       <div class="flex flex-col gap-2">
         <div
