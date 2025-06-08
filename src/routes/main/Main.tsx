@@ -13,6 +13,7 @@ import Touch from "./pages/Touch";
 import Meta from "./pages/Meta";
 import { MusicProvider, useMusic } from "../../lib/api/musicHook";
 import NewProjectCard from "./components/NewProjectCard";
+import { useWallEntries, WallProvider } from "../../lib/api/wallEntriesHook";
 
 export default function App() {
   const [projectsExpanded, setProjectsExpanded] = createSignal<boolean>(false);
@@ -42,34 +43,48 @@ export default function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <svg
               class="w-24"
-              src="https://tarakoshka.tech/static/icons/cv_star.svg"
               style="
               animation: rotate-animation-back 20s infinite linear;
               background-size: cover;
               object-fit: fill;"
-            ></img>
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 240 240"
+            >
+              <path
+                fill="#FFE942"
+                d="m120 0 23.294 33.067L180 16.077l3.64 40.283L223.923 60l-16.99 36.706L240 120l-33.067 23.294L223.923 180l-40.283 3.64-3.64 40.283-36.706-16.99L120 240l-23.294-33.067L60 223.923l-3.64-40.283L16.077 180l16.99-36.706L0 120l33.067-23.294L16.077 60l40.283-3.64L60 16.077l36.706 16.99L120 0Z"
+              />
+            </svg>
             <div class="text-[#1a1611] absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
               <Download />
-              <p class="font-[Overpass] font-bold text-2xl">CV</p>
+              <p class="font-[Overpass] font-bold text-xl">CV</p>
             </div>
           </a>
           <a
             href="/lesya"
             class="relative z-2 md:hover:scale-90 transition-all"
           >
-            <img
-              src="https://tarakoshka.tech/static/icons/lesya_star.svg"
+            <svg
               class="w-24"
               style="
               animation: rotate-animation 20s infinite linear;
               background-size: cover;
               object-fit: fill;"
-            ></img>
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 240 240"
+            >
+              <path
+                fill="#00FF7B"
+                d="m120 0 23.294 33.067L180 16.077l3.64 40.283L223.923 60l-16.99 36.706L240 120l-33.067 23.294L223.923 180l-40.283 3.64-3.64 40.283-36.706-16.99L120 240l-23.294-33.067L60 223.923l-3.64-40.283L16.077 180l16.99-36.706L0 120l33.067-23.294L16.077 60l40.283-3.64L60 16.077l36.706 16.99L120 0Z"
+              />
+            </svg>
             <div class="text-[#1a1611] absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
               <Cat />
-              <p class="font-[Overpass] font-bold text-2xl">Cat</p>
+              <p class="font-[Overpass] font-bold text-xl">Cat</p>
             </div>
           </a>
         </nav>
@@ -364,6 +379,10 @@ export default function App() {
                 <SocialTag text="echo" link="https://echo.labstack.com/" />
                 <SocialTag text="senko.digital" link="https://senko.digital/" />
               </div>
+              <p class="text-xs font-[Overpass] opacity-50 text-center">
+                This website is built by a human. <br />
+                AI training on its content or source code is prohibited.
+              </p>
             </section>
           </div>
         </div>
