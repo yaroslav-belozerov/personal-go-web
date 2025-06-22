@@ -13,11 +13,14 @@ import Touch from "./pages/Touch";
 import Meta from "./pages/Meta";
 import { MusicProvider, useMusic } from "../../lib/api/musicHook";
 import NewProjectCard from "./components/NewProjectCard";
-import { useWallEntries, WallProvider } from "../../lib/api/wallEntriesHook";
+import { Portal } from "solid-js/web";
+import { BackArrow } from "../lesya/components/Icons";
+import { useWebring, WebringProvider } from "../../lib/api/webringHook";
 
 export default function App() {
   const [projectsExpanded, setProjectsExpanded] = createSignal<boolean>(false);
   const [isCurrentProjects, setIsCurrentProjects] = createSignal<boolean>(true);
+  const [isWebringOpen, setWebringOpen] = createSignal<boolean>(false);
 
   return (
     <Motion.main
@@ -27,10 +30,170 @@ export default function App() {
       transition={{ duration: 0.3 }}
     >
       <main class="page md:hidden flex bg-[#1a1611] text-[#f5e9c9] md:pt-0 flex-col relative overflow-x-clip">
-        <Landing></Landing>
-        <Touch></Touch>
-        <Current></Current>
-        <Meta></Meta>
+        <WebringProvider baseURL="https://webring.otomir23.me/tarakoshka/data">
+          {
+            <Portal>
+              <Presence>
+                <Show when={isWebringOpen()}>
+                  <Motion.div
+                    exit={{ opacity: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    <div class="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-70"></div>
+                    <div
+                      onClick={() => {
+                        setWebringOpen(false);
+                      }}
+                      class="absolute flex flex-col items-center justify-center z-5 top-0 left-0 right-0 bottom-0"
+                    >
+                      <Motion.div
+                        initial={{ scale: 0, y: "100vh" }}
+                        animate={{ scale: 1, y: 0 }}
+                        exit={{ scale: 0, y: "100vh" }}
+                      >
+                        <button
+                          class="relative"
+                          onClick={() => {
+                            setWebringOpen(false);
+                          }}
+                        >
+                          <Motion.p
+                            transition={{ delay: 0.1, duration: 0.3 }}
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0 }}
+                          >
+                            <p class="text-white z-[-1] w-full absolute font-black top-[-7rem] text-center text-[9rem]">
+                              RUTG
+                            </p>
+                          </Motion.p>
+                          <div class="relative z-0">
+                            <nav class="absolute items-center z-1 w-full px-6 flex gap-4 text-white font-[Overpass] flex-row justify-between left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]">
+                              <a
+                                class="flex flex-col gap-4"
+                                href={useWebring().items()?.prev?.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <div class="p-3 h-fit aspect-square flex w-16 items-center justify-center text-center outline-10 outline-white rounded-full bg-[#FF3737]">
+                                  <svg
+                                    viewBox="0 0 24 24"
+                                    class="size-8"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                  >
+                                    <path
+                                      d="M12 5v14M5 12l7 7 7-7"
+                                      transform="rotate(90 12 12)"
+                                      stroke="currentColor"
+                                      stroke-width="6"
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+                                <p class="font-[Overpass]">
+                                  {useWebring().items()?.prev?.name}
+                                </p>
+                              </a>
+                              <a
+                                href="https://webring.otomir23.me/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <svg
+                                  class="z-1 size-40 w-full"
+                                  style="animation: rotate-animation 30s infinite linear;"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  height="24px"
+                                  viewBox="0 -960 960 960"
+                                  width="24px"
+                                  fill="#EFEFEF"
+                                >
+                                  <path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z" />
+                                </svg>
+                              </a>
+                              <a
+                                class="flex flex-col gap-4"
+                                href={useWebring().items()?.next?.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <p class="font-[Overpass]">
+                                  {useWebring().items()?.next?.name}
+                                </p>
+                                <div class="p-3 h-fit flex items-center justify-center w-16 aspect-square text-center outline-10 outline-white rounded-full bg-[#FF3737]">
+                                  <svg
+                                    viewBox="0 0 24 24"
+                                    class="size-8"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                  >
+                                    <path
+                                      d="M12 5v14M5 12l7 7 7-7"
+                                      transform="rotate(-90 12 12)"
+                                      stroke="currentColor"
+                                      stroke-width="6"
+                                      fill="none"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+                              </a>
+                            </nav>
+                            <div class="relative">
+                              <svg
+                                style="
+                                animation: breathe-down 10s infinite ease-in-out;
+                                "
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="311"
+                                height="311"
+                                fill="none"
+                                viewBox="0 0 311 311"
+                              >
+                                <circle
+                                  cx="155.5"
+                                  cy="155.5"
+                                  r="155.5"
+                                  fill="#FF3737"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <Motion.p
+                            transition={{ delay: 0.3, duration: 0.3 }}
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0 }}
+                          >
+                            <p class="text-white z-1 absolute font-black bottom-[-4rem] text-center left-1/2 translate-x-[-50%] text-[6rem]">
+                              WEBRING
+                            </p>
+                          </Motion.p>
+                        </button>
+                      </Motion.div>
+                    </div>
+                  </Motion.div>
+                </Show>
+              </Presence>
+            </Portal>
+          }
+        </WebringProvider>
+        <Landing
+          isWebringOpen={isWebringOpen}
+          setWebringOpen={setWebringOpen}
+        ></Landing>
+        <Show when={!isWebringOpen()}>
+          <Touch></Touch>
+          <Current></Current>
+          <Meta></Meta>
+        </Show>
       </main>
       <main class="page md:flex hidden flex-col p-6">
         <nav class="flex flex-row items-center gap-4">
@@ -312,6 +475,85 @@ export default function App() {
             </MusicProvider>
           </section>
           <div class="flex flex-col gap-4 w-fit">
+            <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
+              <a
+                class="flex flex-row gap-4 items-center group"
+                href="https://webring.otomir23.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h2 class="text-5xl">Webring</h2>
+                <svg
+                  class="z-1 size-14 group-hover:scale-90 transition-all"
+                  style="animation: rotate-animation 30s infinite linear;"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#EFEFEF"
+                >
+                  <path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z" />
+                </svg>
+              </a>
+              <WebringProvider baseURL="https://webring.otomir23.me/tarakoshka/data">
+                <nav class="items-center z-1 w-full flex gap-4 text-white font-[Overpass] flex-row gap-4">
+                  <a
+                    class="flex gap-2 w-full rounded-xl bg-[#1A1611] hover:scale-95 transition-all p-3 items-center"
+                    href={useWebring().items()?.prev?.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="size-8"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                    >
+                      <path
+                        d="M12 5v14M5 12l7 7 7-7"
+                        transform="rotate(90 12 12)"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p class="font-[Overpass]">
+                      {useWebring().items()?.prev?.name}
+                    </p>
+                  </a>
+                  <a
+                    class="flex gap-2 w-full justify-end rounded-xl bg-[#1A1611] hover:scale-95 transition-all p-3 items-center"
+                    href={useWebring().items()?.next?.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p class="font-[Overpass]">
+                      {useWebring().items()?.next?.name}
+                    </p>
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="size-8"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                    >
+                      <path
+                        d="M12 5v14M5 12l7 7 7-7"
+                        transform="rotate(-90 12 12)"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </nav>
+              </WebringProvider>
+            </section>
             <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
               <h2 class="text-5xl">Leave a message</h2>
               <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">

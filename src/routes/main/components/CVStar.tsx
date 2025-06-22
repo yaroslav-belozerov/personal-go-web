@@ -3,7 +3,7 @@ import { Download } from "./Icons";
 export default function CVStar() {
   return (
     <a
-      class="relative z-2 mt-8 md:hover:scale-90 transition-all"
+      class="relative z-1 mt-8 md:hover:scale-90 transition-all"
       href="https://tarakoshka.tech/static/cv.pdf"
       target="_blank"
       rel="noopener noreferrer"

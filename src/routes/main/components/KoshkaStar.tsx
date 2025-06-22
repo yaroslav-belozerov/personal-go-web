@@ -3,7 +3,7 @@ import { Cat } from "./Icons";
 
 export default function KoshkaStar() {
   return (
-    <a href="/lesya" class="relative z-2 mb-8 md:hover:scale-90 transition-all">
+    <a href="/lesya" class="relative z-1 mb-8 md:hover:scale-90 transition-all">
       <img
         src="https://tarakoshka.tech/static/icons/lesya_star.svg"
         class="w-32 md:w-48"
