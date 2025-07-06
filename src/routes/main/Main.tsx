@@ -399,7 +399,7 @@ export default function App() {
               </Switch>
             </Presence>
           </section>
-          <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-fit h-fit gap-4">
+          <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
             <h2 class="text-5xl">My socials</h2>
             <div class="flex flex-row flex-wrap gap-4">
               <SocialIcon
@@ -437,8 +437,8 @@ export default function App() {
             </div>
             <MusicProvider baseURL="https://tarakoshka.tech/api/music">
               {useMusic().items() && (
-                <div class="flex flex-row flex-wrap justify-between gap-6 p-6 rounded-2xl bg-[#1A1611]">
-                  <div class="flex flex-row flex-wrap items-center gap-3">
+                <div class="flex flex-row w-full justify-between p-6 rounded-2xl bg-[#1A1611]">
+                  <div class="flex flex-row items-center gap-3">
                     <img
                       src={useMusic()?.items()?.image}
                       alt={useMusic()?.items()?.title}
@@ -558,8 +558,8 @@ export default function App() {
               <h2 class="text-5xl">Leave a message</h2>
               <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
                 {useLastMessage().items() && (
-                  <div class="font-[Overpass] flex w-full flex-row justify-between items-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
-                    <div class="flex flex-col">
+                  <div class="font-[Overpass] flex justify-end items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
+                    <div class="flex flex-col shrink">
                       <p class="text-white text-2xl">
                         {useLastMessage().items()?.text}
                       </p>
@@ -579,11 +579,10 @@ export default function App() {
                     </div>
                     <a
                       href="/write-to-me"
-                      style="align-self: end;"
-                      class="relative size-14 transition-all hover:scale-90"
+                      class="relative min-w-14 size-14 transition-all hover:scale-90"
                     >
                       <img
-                        class="transition-all size-14 scale-120 absolute"
+                        class="transition-all size-14 min-w-14 scale-120 absolute"
                         style="animation: rotate-animation 20s infinite linear;"
                         src="https://tarakoshka.tech/static/icons/star2.svg"
                       ></img>
