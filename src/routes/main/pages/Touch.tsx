@@ -52,7 +52,7 @@ export default function Touch() {
                     your messages
                   </p> */}
               <div class="flex w-full flex-col justify-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-3 md:p-6 bg-[#2B251F] transition-all">
-                <p class="text-white text-xl">
+                <p class="text-white max-h-22 overflow-hidden fade text-xl">
                   {useLastMessage().items()?.text}
                 </p>
                 <p class="text-md">
