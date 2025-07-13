@@ -3,7 +3,7 @@ import SocialTag from "../components/SocialTag";
 
 export default function Meta() {
   return (
-    <section id="meta" class="min-h-[100dvh] flex flex-col">
+    <section id="info" class="min-h-[100dvh] flex flex-col">
       <div class="min-h-[100svh] flex justify-between flex-col">
         <div class="flex flex-col">
           <h2 class="ms-6 text-white text-4xl mt-6">About me and website</h2>
@@ -65,7 +65,7 @@ export default function Meta() {
               href="https://prodcontest.ru/"
               rel="noreferrer noopener"
               target="_blank"
-              class="hover:scale-97 transition-all"
+              class="md:hover:scale-97 transition-all"
             >
               <div class="flex italic flex-row gap-4 outline-[#03a366] outline-2 bg-[#033024] rounded-xl items-center">
                 <svg

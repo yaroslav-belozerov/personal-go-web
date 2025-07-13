@@ -23,7 +23,7 @@ export default function Landing(props: LandingProps) {
   let { isWebringOpen, setWebringOpen } = props;
 
   return (
-    <section class="min-h-[100svh] flex items-center flex-col">
+    <section class="min-h-[100dvh] flex items-center flex-col">
       <img
         src="https://tarakoshka.tech/static/icons/star.svg"
         class={`absolute scale-200 top-[1.5em] md:scale-230`}
@@ -45,15 +45,15 @@ export default function Landing(props: LandingProps) {
             <KoshkaStar />
           </div>
           <button
-            style="
-            animation: breathe 5s infinite ease-in-out;
-            "
             onClick={() => {
               setWebringOpen(true);
             }}
             class="relative z-2 ml-16 cursor-pointer"
           >
             <svg
+              style="
+              animation: breathe 5s infinite ease-in-out;
+              "
               class="size-24"
               xmlns="http://www.w3.org/2000/svg"
               width="311"
@@ -76,9 +76,9 @@ export default function Landing(props: LandingProps) {
           </button>
         </div>
         <div class="flex flex-col px-6 gap-4 justify-center flex-wrap mb-6">
-          <LandingLink href="#touch" title="TOUCH" icon={<Touch />} />
+          <LandingLink href="#contacts" title="CONTACTS" icon={<Touch />} />
           <LandingLink href="#projects" title="PROJECTS" icon={<Projects />} />
-          <LandingLink href="#meta" title="META" icon={<Meta />} />
+          <LandingLink href="#info" title="INFO" icon={<Meta />} />
           <div class="flex flex-row gap-1 items-center justify-center">
             <p class="text-xl">Or scroll down</p>
             <marquee direction="down" class="size-fit" scrolldelay="300">

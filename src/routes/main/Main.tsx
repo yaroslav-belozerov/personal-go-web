@@ -64,8 +64,8 @@ export default function App() {
                             animate={{ scale: 1 }}
                             exit={{ scale: 0 }}
                           >
-                            <p class="text-white z-[-1] w-full absolute font-black top-[-7rem] text-center text-[9rem]">
-                              RUTG
+                            <p class="text-white z-[-1] w-full absolute font-black top-[-4rem] text-center text-[5rem]">
+                              OTORING
                             </p>
                           </Motion.p>
                           <div class="relative z-0">
@@ -172,7 +172,7 @@ export default function App() {
                             animate={{ scale: 1 }}
                             exit={{ scale: 0 }}
                           >
-                            <p class="text-white z-1 absolute font-black bottom-[-4rem] text-center left-1/2 translate-x-[-50%] text-[6rem]">
+                            <p class="text-white z-1 absolute font-black bottom-[-4rem] text-center left-1/2 translate-x-[-50%] text-[5rem]">
                               WEBRING
                             </p>
                           </Motion.p>
