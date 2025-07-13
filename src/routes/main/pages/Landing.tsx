@@ -23,7 +23,7 @@ export default function Landing(props: LandingProps) {
   let { isWebringOpen, setWebringOpen } = props;
 
   return (
-    <section class="min-h-[100dvh] flex items-center flex-col">
+    <section class="min-h-[100svh] flex items-center flex-col">
       <img
         src="https://tarakoshka.tech/static/icons/star.svg"
         class={`absolute scale-200 top-[1.5em] md:scale-230`}
