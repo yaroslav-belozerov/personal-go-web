@@ -1,5 +1,6 @@
 import { ArrowDown } from "../components/Icons";
 import SocialTag from "../components/SocialTag";
+import { SwitchCard } from "../components/SwitchCard";
 
 export default function Meta() {
   return (
@@ -7,8 +8,11 @@ export default function Meta() {
       <div class="min-h-[100svh] flex justify-between flex-col">
         <div class="flex flex-col">
           <h2 class="ms-6 text-white text-4xl mt-6">About me and website</h2>
-          <div class="flex flex-col mx-6 mt-6 gap-4 font-[Overpass] text-white">
-            <div class="flex flex-row gap-4 outline-[#FBBA00] outline-2 bg-[#382a00] rounded-xl items-center px-4 py-3">
+          <div class="flex flex-col mx-4 mt-4 gap-4 font-[Overpass] text-white">
+            <a
+              href="https://school.hse.ru/"
+              class="flex hover:scale-97 transition-all flex-row gap-4 outline-[#FBBA00] outline-2 bg-[#382a00] rounded-xl items-center px-4 py-3"
+            >
               <svg
                 class="size-8 pt-1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +44,11 @@ export default function Meta() {
                 </g>
               </svg>
               <h4 class="text-xl pt-1">HSE Lyceum Alumni</h4>
-            </div>
-            <div class="flex flex-row gap-4 outline-[#FFDD2D] outline-2 bg-[#3d3402] rounded-xl items-center px-4 py-3">
+            </a>
+            <a
+              href="https://www.tbank.ru/"
+              class="flex hover:scale-97 transition-all flex-row gap-4 outline-[#FFDD2D] outline-2 bg-[#3d3402] rounded-xl items-center px-4 py-3"
+            >
               <svg
                 class="size-8 pl-1"
                 viewBox="0 0 32 32"
@@ -60,14 +67,14 @@ export default function Meta() {
                 />
               </svg>
               <h4 class="text-xl pt-1">T-Bank Mobile Intern</h4>
-            </div>
+            </a>
             <a
               href="https://prodcontest.ru/"
               rel="noreferrer noopener"
               target="_blank"
-              class="md:hover:scale-97 transition-all"
+              class="hover:scale-97 transition-all"
             >
-              <div class="flex italic flex-row gap-4 outline-[#03a366] outline-2 bg-[#033024] rounded-xl items-center">
+              <div class="flex flex-row gap-4 outline-[#03a366] outline-2 bg-[#033024] rounded-xl items-center">
                 <svg
                   class="size-8 ml-4"
                   viewBox="0 0 122 34"
@@ -96,22 +103,110 @@ export default function Meta() {
             </a>
             <div class="flex flex-wrap gap-2 flex-row">
               <SocialTag text="17 y/o" />
-              <SocialTag text="ru/eng" />
-              <SocialTag text="moscow" />
-              <SocialTag text="mobile dev" />
-              <SocialTag text="designer" />
-              <SocialTag text="kotlin" link="https://kotlinlang.org/" />
-              <SocialTag text="neovim" link="https://neovim.io/" />
-              <SocialTag text="fedora" link="https://fedoraproject.org/" />
-              <SocialTag text="hyprland" link="https://hyprland.org/" />
-              <SocialTag text="solidjs" link="https://www.solidjs.com/" />
-              <SocialTag text="tailwind" link="https://tailwindcss.com/" />
-              <SocialTag text="go" link="https://go.dev/" />
-              <SocialTag text="echo" link="https://echo.labstack.com/" />
-              <SocialTag text="senko.digital" link="https://senko.digital/" />
+              <SocialTag text="RU/ENG" />
+              <SocialTag text="GMT+3" />
+              <SocialTag text="Mobile Dev & Designer" />
+              <a
+                href="https://kotlinlang.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-linear-to-r items-center from-[#824DFD] to-[#E04169] flex md:hover:scale-95 text-lg font-[Overpass] justify-center rounded-xl px-4 py-2 text-lg transition-all"
+              >
+                <div class="flex flex-row gap-1 mt-[3px]">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M2 2H22L12 12L22 22H2Z" fill="white" />
+                  </svg>
+                  Kotlin
+                </div>
+              </a>
             </div>
+            <SwitchCard title="This Website's Stack">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                class="bold p-1 px-4 rounded-full w-fit mb-3 mt-1 bg-linear-to-r from-[#6335E1] to-[#FC7F42] text-white"
+                style="align-self: center;"
+                href="https://senko.digital/"
+              >
+                senko.digital
+              </a>
+              <div class="flex flex-row">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="w-full rounded-tl-lg text-[#86BBE3] hover:bg-[#86BBE3] p-2 hover:text-[#1A1611] transition-all"
+                  href="https://www.solidjs.com/"
+                >
+                  SolidJS
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="w-full rounded-tr-lg text-[#00BCFF] hover:bg-[#00BCFF] p-2 hover:text-[#1A1611] transition-all"
+                  href="https://tailwindcss.com/"
+                >
+                  Tailwind
+                </a>
+              </div>
+              <div class="flex flex-row">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="w-full rounded-bl-lg text-[#08AFD8] hover:bg-[#08AFD8] p-2 hover:text-[#1A1611] transition-all"
+                  href="https://go.dev/"
+                >
+                  Go
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="w-full rounded-br-lg text-[#50E2FF] hover:bg-[#50E2FF] p-2 hover:text-[#1A1611] transition-all"
+                  href="https://echo.labstack.com/"
+                >
+                  Echo
+                </a>
+              </div>
+            </SwitchCard>
+            <SwitchCard title="My Setup">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://neovim.io/"
+                class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+              >
+                <img
+                  class="size-6"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Neovim-mark.svg/1200px-Neovim-mark.svg.png"
+                ></img>
+                <p>Neovim</p>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://fedoraproject.org/"
+                class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+              >
+                <img
+                  class="size-6"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fedora_logo.svg/1024px-Fedora_logo.svg.png"
+                ></img>
+                <p>Fedora</p>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://hyprland.org/"
+                class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+              >
+                <img
+                  class="size-6 rounded-full scale-110"
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Hyprland_logo.png"
+                ></img>
+                <p>Hyprland</p>
+              </a>
+            </SwitchCard>
           </div>
-          <p class="text-xs pt-6 font-[Overpass] opacity-50 text-center">
+          <p class="text-xs pt-6 mb-4 font-[Overpass] opacity-50 text-center">
             This website is built by a human. <br />
             AI training on its content or source code is prohibited.
           </p>

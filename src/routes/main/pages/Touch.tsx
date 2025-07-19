@@ -46,27 +46,28 @@ export default function Touch() {
           ></SocialIcon>
         </div>
         <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
-          {useLastMessage().items() && (
+          {useLastMessage().get() && (
             <div class="flex flex-col font-[Overpass] md:flex-row md:gap-6 gap-2 mb-4 justify-between mx-6">
               {/* <p class="ms-6 text-xl md:text-2xl italic text-[#ffffff] mb-2">
                     your messages
                   </p> */}
               <div class="flex w-full flex-col justify-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-3 md:p-6 bg-[#2B251F] transition-all">
                 <p class="text-white max-h-22 overflow-hidden fade text-xl">
-                  {useLastMessage().items()?.text}
+                  {useLastMessage().get()?.text}
                 </p>
                 <p class="text-md">
                   <span class="text-white">
-                    {useLastMessage().items()?.creator}
+                    {useLastMessage().get()?.creator}
                   </span>{" "}
                   on
                   {" " +
-                    new Date(
-                      useLastMessage().items()?.time ?? "",
-                    ).toLocaleString("en-US", {
-                      dateStyle: "long",
-                      hour12: false,
-                    })}
+                    new Date(useLastMessage().get()?.time ?? "").toLocaleString(
+                      "en-US",
+                      {
+                        dateStyle: "long",
+                        hour12: false,
+                      },
+                    )}
                 </p>
               </div>
               <a
@@ -83,24 +84,24 @@ export default function Touch() {
         </MessageProvider>
       </div>
       <MusicProvider baseURL="https://tarakoshka.tech/api/music">
-        {useMusic().items() && (
+        {useMusic().get() && (
           <div class="flex flex-col">
             <h2 class="ms-6 text-white text-4xl mb-2">Listening to</h2>
             <div class="flex font-[Overpass] flex-row justify-between me-6">
               <a
-                href={useMusic()?.items()?.url}
+                href={useMusic()?.get()?.url}
                 class="flex flex-row ms-6 items-center gap-4 md:hover:scale-90 transition-all"
               >
                 <img
-                  src={useMusic()?.items()?.image}
-                  alt={useMusic()?.items()?.title}
+                  src={useMusic()?.get()?.image}
+                  alt={useMusic()?.get()?.title}
                   class="size-12 rounded-md transition-all"
                 />
                 <div class="flex flex-col">
                   <h3 class="text-white text-xl leading-7">
-                    {useMusic()?.items()?.title}
+                    {useMusic()?.get()?.title}
                   </h3>
-                  <p class="text-md leading-3">{useMusic()?.items()?.artist}</p>
+                  <p class="text-md leading-3">{useMusic()?.get()?.artist}</p>
                 </div>
               </a>
               <a
@@ -111,13 +112,13 @@ export default function Touch() {
                 <img
                   class="transition-all size-14 absolute"
                   src="https://tarakoshka.tech/static/icons/star2.svg"
-                  alt={useMusic()?.items()?.title}
+                  alt={useMusic()?.get()?.title}
                   style="animation: rotate-animation 20s infinite linear;"
                 ></img>
                 <img
                   class="transition-all size-6 absolute top-[50%] left-[50%] translate-[-51%]"
                   src="https://tarakoshka.tech/static/icons/music.svg"
-                  alt={useMusic()?.items()?.title}
+                  alt={useMusic()?.get()?.title}
                 ></img>
               </a>
             </div>

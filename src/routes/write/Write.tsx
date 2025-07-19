@@ -29,9 +29,9 @@ export default function Write() {
               class="flex md:flex-row md:flex-wrap flex-col max-md:h-full gap-4 mx-6 overflow-scroll relative -mt-12 pt-12 pb-6"
               style="scrollbar-color: #F5E9C9 transparent; scrollbar-width: none;"
             >
-              {useMessages().items() &&
+              {useMessages().get() &&
                 useMessages()
-                  ?.items()
+                  ?.get()
                   ?.map((message) => (
                     <div class="font-[Overpass] flex flex-col border justify-center rounded-xl p-6 bg-[#1A1611] transition-all">
                       <p class="text-white text-2xl">{message.text}</p>

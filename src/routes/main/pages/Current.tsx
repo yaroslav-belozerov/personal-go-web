@@ -11,9 +11,9 @@ export default function Current() {
       >
         <div class="w-0 px-1"></div>
         <ProjectsProvider baseURL="https://tarakoshka.tech/api/projects/ongoing">
-          {useProjects().items() &&
+          {useProjects().get() &&
             useProjects()
-              ?.items()
+              ?.get()
               ?.filter((it) => {
                 return it.description != "";
               })
@@ -30,9 +30,9 @@ export default function Current() {
       >
         <div class="w-0 px-1"></div>
         <ProjectsProvider baseURL="https://tarakoshka.tech/api/projects/finished">
-          {useProjects().items() &&
+          {useProjects().get() &&
             useProjects()
-              ?.items()
+              ?.get()
               ?.map((project) => (
                 <NewProjectCard showPreview={true} project={project} />
               ))}

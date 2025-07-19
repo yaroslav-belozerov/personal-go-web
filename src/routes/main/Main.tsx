@@ -16,6 +16,7 @@ import NewProjectCard from "./components/NewProjectCard";
 import { Portal } from "solid-js/web";
 import { BackArrow } from "../lesya/components/Icons";
 import { useWebring, WebringProvider } from "../../lib/api/webringHook";
+import { SwitchCard } from "./components/SwitchCard";
 
 export default function App() {
   const [projectsExpanded, setProjectsExpanded] = createSignal<boolean>(false);
@@ -72,7 +73,7 @@ export default function App() {
                             <nav class="absolute items-center z-1 w-full px-6 flex gap-4 text-white font-[Overpass] flex-row justify-between left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]">
                               <a
                                 class="flex flex-col gap-4"
-                                href={useWebring().items()?.prev?.url}
+                                href={useWebring().get()?.prev?.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
@@ -96,7 +97,7 @@ export default function App() {
                                   </svg>
                                 </div>
                                 <p class="font-[Overpass]">
-                                  {useWebring().items()?.prev?.name}
+                                  {useWebring().get()?.prev?.name}
                                 </p>
                               </a>
                               <a
@@ -118,12 +119,12 @@ export default function App() {
                               </a>
                               <a
                                 class="flex flex-col gap-4"
-                                href={useWebring().items()?.next?.url}
+                                href={useWebring().get()?.next?.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
                                 <p class="font-[Overpass]">
-                                  {useWebring().items()?.next?.name}
+                                  {useWebring().get()?.next?.name}
                                 </p>
                                 <div class="p-3 h-fit flex items-center justify-center w-16 aspect-square text-center outline-10 outline-white rounded-full bg-[#FF3737]">
                                   <svg
@@ -299,9 +300,9 @@ export default function App() {
                       <ProjectsProvider
                         baseURL={"https://tarakoshka.tech/api/projects/ongoing"}
                       >
-                        {useProjects().items() &&
+                        {useProjects().get() &&
                           useProjects()
-                            ?.items()
+                            ?.get()
                             ?.filter((it) => it.description != "")
                             ?.slice(0, projectsExpanded() ? 7 : 3)
                             ?.map((project) => (
@@ -350,23 +351,23 @@ export default function App() {
                           "https://tarakoshka.tech/api/projects/finished"
                         }
                       >
-                        {useProjects().items() &&
+                        {useProjects().get() &&
                           useProjects()
-                            ?.items()
+                            ?.get()
                             ?.filter((it) => it.description != "")
                             ?.slice(0, projectsExpanded() ? 10 : 3)
                             ?.map((project) => (
                               <NewProjectCard
                                 showPreview={
                                   !projectsExpanded() ||
-                                  useProjects().items.length <= 3
+                                  useProjects().get.length <= 3
                                 }
                                 project={project}
                               />
                             ))}
 
-                        {useProjects().items() && (
-                          <Show when={useProjects().items.length > 3}>
+                        {useProjects().get() && (
+                          <Show when={useProjects().get.length > 3}>
                             <button
                               onClick={() =>
                                 setProjectsExpanded(!projectsExpanded())
@@ -436,23 +437,24 @@ export default function App() {
               ></SocialIcon>
             </div>
             <MusicProvider baseURL="https://tarakoshka.tech/api/music">
-              {useMusic().items() && (
+              {useMusic().get() && (
                 <div class="flex flex-row w-full justify-between p-6 rounded-2xl bg-[#1A1611]">
-                  <div class="flex flex-row items-center gap-3">
+                  <a
+                    href={useMusic()?.get()?.url}
+                    class="flex flex-row items-center gap-3 hover:scale-95 transition-all"
+                  >
                     <img
-                      src={useMusic()?.items()?.image}
-                      alt={useMusic()?.items()?.title}
+                      src={useMusic()?.get()?.image}
+                      alt={useMusic()?.get()?.title}
                       class="size-12 rounded-md transition-all"
                     />
                     <div class="flex flex-col font-[Overall]">
                       <h3 class="text-2xl text-white">
-                        {useMusic()?.items()?.title}
+                        {useMusic()?.get()?.title}
                       </h3>
-                      <p class="text-sm italic">
-                        {useMusic()?.items()?.artist}
-                      </p>
+                      <p class="text-sm italic">{useMusic()?.get()?.artist}</p>
                     </div>
-                  </div>
+                  </a>
                   <a
                     href="https://www.last.fm/user/Lemurr4ik_"
                     class="relative size-14 transition-all hover:scale-90"
@@ -462,7 +464,7 @@ export default function App() {
                       class="transition-all size-14 scale-120 absolute"
                       style="animation: rotate-animation 20s infinite linear;"
                       src="https://tarakoshka.tech/static/icons/star2.svg"
-                      alt={useMusic()?.items()?.title}
+                      alt={useMusic()?.get()?.title}
                     ></img>
                     <img
                       class="transition-all size-8 absolute top-[50%] left-[50%] translate-[-50%]"
@@ -496,10 +498,10 @@ export default function App() {
                 </svg>
               </a>
               <WebringProvider baseURL="https://webring.otomir23.me/tarakoshka/data">
-                <nav class="items-center z-1 w-full flex gap-4 text-white font-[Overpass] flex-row gap-4">
+                <nav class="items-center z-1 w-full flex gap-2 text-white font-[Overpass] flex-row gap-4">
                   <a
-                    class="flex gap-2 w-full rounded-xl bg-[#1A1611] hover:scale-95 transition-all p-3 items-center"
-                    href={useWebring().items()?.prev?.url}
+                    class="flex gap-1 w-full justify-start rounded-xl bg-[#1A1611] p-3 items-center hover:rounded-none outline outline-[#FF3737] outline-0 hover:outline-7 transition-all hover:scale-90"
+                    href={useWebring().get()?.prev?.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -514,24 +516,24 @@ export default function App() {
                         d="M12 5v14M5 12l7 7 7-7"
                         transform="rotate(90 12 12)"
                         stroke="currentColor"
-                        stroke-width="3"
+                        stroke-width="2"
                         fill="none"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                     </svg>
                     <p class="font-[Overpass]">
-                      {useWebring().items()?.prev?.name}
+                      {useWebring().get()?.prev?.name}
                     </p>
                   </a>
                   <a
-                    class="flex gap-2 w-full justify-end rounded-xl bg-[#1A1611] hover:scale-95 transition-all p-3 items-center"
-                    href={useWebring().items()?.next?.url}
+                    class="flex gap-1 w-full justify-end rounded-xl bg-[#1A1611] p-3 items-center hover:rounded-none outline outline-[#FF3737] outline-0 hover:outline-7 transition-all hover:scale-90"
+                    href={useWebring().get()?.next?.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <p class="font-[Overpass]">
-                      {useWebring().items()?.next?.name}
+                      {useWebring().get()?.next?.name}
                     </p>
                     <svg
                       viewBox="0 0 24 24"
@@ -544,7 +546,7 @@ export default function App() {
                         d="M12 5v14M5 12l7 7 7-7"
                         transform="rotate(-90 12 12)"
                         stroke="currentColor"
-                        stroke-width="3"
+                        stroke-width="2"
                         fill="none"
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -557,20 +559,20 @@ export default function App() {
             <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
               <h2 class="text-5xl">Leave a message</h2>
               <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
-                {useLastMessage().items() && (
+                {useLastMessage().get() && (
                   <div class="font-[Overpass] flex justify-end items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
                     <div class="flex flex-col shrink">
                       <p class="text-white text-2xl">
-                        {useLastMessage().items()?.text}
+                        {useLastMessage().get()?.text}
                       </p>
                       <p class="text-xl">
                         <span class="text-white">
-                          {useLastMessage().items()?.creator}
+                          {useLastMessage().get()?.creator}
                         </span>{" "}
                         on
                         {" " +
                           new Date(
-                            useLastMessage().items()?.time ?? "",
+                            useLastMessage().get()?.time ?? "",
                           ).toLocaleString("en-US", {
                             dateStyle: "long",
                             hour12: false,
@@ -605,7 +607,10 @@ export default function App() {
             <section class="bg-[#2B251F] p-6 max-w-[800px] rounded-2xl flex flex-col w-fit h-fit gap-4">
               <h2 class="text-5xl">About</h2>
               <div class="flex flex-col gap-4 font-[Overpass] text-white">
-                <div class="flex flex-row gap-4 outline-[#FBBA00] outline-2 bg-[#382a00] rounded-xl items-center px-4 py-3">
+                <a
+                  href="https://school.hse.ru/"
+                  class="flex hover:scale-97 transition-all flex-row gap-4 outline-[#FBBA00] outline-2 bg-[#382a00] rounded-xl items-center px-4 py-3"
+                >
                   <svg
                     class="size-8 pt-1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -637,8 +642,11 @@ export default function App() {
                     </g>
                   </svg>
                   <h4 class="text-xl pt-1">HSE Lyceum Alumni</h4>
-                </div>
-                <div class="flex flex-row gap-4 outline-[#FFDD2D] outline-2 bg-[#3d3402] rounded-xl items-center px-4 py-3">
+                </a>
+                <a
+                  href="https://www.tbank.ru/"
+                  class="flex hover:scale-97 transition-all flex-row gap-4 outline-[#FFDD2D] outline-2 bg-[#3d3402] rounded-xl items-center px-4 py-3"
+                >
                   <svg
                     class="size-8 pl-1"
                     viewBox="0 0 32 32"
@@ -657,14 +665,14 @@ export default function App() {
                     />
                   </svg>
                   <h4 class="text-xl pt-1">T-Bank Mobile Intern</h4>
-                </div>
+                </a>
                 <a
                   href="https://prodcontest.ru/"
                   rel="noreferrer noopener"
                   target="_blank"
                   class="hover:scale-97 transition-all"
                 >
-                  <div class="flex italic flex-row gap-4 outline-[#03a366] outline-2 bg-[#033024] rounded-xl items-center">
+                  <div class="flex flex-row gap-4 outline-[#03a366] outline-2 bg-[#033024] rounded-xl items-center">
                     <svg
                       class="size-8 ml-4"
                       viewBox="0 0 122 34"
@@ -693,23 +701,108 @@ export default function App() {
                 </a>
                 <div class="flex flex-wrap gap-2 flex-row">
                   <SocialTag text="17 y/o" />
-                  <SocialTag text="ru/eng" />
-                  <SocialTag text="moscow" />
-                  <SocialTag text="mobile dev" />
-                  <SocialTag text="designer" />
-                  <SocialTag text="kotlin" link="https://kotlinlang.org/" />
-                  <SocialTag text="neovim" link="https://neovim.io/" />
-                  <SocialTag text="fedora" link="https://fedoraproject.org/" />
-                  <SocialTag text="hyprland" link="https://hyprland.org/" />
-                  <SocialTag text="solidjs" link="https://www.solidjs.com/" />
-                  <SocialTag text="tailwind" link="https://tailwindcss.com/" />
-                  <SocialTag text="go" link="https://go.dev/" />
-                  <SocialTag text="echo" link="https://echo.labstack.com/" />
-                  <SocialTag
-                    text="senko.digital"
-                    link="https://senko.digital/"
-                  />
+                  <SocialTag text="RU/ENG" />
+                  <SocialTag text="GMT+3" />
+                  <SocialTag text="Mobile Dev & Designer" />
+                  <a
+                    href="https://kotlinlang.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-linear-to-r items-center from-[#824DFD] to-[#E04169] flex md:hover:scale-95 text-lg font-[Overpass] justify-center rounded-xl px-4 py-2 text-lg transition-all"
+                  >
+                    <div class="flex flex-row gap-1 mt-[3px]">
+                      <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M2 2H22L12 12L22 22H2Z" fill="white" />
+                      </svg>
+                      Kotlin
+                    </div>
+                  </a>
                 </div>
+                <SwitchCard title="This Website's Stack">
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    class="bold p-1 px-4 rounded-full w-fit mb-3 mt-1 bg-linear-to-r from-[#6335E1] to-[#FC7F42] text-white"
+                    style="align-self: center;"
+                    href="https://senko.digital/"
+                  >
+                    senko.digital
+                  </a>
+                  <div class="flex flex-row">
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="w-full rounded-tl-lg text-[#86BBE3] hover:bg-[#86BBE3] p-2 hover:text-[#1A1611] transition-all"
+                      href="https://www.solidjs.com/"
+                    >
+                      SolidJS
+                    </a>
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="w-full rounded-tr-lg text-[#00BCFF] hover:bg-[#00BCFF] p-2 hover:text-[#1A1611] transition-all"
+                      href="https://tailwindcss.com/"
+                    >
+                      Tailwind
+                    </a>
+                  </div>
+                  <div class="flex flex-row">
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="w-full rounded-bl-lg text-[#08AFD8] hover:bg-[#08AFD8] p-2 hover:text-[#1A1611] transition-all"
+                      href="https://go.dev/"
+                    >
+                      Go
+                    </a>
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="w-full rounded-br-lg text-[#50E2FF] hover:bg-[#50E2FF] p-2 hover:text-[#1A1611] transition-all"
+                      href="https://echo.labstack.com/"
+                    >
+                      Echo
+                    </a>
+                  </div>
+                </SwitchCard>
+                <SwitchCard title="My Setup">
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://neovim.io/"
+                    class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+                  >
+                    <img
+                      class="size-6"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Neovim-mark.svg/1200px-Neovim-mark.svg.png"
+                    ></img>
+                    <p>Neovim</p>
+                  </a>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://fedoraproject.org/"
+                    class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+                  >
+                    <img
+                      class="size-6"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fedora_logo.svg/1024px-Fedora_logo.svg.png"
+                    ></img>
+                    <p>Fedora</p>
+                  </a>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://hyprland.org/"
+                    class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+                  >
+                    <img
+                      class="size-6 rounded-full scale-110"
+                      src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Hyprland_logo.png"
+                    ></img>
+                    <p>Hyprland</p>
+                  </a>
+                </SwitchCard>
               </div>
               <p class="text-xs font-[Overpass] opacity-50 text-center">
                 This website is built by a human. <br />

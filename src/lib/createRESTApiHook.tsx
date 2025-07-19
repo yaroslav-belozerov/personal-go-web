@@ -13,7 +13,7 @@ interface ProviderProps {
 
 export function createRESTApiHook<T>() {
   interface ContextValue {
-    items: Resource<T>;
+    get: Resource<T>;
     add: (item: T) => Promise<boolean>;
     refetch: () => void;
   }
@@ -51,7 +51,7 @@ export function createRESTApiHook<T>() {
     }
 
     const value: ContextValue = {
-      items,
+      get: items,
       add,
       refetch,
     };

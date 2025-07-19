@@ -17,9 +17,9 @@ export default function SocialTag(props: SocialTagText) {
     );
   } else {
     return (
-      <p class="flex text-lg font-[Overpass] justify-center rounded-xl px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
-        {props.text}
-      </p>
+      <div class="flex text-lg font-[Overpass] justify-center rounded-xl px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
+        <p class="mt-[2px]">{props.text}</p>
+      </div>
     );
   }
 }

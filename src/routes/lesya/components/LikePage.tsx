@@ -5,7 +5,7 @@ import { Motion } from "solid-motionone";
 import { CatLikesProvider, useCatLikes } from "../../../lib/api/catLikesHook";
 
 const LikePane: Component = () => {
-  const { items, add, refetch } = useCatLikes();
+  const { get: items, add, refetch } = useCatLikes();
   const [liked, setLiked] = createSignal(false);
 
   const like = async () => {
@@ -72,7 +72,7 @@ const LikePane: Component = () => {
           <p class="font-[Sora] text-center md:text-4xl text-2xl">
             Click to meow and send
             <br /> respect to this kitty <br /> ({
-              useCatLikes().items()?.likes
+              useCatLikes().get()?.likes
             }{" "}
             now)
           </p>
