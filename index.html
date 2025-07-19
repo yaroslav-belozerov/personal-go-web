@@ -11,12 +11,54 @@
         />
         <title>tarakoshka.tech</title>
     </head>
-    <body>
-        <noscript>
-            <meta http-equiv="refresh" content="0;URL=/noscript" />
-        </noscript>
-        <div id="root"></div>
+    <noscript>
+        <body
+            style="
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: 100vh;
+                padding-inline: 0;
+                text-align: center;
+                margin: 0;
+            "
+        >
+            <h1 style="font-size: 1.5rem">
+                Please enable JavaScript to view
+                <a href="https://tarakoshka.tech">tarakoshka.tech</a>.
+            </h1>
+            <h2 style="font-size: 1rem">
+                Contacts:
+                <a href="https://t.me/yaabelozerov">Telegram</a>,
+                <a href="mailto:me@tarakoshka.tech">e-mail</a>,
+                <a href="mailto:iaroslavbelozerov@proton.me">ProtonMain</a>
+            </h2>
+            <nav
+                style="
+                    display: flex;
+                    align-items: center;
+                    font-size: 1rem;
+                    flex-wrap: wrap;
+                    justify-items: center;
+                "
+            >
+                <a href="https://webring.otomir23.me/tarakoshka/prev"
+                    ><i>🠈 BACK</i></a
+                >
+                <h3 style="font-size: 1rem; padding-inline: 2em">
+                    OTORING<br />WEBRING
+                </h3>
+                <a href="https://webring.otomir23.me/tarakoshka/next"
+                    ><i>FORWARD 🠊</i></a
+                >
+            </nav>
+        </body>
+    </noscript>
 
+    <body>
+        <div id="root"></div>
         <script src="/src/index.tsx" type="module"></script>
     </body>
 </html>
