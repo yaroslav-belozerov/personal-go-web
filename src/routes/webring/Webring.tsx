@@ -10,7 +10,7 @@ export default function Webring() {
       exit={{ x: -1000, scale: 0, rotate: -50 }}
       transition={{ duration: 0.5 }}
     >
-      <main class="w-full bg-[#1A1611] min-h-dvh overflow-clip flex flex-col overflow-y-clip">
+      <main class="w-full bg-[#1A1611] h-dvh max-h-dvh min-h-dvh flex flex-col overflow-y-clip">
         <WebringProvider baseURL="https://webring.otomir23.me/tarakoshka/data">
           <section
             class="h-full flex flex-col justify-between"
