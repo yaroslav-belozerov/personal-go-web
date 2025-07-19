@@ -318,7 +318,7 @@ export default function App() {
               )}
             </MusicProvider>
           </section>
-          <div class="flex flex-col gap-4 w-fit">
+          <div class="flex flex-col gap-4 w-full">
             <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
               <a
                 class="flex flex-row gap-4 items-center group"
