@@ -71,8 +71,10 @@ const LikePane: Component = () => {
           </Show>
           <p class="font-[Sora] text-center md:text-4xl text-2xl">
             Click to meow and send
-            <br /> respect to this kitty <br /> (
-            {useCatLikes().get()?.toString()} now)
+            <br /> respect to this kitty <br /> ({
+              useCatLikes().get()?.likes
+            }{" "}
+            now)
           </p>
         </div>
       </div>
