@@ -5,7 +5,6 @@ import {
   GalleryPage2,
   HappyPane,
 } from "./components/GalleryPanes";
-import ShowWhenInView from "./components/ShowWhenInView";
 import LikePane from "./components/LikePage";
 import { CatLikesProvider } from "../../lib/api/catLikesHook";
 
