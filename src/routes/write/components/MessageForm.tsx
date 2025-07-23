@@ -1,6 +1,6 @@
 import { Component, createSignal } from "solid-js";
-import { Message, useMessages } from "../../../lib/api/allMessagesHook";
 import { SendIcon } from "./Icons";
+import { useMessages } from "../../../lib/api/allMessagesHook";
 
 const MessageForm: Component = () => {
   const { add } = useMessages();
@@ -15,7 +15,7 @@ const MessageForm: Component = () => {
       creator: creator().trim(),
     };
     // @ts-ignore
-    const success = await add(msg);
+    const _ = await add(msg);
     setText("");
     setCreator("");
     setSent(true);

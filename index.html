@@ -9,6 +9,21 @@
             type="image/ico"
             href="/src/assets/favicon.ico"
         />
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"],
+                    ],
+                },
+                svg: { fontCache: "global" },
+            };
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+            async
+        ></script>
         <title>tarakoshka.tech</title>
     </head>
     <noscript>
@@ -45,13 +60,13 @@
                 "
             >
                 <a href="https://webring.otomir23.me/tarakoshka/prev"
-		   ><i>BACK</i></a
+                    ><i>BACK</i></a
                 >
                 <h3 style="font-size: 1rem; padding-inline: 2em">
                     OTORING<br />WEBRING
                 </h3>
                 <a href="https://webring.otomir23.me/tarakoshka/next"
-			 ><i>FORWARD</i></a
+                    ><i>FORWARD</i></a
                 >
             </nav>
         </body>

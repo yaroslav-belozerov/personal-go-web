@@ -17,6 +17,7 @@ import { Portal } from "solid-js/web";
 import { BackArrow } from "../lesya/components/Icons";
 import { useWebring, WebringProvider } from "../../lib/api/webringHook";
 import { SwitchCard } from "./components/SwitchCard";
+import { A } from "@solidjs/router";
 
 export default function App() {
   const [projectsExpanded, setProjectsExpanded] = createSignal<boolean>(false);
@@ -25,18 +26,16 @@ export default function App() {
 
   return (
     <Motion.main
-      initial={false}
+      initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
       <main class="page md:hidden flex bg-[#1a1611] text-[#f5e9c9] md:pt-0 flex-col relative overflow-x-clip">
         <Landing></Landing>
-        <Show when={!isWebringOpen()}>
-          <Touch></Touch>
-          <Current></Current>
-          <Meta></Meta>
-        </Show>
+        <Touch></Touch>
+        <Current></Current>
+        <Meta></Meta>
       </main>
       <main class="page md:flex hidden flex-col p-6">
         <nav class="flex flex-row items-center gap-4">
@@ -245,6 +244,18 @@ export default function App() {
           <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
             <h2 class="text-5xl">My socials</h2>
             <div class="flex flex-row flex-wrap gap-4">
+              <A
+                class="group relative hover:bg-[#0c12c9] flex hover:scale-110 hover:rounded-[80px] max-md:w-full w-8 min-w-14 p-4 justify-center aspect-square  items-center rounded-2xl max-md:bg-[#2B251F] bg-[#1A1611] transition-all"
+                style="flex: 1 0 26%;"
+                href="/blog"
+              >
+                <span class="text-7xl italic group-hover:opacity-0 transition-all">
+                  tt
+                </span>
+                <div class="absolute gap-1 opacity-0 group-hover:opacity-100 transition-all rounded-full items-center flex flex-row">
+                  <p class="text-white pb-[2px]">read my blog</p>
+                </div>
+              </A>
               <SocialIcon
                 path="https://anilist.co/user/Lemurr4ik/"
                 icon="anilist.svg"

@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router";
 import { MessageProvider, useLastMessage } from "../../../lib/api/messagesHook";
 import { MusicProvider, useMusic } from "../../../lib/api/musicHook";
 import { SendMessage } from "../components/Icons";
@@ -12,6 +13,18 @@ export default function Touch() {
           class="w-full pe-12 grid grid-cols-3 gap-2 md:gap-6 ms-6 md:grid-cols-4"
           style="justify-items: center;"
         >
+          <A
+            class="group text-white relative flex max-md:w-full w-8 min-w-14 p-4 justify-center aspect-square items-center rounded-2xl bg-[#0c12c9] transition-all"
+            style="flex: 1 0 26%;"
+            href="/blog"
+          >
+            <span class="text-6xl mb-4 leading-0 italic transition-all">
+              tt
+            </span>
+            <div class="absolute bottom-1 gap-1 transition-all rounded-full items-center flex flex-row">
+              <p class="pb-[2px]">read my blog</p>
+            </div>
+          </A>
           <SocialIcon
             path="https://t.me/yaabelozerov"
             icon="telegram.svg"
