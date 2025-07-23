@@ -13,7 +13,7 @@ export default function Blog() {
       exit={{ y: 300, opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <main>
+      <main class="max-md:min-h-[100vh] max-md:h-[100vh]">
         <BlogProvider baseURL="https://tarakoshka.tech/api/posts">
           <div class="max-md:hidden block mb-8 mx-10 mt-4 w-full">
             <h1 class="flex flex-row gap-6 items-center mb-2">
@@ -82,7 +82,7 @@ export default function Blog() {
                   ))}
             </section>
           </div>
-          <div class="max-md:block hidden overflow-x-clip max-w-vw w-vw h-vh min-h-vh bg-black">
+          <div class="max-md:block hidden overflow-x-clip max-w-[100vw] h-[100vh] bg-black">
             <nav class="flex mb-4 text-white pb-4 bg-[#0c12c9] flex-col w-full items-center gap-4">
               <A
                 class="flex text-center flex-col group pt-4 flex-col text-white text-5xl italic"
