@@ -18,6 +18,7 @@ import { BackArrow } from "../lesya/components/Icons";
 import { useWebring, WebringProvider } from "../../lib/api/webringHook";
 import { SwitchCard } from "./components/SwitchCard";
 import { A } from "@solidjs/router";
+import Badge from "./components/Badge";
 
 export default function App() {
   const [projectsExpanded, setProjectsExpanded] = createSignal<boolean>(false);
@@ -241,94 +242,188 @@ export default function App() {
               </Switch>
             </Presence>
           </section>
-          <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
-            <h2 class="text-5xl">My socials</h2>
-            <div class="flex flex-row flex-wrap gap-4">
-              <A
-                class="group relative hover:bg-[#0c12c9] flex hover:scale-110 hover:rounded-[80px] max-md:w-full w-8 min-w-14 p-4 justify-center aspect-square  items-center rounded-2xl max-md:bg-[#2B251F] bg-[#1A1611] transition-all"
-                style="flex: 1 0 26%;"
-                href="/blog"
-              >
-                <span class="text-7xl italic group-hover:opacity-0 transition-all">
-                  tt
-                </span>
-                <div class="absolute gap-1 opacity-0 group-hover:opacity-100 transition-all rounded-full items-center flex flex-row">
-                  <p class="text-white pb-[2px]">read my blog</p>
-                </div>
-              </A>
-              <SocialIcon
-                path="https://anilist.co/user/Lemurr4ik/"
-                icon="anilist.svg"
-              ></SocialIcon>
-              <SocialIcon
-                path="https://mastodon.social/@yaabelozerov"
-                icon="mastodon.svg"
-              ></SocialIcon>
-              <SocialIcon
-                path="https://open.spotify.com/user/31ztrvjmvnvjcf4m6fhkv4gmys3i"
-                icon="spotify.svg"
-              ></SocialIcon>
-              <SocialIcon
-                path="https://bsky.app/profile/tarakoshka.bsky.social"
-                icon="bluesky.svg"
-              ></SocialIcon>
-              <SocialIcon
-                path="https://x.com/yaabelozerov"
-                icon="twitter.svg"
-              ></SocialIcon>
-              <SocialIcon
-                path="mailto:me@tarakoshka.tech"
-                icon="mail.svg"
-              ></SocialIcon>
-              <SocialIcon
-                path="https://t.me/yaabelozerov"
-                icon="telegram.svg"
-              ></SocialIcon>
-              <SocialIcon
-                path="https://github.com/yaroslav-belozerov"
-                icon="github.svg"
-              ></SocialIcon>
-            </div>
-            <MusicProvider baseURL="https://tarakoshka.tech/api/music">
-              {useMusic().get() && (
-                <div class="flex flex-row w-full justify-between p-6 rounded-2xl bg-[#1A1611]">
-                  <a
-                    href={useMusic()?.get()?.url}
-                    class="flex flex-row items-center gap-3 hover:scale-95 transition-all"
-                  >
-                    <img
-                      src={useMusic()?.get()?.image}
-                      alt={useMusic()?.get()?.title}
-                      class="size-12 rounded-md transition-all"
-                    />
-                    <div class="flex flex-col font-[Overall]">
-                      <h3 class="text-2xl text-white">
-                        {useMusic()?.get()?.title}
-                      </h3>
-                      <p class="text-sm italic">{useMusic()?.get()?.artist}</p>
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.last.fm/user/Lemurr4ik_"
-                    class="relative size-14 transition-all hover:scale-90"
-                    target="_blank"
-                  >
-                    <img
-                      class="transition-all size-14 scale-120 absolute"
-                      style="animation: rotate-animation 20s infinite linear;"
-                      src="https://tarakoshka.tech/static/icons/star2.svg"
-                      alt={useMusic()?.get()?.title}
-                    ></img>
-                    <img
-                      class="transition-all size-8 absolute top-[50%] left-[50%] translate-[-50%]"
-                      src="https://tarakoshka.tech/static/icons/music.svg"
-                      alt="Visit Last.fm"
-                    ></img>
-                  </a>
-                </div>
-              )}
-            </MusicProvider>
-          </section>
+          <div class="flex flex-col gap-4 w-full">
+            <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
+              <h2 class="text-5xl">My socials</h2>
+              <div class="flex flex-row flex-wrap gap-4">
+                <A
+                  class="group relative hover:bg-[#0c12c9] flex hover:scale-110 hover:rounded-[80px] max-md:w-full w-8 min-w-14 p-4 justify-center aspect-square  items-center rounded-2xl max-md:bg-[#2B251F] bg-[#1A1611] transition-all"
+                  style="flex: 1 0 26%;"
+                  href="/blog"
+                >
+                  <span class="text-7xl italic group-hover:opacity-0 transition-all">
+                    tt
+                  </span>
+                  <div class="absolute gap-1 opacity-0 group-hover:opacity-100 transition-all rounded-full items-center flex flex-row">
+                    <p class="text-white pb-[2px]">read my blog</p>
+                  </div>
+                </A>
+                <SocialIcon
+                  path="https://anilist.co/user/Lemurr4ik/"
+                  icon="anilist.svg"
+                ></SocialIcon>
+                <SocialIcon
+                  path="https://mastodon.social/@yaabelozerov"
+                  icon="mastodon.svg"
+                ></SocialIcon>
+                <SocialIcon
+                  path="https://open.spotify.com/user/31ztrvjmvnvjcf4m6fhkv4gmys3i"
+                  icon="spotify.svg"
+                ></SocialIcon>
+                <SocialIcon
+                  path="https://bsky.app/profile/tarakoshka.bsky.social"
+                  icon="bluesky.svg"
+                ></SocialIcon>
+                <SocialIcon
+                  path="https://x.com/yaabelozerov"
+                  icon="twitter.svg"
+                ></SocialIcon>
+                <SocialIcon
+                  path="mailto:me@tarakoshka.tech"
+                  icon="mail.svg"
+                ></SocialIcon>
+                <SocialIcon
+                  path="https://t.me/yaabelozerov"
+                  icon="telegram.svg"
+                ></SocialIcon>
+                <SocialIcon
+                  path="https://github.com/yaroslav-belozerov"
+                  icon="github.svg"
+                ></SocialIcon>
+              </div>
+              <MusicProvider baseURL="https://tarakoshka.tech/api/music">
+                {useMusic().get() && (
+                  <div class="flex flex-row w-full justify-between p-6 rounded-2xl bg-[#1A1611]">
+                    <a
+                      href={useMusic()?.get()?.url}
+                      class="flex flex-row items-center gap-3 hover:scale-95 transition-all"
+                    >
+                      <img
+                        src={useMusic()?.get()?.image}
+                        alt={useMusic()?.get()?.title}
+                        class="size-12 rounded-md transition-all"
+                      />
+                      <div class="flex flex-col font-[Overall]">
+                        <h3 class="text-2xl text-white">
+                          {useMusic()?.get()?.title}
+                        </h3>
+                        <p class="text-sm italic">
+                          {useMusic()?.get()?.artist}
+                        </p>
+                      </div>
+                    </a>
+                    <a
+                      href="https://www.last.fm/user/Lemurr4ik_"
+                      class="relative size-14 transition-all hover:scale-90"
+                      target="_blank"
+                    >
+                      <img
+                        class="transition-all size-14 scale-120 absolute"
+                        style="animation: rotate-animation 20s infinite linear;"
+                        src="https://tarakoshka.tech/static/icons/star2.svg"
+                        alt={useMusic()?.get()?.title}
+                      ></img>
+                      <img
+                        class="transition-all size-8 absolute top-[50%] left-[50%] translate-[-50%]"
+                        src="https://tarakoshka.tech/static/icons/music.svg"
+                        alt="Visit Last.fm"
+                      ></img>
+                    </a>
+                  </div>
+                )}
+              </MusicProvider>
+            </section>
+            <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
+              <h2 class="text-5xl">Buttons</h2>
+              <div class="flex flex-row flex-wrap gap-2">
+                <Badge
+                  link="https://ecma-international.org/publications-and-standards/standards/ecma-262/"
+                  src="https://tarakoshka.tech/static/buttons/js.png"
+                ></Badge>
+                <Badge
+                  link="https://cadence.moe/blog/2024-10-05-created-by-a-human-badges"
+                  src="https://tarakoshka.tech/static/buttons/created-by-human.png"
+                ></Badge>
+                <Badge src="https://tarakoshka.tech/static/buttons/made-with-pride.gif"></Badge>
+                <Badge
+                  link="https://www.firefox.com/"
+                  src="https://tarakoshka.tech/static/buttons/get-firefox.gif"
+                ></Badge>
+                <Badge
+                  link="https://fedoraproject.org/"
+                  src="https://tarakoshka.tech/static/buttons/fedora.gif"
+                ></Badge>
+                <Badge
+                  link="https://hse.ru/"
+                  src="https://tarakoshka.tech/static/buttons/hse.gif"
+                ></Badge>
+                <Badge
+                  link="https://store.steampowered.com/app/1150690/OMORI/"
+                  src="https://tarakoshka.tech/static/buttons/omori.gif"
+                ></Badge>
+                <Badge
+                  link="https://store.steampowered.com/app/460950/Katana_ZERO/"
+                  src="https://tarakoshka.tech/static/buttons/katana.gif"
+                ></Badge>
+                <Badge
+                  link="https://ublockorigin.com/"
+                  src="https://tarakoshka.tech/static/buttons/ublock.png"
+                ></Badge>
+                <Badge
+                  link="https://www.gnu.org/"
+                  src="https://tarakoshka.tech/static/buttons/made-on-linux.png"
+                ></Badge>
+                <Badge
+                  link="https://otomir23.me/"
+                  src="https://otomir23.me/88x31.png"
+                ></Badge>
+                <Badge
+                  link="https://entitybtw.ru/"
+                  src="https://entitybtw.ru/images/entitybtw.gif"
+                ></Badge>
+                <Badge
+                  link="https://milkcool.ru/"
+                  src="https://milkcool.ru/buttons/mybutton.gif"
+                ></Badge>
+                <Badge
+                  link="https://asyasocute.online/"
+                  src="https://asyasocute.online/badges/cowl.png"
+                ></Badge>
+                <Badge
+                  link="https://timofei302.su"
+                  src="https://timofei302.su/res/88x31.png"
+                ></Badge>
+                <Badge
+                  link="https://myslivets.com/"
+                  src="https://timofei302.su/img/banners/myslivets-banner.png"
+                ></Badge>
+                <Badge
+                  link="https://gooslime.neocities.org/"
+                  src="http://gooslime.neocities.org/gooslime_branding/gooslime.gif"
+                ></Badge>
+                <Badge
+                  link="https://veselcraft.ru/"
+                  src="https://veselcraft.ru/images/vc.gif"
+                ></Badge>
+                <Badge
+                  link="https://jsopn.com/?glunging=true"
+                  src="https://jsopn.com/images/88x31/button.gif"
+                ></Badge>
+                <Badge
+                  link="https://senko.dev/"
+                  src="https://senko.dev/banners/senko.gif"
+                ></Badge>
+                <Badge
+                  link="https://tei.su/"
+                  src="https://tei.su/88x31/teidesu.png"
+                ></Badge>
+                <Badge
+                  link="https://about.akarpov.ru/"
+                  src="https://otomir23.me/_astro/sanspie.BIFJ1uLz.gif"
+                ></Badge>
+              </div>
+            </section>
+          </div>
           <div class="flex flex-col gap-4 w-full">
             <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
               <a
@@ -413,7 +508,7 @@ export default function App() {
               <h2 class="text-5xl">Leave a message</h2>
               <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
                 {useLastMessage().get() && (
-                  <div class="font-[Overpass] flex justify-end items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
+                  <div class="font-[Overpass] flex justify-between items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
                     <div class="flex flex-col shrink">
                       <p class="text-white text-2xl">
                         {useLastMessage().get()?.text}
