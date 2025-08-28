@@ -3,7 +3,7 @@ export default function Badge({ src, link }: { src: string; link?: string }) {
     return (
       <img
         src={src}
-        alt="badge"
+        alt=""
         class="w-[88px] h-[31px] md:hover:scale-140 transition-all"
       />
     );
@@ -12,7 +12,7 @@ export default function Badge({ src, link }: { src: string; link?: string }) {
       <a href={link} target="_blank" rel="noopener noreferrer">
         <img
           src={src}
-          alt="badge"
+          alt=""
           class="w-[88px] h-[31px] md:hover:scale-140 transition-all"
         />
       </a>

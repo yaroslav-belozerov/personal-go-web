@@ -395,14 +395,14 @@ export default function App() {
                   link="https://asyasocute.online/"
                   src="https://asyasocute.online/badges/cowl.png"
                 ></Badge>
-                <Badge
+                {/*<Badge
                   link="https://timofei302.su"
                   src="https://timofei302.su/res/88x31.png"
                 ></Badge>
                 <Badge
                   link="https://myslivets.com/"
                   src="https://timofei302.su/img/banners/myslivets-banner.png"
-                ></Badge>
+                ></Badge>*/}
                 <Badge
                   link="https://gooslime.neocities.org/"
                   src="http://gooslime.neocities.org/gooslime_branding/gooslime.gif"
