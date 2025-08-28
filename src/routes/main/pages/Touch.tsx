@@ -201,6 +201,10 @@ export default function Touch() {
             link="https://asyasocute.online/"
             src="https://asyasocute.online/badges/cowl.png"
           ></Badge>
+          <Badge
+            link="https://okt.nekoweb.org"
+            src="https://okt.nekoweb.org/assets/pics/okt_button.gif"
+          ></Badge>
           {/*<Badge
             link="https://timofei302.su"
             src="https://timofei302.su/res/88x31.png"
