@@ -8,12 +8,12 @@ export default function Blog() {
 
   return (
     <Motion.main
-      initial={{ y: 300, opacity: 0 }}
+      initial={{ y: 800, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: 300, opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      exit={{ y: 800, opacity: 0 }}
+      transition={{ duration: 0.2 }}
     >
-      <main class="max-md:min-h-[100vh] max-md:h-[100vh]">
+      <main class="">
         <BlogProvider baseURL="https://tarakoshka.tech/api/posts">
           <div class="max-md:hidden block mb-8 mx-10 mt-4 w-full">
             <h1 class="flex flex-row gap-6 items-center mb-2">
@@ -45,12 +45,12 @@ export default function Blog() {
                     );
                     setCopied(true);
                   }}
-                  class="text-4xl h-fit flex flex-row items-center gap-2 group relative hover:scale-90 rounded-4xl cursor-pointer hover:bg-white p-4 hover:text-[#1A1611] transition-all"
+                  class="text-4xl h-fit flex flex-row items-center gap-2 group relative md:hover:scale-90 rounded-4xl cursor-pointer md:hover:bg-white p-4 md:hover:text-[#1A1611] transition-all"
                 >
-                  <span class="transition-all group-hover:text-[#0c12c9]">
+                  <span class="transition-all md:group-hover:text-[#0c12c9]">
                     blog
                   </span>
-                  <span class="text-xl group-hover:opacity-100 opacity-0">
+                  <span class="text-xl md:group-hover:opacity-100 opacity-0">
                     {copied() ? "link copied" : "copy link"}
                   </span>
                 </div>
@@ -115,7 +115,7 @@ export default function Blog() {
                     );
                     setCopied(true);
                   }}
-                  class="text-4xl pr-4 flex flex-row flex flex-row items-center gap-2 group relative rounded-4xl cursor-pointer hover:bg-white transition-all"
+                  class="text-4xl pr-4 flex flex-row flex flex-row items-center gap-2 group relative rounded-4xl cursor-pointer md:hover:bg-white transition-all"
                 >
                   <span class="text-xl">
                     {copied() ? "link copied" : "copy link"}

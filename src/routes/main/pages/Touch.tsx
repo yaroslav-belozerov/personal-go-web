@@ -3,10 +3,11 @@ import { MessageProvider, useLastMessage } from "../../../lib/api/messagesHook";
 import { MusicProvider, useMusic } from "../../../lib/api/musicHook";
 import { SendMessage } from "../components/Icons";
 import SocialIcon from "../components/SocialIcon";
+import Badge from "../components/Badge";
 
 export default function Touch() {
   return (
-    <section id="contacts" class="flex flex-col min-h-[100svh] pt-6 gap-2">
+    <section id="contacts" class="flex flex-col pt-6 gap-4">
       <h2 class="ms-6 text-white text-4xl mt-2">Get in touch</h2>
       <div class="flex flex-col gap-2">
         <div
@@ -98,8 +99,8 @@ export default function Touch() {
       </div>
       <MusicProvider baseURL="https://tarakoshka.tech/api/music">
         {useMusic().get() && (
-          <div class="flex flex-col">
-            <h2 class="ms-6 text-white text-4xl mb-2">Listening to</h2>
+          <div class="flex flex-col gap-3">
+            <h2 class="ms-6 text-white text-4xl">Listening to</h2>
             <div class="flex font-[Overpass] flex-row justify-between me-6">
               <a
                 href={useMusic()?.get()?.url}
@@ -138,6 +139,102 @@ export default function Touch() {
           </div>
         )}
       </MusicProvider>
+      <div class="flex flex-col w-full gap-4 mt-6">
+        <h2 class="ms-6 text-white text-4xl">Buttons</h2>
+        <div class="flex flex-row flex-wrap gap-2 mb-2 justify-center">
+          <Badge
+            link="https://tarakoshka.tech/"
+            src="https://tarakoshka.tech/static/88x31.gif"
+          ></Badge>
+          <Badge
+            link="https://hse.ru/"
+            src="https://tarakoshka.tech/static/buttons/hse.gif"
+          ></Badge>
+          <Badge
+            link="https://store.steampowered.com/app/1150690/OMORI/"
+            src="https://tarakoshka.tech/static/buttons/omori.gif"
+          ></Badge>
+          <Badge
+            link="https://store.steampowered.com/app/460950/Katana_ZERO/"
+            src="https://tarakoshka.tech/static/buttons/katana.gif"
+          ></Badge>
+        </div>
+        <div class="flex flex-row flex-wrap gap-2 justify-center">
+          <Badge
+            link="https://ecma-international.org/publications-and-standards/standards/ecma-262/"
+            src="https://tarakoshka.tech/static/buttons/js.png"
+          ></Badge>
+          <Badge
+            link="https://cadence.moe/blog/2024-10-05-created-by-a-human-badges"
+            src="https://tarakoshka.tech/static/buttons/created-by-human.png"
+          ></Badge>
+          <Badge src="https://tarakoshka.tech/static/buttons/made-with-pride.gif"></Badge>
+          <Badge
+            link="https://www.firefox.com/"
+            src="https://tarakoshka.tech/static/buttons/get-firefox.gif"
+          ></Badge>
+          <Badge
+            link="https://fedoraproject.org/"
+            src="https://tarakoshka.tech/static/buttons/fedora.gif"
+          ></Badge>
+          <Badge
+            link="https://ublockorigin.com/"
+            src="https://tarakoshka.tech/static/buttons/ublock.png"
+          ></Badge>
+          <Badge
+            link="https://www.gnu.org/"
+            src="https://tarakoshka.tech/static/buttons/made-on-linux.png"
+          ></Badge>
+          <Badge
+            link="https://otomir23.me/"
+            src="https://otomir23.me/88x31.png"
+          ></Badge>
+          <Badge
+            link="https://entitybtw.ru/"
+            src="https://entitybtw.ru/images/entitybtw.gif"
+          ></Badge>
+          <Badge
+            link="https://milkcool.ru/"
+            src="https://milkcool.ru/buttons/mybutton.gif"
+          ></Badge>
+          <Badge
+            link="https://asyasocute.online/"
+            src="https://asyasocute.online/badges/cowl.png"
+          ></Badge>
+          <Badge
+            link="https://timofei302.su"
+            src="https://timofei302.su/res/88x31.png"
+          ></Badge>
+          <Badge
+            link="https://myslivets.com/"
+            src="https://timofei302.su/img/banners/myslivets-banner.png"
+          ></Badge>
+          <Badge
+            link="https://gooslime.neocities.org/"
+            src="http://gooslime.neocities.org/gooslime_branding/gooslime.gif"
+          ></Badge>
+          <Badge
+            link="https://veselcraft.ru/"
+            src="https://veselcraft.ru/images/vc.gif"
+          ></Badge>
+          <Badge
+            link="https://jsopn.com/?glunging=true"
+            src="https://jsopn.com/images/88x31/button.gif"
+          ></Badge>
+          <Badge
+            link="https://senko.dev/"
+            src="https://senko.dev/banners/senko.gif"
+          ></Badge>
+          <Badge
+            link="https://tei.su/"
+            src="https://tei.su/88x31/teidesu.png"
+          ></Badge>
+          <Badge
+            link="https://about.akarpov.ru/"
+            src="https://otomir23.me/_astro/sanspie.BIFJ1uLz.gif"
+          ></Badge>
+        </div>
+      </div>
     </section>
   );
 }

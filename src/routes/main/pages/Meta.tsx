@@ -4,11 +4,11 @@ import { SwitchCard } from "../components/SwitchCard";
 
 export default function Meta() {
   return (
-    <section id="info" class="min-h-[100dvh] flex flex-col">
-      <div class="min-h-[100svh] flex justify-between flex-col">
-        <div class="flex flex-col">
-          <h2 class="ms-6 text-white text-4xl mt-6">About me and website</h2>
-          <div class="flex flex-col mx-4 mt-4 gap-4 font-[Overpass] text-white">
+    <section id="info" class="flex flex-col mt-6">
+      <div class="flex justify-between flex-col">
+        <div class="flex flex-col gap-4">
+          <h2 class="ms-6 text-white text-4xl mt-6">About me and site</h2>
+          <div class="flex flex-col mx-4 gap-4 font-[Overpass] text-white">
             <a
               href="https://school.hse.ru/"
               class="flex hover:scale-97 transition-all flex-row gap-4 outline-[#FBBA00] outline-2 bg-[#382a00] rounded-xl items-center px-4 py-3"
@@ -45,7 +45,7 @@ export default function Meta() {
               </svg>
               <h4 class="text-xl pt-1">HSE Lyceum Alumni</h4>
             </a>
-            <a
+            {/*<a
               href="https://www.tbank.ru/"
               class="flex hover:scale-97 transition-all flex-row gap-4 outline-[#FFDD2D] outline-2 bg-[#3d3402] rounded-xl items-center px-4 py-3"
             >
@@ -67,7 +67,7 @@ export default function Meta() {
                 />
               </svg>
               <h4 class="text-xl pt-1">T-Bank Mobile Intern</h4>
-            </a>
+            </a>*/}
             <a
               href="https://prodcontest.ru/"
               rel="noreferrer noopener"
@@ -101,72 +101,44 @@ export default function Meta() {
                 <h4 class="text-xl pt-4 pb-3">PROD 2025 Winner</h4>
               </div>
             </a>
-            <div class="flex flex-wrap gap-2 flex-row">
-              <SocialTag text="17 y/o" />
-              <SocialTag text="RU/ENG" />
-              <SocialTag text="GMT+3" />
-              <SocialTag text="Mobile Dev & Designer" />
-              <a
-                href="https://kotlinlang.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="bg-linear-to-r items-center from-[#824DFD] to-[#E04169] flex md:hover:scale-95 text-lg font-[Overpass] justify-center rounded-xl px-4 py-2 text-lg transition-all"
-              >
-                <div class="flex flex-row gap-1 mt-[3px]">
-                  <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M2 2H22L12 12L22 22H2Z" fill="white" />
-                  </svg>
-                  Kotlin
-                </div>
-              </a>
-            </div>
-            <SwitchCard title="This Website's Stack">
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                class="bold p-1 px-4 rounded-full w-fit mb-3 mt-1 bg-linear-to-r from-[#6335E1] to-[#FC7F42] text-white"
-                style="align-self: center;"
-                href="https://senko.digital/"
-              >
-                senko.digital
-              </a>
-              <div class="flex flex-row">
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  class="w-full rounded-tl-lg text-[#86BBE3] hover:bg-[#86BBE3] p-2 hover:text-[#1A1611] transition-all"
-                  href="https://www.solidjs.com/"
+            <a
+              href="https://lp.jetbrains.com/software-data-and-technology-constructor-university/"
+              rel="noreferrer noopener"
+              target="_blank"
+              class="hover:scale-97 transition-all"
+            >
+              <div class="flex flex-row gap-4 outline-[#FF801A] outline-2 bg-[#452105] rounded-xl items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  class="size-7 ml-4"
+                  viewBox="0 0 64 64"
                 >
-                  SolidJS
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  class="w-full rounded-tr-lg text-[#00BCFF] hover:bg-[#00BCFF] p-2 hover:text-[#1A1611] transition-all"
-                  href="https://tailwindcss.com/"
-                >
-                  Tailwind
-                </a>
+                  <defs>
+                    <linearGradient
+                      id="a"
+                      x1=".850001"
+                      x2="62.62"
+                      y1="62.72"
+                      y2="1.81"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FF9419" />
+                      <stop offset=".43" stop-color="#FF021D" />
+                      <stop offset=".99" stop-color="#E600FF" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#a)"
+                    d="M20.34 3.66 3.66 20.34C1.32 22.68 0 25.86 0 29.18V59c0 2.76 2.24 5 5 5h29.82c3.32 0 6.49-1.32 8.84-3.66l16.68-16.68c2.34-2.34 3.66-5.52 3.66-8.84V5c0-2.76-2.24-5-5-5H29.18c-3.32 0-6.49 1.32-8.84 3.66Z"
+                  />
+                  <path fill="#000" d="M48 16H8v40h40V16Z" />
+                  <path fill="#fff" d="M30 47H13v4h17v-4Z" />
+                </svg>
+
+                <h4 class="text-xl pt-4 pb-3">SDT Student</h4>
               </div>
-              <div class="flex flex-row">
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  class="w-full rounded-bl-lg text-[#08AFD8] hover:bg-[#08AFD8] p-2 hover:text-[#1A1611] transition-all"
-                  href="https://go.dev/"
-                >
-                  Go
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  class="w-full rounded-br-lg text-[#50E2FF] hover:bg-[#50E2FF] p-2 hover:text-[#1A1611] transition-all"
-                  href="https://echo.labstack.com/"
-                >
-                  Echo
-                </a>
-              </div>
-            </SwitchCard>
+            </a>
             <SwitchCard title="My Setup">
               <a
                 rel="noopener noreferrer"
@@ -204,9 +176,70 @@ export default function Meta() {
                 ></img>
                 <p>Hyprland</p>
               </a>
+              <div class="flex flex-row flex-wrap gap-3 text-[#50E2FF] text-sm my-2">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="px-5 text-lg items-center justify-center flex rounded-full w-fit bg-linear-to-r from-[#6335E1] to-[#FC7F42] text-white"
+                  href="https://senko.digital/"
+                >
+                  senko.digital
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="py-2 items-center justify-center flex px-4 rounded-full outline-2"
+                  href="https://www.solidjs.com/"
+                >
+                  SolidJS
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="py-2 items-center justify-center flex px-4 rounded-full outline-2"
+                  href="https://tailwindcss.com/"
+                >
+                  Tailwind
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="py-2 items-center justify-center flex px-4 rounded-full outline-2"
+                  href="https://go.dev/"
+                >
+                  Go
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="py-2 items-center justify-center flex px-4 rounded-full outline-2"
+                  href="https://echo.labstack.com/"
+                >
+                  Echo
+                </a>
+              </div>
             </SwitchCard>
+            <div class="flex flex-wrap gap-4 flex-row">
+              <SocialTag text="17 y/o" />
+              <SocialTag text="RU/EN" />
+              <SocialTag text="GMT+2" />
+              <SocialTag text="Mobile Dev & Designer" />
+              <a
+                href="https://kotlinlang.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-linear-to-r items-center from-[#824DFD] to-[#E04169] flex md:hover:scale-95 text-lg font-[Overpass] justify-center rounded-xl px-4 py-2 text-lg transition-all"
+              >
+                <div class="flex flex-row gap-1 mt-[3px]">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M2 2H22L12 12L22 22H2Z" fill="white" />
+                  </svg>
+                  Kotlin
+                </div>
+              </a>
+            </div>
           </div>
-          <p class="text-xs pt-6 mb-4 font-[Overpass] opacity-50 text-center">
+          <p class="text-xs pt-2 mb-4 font-[Overpass] opacity-50 text-center">
             This website is built by a human. <br />
             AI training on its content or source code is prohibited.
           </p>
@@ -219,7 +252,7 @@ export default function Meta() {
             history.pushState("", document.title, window.location.pathname);
             e.preventDefault();
           }}
-          class="flex flex-row mb-6 gap-1 items-center justify-center"
+          class="flex flex-row pb-6 gap-1 items-center justify-center"
         >
           <p class="text-xl">Back to top</p>
           <div class="rotate-180">

@@ -13,10 +13,10 @@ export function SwitchCard(props: SwitchCardProps) {
   return (
     <button
       onClick={() => setExpanded(!isExpanded())}
-      class={`flex relative flex-col py-3 text-lg font-[Overpass] justify-center rounded-xl bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all ${!isExpanded() ? "cursor-pointer hover:scale-95" : ""}`}
+      class={`flex relative flex-col outline-2 outline-[#2B251F] py-3 text-lg font-[Overpass] justify-center rounded-xl bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all ${!isExpanded() ? "cursor-pointer hover:scale-95" : ""}`}
     >
       <svg
-        class={`size-8 z-2 absolute top-4 right-4 text-xl text-white transition-all cursor-pointer rotate-0 ${isExpanded() ? "rotate-180 hover:scale-80 " : ""} transition-all`}
+        class={`size-8 z-2 absolute top-4 right-4 text-lg text-white transition-all cursor-pointer rotate-0 ${isExpanded() ? "rotate-180 hover:scale-80 " : ""} transition-all`}
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"

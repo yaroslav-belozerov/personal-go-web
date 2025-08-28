@@ -4,7 +4,7 @@ export default function Badge({ src, link }: { src: string; link?: string }) {
       <img
         src={src}
         alt="badge"
-        class="w-[88px] h-[31px] hover:scale-140 transition-all"
+        class="w-[88px] h-[31px] md:hover:scale-140 transition-all"
       />
     );
   } else {
@@ -13,7 +13,7 @@ export default function Badge({ src, link }: { src: string; link?: string }) {
         <img
           src={src}
           alt="badge"
-          class="w-[88px] h-[31px] hover:scale-140 transition-all"
+          class="w-[88px] h-[31px] md:hover:scale-140 transition-all"
         />
       </a>
     );

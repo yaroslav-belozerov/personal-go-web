@@ -77,7 +77,7 @@ export default function Landing() {
           <div class="flex flex-row gap-4">
             <A
               href="/webring"
-              class={`bg-[#FF3737] w-full rounded-xl text-white pl-6 pr-5 py-4 flex justify-between items-center transition-all`}
+              class={`bg-[#FF3737] gap-1 w-full rounded-xl text-white pl-6 pr-5 py-4 flex justify-between items-center transition-all`}
             >
               <h2 class="text-3xl text-[#1A1611]">RING</h2>
               <svg
