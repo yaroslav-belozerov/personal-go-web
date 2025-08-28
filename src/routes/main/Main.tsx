@@ -404,6 +404,10 @@ export default function App() {
                   src="https://timofei302.su/img/banners/myslivets-banner.png"
                 ></Badge>*/}
                 <Badge
+                  link="https://edwardcode.net/"
+                  src="https://edwardcode.net/www/button.gif"
+                ></Badge>
+                <Badge
                   link="https://gooslime.neocities.org/"
                   src="http://gooslime.neocities.org/gooslime_branding/gooslime.gif"
                 ></Badge>
