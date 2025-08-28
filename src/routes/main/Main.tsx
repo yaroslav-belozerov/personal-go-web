@@ -408,6 +408,10 @@ export default function App() {
                   src="https://edwardcode.net/www/button.gif"
                 ></Badge>
                 <Badge
+                  link="https://c1oudy.otlegacy.com/"
+                  src="https://c1oudy.otlegacy.com//_astro/c1oudy.DQjxxEhY.png"
+                ></Badge>
+                <Badge
                   link="https://gooslime.neocities.org/"
                   src="http://gooslime.neocities.org/gooslime_branding/gooslime.gif"
                 ></Badge>
