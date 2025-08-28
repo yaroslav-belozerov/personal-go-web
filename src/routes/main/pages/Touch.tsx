@@ -201,13 +201,21 @@ export default function Touch() {
             link="https://asyasocute.online/"
             src="https://asyasocute.online/badges/cowl.png"
           ></Badge>
-          <Badge
+          {/*<Badge
             link="https://timofei302.su"
             src="https://timofei302.su/res/88x31.png"
           ></Badge>
           <Badge
             link="https://myslivets.com/"
             src="https://timofei302.su/img/banners/myslivets-banner.png"
+          ></Badge>*/}
+          <Badge
+            link="https://edwardcode.net/"
+            src="https://edwardcode.net/www/button.gif"
+          ></Badge>
+          <Badge
+            link="https://c1oudy.otlegacy.com/"
+            src="https://c1oudy.otlegacy.com//_astro/c1oudy.DQjxxEhY.png"
           ></Badge>
           <Badge
             link="https://gooslime.neocities.org/"
