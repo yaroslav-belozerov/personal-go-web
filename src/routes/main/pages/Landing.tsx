@@ -16,7 +16,7 @@ import { Motion, Presence } from "solid-motionone";
 
 export default function Landing() {
   return (
-    <section class="min-h-[100svh] flex items-center flex-col">
+    <section class="min-h-svh max-h-svh flex items-center flex-col">
       <img
         src="https://tarakoshka.tech/static/icons/star.svg"
         class={`absolute scale-200 top-[1.5em] md:scale-230`}
