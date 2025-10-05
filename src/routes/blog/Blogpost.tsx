@@ -10,6 +10,7 @@ import hljs from "highlight.js";
 import { createEffect, onMount } from "solid-js";
 import ShowWhenInView from "../lesya/components/ShowWhenInView";
 import PerformOnLoad from "./PerformOnLoad";
+import NotFound from "../NotFound";
 
 export default function Blogpost() {
   let slug = useParams().slug;
@@ -29,7 +30,7 @@ export default function Blogpost() {
       </head>
       <main class="w-full">
         <BlogpostProvider baseURL={`https://tarakoshka.tech/api/posts/${slug}`}>
-          {useBlog().get() && (
+          {useBlog().get() ? (
             <section class="p-8 flex flex-col">
               <div class="flex flex-row gap-1 items-center">
                 <A href="/blog" class="max-md:pl-0 p-2 max-md:py-4">
@@ -70,6 +71,8 @@ export default function Blogpost() {
                 innerHTML={useBlog()?.get()?.content}
               ></div>
             </section>
+          ) : (
+            <NotFound />
           )}
         </BlogpostProvider>
       </main>

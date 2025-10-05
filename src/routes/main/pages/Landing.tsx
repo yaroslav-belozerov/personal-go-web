@@ -8,11 +8,7 @@ import {
   Touch,
 } from "../components/Icons";
 import CVStar from "../components/CVStar";
-import KoshkaStar from "../components/KoshkaStar";
 import LandingLink from "../components/LandingLink";
-import { createSignal, Show } from "solid-js";
-import { Portal } from "solid-js/web";
-import { Motion, Presence } from "solid-motionone";
 
 export default function Landing() {
   return (

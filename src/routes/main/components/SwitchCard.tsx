@@ -13,44 +13,33 @@ export function SwitchCard(props: SwitchCardProps) {
   return (
     <button
       onClick={() => setExpanded(!isExpanded())}
-      class={`flex relative flex-col outline-2 outline-[#2B251F] py-3 text-lg font-[Overpass] justify-center rounded-xl bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all ${!isExpanded() ? "cursor-pointer hover:scale-95" : ""}`}
+      class={`flex w-full transition-all flex-col bg-[#2B251F] cursor-pointer outline-2 z-1 outline-transparent md:hover:outline-[#F5E9C9] md:bg-[#1A1611] rounded-4xl py-2`}
     >
-      <svg
-        class={`size-8 z-2 absolute top-4 right-4 text-lg text-white transition-all cursor-pointer rotate-0 ${isExpanded() ? "rotate-180 hover:scale-80 " : ""} transition-all`}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M12 5v14M5 12l7 7 7-7" />
-      </svg>
+      <div class="flex flex-row px-4 justify-center relative">
+        <h4 class="text-lg pt-1">{props.title}</h4>
+        <svg
+          class={`size-6 z-2 text-lg text-white absolute right-4 top-1/2 -translate-y-1/2 transition-all cursor-pointer rotate-0 ${isExpanded() ? "rotate-180 hover:scale-80 " : ""} transition-all`}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+      </div>
       <Presence exitBeforeEnter={true}>
         <Show when={isExpanded()}>
           <Motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, scale: 0, y: -100 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0, y: -100 }}
             transition={{ duration: 0.1 }}
           >
-            <div class="px-3 flex flex-col">{props.children}</div>
+            <div class="px-4 flex flex-col mb-1">{props.children}</div>
           </Motion.div>
-        </Show>
-        <Show when={!isExpanded()}>
-          <Motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.1 }}
-          >
-            <p class="px-4 pb-1 text-start font-[Instrument] text-3xl italic">
-              {props.title}
-            </p>
-          </Motion.p>
         </Show>
       </Presence>
     </button>
