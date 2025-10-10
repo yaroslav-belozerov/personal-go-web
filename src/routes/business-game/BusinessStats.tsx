@@ -7,23 +7,15 @@ export default function BusinessStats() {
   const [comp, setComp] = createSignal<{ complaint: string }[]>([]);
   const [allUsersOpen, setAllUsersOpen] = createSignal(false);
 
-  const interest = createMemo(() => {
+  const calc = (key: string) => {
     const total = comp().length;
-    const part = comp().filter((it) => it.complaint === "no interest").length;
-    return `${part}x = ${Math.round((part / total) * 100)}%`;
-  }, [comp]);
+    const part = comp().filter((it) => it.complaint === key).length;
+    return [part, Math.round((part / total) * 100)];
+  };
 
-  const timing = createMemo(() => {
-    const total = comp().length;
-    const part = comp().filter((it) => it.complaint === "bad time").length;
-    return `${part}x = ${Math.round((part / total) * 100)}%`;
-  }, [comp]);
-
-  const rules = createMemo(() => {
-    const total = comp().length;
-    const part = comp().filter((it) => it.complaint === "bad rules").length;
-    return `${part}x = ${Math.round((part / total) * 100)}%`;
-  }, [comp]);
+  const interest = createMemo(() => calc("no interest"), [comp]);
+  const timing = createMemo(() => calc("bad time"), [comp]);
+  const rules = createMemo(() => calc("bad rules"), [comp]);
 
   onMount(() => {
     fetch("https://tarakoshka.tech/bgapi/users")
@@ -35,7 +27,7 @@ export default function BusinessStats() {
   });
 
   return (
-    <div class="flex flex-col overflow-hidden w-full bg-[#1D1E22] min-h-dvh font-[Figtree] text-white text-xl p-4">
+    <div class="flex flex-col overflow-hidden w-full bg-[#1D1E22] min-h-dvh font-[Figtree] text-white text-xl p-4 gap-2">
       <div class="flex flex-col mb-4">
         <div class="text-3xl flex flex-row justify-between items-center">
           {regs().length} users registered
@@ -63,20 +55,40 @@ export default function BusinessStats() {
           ))}
       </div>
       <span class="text-3xl mb-2">{comp().length} Complaints</span>
-      <div class="py-2 mb-2 px-4 bg-zinc-800 rounded-lg">
-        <span class="text-2xl">{interest()}</span>
-        <br />
-        not interested
+      <div class="py-2 mb-2 pt-3 px-4 bg-zinc-800 rounded-lg relative flex flex-col">
+        <div class="z-2">
+          <span class="text-2xl ">
+            {interest()[0]} = {interest()[1]}%
+          </span>
+          <br />
+          not interested
+        </div>
+        <div
+          class={`absolute bg-zinc-600 top-0 h-2 left-0 rounded-lg`}
+          style={`right: ${100 - interest()[1]}%;`}
+        ></div>
       </div>
-      <div class="py-2 mb-2 px-4 bg-zinc-800 rounded-lg">
-        <span class="text-2xl">{timing()}</span>
+      <div class="py-2 mb-2 pt-3 px-4 bg-zinc-800 rounded-lg relative">
+        <span class="text-2xl">
+          {timing()[0]} = {timing()[1]}%
+        </span>
         <br />
         think time is bad
+        <div
+          class={`absolute bg-zinc-600 top-0 h-2 left-0 rounded-lg`}
+          style={`right: ${100 - timing()[1]}%;`}
+        ></div>
       </div>
-      <div class="py-2 mb-2 px-4 bg-zinc-800 rounded-lg">
-        <span class="text-2xl">{rules()}</span>
+      <div class="py-2 mb-2 pt-3 px-4 bg-zinc-800 rounded-lg relative">
+        <span class="text-2xl">
+          {rules()[0]} = {rules()[1]}%
+        </span>
         <br />
         think rules are too difficult
+        <div
+          class={`absolute bg-zinc-600 top-0 h-2 left-0 rounded-lg`}
+          style={`right: ${100 - rules()[1]}%;`}
+        ></div>
       </div>
     </div>
   );

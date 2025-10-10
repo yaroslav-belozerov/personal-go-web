@@ -34,7 +34,7 @@ export default function BusinessGame() {
   );
 
   return (
-    <div class="flex flex-col md:flex-row md:flex-wrap md:gap-10 md:p-10 overflow-hidden w-full bg-[#1D1E22] min-h-dvh font-[Figtree] text-white">
+    <div class="flex flex-col md:gap-10 md:p-10 overflow-hidden w-full bg-[#1D1E22] min-h-dvh font-[Figtree] text-white">
       <section class="border-white/30 border-b md:border-none pb-4 w-full">
         <h1 class="text-[12vw] md:text-[8vw] px-4 py-3 font-bold text-[#7875FF] leading-10 md:leading-30">
           <span class="text-white font-black">MANAGEMENT</span>
@@ -45,7 +45,7 @@ export default function BusinessGame() {
           plan {circle()} negotiate {circle()} dominate
         </h3>
       </section>
-      <section class="flex flex-col p-4 gap-2 border-white/30 border-b md:border">
+      <section class="flex flex-col p-4 gap-2 border-white/30 border-b md:border md:max-w-3xl">
         <h2 class="text-3xl md:text-5xl flex flex-row justify-between w-full md:gap-10">
           Place & Time
           <a
@@ -122,7 +122,100 @@ export default function BusinessGame() {
           </h3>
         </div>
       </section>
-      <section class="flex flex-col px-4 gap-2 border-white/30 border-b md:min-w-xl md:border p-4 md:text-xl">
+      <section class="flex flex-col px-4 gap-2 border-white/30 border-b md:border p-4 md:max-w-3xl">
+        <h2 class="text-3xl mb-2 md:text-5xl flex flex-row justify-between items-center w-full">
+          Rules
+          {fullRules() ? (
+            <div class="flex px-2 flex-row w-fit gap-2 text-lg items-center">
+              <div
+                onClick={() => {
+                  setFullRulesEnglish(false);
+                }}
+                class={`${!fullRulesEnglish() && "underline decoration-2"} px-2 cursor-pointer`}
+              >
+                RU
+              </div>
+              <div
+                onClick={() => {
+                  setFullRulesEnglish(true);
+                }}
+                class={`${fullRulesEnglish() && "underline decoration-2"} px-2 cursor-pointer`}
+              >
+                EN
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setFullRules(!fullRules());
+                }}
+                class="px-4 py-1 bg-zinc-800 text-lg rounded-full cursor-pointer"
+              >
+                Hide
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => {
+                setFullRules(!fullRules());
+              }}
+              class="px-4 py-1 bg-zinc-800 h-fit text-lg rounded-full cursor-pointer"
+            >
+              See full
+            </button>
+          )}
+        </h2>
+        {fullRules() ? (
+          <div
+            class="leading-5 md:text-xl md:leading-7"
+            innerHTML={(fullRulesEnglish()
+              ? `At the start of the game, each team receives a certain number of small sheets (“shares”) to distribute among all teams by creating an internal ranking — the higher you rank a team, the more shares they get. For example: 1st place – 6 shares, 2nd – 5, 3rd – 4, and so on. Each team does this independently, without knowing how many total shares have been issued for other teams.
+              The game then proceeds in repeating cycles: <b>discussion → trading → discussion → trading</b>. The goal is to <b>absorb all other teams</b> by collecting a controlling stake (51% of all shares issued for that team). During trading, one representative from each team brings 2 shares and can exchange them <b>1 for 1</b> through the moderator. Touching the table is forbidden. Any shares left untraded are removed from the game.
+              Teams are penalized for rule violations (being late, touching the table, secret talks, etc.) by losing shares. If a team runs out of shares, it is eliminated. The game continues until only <b>one team remains — the winner</b>. A short practice round is held at the beginning so everyone can understand the rules.`
+              : `В начале игры каждая команда получает определённое количество листочков («акций») – их нужно распределить между всеми командами, составив внутренний рейтинг: кому вы доверяете больше, тот получает больше акций. Например, 1-е место – 6 акций, 2-е – 5, 3-е – 4 и т.д. Каждая команда делает это самостоятельно, не зная, сколько всего акций выписано на другие группы.
+                Далее начинается сама игра, которая проходит циклами: <b>обсуждение → торги → обсуждение → торги</b>. Цель – <b>поглотить все остальные команды</b>, собрав контрольный пакет их акций (51 % от всех выписанных на них). На торги выходит по одному представителю от каждой команды, приносят по 2 акции и могут обменяться ими 1 к 1 через ведущего.
+                Трогать стол руками запрещено. Необменянные акции выбывают из игры. За нарушения (опоздание, касание стола, тайные переговоры и т.п.) начисляются штрафы – команда теряет акции. Если команда теряет все акции – она выбывает. Игра продолжается, пока не останется <b>одна команда-победитель</b>. Перед началом проводится короткий пробный раунд, чтобы все разобрались с правилами.`
+            ).replaceAll("\n", "<br class='mb-4' />")}
+          ></div>
+        ) : (
+          <ol class="text-lg mx-6 md:text-2xl md:mx-8 list-decimal leading-6 md:leading-8 gap-4 flex flex-col max-md:w-full">
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+              Each team ranks all teams (including their own) and receives
+              “shares” based on that ranking.
+            </li>
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+              The game runs in repeating rounds:{" "}
+              <b>
+                discussion
+                <svg
+                  class="size-4 fill-white inline mx-2"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 14v2l-4-3 4-3v2h12v2H4zm8-12V0l4 3-4 3V4H0V2h12z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                trading
+              </b>
+              .
+            </li>
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+              During trading, one person from team brings 2 shares and can
+              exchange them <b>1-for-1</b>.
+            </li>
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+              <b>Absorb other teams</b> by collecting 51% of their shares.
+            </li>
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+              Penalties cost shares. Teams with no shares are eliminated. The
+              game ends when <b>one team remains</b>.
+            </li>
+          </ol>
+        )}
+      </section>
+      <section class="flex flex-col px-4 gap-2 border-white/30 border-b md:min-w-xl md:border p-4 md:text-xl md:max-w-3xl">
         <h2 class="text-3xl md:text-5xl flex flex-row justify-between w-full mb-2">
           Register
         </h2>
@@ -311,104 +404,11 @@ export default function BusinessGame() {
           </>
         )}
       </section>
-      <section class="flex flex-col px-4 gap-2 border-white/30 border-b md:border p-4 md:max-w-2xl">
-        <h2 class="text-3xl mb-1 md:text-5xl flex flex-row justify-between w-full">
-          Rules
-          {fullRules() ? (
-            <div class="flex px-2 flex-row w-fit gap-2 text-lg items-center">
-              <div
-                onClick={() => {
-                  setFullRulesEnglish(false);
-                }}
-                class={`${!fullRulesEnglish() && "underline decoration-2"} px-2 cursor-pointer`}
-              >
-                RU
-              </div>
-              <div
-                onClick={() => {
-                  setFullRulesEnglish(true);
-                }}
-                class={`${fullRulesEnglish() && "underline decoration-2"} px-2 cursor-pointer`}
-              >
-                EN
-              </div>
-              <button
-                type="button"
-                onClick={() => {
-                  setFullRules(!fullRules());
-                }}
-                class="px-4 py-1 bg-zinc-800 text-lg rounded-full cursor-pointer"
-              >
-                Hide
-              </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={() => {
-                setFullRules(!fullRules());
-              }}
-              class="px-4 py-1 bg-zinc-800 text-lg rounded-full cursor-pointer"
-            >
-              See full
-            </button>
-          )}
-        </h2>
-        {fullRules() ? (
-          <div
-            class="leading-5"
-            innerHTML={(fullRulesEnglish()
-              ? `At the start of the game, each team receives a certain number of small sheets (“shares”) to distribute among all teams by creating an internal ranking — the higher you rank a team, the more shares they get. For example: 1st place – 6 shares, 2nd – 5, 3rd – 4, and so on. Each team does this independently, without knowing how many total shares have been issued for other teams.
-              The game then proceeds in repeating cycles: <b>discussion → trading → discussion → trading</b>. The goal is to <b>absorb all other teams</b> by collecting a controlling stake (51% of all shares issued for that team). During trading, one representative from each team brings 2 shares and can exchange them <b>1 for 1</b> through the moderator. Touching the table is forbidden. Any shares left untraded are removed from the game.
-              Teams are penalized for rule violations (being late, touching the table, secret talks, etc.) by losing shares. If a team runs out of shares, it is eliminated. The game continues until only <b>one team remains — the winner</b>. A short practice round is held at the beginning so everyone can understand the rules.`
-              : `В начале игры каждая команда получает определённое количество листочков («акций») – их нужно распределить между всеми командами, составив внутренний рейтинг: кому вы доверяете больше, тот получает больше акций. Например, 1-е место – 6 акций, 2-е – 5, 3-е – 4 и т.д. Каждая команда делает это самостоятельно, не зная, сколько всего акций выписано на другие группы.
-                Далее начинается сама игра, которая проходит циклами: <b>обсуждение → торги → обсуждение → торги</b>. Цель – <b>поглотить все остальные команды</b>, собрав контрольный пакет их акций (51 % от всех выписанных на них). На торги выходит по одному представителю от каждой команды, приносят по 2 акции и могут обменяться ими 1 к 1 через ведущего.
-                Трогать стол руками запрещено. Необменянные акции выбывают из игры. За нарушения (опоздание, касание стола, тайные переговоры и т.п.) начисляются штрафы – команда теряет акции. Если команда теряет все акции – она выбывает. Игра продолжается, пока не останется <b>одна команда-победитель</b>. Перед началом проводится короткий пробный раунд, чтобы все разобрались с правилами.`
-            ).replaceAll("\n", "<br class='mb-4' />")}
-          ></div>
-        ) : (
-          <ol class="text-lg mx-6 md:text-2xl md:mx-8 list-decimal leading-6 gap-2 flex flex-col">
-            <li class="py-1 px-2 bg-zinc-800 rounded-lg">
-              Each team ranks all teams (including their own) and receives
-              “shares” based on that ranking.
-            </li>
-            <li class="py-1 px-2 bg-zinc-800 rounded-lg">
-              The game runs in repeating rounds:{" "}
-              <b>
-                discussion
-                <svg
-                  class="size-4 fill-white inline mx-2"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 14v2l-4-3 4-3v2h12v2H4zm8-12V0l4 3-4 3V4H0V2h12z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-                trading
-              </b>
-              .
-            </li>
-            <li class="py-1 px-2 bg-zinc-800 rounded-lg">
-              During trading, one person from team brings 2 shares and can
-              exchange them <b>1-for-1</b>.
-            </li>
-            <li class="py-1 px-2 bg-zinc-800 rounded-lg">
-              <b>Absorb other teams</b> by collecting 51% of their shares.
-            </li>
-            <li class="py-1 px-2 bg-zinc-800 rounded-lg">
-              Penalties cost shares. Teams with no shares are eliminated. The
-              game ends when <b>one team remains</b>.
-            </li>
-          </ol>
-        )}
-      </section>
       <section class="flex flex-col px-4 gap-2 border-white/30 border-b md:border p-4 md:max-w-xl">
         <h2 class="text-3xl md:text-5xl flex flex-row justify-between w-full">
           Contacts
         </h2>
-        <p class="text-zinc-400 leading-4 md:text-xl md:leading-6">
+        <p class="text-zinc-400 leading-4 md:text-xl md:leading-6 my-2">
           Reach out if something is confusing or you want to cancel the
           registration
         </p>
