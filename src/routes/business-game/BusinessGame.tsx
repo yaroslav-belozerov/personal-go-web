@@ -265,7 +265,7 @@ export default function BusinessGame() {
             >
               <input
                 id="email-input"
-                placeholder="Your unversity e-mail"
+                placeholder="Your university e-mail"
                 class={`px-4 py-2 grow-1 block outline-white/30 rounded-full outline-1`}
                 onInput={(e) => {
                   setEmail(e.target.value);
