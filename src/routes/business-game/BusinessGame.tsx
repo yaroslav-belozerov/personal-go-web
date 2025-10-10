@@ -148,7 +148,7 @@ export default function BusinessGame() {
               class={`flex-col flex relative ${canSubmitEmail() ? "pb-20 md:pb-22" : "pb-0"} transition-all duration-300`}
               onSubmit={async (e) => {
                 e.preventDefault();
-                fetch("https://tarakoshka.tech/bgapi/users/reg", {
+                const a = fetch("https://tarakoshka.tech/bgapi/users/reg", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
@@ -158,7 +158,13 @@ export default function BusinessGame() {
                     email: email(),
                   }),
                 })
-                  .then(() => setRegistered(true))
+                  .then((it) => {
+                    if (it.status === 409) {
+                      setRegistered(null);
+                    } else {
+                      setRegistered(true);
+                    }
+                  })
                   .catch((err) => {
                     setRegistered(null);
                   });
