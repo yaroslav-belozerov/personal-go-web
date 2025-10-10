@@ -1,13 +1,19 @@
 import { Router, Route, useLocation } from "@solidjs/router";
-import { Transition } from "solid-transition-group";
-import { Motion, Presence } from "solid-motionone";
-import Main from "./routes/main/Main";
-import Write from "./routes/write/Write";
-import Lesya from "./routes/lesya/Lesya";
+import { Presence } from "solid-motionone";
+import { lazy } from "solid-js";
+
+const Main = lazy(() => import("./routes/main/Main"));
+const Write = lazy(() => import("./routes/write/Write"));
+const Lesya = lazy(() => import("./routes/lesya/Lesya"));
+const Webring = lazy(() => import("./routes/webring/Webring"));
+const Blog = lazy(() => import("./routes/blog/Blog"));
+const Blogpost = lazy(() => import("./routes/blog/Blogpost"));
+const BusinessGame = lazy(() => import("./routes/business-game/BusinessGame"));
+const BusinessStats = lazy(
+  () => import("./routes/business-game/BusinessStats"),
+);
+
 import NotFound from "./routes/NotFound";
-import Webring from "./routes/webring/Webring";
-import Blog from "./routes/blog/Blog";
-import Blogpost from "./routes/blog/Blogpost";
 
 export default function App() {
   return (
@@ -15,6 +21,8 @@ export default function App() {
       <Router>
         <Route path="/write-to-me" component={Write} />
         <Route path="/webring" component={Webring} />
+        <Route path="/business-game" component={BusinessGame} />
+        <Route path="/business-game/stats" component={BusinessStats} />
         <Route path="/lesya" component={Lesya} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={Blogpost} />
