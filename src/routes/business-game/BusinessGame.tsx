@@ -51,7 +51,7 @@ export default function BusinessGame() {
           <a
             class="flex text-lg md:text-2xl leading-0 flex-row w-fit items-center gap-2 rounded-full bg-zinc-800 px-4 pb-[1px]"
             target="_blank"
-            href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NDJwNmE5ZHNwazQwaTBlYjl2YmI2YTIzaGkgeWFyb3NsYXZuZWtpajQyQG0&amp;tmsrc=yaroslavnekij42%40gmail.com"
+            href="https://calendar.app.google/n7mdAs4vXLGtCYLW6"
           >
             <svg
               class="size-5"
