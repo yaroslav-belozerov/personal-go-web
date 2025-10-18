@@ -45,43 +45,47 @@ export default function JbTestingCup() {
       <div class="px-4 py-4 bg-zinc-900">
         <h3 class="text-3xl font-[Sora] mb-4">Platform Features</h3>
         <ul class="text-lg flex flex-col gap-4">
-          <li class="bg-zinc-800 p-4 rounded-xl md:flex md:flex-row flex-wrap gap-4">
+          <li class="bg-zinc-800 p-4 rounded-xl md:flex md:flex-row flex-wrap max-md:gap-4 gap-2 md:text-xl">
             <img
               src="/static/jb-romania/hints.png"
-              class="rounded-lg mb-4 outline-1 outline-white md:max-w-lg"
+              class="rounded-lg max-md:mb-4 outline-1 outline-white md:max-w-lg h-full"
             ></img>
             <img
               src="/static/jb-romania/hints-admin.png"
-              class="rounded-lg mb-4 outline-1 outline-white md:max-w-lg"
+              class="rounded-lg max-md:mb-4 outline-1 outline-white md:max-w-lg h-full"
             ></img>
+            <div class="basis-full"></div>
             Viewing the problem statement and revealing hints during the
             competition from the dedicated admin panel
           </li>
-          <li class="bg-zinc-800 p-4 rounded-xl md:flex md:flex-row flex-wrap gap-4">
+          <li class="bg-zinc-800 p-4 rounded-xl md:flex md:flex-row flex-wrap max-md:gap-4 gap-2 md:text-xl">
             <img
               src="/static/jb-romania/test-editor.png"
-              class="rounded-lg mb-4 outline-1 outline-white md:max-w-lg"
+              class="rounded-lg max-md:mb-4 outline-1 outline-white md:max-w-lg h-full"
             ></img>
+            <div class="basis-full"></div>
             Running tests (with or without saving the result), renaming and
             rerunning them
           </li>
-          <li class="bg-zinc-800 p-4 rounded-xl md:flex md:flex-row flex-wrap gap-4">
+          <li class="bg-zinc-800 p-4 rounded-xl md:flex md:flex-row flex-wrap max-md:gap-4 gap-2 md:text-xl">
             <img
               src="/static/jb-romania/test-table.png"
-              class="rounded-lg mb-4 outline-1 outline-white md:max-w-lg"
+              class="rounded-lg max-md:mb-4 outline-1 outline-white md:max-w-lg h-full"
             ></img>
             <img
               src="/static/jb-romania/test-table-2.png"
-              class="rounded-lg mb-4 outline-1 outline-white md:max-w-lg"
+              class="rounded-lg max-md:mb-4 outline-1 outline-white md:max-w-lg h-full"
             ></img>
+            <div class="basis-full"></div>
             Seeing all the tests you submitted, editing them, and seeing the
             results (for example, score for each test case)
           </li>
-          <li class="bg-zinc-800 p-4 rounded-xl md:flex md:flex-row flex-wrap gap-4">
+          <li class="bg-zinc-800 p-4 rounded-xl md:flex md:flex-row flex-wrap max-md:gap-4 gap-2 md:text-xl">
             <img
               src="/static/jb-romania/leaderboard.png"
-              class="rounded-lg mb-4 outline-1 outline-white md:max-w-xl"
+              class="rounded-lg max-md:mb-4 outline-1 outline-white md:max-w-xl h-full"
             ></img>
+            <div class="basis-full"></div>
             Dynamic leaderboard with sorting by time of last score change
           </li>
         </ul>
