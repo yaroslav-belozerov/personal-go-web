@@ -33,10 +33,10 @@ export function SwitchCard(props: SwitchCardProps) {
       <Presence exitBeforeEnter={true}>
         <Show when={isExpanded()}>
           <Motion.div
-            initial={{ opacity: 0, scale: 0, y: -100 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0, y: -100 }}
-            transition={{ duration: 0.1 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
           >
             <div class="px-4 flex flex-col mb-1">{props.children}</div>
           </Motion.div>

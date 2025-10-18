@@ -7,23 +7,23 @@ import Badge from "../components/Badge";
 
 export default function Touch() {
   return (
-    <section id="contacts" class="flex flex-col pt-6 gap-4">
-      <h2 class="ms-6 text-white text-4xl mt-2">Get in touch</h2>
+    <section id="contacts" class="flex flex-col gap-4">
+      <h2 class="ms-6 text-white text-4xl mt-6">Get in touch</h2>
       <div class="flex flex-col gap-2">
         <div
           class="w-full pe-12 grid grid-cols-3 gap-2 md:gap-6 ms-6 md:grid-cols-4"
           style="justify-items: center;"
         >
           <A
-            class="group text-white relative flex max-md:w-full w-8 min-w-14 p-4 justify-center aspect-square items-center rounded-2xl bg-[#0c12c9] transition-all"
+            class="group text-white relative flex max-md:w-full w-8 min-w-14 p-4 justify-center aspect-square items-center rounded-full bg-[#0c12c9] transition-all"
             style="flex: 1 0 26%;"
             href="/blog"
           >
             <span class="text-6xl mb-4 leading-0 italic transition-all">
               tt
             </span>
-            <div class="absolute bottom-1 gap-1 transition-all rounded-full items-center flex flex-row">
-              <p class="pb-[2px]">read my blog</p>
+            <div class="absolute bottom-3 gap-1 transition-all rounded-full items-center flex flex-row">
+              <p class="pb-[2px]">my blog</p>
             </div>
           </A>
           <SocialIcon
@@ -61,11 +61,11 @@ export default function Touch() {
         </div>
         <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
           {useLastMessage().get() && (
-            <div class="flex flex-col font-[Overpass] md:flex-row md:gap-6 gap-2 mb-4 justify-between mx-6">
+            <div class="flex flex-col font-[Overpass] gap-1 mb-4 justify-between mx-6">
               {/* <p class="ms-6 text-xl md:text-2xl italic text-[#ffffff] mb-2">
                     your messages
                   </p> */}
-              <div class="flex w-full flex-col justify-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-3 md:p-6 bg-[#2B251F] transition-all">
+              <div class="flex w-full flex-col justify-center rounded-t-3xl rounded-b-sm md:rounded-b-2xl p-3 md:p-6 bg-[#2B251F] transition-all">
                 <p class="text-white max-h-22 overflow-hidden fade text-xl">
                   {useLastMessage().get()?.text}
                 </p>
@@ -85,7 +85,7 @@ export default function Touch() {
                 </p>
               </div>
               <a
-                class={`flex flex-row gap-2 justify-center md:hover:scale-95 md:px-12 transition-all items-center rounded-t-lg md:rounded-t-2xl rounded-b-2xl p-3 bg-[#2B251F] transition-all`}
+                class={`flex flex-row gap-2 justify-center transition-all items-center rounded-t-sm rounded-b-3xl p-3 bg-[#2B251F] transition-all`}
                 href="/write-to-me"
               >
                 <p class="text-md">More messages</p>
@@ -109,7 +109,7 @@ export default function Touch() {
                 <img
                   src={useMusic()?.get()?.image}
                   alt={useMusic()?.get()?.title}
-                  class="size-12 rounded-md transition-all"
+                  class="size-12 rounded-xl transition-all"
                 />
                 <div class="flex flex-col">
                   <h3 class="text-white text-xl leading-7">
@@ -139,7 +139,7 @@ export default function Touch() {
           </div>
         )}
       </MusicProvider>
-      <div class="flex flex-col w-full gap-4 mt-6">
+      <div id="badges" class="flex flex-col w-full gap-4 mt-6">
         <h2 class="ms-6 text-white text-4xl">Buttons</h2>
         <div class="flex flex-row flex-wrap gap-2 mb-2 justify-center">
           <Badge

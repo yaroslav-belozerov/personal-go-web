@@ -12,88 +12,108 @@ import LandingLink from "../components/LandingLink";
 
 export default function Landing() {
   return (
-    <section class="min-h-svh max-h-svh flex items-center flex-col">
-      <img
-        src="https://tarakoshka.tech/static/icons/star.svg"
-        class={`absolute scale-200 top-[1.5em] md:scale-230`}
-        style={`
-        animation: rotate-animation 90s infinite linear;
-        background-size: cover;
-        object-fit: fill;`}
-      ></img>
-      <header class="text-5xl md:text-7xl z-0 my-8 italic">
-        <a href="https://tarakoshka.tech">
-          <h1 class="">tarakoshka.tech</h1>
+    <section class="min-h-svh bg-black max-h-svh max-w-screen flex items-center flex-col">
+      <header class="text-6xl z-0 px-8 w-full pt-3 pb-4 text-white outline-white -outline-offset-2">
+        <a href="https://tarakoshka.tech" class="overflow-clip">
+          <h1 class="text-7xl text-center text-nowrap animate-[marquee-content_10s_linear_infinite]">
+            tarakoshka.tech
+          </h1>
         </a>
       </header>
-      <nav class="flex flex-col w-full grow-1 justify-between">
-        <div class="flex flex-col items-center">
-          <div class="flex flex-row gap-4 justify-center">
+      <nav class="flex flex-col w-full grow-1">
+        <div class="flex flex-col px-8 items-center w-full">
+          <div class="flex flex-row w-full">
             <a
-              class="relative z-0 mt-8 transition-all"
+              class="relative z-0 transition-all outline-white -outline-offset-2 bg-[#FFE942] grow-1 py-4 animate-[round_4s_ease-in-out_infinite_2s] flex flex-col justify-center"
               href="https://tarakoshka.tech/static/cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                class="w-32 md:w-48"
-                src="https://tarakoshka.tech/static/icons/cv_star.svg"
-                style="
-                animation: rotate-animation-back 20s infinite linear;
-                background-size: cover;
-                object-fit: fill;"
-              ></img>
-              <div class="text-[#1a1611] absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
-                <Download />
-                <p class="font-[Overpass] font-bold text-2xl">CV</p>
+              <div class="text-black ml-6 flex flex-col gap-3 justify-center items-start pt-2">
+                <div class="ml-1">
+                  <Download />
+                </div>
+                <div class="flex flex-col text-2xl">
+                  <span class="leading-4">See my</span>
+                  <span>Resume</span>
+                </div>
               </div>
             </a>
             <a
               href="/lesya"
-              class="relative z-0 mb-8 md:hover:scale-90 transition-all"
+              class="relative z-0 transition-all outline-white -outline-offset-2 bg-[#00FF7B] grow-1 py-4 animate-[round_4s_ease-in-out_infinite_2s] flex flex-col justify-center"
             >
-              <img
-                src="https://tarakoshka.tech/static/icons/lesya_star.svg"
-                class="w-32 md:w-48"
-                style="
-                animation: rotate-animation 20s infinite linear;
-                background-size: cover;
-                object-fit: fill;"
-              ></img>
-              <div class="text-[#1a1611] absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
-                <Cat />
-                <p class="font-[Overpass] font-bold text-2xl">Cat</p>
+              <div class="text-black ml-6 flex flex-col gap-3 justify-center items-start pt-2">
+                <div class="ml-1">
+                  <Cat />
+                </div>
+                <div class="flex flex-col text-2xl">
+                  <span class="leading-4">Look at</span>
+                  <span>My Cat</span>
+                </div>
               </div>
             </a>
           </div>
-        </div>
-        <div class="flex flex-col px-6 gap-4 justify-center flex-wrap mb-6">
-          <LandingLink href="#contacts" title="CONTACTS" icon={<Touch />} />
-          <LandingLink href="#projects" title="PROJECTS" icon={<Projects />} />
-          <div class="flex flex-row gap-4">
-            <A
-              href="/webring"
-              class={`bg-[#FF3737] gap-1 w-full rounded-xl text-white pl-6 pr-5 py-4 flex justify-between items-center transition-all`}
-            >
-              <h2 class="text-3xl text-[#1A1611]">RING</h2>
+          <A
+            href="/webring"
+            class={`bg-linear-to-r from-[#FF3737] to-[#FF3737]/0 w-full gap-2 text-white pl-4 py-4 flex items-center transition-all animate-[round-other_4s_ease-in-out_infinite]`}
+          >
+            <div class="flex flex-row gap-3 bg-black py-2 px-4 rounded-full">
               <svg
-                class="size-8"
+                class="size-8 fill-white mt-1"
                 xmlns="http://www.w3.org/2000/svg"
-                height="24px"
                 viewBox="0 -960 960 960"
-                width="24px"
-                fill="#1A1611"
               >
-                <path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q-3-20-4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z" />
+                <path d="M360-240 120-480l240-240 56 56-144 144h488v-160h80v240H272l144 144-56 56Z" />
               </svg>
+              <h2 class="text-3xl italic">Enter the webring</h2>
+            </div>
+          </A>
+        </div>
+        <div class="grid grid-cols-2 grid-rows-2 grow-1 mt-4 grid-rows-2 flex-col px-4">
+          <A href="#contacts" class="h-fit relative w-fit">
+            <img
+              class="h-48 -rotate-10"
+              src="https://tarakoshka.tech/static/old_phone.png"
+            ></img>
+            <div class="absolute rotate-5 bg-black px-3 py-1 italic outline-white outline-2 rounded-full bottom-2 left-4 text-2xl text-white">
+              Contacts
+            </div>
+          </A>
+          <A href="#projects" class="self-center h-fit relative w-fit">
+            <img
+              class="h-48 rotate-60"
+              src="https://tarakoshka.tech/static/scraps.png"
+            ></img>
+            <div class="absolute -rotate-5 bg-black px-3 py-1 italic outline-white outline-2 rounded-full bottom-8 right-4 text-2xl text-white">
+              Projects
+            </div>
+          </A>
+          <A href="#badges" class="h-fit relative w-fit">
+            <img
+              class="w-40 rotate-30"
+              src="https://tarakoshka.tech/static/badges.png"
+            ></img>
+            <div class="absolute text-nowrap -rotate-5 bg-black px-3 py-1 italic outline-white outline-2 rounded-full top-4 right-4 text-2xl text-white">
+              Your badges
+            </div>
+          </A>
+          <div class="flex flex-col h-full justify-between pb-8 items-center">
+            <A href="#info" class="h-fit relative w-fit">
+              <img
+                class="-rotate-10 w-40"
+                src="https://tarakoshka.tech/static/login.jpg"
+              ></img>
+              <div class="absolute rotate-10 bg-black px-3 py-1 italic outline-white outline-2 rounded-full -bottom-2 right-2 text-2xl text-white">
+                About me
+              </div>
             </A>
-            <LandingLink href="#info" title="INFO" icon={<Meta />} />
-          </div>
-          <div class="flex flex-row gap-1 items-center justify-center">
-            <p class="text-xl">Or scroll down</p>
-            <marquee direction="down" class="size-fit" scrolldelay="300">
-              <ArrowDown />
-            </marquee>
+            <div class="overflow-hidden h-fit text-xl flex flex-row gap-1">
+              <div class=" animate-[marquee-h_2s_linear_infinite]">
+                <ArrowDown />
+              </div>
+              or scroll down...
+            </div>
           </div>
         </div>
       </nav>

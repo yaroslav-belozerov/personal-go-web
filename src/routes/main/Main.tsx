@@ -34,6 +34,7 @@ export default function App() {
     >
       <main class="page md:hidden flex bg-[#1a1611] text-[#f5e9c9] md:pt-0 flex-col relative overflow-x-clip">
         <Landing></Landing>
+        <div class="h-10 w-full bg-linear-to-b from-black to-[#1A1611]"></div>
         <Touch></Touch>
         <Current></Current>
         <Meta></Meta>

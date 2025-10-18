@@ -10,10 +10,11 @@ export default function LandingLink(props: LandingLinkProps) {
   return (
     <a
       href={props.href}
-      class={`bg-[#2B251F] outline-[#1A1611] outline-16 z-1 gap-1 w-full rounded-xl text-white pl-6 pr-5 py-4 flex justify-between items-center transition-all`}
+      class={`w-full relative z-1 gap-1 text-white pl-8 min-h-20 flex justify-left items-center transition-all gap-4`}
     >
-      <h2 class="text-3xl">{props.title}</h2>
       {props.icon}
+      <h2 class="text-4xl">{props.title}</h2>
+      <div class="absolute bg-linear-to-l from-[#FFFFFF]/0 to-[#FFFFFF] w-4 top-0 bottom-0 left-0"></div>
     </a>
   );
 }

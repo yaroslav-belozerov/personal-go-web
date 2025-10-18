@@ -338,28 +338,33 @@ export default function Meta() {
               <SocialTag text="mobile" />
               <SocialTag text="web" />
               <SocialTag text="designer" />
-              <div class="flex w-full mb-3 relative text-xs font-[Overpass] justify-center rounded-full grow-1 px-2 py-4 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
+            </div>
+            <div class="w-full flex mb-6 flex-row">
+              <div class="flex w-full text-xs font-[Overpass] justify-center rounded-full grow-1 px-2 py-4 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
                 This website is built by a human. <br />
                 AI training on its content or source code is prohibited.
               </div>
+              <button
+                onClick={(e) => {
+                  document.body.scrollTop = 0;
+                  document.documentElement.scrollTop = 0;
+                  window.location.hash = "";
+                  history.pushState(
+                    "",
+                    document.title,
+                    window.location.pathname,
+                  );
+                  e.preventDefault();
+                }}
+                class="flex flex-row gap-1 items-center justify-center bg-[#2B251F] rounded-full aspect-square items-center justify-center"
+              >
+                <div class="rotate-180">
+                  <ArrowDown></ArrowDown>
+                </div>
+              </button>
             </div>
           </div>
         </div>
-        <button
-          onClick={(e) => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-            window.location.hash = "";
-            history.pushState("", document.title, window.location.pathname);
-            e.preventDefault();
-          }}
-          class="flex flex-row pb-6 gap-1 items-center justify-center"
-        >
-          <p class="text-xl">Back to top</p>
-          <div class="rotate-180">
-            <ArrowDown></ArrowDown>
-          </div>
-        </button>
       </div>
     </section>
   );
