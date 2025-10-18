@@ -303,7 +303,7 @@ export default function App() {
                         alt={useMusic()?.get()?.title}
                         class="size-12 rounded-md transition-all"
                       />
-                      <div class="flex flex-col font-[Overall]">
+                      <div class="flex flex-col font-[Overpass]">
                         <h3 class="text-2xl text-white">
                           {useMusic()?.get()?.title}
                         </h3>
