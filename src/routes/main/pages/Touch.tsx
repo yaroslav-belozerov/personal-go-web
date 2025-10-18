@@ -12,7 +12,7 @@ export default function Touch() {
   const [openDetail, setOpenDetail] = createSignal<DetailType | null>(null);
 
   return (
-    <section id="contacts" class="flex flex-col gap-4 bg-black">
+    <section id="contacts" class="flex flex-col gap-4 bg-black pb-6">
       {openDetail() == DetailType.Others && (
         <div
           onClick={() => setOpenDetail(null)}

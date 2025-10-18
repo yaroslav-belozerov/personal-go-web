@@ -5,7 +5,7 @@ export default function Current() {
   return (
     <section
       id="projects"
-      class="flex flex-col py-6 gap-4 mt-6 bg-white text-black"
+      class="flex flex-col py-6 gap-4 bg-white text-black"
     >
       <h2 class="text-black text-5xl text-center mb-2">What are you doing?</h2>
       <div class="flex flex-row">

@@ -35,7 +35,7 @@ export default function Landing() {
       ></img>
       <header class="text-6xl z-0 px-8 w-full py-4 text-white outline-white -outline-offset-2">
         <a href="https://tarakoshka.tech" class="overflow-clip">
-          <h1 class="text-7xl text-center text-nowrap animate-[marquee-op_10s_linear_infinite] opacity-80">
+          <h1 class="text-7xl text-center text-nowrap animate-[marquee-content_10s_linear_infinite]">
             tarakoshka.tech
           </h1>
         </a>
