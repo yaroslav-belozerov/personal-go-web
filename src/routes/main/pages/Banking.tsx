@@ -22,11 +22,10 @@ export default function Banking() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://revolut.me/iabelozerov"
-          class="flex flex-row font-[Overpass] bg-[#2B251F] gap-4 items-center py-4 px-6 rounded-2xl justify-between text-white"
+          class="flex flex-row font-[Overpass] bg-[#2B251F] gap-4 items-center py-4 px-6 rounded-3xl text-white"
         >
-          <span class="text-3xl pt-1">Revolut</span>
           <svg
-            class="size-6"
+            class="size-8"
             version="1.1"
             id="Layer_1"
             x="0px"
@@ -45,14 +44,14 @@ export default function Banking() {
               ></path>
             </g>
           </svg>
+          <span class="text-3xl pt-1">Revolut</span>
         </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://buymeacoffee.com/iabelozerov"
-          class="flex flex-row font-[Overpass] bg-[#2B251F] gap-4 items-center py-4 pl-6 pr-5 rounded-2xl justify-between text-white"
+          class="flex flex-row font-[Overpass] bg-[#2B251F] gap-4 items-center py-4 pl-6 pr-5 rounded-3xl text-white"
         >
-          <span class="text-3xl text-white pt-1">Buy Me a Coffee</span>
           <svg
             class="size-8"
             width="884"
@@ -118,13 +117,14 @@ export default function Banking() {
               fill="currentColor"
             />
           </svg>
+          <span class="text-3xl text-white pt-1">Buy Me a Coffee</span>
         </a>
         <hr class="text-white opacity-50 mt-4 mb-2" />
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.tinkoff.ru/cf/8NtrlPk7IVM"
-          class="flex flex-row font-[Overpass] gap-4 items-center justify-between"
+          class="flex flex-row font-[Overpass] bg-[#2B251F] gap-4 items-center py-4 pl-6 pr-5 pb-5 rounded-3xl justify-between text-white"
         >
           <div class="flex flex-col gap-2">
             <div class="flex flex-row items-center gap-2">

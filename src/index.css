@@ -251,8 +251,8 @@ html {
     height: 70%;
     background: linear-gradient(
         to bottom,
-        rgba(43, 37, 31, 0) 10%,
-        rgba(43, 37, 31, 1) 90%
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 1) 90%
     );
 }
 
@@ -319,6 +319,18 @@ html {
     }
 }
 
+@keyframes marquee-op {
+    from {
+        transform: translateX(140%) skewY(-5deg);
+    }
+    50% {
+        transform: skewY(0deg);
+    }
+    to {
+        transform: translateX(-140%) skewY(5deg);
+    }
+}
+
 @keyframes round {
     0% {
         border-radius: 0;
@@ -361,5 +373,33 @@ html {
     }
     to {
         transform: translateY(100%);
+    }
+}
+
+@keyframes rot-bg {
+    from {
+        transform: rotateZ(0deg);
+        scale: 1;
+    }
+    50% {
+        scale: 0.9;
+    }
+    to {
+        transform: rotateZ(-360deg);
+        scale: 1;
+    }
+}
+
+@keyframes rot-bg-compliment {
+    from {
+        transform: rotateZ(-180deg);
+        scale: 2;
+    }
+    50% {
+        scale: 0.9;
+    }
+    to {
+        transform: rotateZ(-540deg);
+        scale: 2;
     }
 }

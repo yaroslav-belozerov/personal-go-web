@@ -16,10 +16,26 @@ export default function Landing() {
   const flyInEase = cubicBezier(0.76, 0, 0.24, 1);
 
   return (
-    <section class="min-h-svh bg-black max-h-svh max-w-screen flex items-center flex-col">
+    <section class="relative min-h-svh bg-black max-h-svh max-w-screen flex items-center flex-col">
+      <img
+        src="https://tarakoshka.tech/static/sky.png"
+        class="absolute -top-2 w-full mix-blend-hard-light animate-[rot-bg_90s_linear_infinite] origin-top"
+      ></img>
+      <img
+        src="https://tarakoshka.tech/static/sky.png"
+        class="absolute -top-2 w-full mix-blend-hard-light animate-[rot-bg-compliment_90s_linear_infinite] origin-top"
+      ></img>
+      <img
+        src="https://tarakoshka.tech/static/sky.png"
+        class="absolute -top-2 w-full mix-blend-hard-light animate-[rot-bg_60s_linear_infinite] origin-top"
+      ></img>
+      <img
+        src="https://tarakoshka.tech/static/sky.png"
+        class="absolute -top-2 w-full mix-blend-hard-light animate-[rot-bg_120s_linear_infinite] origin-top"
+      ></img>
       <header class="text-6xl z-0 px-8 w-full py-4 text-white outline-white -outline-offset-2">
         <a href="https://tarakoshka.tech" class="overflow-clip">
-          <h1 class="text-7xl text-center text-nowrap animate-[marquee-content_10s_linear_infinite]">
+          <h1 class="text-7xl text-center text-nowrap animate-[marquee-op_10s_linear_infinite] opacity-80">
             tarakoshka.tech
           </h1>
         </a>
@@ -157,7 +173,7 @@ export default function Landing() {
                 </div>
               </Motion.div>
             </A>
-            <div class="overflow-hidden h-fit text-xl flex flex-row gap-1">
+            <div class="overflow-hidden text-[#0C12C9] bg-white h-fit text-xl flex flex-row gap-1">
               <div class=" animate-[marquee-h_2s_linear_infinite]">
                 <ArrowDown />
               </div>

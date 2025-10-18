@@ -2,17 +2,22 @@ import { createSignal } from "solid-js";
 import { ArrowDown } from "../components/Icons";
 import SocialTag from "../components/SocialTag";
 import { SwitchCard } from "../components/SwitchCard";
+import { MusicProvider, useMusic } from "../../../lib/api/musicHook";
 
 export default function Meta() {
   return (
-    <section id="info" class="flex flex-col mt-6">
+    <section id="info" class="flex flex-col bg-black py-8">
       <div class="flex justify-between flex-col">
         <div class="flex flex-col gap-4">
-          <div class="mt-6 flex flex-row justify-between items-center w-full">
-            <h2 class="ms-6 text-white text-4xl">About me and site</h2>
-            <a href="/support">
+          <div class="flex flex-col items-center">
+            <h2 class="text-white text-5xl text-center">About me and site</h2>
+            <a
+              href="/support"
+              class="text-3xl italic w-fit justify-center text-yellow-300 flex flex-row items-center gap-1"
+            >
+              support
               <svg
-                class="size-10 fill-yellow-300 me-6 animate-[landing_10s_ease-in-out_infinite]"
+                class="size-8 fill-yellow-300"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 -960 960 960"
               >
@@ -20,12 +25,12 @@ export default function Meta() {
               </svg>
             </a>
           </div>
-          <div class="flex flex-col mx-4 gap-3 font-[Overpass] text-white">
+          <div class="flex flex-col mx-8 gap-3 font-[Overpass] text-white">
             <a
               href="https://school.hse.ru/"
               rel="noreferrer noopener"
               target="_blank"
-              class="flex hover:scale-97 transition-all flex-row gap-4 border-[#FBBA00] border-2 bg-[#382a00] rounded-xl items-center px-4 py-3"
+              class="flex hover:scale-97 transition-all flex-row gap-4 border-[#FBBA00] border-2 bg-[#382a00] rounded-2xl items-center px-4 py-3"
             >
               <svg
                 class="size-8 pt-1"
@@ -88,7 +93,7 @@ export default function Meta() {
               target="_blank"
               class="hover:scale-97 transition-all"
             >
-              <div class="flex flex-row gap-4 border-[#03a366] border-2 bg-[#033024] rounded-xl items-center">
+              <div class="flex flex-row gap-4 border-[#03a366] border-2 bg-[#033024] rounded-2xl items-center">
                 <svg
                   class="size-8 ml-4"
                   viewBox="0 0 122 34"
@@ -121,7 +126,7 @@ export default function Meta() {
               target="_blank"
               class="hover:scale-97 transition-all"
             >
-              <div class="flex flex-row gap-4 border-[#FF801A] border-2 bg-[#452105] rounded-xl items-center">
+              <div class="flex flex-row gap-4 border-[#FF801A] border-2 bg-[#452105] rounded-2xl items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -153,226 +158,269 @@ export default function Meta() {
                 <h4 class="text-xl pt-4 pb-3">SDT Student</h4>
               </div>
             </a>
-            <div class="flex flex-wrap flex-row">
-              <SwitchCard title="My Setup">
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://neovim.io/"
-                  class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
-                >
-                  <svg
-                    class="size-6"
-                    viewBox="0 0 602 734"
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
+            <MusicProvider baseURL="https://tarakoshka.tech/api/music">
+              {useMusic().get() && (
+                <div class="flex font-[Overpass] flex-row justify-between pl-3 pr-3">
+                  <a
+                    href={useMusic()?.get()?.url}
+                    class="flex flex-row items-center gap-4 md:hover:scale-90 transition-all"
                   >
-                    <defs>
-                      <linearGradient
-                        x1="50%"
-                        y1="0%"
-                        x2="50%"
-                        y2="100%"
-                        id="linearGradient-1"
-                      >
-                        <stop
-                          stop-color="#16B0ED"
-                          stop-opacity="0.800235524"
-                          offset="0%"
-                        ></stop>
-                        <stop
-                          stop-color="#0F59B2"
-                          stop-opacity="0.83700023"
-                          offset="100%"
-                        ></stop>
-                      </linearGradient>
-                      <linearGradient
-                        x1="50%"
-                        y1="0%"
-                        x2="50%"
-                        y2="100%"
-                        id="linearGradient-2"
-                      >
-                        <stop stop-color="#7DB643" offset="0%"></stop>
-                        <stop stop-color="#367533" offset="100%"></stop>
-                      </linearGradient>
-                      <linearGradient
-                        x1="50%"
-                        y1="0%"
-                        x2="50%"
-                        y2="100%"
-                        id="linearGradient-3"
-                      >
-                        <stop
-                          stop-color="#88C649"
-                          stop-opacity="0.8"
-                          offset="0%"
-                        ></stop>
-                        <stop
-                          stop-color="#439240"
-                          stop-opacity="0.84"
-                          offset="100%"
-                        ></stop>
-                      </linearGradient>
-                    </defs>
-                    <g
-                      id="Page-1"
-                      stroke="none"
-                      stroke-width="1"
-                      fill="none"
-                      fill-rule="evenodd"
+                    <img
+                      src={useMusic()?.get()?.image}
+                      alt={useMusic()?.get()?.title}
+                      class="size-9 rounded-sm transition-all"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="text-white text-xl leading-7">
+                        {useMusic()?.get()?.title}
+                      </h3>
+                      <p class="text-md leading-3 italic">
+                        {useMusic()?.get()?.artist}
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.last.fm/user/Lemurr4ik_"
+                    class="relative size-14 md:scale-140 md:hover:scale-120 md:me-4 transition-all"
+                    target="_blank"
+                  >
+                    <img
+                      class="transition-all size-14 absolute"
+                      src="https://tarakoshka.tech/static/icons/star2.svg"
+                      alt={useMusic()?.get()?.title}
+                      style="animation: rotate-animation 20s infinite linear;"
+                    ></img>
+                    <img
+                      class="transition-all size-6 absolute top-[50%] left-[50%] translate-[-51%]"
+                      src="https://tarakoshka.tech/static/icons/music.svg"
+                      alt={useMusic()?.get()?.title}
+                    ></img>
+                  </a>
+                </div>
+              )}
+            </MusicProvider>
+            <div class="flex flex-col">
+              <div class="flex flex-wrap flex-row text-black">
+                <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-white text-lg transition-all">
+                  <p class="mt-[2px]">18 yo</p>
+                </div>
+                <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-white text-lg transition-all">
+                  <p class="mt-[2px]">ru/en</p>
+                </div>
+                <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-white text-lg transition-all">
+                  <p class="mt-[2px]">he/him</p>
+                </div>
+                <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-white text-lg transition-all">
+                  <p class="mt-[2px]">gmt+2</p>
+                </div>
+                <SocialTag text="mobile" />
+                <SocialTag text="web" />
+                <SocialTag text="designer" />
+                <SwitchCard title="My Setup">
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://neovim.io/"
+                    class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+                  >
+                    <svg
+                      class="size-6"
+                      viewBox="0 0 602 734"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
+                      <defs>
+                        <linearGradient
+                          x1="50%"
+                          y1="0%"
+                          x2="50%"
+                          y2="100%"
+                          id="linearGradient-1"
+                        >
+                          <stop
+                            stop-color="#16B0ED"
+                            stop-opacity="0.800235524"
+                            offset="0%"
+                          ></stop>
+                          <stop
+                            stop-color="#0F59B2"
+                            stop-opacity="0.83700023"
+                            offset="100%"
+                          ></stop>
+                        </linearGradient>
+                        <linearGradient
+                          x1="50%"
+                          y1="0%"
+                          x2="50%"
+                          y2="100%"
+                          id="linearGradient-2"
+                        >
+                          <stop stop-color="#7DB643" offset="0%"></stop>
+                          <stop stop-color="#367533" offset="100%"></stop>
+                        </linearGradient>
+                        <linearGradient
+                          x1="50%"
+                          y1="0%"
+                          x2="50%"
+                          y2="100%"
+                          id="linearGradient-3"
+                        >
+                          <stop
+                            stop-color="#88C649"
+                            stop-opacity="0.8"
+                            offset="0%"
+                          ></stop>
+                          <stop
+                            stop-color="#439240"
+                            stop-opacity="0.84"
+                            offset="100%"
+                          ></stop>
+                        </linearGradient>
+                      </defs>
                       <g
-                        id="mark-copy"
-                        transform="translate(2.000000, 3.000000)"
+                        id="Page-1"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
                       >
-                        <path
-                          d="M0,155.5704 L155,-1 L154.999997,727 L0,572.237919 L0,155.5704 Z"
-                          id="Left---green"
-                          fill="url(#linearGradient-1)"
-                        ></path>
-                        <path
-                          d="M443.060403,156.982405 L600,-1 L596.818792,727 L442,572.219941 L443.060403,156.982405 Z"
-                          id="Right---blue"
-                          fill="url(#linearGradient-2)"
-                          transform="translate(521.000000, 363.500000) scale(-1, 1) translate(-521.000000, -363.500000) "
-                        ></path>
-                        <path
-                          d="M154.986294,0 L558,615.189696 L445.224605,728 L42,114.172017 L154.986294,0 Z"
-                          id="Cross---blue"
-                          fill="url(#linearGradient-3)"
-                        ></path>
-                        <path
-                          d="M155,283.83232 L154.786754,308 L31,124.710606 L42.4619486,113 L155,283.83232 Z"
-                          id="Shadow"
-                          fill-opacity="0.13"
-                          fill="#000000"
-                        ></path>
+                        <g
+                          id="mark-copy"
+                          transform="translate(2.000000, 3.000000)"
+                        >
+                          <path
+                            d="M0,155.5704 L155,-1 L154.999997,727 L0,572.237919 L0,155.5704 Z"
+                            id="Left---green"
+                            fill="url(#linearGradient-1)"
+                          ></path>
+                          <path
+                            d="M443.060403,156.982405 L600,-1 L596.818792,727 L442,572.219941 L443.060403,156.982405 Z"
+                            id="Right---blue"
+                            fill="url(#linearGradient-2)"
+                            transform="translate(521.000000, 363.500000) scale(-1, 1) translate(-521.000000, -363.500000) "
+                          ></path>
+                          <path
+                            d="M154.986294,0 L558,615.189696 L445.224605,728 L42,114.172017 L154.986294,0 Z"
+                            id="Cross---blue"
+                            fill="url(#linearGradient-3)"
+                          ></path>
+                          <path
+                            d="M155,283.83232 L154.786754,308 L31,124.710606 L42.4619486,113 L155,283.83232 Z"
+                            id="Shadow"
+                            fill-opacity="0.13"
+                            fill="#000000"
+                          ></path>
+                        </g>
                       </g>
-                    </g>
-                  </svg>
-                  <p>Neovim</p>
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://fedoraproject.org/"
-                  class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
-                >
-                  <svg
-                    class="size-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 135.47752 132.93699"
-                    version="1.1"
+                    </svg>
+                    <p>Neovim</p>
+                  </a>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://fedoraproject.org/"
+                    class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
                   >
-                    <g>
-                      <path
-                        fill="#51A2DA"
-                        d="M 67.77483,0 C 30.36665,0 0.07878,29.732002 0.0126,66.438752 H 0 v 51.430478 h 0.0126 c 0.0174,8.3247 6.90194,15.06782 15.39209,15.06782 h 52.37676 c 37.41481,-0.0238 67.69606,-29.75187 67.69606,-66.438739 5e-5,-36.70675 -30.32095,-66.438755 -67.76224,-66.438755 z"
-                      />
-                      <path
-                        fill="#FFFFFF"
-                        d="m 81.54629,27.337877 c -10.56799,0 -19.90324,7.801562 -21.19561,18.038694 -0.0868,0.856948 -0.11179,1.474652 -0.11679,2.25154 l 0.0124,41.854812 c 0,8.0289 -6.12782,13.493227 -13.78418,13.493227 -7.66691,0 -13.8436,-6.008637 -13.8436,-13.506147 0.12574,-8.230728 6.84267,-13.450867 14.67766,-13.678237 h 0.0419 l 7.95404,-0.07183 V 64.668931 l -7.95404,0.05891 c -14.2605,-0.12574 -25.57978,10.82588 -25.99324,24.748872 0,13.539207 11.34236,24.576797 25.11319,24.576797 12.98996,0 23.80035,-9.95243 24.9809,-22.406387 0.1702,-4.239107 0.0873,-9.833503 0.0873,-9.833503 0.0238,-2.303511 -0.0365,-1.476328 -0.0124,-6.050278 l 9.86659,-0.07183 c 7.6344,0.05295 7.54863,-11.225802 -0.0879,-11.070643 l -9.7808,0.07131 c 0,-5.677739 0.0911,-11.320375 0,-17.006713 0.007,-4.918056 4.7563,-9.264033 10.02574,-9.264033 5.27077,0 10.84585,2.580457 10.84585,9.264033 0,0.954889 -0.0195,1.510723 -0.0734,1.864484 -0.58829,3.099594 1.57066,6.061962 4.75165,6.509166 3.18098,0.442039 6.10201,-1.811142 6.41718,-4.94647 0.18261,-1.239441 0.1757,-2.332945 0.1757,-3.426148 0,-11.785592 -10.74013,-20.32899 -22.11545,-20.32899 z"
-                      />
-                    </g>
-                  </svg>
+                    <svg
+                      class="size-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 135.47752 132.93699"
+                      version="1.1"
+                    >
+                      <g>
+                        <path
+                          fill="#51A2DA"
+                          d="M 67.77483,0 C 30.36665,0 0.07878,29.732002 0.0126,66.438752 H 0 v 51.430478 h 0.0126 c 0.0174,8.3247 6.90194,15.06782 15.39209,15.06782 h 52.37676 c 37.41481,-0.0238 67.69606,-29.75187 67.69606,-66.438739 5e-5,-36.70675 -30.32095,-66.438755 -67.76224,-66.438755 z"
+                        />
+                        <path
+                          fill="#FFFFFF"
+                          d="m 81.54629,27.337877 c -10.56799,0 -19.90324,7.801562 -21.19561,18.038694 -0.0868,0.856948 -0.11179,1.474652 -0.11679,2.25154 l 0.0124,41.854812 c 0,8.0289 -6.12782,13.493227 -13.78418,13.493227 -7.66691,0 -13.8436,-6.008637 -13.8436,-13.506147 0.12574,-8.230728 6.84267,-13.450867 14.67766,-13.678237 h 0.0419 l 7.95404,-0.07183 V 64.668931 l -7.95404,0.05891 c -14.2605,-0.12574 -25.57978,10.82588 -25.99324,24.748872 0,13.539207 11.34236,24.576797 25.11319,24.576797 12.98996,0 23.80035,-9.95243 24.9809,-22.406387 0.1702,-4.239107 0.0873,-9.833503 0.0873,-9.833503 0.0238,-2.303511 -0.0365,-1.476328 -0.0124,-6.050278 l 9.86659,-0.07183 c 7.6344,0.05295 7.54863,-11.225802 -0.0879,-11.070643 l -9.7808,0.07131 c 0,-5.677739 0.0911,-11.320375 0,-17.006713 0.007,-4.918056 4.7563,-9.264033 10.02574,-9.264033 5.27077,0 10.84585,2.580457 10.84585,9.264033 0,0.954889 -0.0195,1.510723 -0.0734,1.864484 -0.58829,3.099594 1.57066,6.061962 4.75165,6.509166 3.18098,0.442039 6.10201,-1.811142 6.41718,-4.94647 0.18261,-1.239441 0.1757,-2.332945 0.1757,-3.426148 0,-11.785592 -10.74013,-20.32899 -22.11545,-20.32899 z"
+                        />
+                      </g>
+                    </svg>
 
-                  <p>Fedora</p>
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://hyprland.org/"
-                  class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+                    <p>Fedora</p>
+                  </a>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://hyprland.org/"
+                    class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+                  >
+                    <img
+                      class="size-6 rounded-full scale-110"
+                      src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Hyprland_logo.png"
+                    ></img>
+                    <p>Hyprland</p>
+                  </a>
+                  <div class="flex flex-row flex-wrap gap-2 text-[#50E2FF] text-sm my-2">
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="text-lg pt-0.5 flex items-center justify-center px-4 rounded-full border-2"
+                      href="https://www.solidjs.com/"
+                    >
+                      SolidJS
+                    </a>
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
+                      href="https://tailwindcss.com/"
+                    >
+                      Tailwind
+                    </a>
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
+                      href="https://go.dev/"
+                    >
+                      Go
+                    </a>
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
+                      href="https://echo.labstack.com/"
+                    >
+                      Echo
+                    </a>
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="px-5 pt-0.5 text-lg items-center justify-center flex rounded-full w-fit bg-linear-to-r from-[#6335E1] to-[#FC7F42] text-white"
+                      href="https://senko.digital/"
+                    >
+                      senko.digital
+                    </a>
+                  </div>
+                </SwitchCard>
+              </div>
+              <div class="w-full flex mb-6 flex-row">
+                <div class="flex text-black w-full text-xs font-[Overpass] justify-center rounded-full grow-1 px-8 py-4 bg-white text-lg transition-all">
+                  This website is built by a human. <br />
+                  AI training on its content or source code is prohibited.
+                </div>
+                <button
+                  onClick={(e) => {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                    window.location.hash = "";
+                    history.pushState(
+                      "",
+                      document.title,
+                      window.location.pathname,
+                    );
+                    e.preventDefault();
+                  }}
+                  class="flex flex-row gap-1 items-center justify-center bg-black outline-2 outline-white -outline-offset-2 px-4 rounded-full aspect-square items-center justify-center"
                 >
-                  <img
-                    class="size-6 rounded-full scale-110"
-                    src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Hyprland_logo.png"
-                  ></img>
-                  <p>Hyprland</p>
-                </a>
-                <div class="flex flex-row flex-wrap gap-2 text-[#50E2FF] text-sm my-2">
-                  <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    class="text-lg pt-0.5 flex items-center justify-center px-4 rounded-full border-2"
-                    href="https://www.solidjs.com/"
-                  >
-                    SolidJS
-                  </a>
-                  <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
-                    href="https://tailwindcss.com/"
-                  >
-                    Tailwind
-                  </a>
-                  <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
-                    href="https://go.dev/"
-                  >
-                    Go
-                  </a>
-                  <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
-                    href="https://echo.labstack.com/"
-                  >
-                    Echo
-                  </a>
-                  <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    class="px-5 pt-0.5 text-lg items-center justify-center flex rounded-full w-fit bg-linear-to-r from-[#6335E1] to-[#FC7F42] text-white"
-                    href="https://senko.digital/"
-                  >
-                    senko.digital
-                  </a>
-                </div>
-              </SwitchCard>
-              <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
-                <p class="mt-[2px]">18 yo</p>
+                  <div class="rotate-180">
+                    <ArrowDown></ArrowDown>
+                  </div>
+                </button>
               </div>
-              <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
-                <p class="mt-[2px]">ru/en</p>
-              </div>
-              <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
-                <p class="mt-[2px]">he/him</p>
-              </div>
-              <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
-                <p class="mt-[2px]">gmt+2</p>
-              </div>
-              <SocialTag text="mobile" />
-              <SocialTag text="web" />
-              <SocialTag text="designer" />
-            </div>
-            <div class="w-full flex mb-6 flex-row">
-              <div class="flex w-full text-xs font-[Overpass] justify-center rounded-full grow-1 px-2 py-4 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
-                This website is built by a human. <br />
-                AI training on its content or source code is prohibited.
-              </div>
-              <button
-                onClick={(e) => {
-                  document.body.scrollTop = 0;
-                  document.documentElement.scrollTop = 0;
-                  window.location.hash = "";
-                  history.pushState(
-                    "",
-                    document.title,
-                    window.location.pathname,
-                  );
-                  e.preventDefault();
-                }}
-                class="flex flex-row gap-1 items-center justify-center bg-[#2B251F] px-4 rounded-full aspect-square items-center justify-center"
-              >
-                <div class="rotate-180">
-                  <ArrowDown></ArrowDown>
-                </div>
-              </button>
             </div>
           </div>
         </div>
