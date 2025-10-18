@@ -572,7 +572,18 @@ export default function App() {
               </MessageProvider>
             </section>
             <section class="bg-[#2B251F] p-6 max-w-[800px] rounded-2xl flex flex-col w-fit h-fit gap-4">
-              <h2 class="text-5xl">About</h2>
+              <div class="flex flex-row justify-between items-center">
+                <h2 class="text-5xl">About</h2>
+                <a href="/support">
+                  <svg
+                    class="size-10 fill-yellow-300 animate-[landing_10s_ease-in-out_infinite]"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 960 960"
+                  >
+                    <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                  </svg>
+                </a>
+              </div>
               <div class="flex flex-col gap-3 font-[Overpass] text-white">
                 <a
                   href="https://school.hse.ru/"

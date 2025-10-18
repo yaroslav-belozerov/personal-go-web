@@ -8,7 +8,18 @@ export default function Meta() {
     <section id="info" class="flex flex-col mt-6">
       <div class="flex justify-between flex-col">
         <div class="flex flex-col gap-4">
-          <h2 class="ms-6 text-white text-4xl mt-6">About me and site</h2>
+          <div class="mt-6 flex flex-row justify-between items-center w-full">
+            <h2 class="ms-6 text-white text-4xl">About me and site</h2>
+            <a href="/support">
+              <svg
+                class="size-10 fill-yellow-300 me-6 animate-[landing_10s_ease-in-out_infinite]"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+              >
+                <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+              </svg>
+            </a>
+          </div>
           <div class="flex flex-col mx-4 gap-3 font-[Overpass] text-white">
             <a
               href="https://school.hse.ru/"
