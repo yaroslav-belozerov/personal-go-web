@@ -2,6 +2,7 @@ export default function Badge({ src, link }: { src: string; link?: string }) {
   if (link == null) {
     return (
       <img
+        loading="lazy"
         src={src}
         style="image-rendering: pixelated;"
         alt=""
@@ -12,6 +13,7 @@ export default function Badge({ src, link }: { src: string; link?: string }) {
     return (
       <a href={link} target="_blank" rel="noopener noreferrer">
         <img
+          loading="lazy"
           style="image-rendering: pixelated;"
           src={src}
           alt=""
