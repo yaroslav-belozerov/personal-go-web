@@ -440,6 +440,10 @@ export default function App() {
                   link="https://about.akarpov.ru/"
                   src="https://otomir23.me/_astro/sanspie.BIFJ1uLz.gif"
                 ></Badge>
+                <Badge
+                  link="https://monomere.cc/"
+                  src="https://monomere.cc/buttons/button.gif"
+                ></Badge>
               </div>
             </section>
           </div>
