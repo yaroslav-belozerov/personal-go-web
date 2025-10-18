@@ -356,7 +356,7 @@ export default function Meta() {
                   );
                   e.preventDefault();
                 }}
-                class="flex flex-row gap-1 items-center justify-center bg-[#2B251F] rounded-full aspect-square items-center justify-center"
+                class="flex flex-row gap-1 items-center justify-center bg-[#2B251F] px-4 rounded-full aspect-square items-center justify-center"
               >
                 <div class="rotate-180">
                   <ArrowDown></ArrowDown>

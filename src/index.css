@@ -1,6 +1,22 @@
 @import "tailwindcss";
 
 @font-face {
+    font-family: "Inter";
+    src: url("/static/fonts/Inter-Regular.ttf") format("truetype");
+    font-weight: 100 900; /* Variable font weight range */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/static/fonts/Inter-Italic.ttf") format("truetype");
+    font-weight: 100 900; /* Variable font weight range */
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
     font-family: "Instrument";
     src: url("/static/fonts/InstrumentSerif-Regular.ttf") format("truetype");
     font-style: normal;
@@ -59,6 +75,13 @@
     src: url("/static/fonts/Overpass-Italic.ttf") format("truetype-variations");
     font-weight: 100 900;
     font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url("/static/fonts/Oswald-SemiBold.ttf");
+    font-style: normal;
     font-display: swap;
 }
 

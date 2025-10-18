@@ -6,6 +6,9 @@ const Main = lazy(() => import("./routes/main/Main"));
 const Write = lazy(() => import("./routes/write/Write"));
 const Lesya = lazy(() => import("./routes/lesya/Lesya"));
 const Webring = lazy(() => import("./routes/webring/Webring"));
+const PreviewHolder = lazy(
+  () => import("./routes/main/project_previews/PreviewHolder"),
+);
 const Blog = lazy(() => import("./routes/blog/Blog"));
 const Blogpost = lazy(() => import("./routes/blog/Blogpost"));
 const BusinessGame = lazy(() => import("./routes/business-game/BusinessGame"));
@@ -24,6 +27,7 @@ export default function App() {
         <Route path="/business-game" component={BusinessGame} />
         <Route path="/business-game/stats" component={BusinessStats} />
         <Route path="/lesya" component={Lesya} />
+        <Route path="/preview" component={PreviewHolder} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={Blogpost} />
         <Route path="/" component={Main} />

@@ -58,7 +58,7 @@ export default function Landing() {
             href="/webring"
             class={`bg-linear-to-r from-[#FF3737] to-[#FF3737]/0 w-full gap-2 text-white pl-4 py-4 flex items-center transition-all animate-[round-other_4s_ease-in-out_infinite]`}
           >
-            <div class="flex flex-row gap-3 bg-black py-2 px-4 rounded-full">
+            <div class="flex flex-row gap-3 bg-black py-2 pl-4 pr-6 rounded-full">
               <svg
                 class="size-8 fill-white mt-1"
                 xmlns="http://www.w3.org/2000/svg"

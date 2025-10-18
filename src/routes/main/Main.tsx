@@ -902,7 +902,7 @@ export default function App() {
                   <SocialTag text="mobile" />
                   <SocialTag text="web" />
                   <SocialTag text="designer" />
-                  <div class="flex w-full mb-3 relative text-sm font-[Overpass] justify-center rounded-full grow-1 px-2 py-4 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
+                  <div class="flex w-full mb-3 relative text-sm font-[Overpass] justify-center rounded-full grow-1 px-4 py-4 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
                     This website is built by a human. <br />
                     AI training on its content or source code is prohibited.
                   </div>
