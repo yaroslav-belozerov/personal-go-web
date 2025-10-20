@@ -24,7 +24,7 @@ export default function Blogpost() {
       <head>
         <link
           rel="stylesheet"
-          href="https:/tarakoshka.tech/static/blog.css"
+          href="https://tarakoshka.tech/static/blog.css"
           type="text/css"
         ></link>
       </head>
