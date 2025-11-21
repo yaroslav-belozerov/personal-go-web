@@ -38,7 +38,7 @@ export default function App() {
         <Current></Current>
         <Meta></Meta>
       </main>
-      <main class="page md:flex hidden flex-col p-6">
+      <main class="page md:flex hidden flex-col p-6 bg-[#1a1611]">
         <nav class="flex flex-row items-center gap-4">
           <h1 class="italic text-white text-7xl me-4">
             <a href="https://tarakoshka.tech">tarakoshka.tech</a>

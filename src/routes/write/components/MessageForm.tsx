@@ -27,7 +27,7 @@ const MessageForm: Component = () => {
       onsubmit={async (e) => {
         e.preventDefault();
       }}
-      class="flex font-[Overpass] py-4 bg-[#2B251F] mt-8 px-8 mb-8 md:flex-wrap md:flex-row gap-4 flex-col z-2 py-8"
+      class="flex font-[Overpass] py-4 px-8 md:flex-wrap md:flex-row gap-4 flex-col z-2 py-8"
     >
       <textarea
         value={text()}
@@ -35,8 +35,8 @@ const MessageForm: Component = () => {
         maxlength="256"
         id="message"
         onChange={(e) => setText(e.target.value)}
-        class="flex md:grow-1 md:text-xl justify-center rounded-xl p-3 bg-[#1A1611] transition-all outline-none"
-        placeholder="Your message"
+        class="flex md:grow-1 md:text-xl justify-center p-3 bg-zinc-900 transition-all outline-none"
+        placeholder="Message"
       />
       <input
         value={creator()}
@@ -44,22 +44,29 @@ const MessageForm: Component = () => {
         maxlength="64"
         type="text"
         onChange={(e) => setCreator(e.target.value)}
-        class="flex md:text-xl justify-center rounded-xl p-3 bg-[#1A1611] transition-all outline-none"
-        placeholder="You (may be blank)"
+        class="flex md:text-xl justify-center p-3 bg-zinc-900 transition-all outline-none"
+        placeholder="Author (may be blank)"
       />
       {sent() ? (
-        <div class="flex justify-center rounded-xl p-3 bg-[#2B251F] transition-all">
+        <div class="flex justify-center rounded-xl p-3 bg-zinc-900 transition-all">
           <i class="px-2 py-1 text-lg">Thank you!</i>
         </div>
       ) : (
         <button
           type="submit"
-          class="flex cursor-pointer md:px-6 md:pe-8 md:hover:scale-95 transition-all justify-center rounded-xl p-3 bg-[#1A1611] transition-all"
+          class="flex cursor-pointer md:px-6 group md:pe-8 md:hover:bg-white md:hover:text-black transition-all justify-center p-3 bg-[#0C12C9] transition-all"
           onClick={sendMessage}
         >
-          <div class="flex md:gap-4 flex-row items-center text-white">
-            <p class="px-2 md:text-2xl py-1 text-lg">Send</p>
-            <SendIcon />
+          <div class="flex flex-row items-center">
+            <p class="px-2 text-2xl pt-1">Send</p>
+            <svg
+              class="size-8 md:group-hover:scale-125 transition-all md:group-hover:translate-x-1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 -960 960 960"
+              fill="currentColor"
+            >
+              <path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z" />
+            </svg>
           </div>
         </button>
       )}

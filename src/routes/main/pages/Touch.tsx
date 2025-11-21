@@ -23,7 +23,7 @@ export default function Touch() {
       <div class="flex flex-col gap-2">
         <div class="flex flex-row">
           <A
-            class="group text-white relative flex flex-col gap-2 p-4 pl-0 justify-center aspect-square items-center rounded-r-full bg-[#0c12c9] transition-all"
+            class="group text-white relative flex flex-col gap-2 py-4 px-8 justify-center aspect-square items-center rounded-r-full bg-[#0c12c9] transition-all"
             href="/blog"
           >
             <span class="text-6xl leading-0 p-8 italic transition-all">tt</span>
@@ -69,7 +69,7 @@ export default function Touch() {
               class="p-4 rounded-3xl transition-all h-fit flex items-center justify-center"
               href="mailto:me@tarakoshka.tech"
             >
-              <svg
+              {/*<svg
                 class="size-12 text-white fill-white"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -82,6 +82,21 @@ export default function Touch() {
                   d="M5.96802 4H18.032C18.4706 3.99999 18.8491 3.99998 19.1624 4.02135C19.4922 4.04386 19.8221 4.09336 20.1481 4.22836C20.8831 4.53284 21.4672 5.11687 21.7716 5.85195C21.9066 6.17788 21.9561 6.50779 21.9787 6.83762C22 7.15088 22 7.52936 22 7.96801V16.032C22 16.4706 22 16.8491 21.9787 17.1624C21.9561 17.4922 21.9066 17.8221 21.7716 18.1481C21.4672 18.8831 20.8831 19.4672 20.1481 19.7716C19.8221 19.9066 19.4922 19.9561 19.1624 19.9787C18.8491 20 18.4706 20 18.032 20H5.96801C5.52936 20 5.15088 20 4.83762 19.9787C4.50779 19.9561 4.17788 19.9066 3.85195 19.7716C3.11687 19.4672 2.53284 18.8831 2.22836 18.1481C2.09336 17.8221 2.04386 17.4922 2.02135 17.1624C1.99998 16.8491 1.99999 16.4706 2 16.032V7.96802C1.99999 7.52937 1.99998 7.15088 2.02135 6.83762C2.04386 6.50779 2.09336 6.17788 2.22836 5.85195C2.53284 5.11687 3.11687 4.53284 3.85195 4.22836C4.17788 4.09336 4.50779 4.04386 4.83762 4.02135C5.15088 3.99998 5.52937 3.99999 5.96802 4ZM4.31745 6.27777C4.68114 5.86214 5.3129 5.82002 5.72854 6.1837L11.3415 11.095C11.7185 11.4249 12.2815 11.4249 12.6585 11.095L18.2715 6.1837C18.6871 5.82002 19.3189 5.86214 19.6825 6.27777C20.0462 6.69341 20.0041 7.32517 19.5885 7.68885L13.9755 12.6002C12.8444 13.5899 11.1556 13.5899 10.0245 12.6002L4.41153 7.68885C3.99589 7.32517 3.95377 6.69341 4.31745 6.27777Z"
                   fill="currentColor"
                 />
+              </svg>*/}
+              <svg
+                class="size-12 text-white fill-white"
+                viewBox="0 -2.5 20 20"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  transform="translate(-340.000000, -922.000000)"
+                  fill="currentColor"
+                >
+                  <g transform="translate(56.000000, 160.000000)">
+                    <path d="M294,774.474 L284,765.649 L284,777 L304,777 L304,765.649 L294,774.474 Z M294.001,771.812 L284,762.981 L284,762 L304,762 L304,762.981 L294.001,771.812 Z"></path>
+                  </g>
+                </g>
               </svg>
             </a>
             <button
@@ -93,14 +108,14 @@ export default function Touch() {
               }}
             >
               <svg
-                class={`size-12 ${openDetail() == DetailType.Others ? "text-[#0C12C9]" : "rotate-180"} transition-all`}
+                class={`size-12 ${openDetail() == DetailType.Others ? "bg-[#0C12C9]" : "rotate-180"} transition-all`}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                stroke-linecap="square"
+                stroke-linejoin="arcs"
               >
                 <path d="M12 5v14M5 12l7 7 7-7" />
               </svg>
@@ -110,7 +125,7 @@ export default function Touch() {
                     initial={{ opacity: 0, transform: "translateY(5%)" }}
                     animate={{ opacity: 1, transform: "translateX(0)" }}
                     exit={{ opacity: 0, transform: "translateY(5%)" }}
-                    class="bottom-full right-0 absolute bg-linear-[180deg,black,black_90%,#0C12C9] outline-3 outline-[#0C12C9] rounded-xl px-2 py-4 mb-2"
+                    class="bottom-full right-0 absolute bg-black outline-3 outline-[#0C12C9] px-2 py-4 mb-2"
                   >
                     <div class="flex flex-col">
                       <span class="text-3xl">Other stuff</span>
@@ -273,8 +288,8 @@ export default function Touch() {
           )}
         </MessageProvider>
       </div>
-      <div id="badges" class="flex flex-col w-full gap-4 mt-6">
-        <h2 class="text-white mb-2 text-center text-5xl">Buttons</h2>
+      <div id="badges" class="flex flex-col w-full gap-4 pt-6">
+        <h2 class="text-white mb-2 text-center text-5xl">Badges</h2>
         <div class="flex flex-row flex-wrap gap-2 mb-2 justify-center">
           <Badge
             link="https://tarakoshka.tech/"

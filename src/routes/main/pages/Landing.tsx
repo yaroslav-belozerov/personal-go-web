@@ -12,31 +12,39 @@ import LandingLink from "../components/LandingLink";
 import { Motion } from "solid-motionone";
 import { cubicBezier, easeInOut } from "motion";
 
+function star(delay: number) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      class="stroke-white size-10 inline-block draw mx-1"
+      style={{ "animation-delay": `${delay}s` }}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2L10.6985 7.20599C10.4445 8.22185 10.3176 8.72978 10.0531 9.14309C9.81915 9.50868 9.50868 9.81915 9.14309 10.0531C8.72978 10.3176 8.22185 10.4445 7.20599 10.6985L2 12L7.20599 13.3015C8.22185 13.5555 8.72978 13.6824 9.14309 13.9469C9.50868 14.1808 9.81915 14.4913 10.0531 14.8569C10.3176 15.2702 10.4445 15.7782 10.6985 16.794L12 22L13.3015 16.794C13.5555 15.7782 13.6824 15.2702 13.9469 14.8569C14.1808 14.4913 14.4913 14.1808 14.8569 13.9469C15.2702 13.6824 15.7782 13.5555 16.794 13.3015L22 12L16.794 10.6985C15.7782 10.4445 15.2702 10.3176 14.8569 10.0531C14.4913 9.81915 14.1808 9.50868 13.9469 9.14309C13.6824 8.72978 13.5555 8.22185 13.3015 7.20599L12 2Z"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function Landing() {
   const flyInEase = cubicBezier(0.76, 0, 0.24, 1);
 
   return (
     <section class="relative min-h-svh bg-black max-h-svh max-w-screen flex items-center flex-col">
-      <img
-        src="https://tarakoshka.tech/static/sky.png"
-        class="absolute -top-2 w-full mix-blend-hard-light animate-[rot-bg_90s_linear_infinite] origin-top"
-      ></img>
-      <img
-        src="https://tarakoshka.tech/static/sky.png"
-        class="absolute -top-2 w-full mix-blend-hard-light animate-[rot-bg-compliment_90s_linear_infinite] origin-top"
-      ></img>
-      <img
-        src="https://tarakoshka.tech/static/sky.png"
-        class="absolute -top-2 w-full mix-blend-hard-light animate-[rot-bg_60s_linear_infinite] origin-top"
-      ></img>
-      <img
-        src="https://tarakoshka.tech/static/sky.png"
-        class="absolute -top-2 w-full mix-blend-hard-light animate-[rot-bg_120s_linear_infinite] origin-top"
-      ></img>
-      <header class="text-6xl z-0 px-8 w-full py-4 text-white outline-white -outline-offset-2">
-        <a href="https://tarakoshka.tech" class="overflow-clip">
+      <header class="text-6xl z-0 w-full py-4 text-white outline-white -outline-offset-2 bg-black">
+        <a href="https://tarakoshka.tech" class="overflow-hidden w-full">
           <h1 class="text-7xl text-center text-nowrap animate-[marquee-content_10s_linear_infinite]">
-            tarakoshka.tech
+            {star(0)}
+            {star(0.2)}
+            {star(0.4)}
+            <span class="mx-2">tarakoshka.tech</span>
+            {star(0.4)}
+            {star(0.2)}
+            {star(0)}
           </h1>
         </a>
       </header>
@@ -60,8 +68,8 @@ export default function Landing() {
                     <Download />
                   </div>
                   <div class="flex flex-col text-2xl">
-                    <span class="leading-4">See my</span>
-                    <span>Resume</span>
+                    <span class="leading-6 italic">get</span>
+                    <span class="text-3xl">resume</span>
                   </div>
                 </div>
               </a>
@@ -81,8 +89,8 @@ export default function Landing() {
                     <Cat />
                   </div>
                   <div class="flex flex-col text-2xl">
-                    <span class="leading-4">Look at</span>
-                    <span>My Cat</span>
+                    <span class="leading-6 italic">look at</span>
+                    <span class="text-3xl">my cat</span>
                   </div>
                 </div>
               </a>
@@ -98,7 +106,7 @@ export default function Landing() {
               href="/webring"
               class={`bg-linear-to-r from-[#FF3737] to-[#FF3737]/0 w-full gap-2 text-white pl-4 py-4 flex items-center transition-all animate-[round-other_4s_ease-in-out_infinite]`}
             >
-              <div class="flex flex-row gap-3 bg-black py-2 pl-4 pr-6 rounded-full">
+              <div class="flex flex-row gap-2 bg-black py-2 pl-4 pr-6 rounded-full">
                 <svg
                   class="size-8 fill-white mt-1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +114,9 @@ export default function Landing() {
                 >
                   <path d="M360-240 120-480l240-240 56 56-144 144h488v-160h80v240H272l144 144-56 56Z" />
                 </svg>
-                <h2 class="text-3xl italic">Enter the webring</h2>
+                <h2 class="text-3xl pb-1">
+                  <span class="italic pe-1">enter</span> the webring
+                </h2>
               </div>
             </A>
           </Motion.a>
