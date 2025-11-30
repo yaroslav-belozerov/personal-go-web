@@ -1,7 +1,7 @@
 export function ArrowDown() {
   return (
     <svg
-      class="md:scale-200"
+      class="lg:scale-200"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -20,7 +20,7 @@ export function ArrowDown() {
 export function ExternalLink() {
   return (
     <svg
-      class="md:scale-175"
+      class="lg:scale-175"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -41,7 +41,7 @@ export function ExternalLink() {
 export function SendMessage() {
   return (
     <svg
-      class="md:scale-175"
+      class="lg:scale-175"
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -102,7 +102,7 @@ export function Cat() {
 export function Close() {
   return (
     <svg
-      class="md:scale-160"
+      class="lg:scale-160"
       xmlns="http://www.w3.org/2000/svg"
       height="24px"
       viewBox="0 -960 960 960"
@@ -117,7 +117,7 @@ export function Close() {
 export function Share() {
   return (
     <svg
-      class="md:scale-160"
+      class="lg:scale-160"
       xmlns="http://www.w3.org/2000/svg"
       height="24px"
       viewBox="0 -960 960 960"

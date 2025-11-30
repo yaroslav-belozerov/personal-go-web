@@ -25,44 +25,44 @@ export default function Lesya() {
           onLoad="this.style.opacity = 1;"
         />
 
-        <div class="flex p-4 flex-col items-end absolute top-0 right-0 max-md:gap-4 md:justify-evenly min-h-screen max-h-screen">
-          <div class="flex flex-row w-screen md:ps-16 ps-8 max-md:pt-2 justify-between">
+        <div class="flex p-4 flex-col items-end absolute top-0 right-0 max-lg:gap-4 lg:justify-evenly min-h-screen max-h-screen">
+          <div class="flex flex-row w-screen lg:ps-16 ps-8 max-lg:pt-2 justify-between">
             <a
               href="/"
-              class="md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-12 md:size-16 flex justify-center items-center rounded-2xl"
+              class="lg:hover:scale-90 transition-all lg:hover:bg-white text-green-900 bg-green-400 size-12 lg:size-16 flex justify-center items-center rounded-2xl"
             >
               <BackArrow />
             </a>
-            <h1 class="text-4xl md:text-8xl font-[Oi] text-white text-nowrap">
+            <h1 class="text-4xl lg:text-8xl font-[Oi] text-white text-nowrap">
               Lesya{" "}
-              <span class="text-green-400 text-3xl md:text-6xl align-super">
+              <span class="text-green-400 text-3xl lg:text-6xl align-super">
                 TM
               </span>
             </h1>
           </div>
 
-          <div class="flex text-green-900 max-md:ps-8 flex-row max-md:w-full md:flex-col max-md:space-x-2 md:space-y-4 justify-between">
+          <div class="flex text-green-900 max-lg:ps-8 flex-row max-lg:w-full lg:flex-col max-lg:space-x-2 lg:space-y-4 justify-between">
             <a
               href="#gallery-page-1"
-              class="max-md:py-4 md:hover:scale-90 transition-all md:hover:bg-white bg-green-400 md:w-20 md:aspect-square flex justify-center items-center rounded-2xl grow-1"
+              class="max-lg:py-4 lg:hover:scale-90 transition-all lg:hover:bg-white bg-green-400 lg:w-20 lg:aspect-square flex justify-center items-center rounded-2xl grow-1"
             >
               <Photos />
             </a>
             <a
               href="#happy-page"
-              class="max-md:py-4 md:hover:scale-90 transition-all md:hover:bg-white bg-green-400 md:w-20 md:aspect-square flex justify-center items-center rounded-2xl grow-1"
+              class="max-lg:py-4 lg:hover:scale-90 transition-all lg:hover:bg-white bg-green-400 lg:w-20 lg:aspect-square flex justify-center items-center rounded-2xl grow-1"
             >
               <Happy />
             </a>
             <a
               href="#like-page"
-              class="max-md:py-4 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 md:w-20 md:aspect-square flex justify-center items-center rounded-2xl grow-1"
+              class="max-lg:py-4 lg:hover:scale-90 transition-all lg:hover:bg-white text-green-900 bg-green-400 lg:w-20 lg:aspect-square flex justify-center items-center rounded-2xl grow-1"
             >
               <HeartPlus />
             </a>
           </div>
 
-          <div class="text-right font-[Sora] right-8 bottom-8 md:text-8xl text-4xl font-bold text-white">
+          <div class="text-right font-[Sora] right-8 bottom-8 lg:text-8xl text-4xl font-bold text-white">
             The best kitty
             <br /> in the world!
           </div>

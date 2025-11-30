@@ -26,13 +26,13 @@ export function GalleryPage1() {
         <div class="flex flex-row gap-4">
           <a
             href="#catstart"
-            class="rotate-90 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-90 lg:hover:scale-90 transition-all lg:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
           <a
             href="#gallery-page-2"
-            class="rotate-270 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-270 lg:hover:scale-90 transition-all lg:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
@@ -68,7 +68,7 @@ export function GalleryPage1() {
         </div>
 
         {/* Right two columns spanned by the large image */}
-        <div class="w-[60%] max-md:max-h-90 overflow-hidden rounded-xl">
+        <div class="w-[60%] max-lg:max-h-90 overflow-hidden rounded-xl">
           <img
             draggable="false"
             src={images[2]}
@@ -104,20 +104,20 @@ export function GalleryPage2() {
         <div class="flex flex-row gap-4">
           <a
             href="#gallery-page-1"
-            class="rotate-90 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-90 lg:hover:scale-90 transition-all lg:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
           <a
             href="#happy-page"
-            class="rotate-270 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-270 lg:hover:scale-90 transition-all lg:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
         </div>
       </div>
 
-      <div class="md:flex hidden flex-row items-center gap-4 grow-1">
+      <div class="lg:flex hidden flex-row items-center gap-4 grow-1">
         <div class="overflow-hidden rounded-xl flex-1">
           <img
             draggable="false"
@@ -148,7 +148,7 @@ export function GalleryPage2() {
       </div>
 
       <div
-        class="md:hidden relative block min-w-full rounded-4xl flex flex-row overflow-scroll"
+        class="lg:hidden relative block min-w-full rounded-4xl flex flex-row overflow-scroll"
         style="scrollbar-width: none;"
       >
         <img
@@ -194,20 +194,20 @@ export function HappyPane() {
         <div class="flex flex-row gap-4">
           <a
             href="#gallery-page-2"
-            class="rotate-90 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-90 lg:hover:scale-90 transition-all lg:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
           <a
             href="#like-page"
-            class="rotate-270 md:hover:scale-90 transition-all md:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
+            class="rotate-270 lg:hover:scale-90 transition-all lg:hover:bg-white text-green-900 bg-green-400 size-16 flex justify-center items-center rounded-2xl"
           >
             <BackArrow />
           </a>
         </div>
       </div>
 
-      <div class="md:hidden mb-8 flex flex-col gap-4">
+      <div class="lg:hidden mb-8 flex flex-col gap-4">
         <div class="relative w-full mb-4">
           <img
             draggable="false"
@@ -219,7 +219,7 @@ export function HappyPane() {
         <ShowWhenInView index={1}>
           <div class="flex flex-row gap-4 items-center">
             <RoundCheck />
-            <h2 class="text-lg md:text-4xl font-[Sora]">
+            <h2 class="text-lg lg:text-4xl font-[Sora]">
               Eating six times a day
             </h2>
           </div>
@@ -227,7 +227,7 @@ export function HappyPane() {
         <ShowWhenInView index={2}>
           <div class="flex flex-row gap-4 items-center">
             <RoundCheck />
-            <h2 class="text-lg md:text-4xl font-[Sora]">
+            <h2 class="text-lg lg:text-4xl font-[Sora]">
               Chewing on wires and clothes
             </h2>
           </div>
@@ -235,7 +235,7 @@ export function HappyPane() {
         <ShowWhenInView index={3}>
           <div class="flex flex-row gap-4 items-center">
             <RoundCheck />
-            <h2 class="text-lg md:text-4xl font-[Sora]">
+            <h2 class="text-lg lg:text-4xl font-[Sora]">
               Laying between shoes
             </h2>
           </div>
@@ -243,7 +243,7 @@ export function HappyPane() {
         <ShowWhenInView index={4}>
           <div class="flex flex-row gap-4 items-center">
             <RoundCheck />
-            <h2 class="text-lg md:text-4xl font-[Sora]">
+            <h2 class="text-lg lg:text-4xl font-[Sora]">
               Screaming at night for no reason
             </h2>
           </div>
@@ -251,14 +251,14 @@ export function HappyPane() {
         <ShowWhenInView index={5}>
           <div class="flex flex-row gap-4 items-center">
             <RoundCheck />
-            <h2 class="text-lg md:text-4xl font-[Sora]">
+            <h2 class="text-lg lg:text-4xl font-[Sora]">
               Sneezing in your face
             </h2>
           </div>
         </ShowWhenInView>
       </div>
 
-      <div class="md:flex hidden items-center grow-1 pb-16 justify-center relative bg-green-900">
+      <div class="lg:flex hidden items-center grow-1 pb-16 justify-center relative bg-green-900">
         {/* Main content */}
         <div class="relative flex flex-col items-center me-8 mb-8">
           {/* Cat image in center */}
@@ -275,7 +275,7 @@ export function HappyPane() {
           {/* Eating six times a day */}
           <ShowWhenInView index={0}>
             <div class="absolute top-[15%] text-white text-center left-[-110%]">
-              <h2 class="text-2xl md:text-4xl font-[Sora] whitespace-nowrap">
+              <h2 class="text-2xl lg:text-4xl font-[Sora] whitespace-nowrap">
                 Eating six
                 <br /> times a day
               </h2>
@@ -290,7 +290,7 @@ export function HappyPane() {
           {/* Chewing on wires and clothes */}
           <ShowWhenInView index={1}>
             <div class="absolute text-white text-center absolute top-[-10%] right-[-130%]">
-              <h2 class="text-2xl md:text-4xl font-[Sora] whitespace-nowrap">
+              <h2 class="text-2xl lg:text-4xl font-[Sora] whitespace-nowrap">
                 Chewing on
                 <br /> wires and clothes
               </h2>
@@ -306,7 +306,7 @@ export function HappyPane() {
           {/* Laying between shoes */}
           <ShowWhenInView index={2}>
             <div class="absolute overflow-visible top-[40%] right-[-135%] text-white text-center">
-              <h2 class="text-2xl md:text-4xl font-[Sora] whitespace-nowrap">
+              <h2 class="text-2xl lg:text-4xl font-[Sora] whitespace-nowrap">
                 Laying between <br />
                 shoes
               </h2>
@@ -321,7 +321,7 @@ export function HappyPane() {
           {/* Screaming at night for no reason */}
           <ShowWhenInView index={3}>
             <div class="absolute right-[-140%] top-[110%] text-white text-center">
-              <h2 class="text-2xl md:text-4xl font-[Sora] whitespace-nowrap">
+              <h2 class="text-2xl lg:text-4xl font-[Sora] whitespace-nowrap">
                 Screaming at night <br /> for no reason
               </h2>
               <img
@@ -335,7 +335,7 @@ export function HappyPane() {
           {/* Sneezing in your face */}
           <ShowWhenInView index={4}>
             <div class="absolute bottom-[-30%] right-[120%] text-white text-center">
-              <h2 class="text-2xl md:text-4xl font-[Sora] whitespace-nowrap">
+              <h2 class="text-2xl lg:text-4xl font-[Sora] whitespace-nowrap">
                 Sneezing
                 <br /> in your face
               </h2>

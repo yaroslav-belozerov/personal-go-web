@@ -39,11 +39,7 @@ export default function Landing() {
         <a href="https://tarakoshka.tech" class="overflow-hidden w-full">
           <h1 class="text-7xl text-center text-nowrap animate-[marquee-content_10s_linear_infinite]">
             {star(0)}
-            {star(0.2)}
-            {star(0.4)}
-            <span class="mx-2">tarakoshka.tech</span>
-            {star(0.4)}
-            {star(0.2)}
+            <span class="mx-3">tarakoshka.tech</span>
             {star(0)}
           </h1>
         </a>
@@ -63,12 +59,12 @@ export default function Landing() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div class="text-black ml-6 flex flex-col gap-3 justify-center items-start pt-2">
+                <div class="text-black ml-6 flex flex-col gap-5 justify-center items-start pt-2">
                   <div class="ml-1">
                     <Download />
                   </div>
                   <div class="flex flex-col text-2xl">
-                    <span class="leading-6 italic">get</span>
+                    <span class="leading-3 italic">get</span>
                     <span class="text-3xl">resume</span>
                   </div>
                 </div>
@@ -84,12 +80,12 @@ export default function Landing() {
                 href="/lesya"
                 class="relative z-0 transition-all outline-white -outline-offset-2 bg-[#00FF7B] grow-1 py-4 animate-[round_4s_ease-in-out_infinite_2s] flex flex-col justify-center"
               >
-                <div class="text-black ml-6 flex flex-col gap-3 justify-center items-start pt-2">
+                <div class="text-black ml-6 flex flex-col gap-5 justify-center items-start pt-2">
                   <div class="ml-1">
                     <Cat />
                   </div>
                   <div class="flex flex-col text-2xl">
-                    <span class="leading-6 italic">look at</span>
+                    <span class="leading-3 italic">look at</span>
                     <span class="text-3xl">my cat</span>
                   </div>
                 </div>
@@ -115,7 +111,7 @@ export default function Landing() {
                   <path d="M360-240 120-480l240-240 56 56-144 144h488v-160h80v240H272l144 144-56 56Z" />
                 </svg>
                 <h2 class="text-3xl pb-1">
-                  <span class="italic pe-1">enter</span> the webring
+                  <span class="italic pe-[2px]">enter</span> the webring
                 </h2>
               </div>
             </A>
@@ -143,7 +139,7 @@ export default function Landing() {
               src="https://tarakoshka.tech/static/scraps.png"
             ></img>
             <Motion.div
-              initial={{ transform: "translateX(-10%)", opacity: 0 }}
+              initial={{ transform: "translateX(10%)", opacity: 0 }}
               animate={{ transform: "translateX(0)", opacity: 1 }}
               transition={{ easing: flyInEase, delay: 0.2 }}
             >
@@ -158,7 +154,7 @@ export default function Landing() {
               src="https://tarakoshka.tech/static/badges.png"
             ></img>
             <Motion.div
-              initial={{ transform: "translateX(10%)", opacity: 0 }}
+              initial={{ transform: "translateX(-10%)", opacity: 0 }}
               animate={{ transform: "translateX(0)", opacity: 1 }}
               transition={{ easing: flyInEase, delay: 0.3 }}
             >

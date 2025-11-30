@@ -3,13 +3,13 @@ import { Download } from "./Icons";
 export default function CVStar() {
   return (
     <a
-      class="relative z-1 mt-8 md:hover:scale-90 transition-all"
+      class="relative z-1 mt-8 lg:hover:scale-90 transition-all"
       href="https://tarakoshka.tech/static/cv.pdf"
       target="_blank"
       rel="noopener noreferrer"
     >
       <img
-        class="w-32 md:w-48"
+        class="w-32 lg:w-48"
         src="https://tarakoshka.tech/static/icons/cv_star.svg"
         style="
         animation: rotate-animation-back 20s infinite linear;

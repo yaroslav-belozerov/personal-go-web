@@ -17,13 +17,19 @@ import { Portal } from "solid-js/web";
 import { BackArrow } from "../lesya/components/Icons";
 import { useWebring, WebringProvider } from "../../lib/api/webringHook";
 import { SwitchCard } from "./components/SwitchCard";
-import { A } from "@solidjs/router";
+import { A, useSearchParams } from "@solidjs/router";
 import Badge from "./components/Badge";
+import Write from "../write/Write";
 
 export default function App() {
   const [projectsExpanded, setProjectsExpanded] = createSignal<boolean>(false);
   const [isCurrentProjects, setIsCurrentProjects] = createSignal<boolean>(true);
-  const [isWebringOpen, setWebringOpen] = createSignal<boolean>(false);
+  const [q, setQ] = useSearchParams();
+  const openWrite = () => q.write === "true";
+  const setOpenWrite = (value: boolean) => {
+    document.body.style.overflowX = value ? "hidden" : "unset";
+    setQ({ write: value ? "true" : undefined });
+  };
 
   return (
     <Motion.main
@@ -32,19 +38,28 @@ export default function App() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <main class="page md:hidden flex bg-[#1a1611] text-[#f5e9c9] md:pt-0 flex-col relative overflow-x-clip">
+      <main
+        class={`page ${openWrite() ? "overflow-y-hidden" : ""} overflow-x-hidden lg:hidden flex bg-[#1a1611] text-[#f5e9c9] lg:pt-0 flex-col relative`}
+      >
         <Landing></Landing>
         <Touch></Touch>
         <Current></Current>
         <Meta></Meta>
       </main>
-      <main class="page md:flex hidden flex-col p-6 bg-[#1a1611]">
+      <main class="page lg:flex hidden flex-col p-6 bg-[#1a1611]">
+        <Portal>
+          <Presence>
+            <Show when={openWrite()} fallback={<div></div>}>
+              <Write onClose={() => setOpenWrite(false)} />
+            </Show>
+          </Presence>
+        </Portal>
         <nav class="flex flex-row items-center gap-4">
           <h1 class="italic text-white text-7xl me-4">
             <a href="https://tarakoshka.tech">tarakoshka.tech</a>
           </h1>
           <a
-            class="relative z-2 md:hover:scale-90 transition-all"
+            class="relative z-2 lg:hover:scale-90 transition-all"
             href="https://tarakoshka.tech/static/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -71,7 +86,7 @@ export default function App() {
           </a>
           <a
             href="/lesya"
-            class="relative z-2 md:hover:scale-90 transition-all"
+            class="relative z-2 lg:hover:scale-90 transition-all"
           >
             <svg
               class="w-24"
@@ -100,7 +115,7 @@ export default function App() {
               <h2 class="text-5xl">Doing stuff</h2>
               <div class="flex flex-row font-[Overpass] gap-2">
                 <button
-                  class="cursor-pointer outline transition-all outline-transparent md:hover:outline-[#F5E9C9] grow-1 py-1 bg-[#1A1611] rounded-full"
+                  class="cursor-pointer outline transition-all outline-transparent lg:hover:outline-[#F5E9C9] grow-1 py-1 bg-[#1A1611] rounded-full"
                   style={
                     isCurrentProjects()
                       ? "outline: #F5E9C900;"
@@ -113,7 +128,7 @@ export default function App() {
                   Current
                 </button>
                 <button
-                  class="cursor-pointer outline transition-all outline-transparent md:hover:outline-[#F5E9C9] grow-1 py-1 bg-[#1A1611] rounded-full"
+                  class="cursor-pointer outline transition-all outline-transparent lg:hover:outline-[#F5E9C9] grow-1 py-1 bg-[#1A1611] rounded-full"
                   style={
                     isCurrentProjects()
                       ? "background: transparent;"
@@ -247,7 +262,7 @@ export default function App() {
               <h2 class="text-5xl">My socials</h2>
               <div class="flex flex-row flex-wrap gap-4">
                 <A
-                  class="group relative hover:bg-[#0c12c9] flex hover:scale-110 hover:rounded-[80px] max-md:w-full w-8 min-w-14 p-4 justify-center aspect-square  items-center rounded-2xl max-md:bg-[#2B251F] bg-[#1A1611] transition-all"
+                  class="group relative hover:bg-[#0c12c9] flex hover:scale-110 hover:rounded-[80px] max-lg:w-full w-8 min-w-14 p-4 justify-center aspect-square  items-center rounded-2xl max-lg:bg-[#2B251F] bg-[#1A1611] transition-all"
                   style="flex: 1 0 26%;"
                   href="/blog"
                 >
@@ -317,17 +332,31 @@ export default function App() {
                       class="relative size-14 transition-all hover:scale-90"
                       target="_blank"
                     >
-                      <img
+                      <svg
                         class="transition-all size-14 scale-120 absolute"
                         style="animation: rotate-animation 20s infinite linear;"
-                        src="https://tarakoshka.tech/static/icons/star2.svg"
-                        alt={useMusic()?.get()?.title}
-                      ></img>
-                      <img
-                        class="transition-all size-8 absolute top-[50%] left-[50%] translate-[-50%]"
-                        src="https://tarakoshka.tech/static/icons/music.svg"
-                        alt="Visit Last.fm"
-                      ></img>
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="409"
+                        height="405"
+                        fill="none"
+                        viewBox="0 0 409 405"
+                      >
+                        <path
+                          fill="#2B251F"
+                          d="M180.993 9.267c13.508-11.646 33.506-11.646 47.014 0l26.686 23.008a36.003 36.003 0 0 0 23.989 8.73l35.232-.47c17.834-.24 33.154 12.616 36.015 30.22l5.654 34.778a36.001 36.001 0 0 0 12.764 22.109l27.292 22.285c13.815 11.28 17.288 30.975 8.164 46.3l-18.024 30.276a36.003 36.003 0 0 0-4.433 25.141l6.582 34.615c3.332 17.521-6.667 34.84-23.507 40.715l-33.268 11.607a36.004 36.004 0 0 0-19.556 16.41l-17.208 30.747c-8.71 15.564-27.502 22.404-44.179 16.08l-32.946-12.493a36.003 36.003 0 0 0-25.528 0l-32.946 12.493c-16.677 6.324-35.469-.516-44.179-16.08l-17.208-30.747a36.004 36.004 0 0 0-19.556-16.41L44.58 326.974c-16.84-5.875-26.84-23.194-23.508-40.715l6.583-34.615a36.002 36.002 0 0 0-4.433-25.141L5.197 196.227c-9.124-15.325-5.651-35.02 8.163-46.3l27.293-22.285a36 36 0 0 0 12.764-22.109l5.654-34.778c2.861-17.604 18.181-30.46 36.015-30.22l35.232.47a36.003 36.003 0 0 0 23.989-8.73l26.686-23.008Z"
+                        />
+                      </svg>
+                      <svg
+                        class="transition-all pr-[2px] size-8 absolute top-[50%] left-[50%] translate-[-50%]"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.8894 5.1786V16.4786C20.8894 18.4586 19.2794 20.0686 17.2994 20.0686C15.3294 20.0686 13.7094 18.4586 13.7094 16.4786C13.7094 14.5086 15.3294 12.8986 17.2994 12.8986C18.1394 12.8986 18.8894 13.1886 19.4994 13.6686V7.7186L10.2894 10.3386V18.4086C10.2894 20.3886 8.66937 21.9986 6.69937 21.9986C4.71937 21.9986 3.10938 20.3886 3.10938 18.4086C3.10938 16.4386 4.71937 14.8286 6.69937 14.8286C7.52938 14.8286 8.27938 15.1186 8.88938 15.5886V6.7486C8.88938 5.2786 9.77938 4.1386 11.1894 3.7586L16.9694 2.1786C18.1394 1.8586 19.1294 1.9686 19.8294 2.5086C20.5394 3.0386 20.8894 3.9386 20.8894 5.1786Z"
+                          fill="#F5E9C9"
+                        />
+                      </svg>
                     </a>
                   </div>
                 )}
@@ -530,7 +559,7 @@ export default function App() {
               <h2 class="text-5xl">Leave a message</h2>
               <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
                 {useLastMessage().get() && (
-                  <div class="font-[Overpass] flex justify-between items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md md:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
+                  <div class="font-[Overpass] flex justify-between items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md lg:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
                     <div class="flex flex-col shrink">
                       <p class="text-white text-2xl">
                         {useLastMessage().get()?.text}
@@ -549,16 +578,24 @@ export default function App() {
                           })}
                       </p>
                     </div>
-                    <a
-                      href="/write-to-me"
-                      class="relative min-w-14 size-14 transition-all hover:scale-90"
+                    <button
+                      onClick={() => setOpenWrite(true)}
+                      class="relative min-w-14 size-14 transition-all hover:scale-90 lg:cursor-pointer"
                     >
-                      <img
-                        class="transition-all size-14 min-w-14 scale-120 absolute"
+                      <svg
+                        class="transition-all size-14 min-w-14 top-0 bottom-0 scale-120 absolute"
                         style="animation: rotate-animation 20s infinite linear;"
-                        src="https://tarakoshka.tech/static/icons/star2.svg"
-                      ></img>
-
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="409"
+                        height="405"
+                        fill="none"
+                        viewBox="0 0 409 405"
+                      >
+                        <path
+                          fill="#2B251F"
+                          d="M180.993 9.267c13.508-11.646 33.506-11.646 47.014 0l26.686 23.008a36.003 36.003 0 0 0 23.989 8.73l35.232-.47c17.834-.24 33.154 12.616 36.015 30.22l5.654 34.778a36.001 36.001 0 0 0 12.764 22.109l27.292 22.285c13.815 11.28 17.288 30.975 8.164 46.3l-18.024 30.276a36.003 36.003 0 0 0-4.433 25.141l6.582 34.615c3.332 17.521-6.667 34.84-23.507 40.715l-33.268 11.607a36.004 36.004 0 0 0-19.556 16.41l-17.208 30.747c-8.71 15.564-27.502 22.404-44.179 16.08l-32.946-12.493a36.003 36.003 0 0 0-25.528 0l-32.946 12.493c-16.677 6.324-35.469-.516-44.179-16.08l-17.208-30.747a36.004 36.004 0 0 0-19.556-16.41L44.58 326.974c-16.84-5.875-26.84-23.194-23.508-40.715l6.583-34.615a36.002 36.002 0 0 0-4.433-25.141L5.197 196.227c-9.124-15.325-5.651-35.02 8.163-46.3l27.293-22.285a36 36 0 0 0 12.764-22.109l5.654-34.778c2.861-17.604 18.181-30.46 36.015-30.22l35.232.47a36.003 36.003 0 0 0 23.989-8.73l26.686-23.008Z"
+                        />
+                      </svg>
                       <svg
                         class="transition-all size-8 absolute top-[50%] left-[50%] translate-[-50%]"
                         xmlns="http://www.w3.org/2000/svg"
@@ -569,7 +606,7 @@ export default function App() {
                       >
                         <path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
                       </svg>
-                    </a>
+                    </button>
                   </div>
                 )}
               </MessageProvider>

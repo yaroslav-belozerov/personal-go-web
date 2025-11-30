@@ -3,7 +3,7 @@ import { Motion, Presence } from "solid-motionone";
 
 const circle = () => (
   <svg
-    class="fill-[#7875FF] size-3 md:size-12 md:mx-4 text-[#7875FF] animate-[rot-scale_5s_ease-in-out_infinite]"
+    class="fill-[#7875FF] size-3 lg:size-12 lg:mx-4 text-[#7875FF] animate-[rot-scale_5s_ease-in-out_infinite]"
     viewBox="0 0 16 16"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -34,22 +34,22 @@ export default function BusinessGame() {
   );
 
   return (
-    <div class="flex flex-col md:gap-10 md:p-10 overflow-hidden w-full bg-[#1D1E22] min-h-dvh font-[Figtree] text-white">
-      <section class="border-white/30 border-b md:border-none pb-4 w-full">
-        <h1 class="text-[12vw] md:text-[8vw] px-4 py-3 font-bold text-[#7875FF] leading-10 md:leading-30">
+    <div class="flex flex-col lg:gap-10 lg:p-10 overflow-hidden w-full bg-[#1D1E22] min-h-dvh font-[Figtree] text-white">
+      <section class="border-white/30 border-b lg:border-none pb-4 w-full">
+        <h1 class="text-[12vw] lg:text-[8vw] px-4 py-3 font-bold text-[#7875FF] leading-10 lg:leading-30">
           <span class="text-white font-black">MANAGEMENT</span>
           <br />
           <span class="text-[20vw] font-[JustMe]">GAME</span>
         </h1>
-        <h3 class="text-xl md:text-5xl animate-[marquee_10s_linear_infinite] italic flex flex-row gap-3 items-center">
+        <h3 class="text-xl lg:text-5xl animate-[marquee_10s_linear_infinite] italic flex flex-row gap-3 items-center">
           plan {circle()} negotiate {circle()} dominate
         </h3>
       </section>
-      <section class="flex flex-col p-4 gap-2 border-white/30 border-b md:border md:max-w-3xl">
-        <h2 class="text-3xl md:text-5xl flex flex-row justify-between w-full md:gap-10">
+      <section class="flex flex-col p-4 gap-2 border-white/30 border-b lg:border lg:max-w-3xl">
+        <h2 class="text-3xl lg:text-5xl flex flex-row justify-between w-full lg:gap-10">
           Place & Time
           <a
-            class="flex text-lg md:text-2xl leading-0 flex-row w-fit items-center gap-2 rounded-full bg-zinc-800 px-4 pb-[1px]"
+            class="flex text-lg lg:text-2xl leading-0 flex-row w-fit items-center gap-2 rounded-full bg-zinc-800 px-4 pb-[1px]"
             target="_blank"
             href="https://calendar.app.google/n7mdAs4vXLGtCYLW6"
           >
@@ -99,10 +99,10 @@ export default function BusinessGame() {
             Add
           </a>
         </h2>
-        <div class="flex flex-col gap-2 md:my-2">
-          <h3 class="text-xl md:text-3xl flex flex-row gap-2 items-center">
+        <div class="flex flex-col gap-2 lg:my-2">
+          <h3 class="text-xl lg:text-3xl flex flex-row gap-2 items-center">
             <svg
-              class="size-6 fill-white md:size-8"
+              class="size-6 fill-white lg:size-8"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 -960 960 960"
             >
@@ -110,9 +110,9 @@ export default function BusinessGame() {
             </svg>
             October 26th, 14:00
           </h3>
-          <h3 class="text-xl md:text-3xl flex flex-row gap-2 items-center">
+          <h3 class="text-xl lg:text-3xl flex flex-row gap-2 items-center">
             <svg
-              class="size-6 fill-white md:size-8"
+              class="size-6 fill-white lg:size-8"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 -960 960 960"
             >
@@ -122,8 +122,8 @@ export default function BusinessGame() {
           </h3>
         </div>
       </section>
-      <section class="flex flex-col px-4 gap-2 border-white/30 border-b md:border p-4 md:max-w-3xl">
-        <h2 class="text-3xl mb-2 md:text-5xl flex flex-row justify-between items-center w-full">
+      <section class="flex flex-col px-4 gap-2 border-white/30 border-b lg:border p-4 lg:max-w-3xl">
+        <h2 class="text-3xl mb-2 lg:text-5xl flex flex-row justify-between items-center w-full">
           Rules
           {fullRules() ? (
             <div class="flex px-2 flex-row w-fit gap-2 text-lg items-center">
@@ -167,7 +167,7 @@ export default function BusinessGame() {
         </h2>
         {fullRules() ? (
           <div
-            class="leading-5 md:text-xl md:leading-7"
+            class="leading-5 lg:text-xl lg:leading-7"
             innerHTML={(fullRulesEnglish()
               ? `At the start of the game, each team receives a certain number of small sheets (“shares”) to distribute among all teams by creating an internal ranking — the higher you rank a team, the more shares they get. For example: 1st place – 6 shares, 2nd – 5, 3rd – 4, and so on. Each team does this independently, without knowing how many total shares have been issued for other teams.
               The game then proceeds in repeating cycles: <b>discussion → trading → discussion → trading</b>. The goal is to <b>absorb all other teams</b> by collecting a controlling stake (51% of all shares issued for that team). During trading, one representative from each team brings 2 shares and can exchange them <b>1 for 1</b> through the moderator. Touching the table is forbidden. Any shares left untraded are removed from the game.
@@ -178,12 +178,12 @@ export default function BusinessGame() {
             ).replaceAll("\n", "<br class='mb-4' />")}
           ></div>
         ) : (
-          <ol class="text-lg mx-6 md:text-2xl md:mx-8 list-decimal leading-6 md:leading-8 gap-4 flex flex-col max-md:w-full">
-            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+          <ol class="text-lg mx-6 lg:text-2xl lg:mx-8 list-decimal leading-6 lg:leading-8 gap-4 flex flex-col max-lg:w-full">
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-lg:mr-8">
               Each team ranks all teams (including their own) and receives
               “shares” based on that ranking.
             </li>
-            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-lg:mr-8">
               The game runs in repeating rounds:{" "}
               <b>
                 discussion
@@ -201,26 +201,26 @@ export default function BusinessGame() {
               </b>
               .
             </li>
-            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-lg:mr-8">
               During trading, one person from team brings 2 shares and can
               exchange them <b>1-for-1</b>.
             </li>
-            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-lg:mr-8">
               <b>Absorb other teams</b> by collecting 51% of their shares.
             </li>
-            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-md:mr-8">
+            <li class="py-3 px-4 bg-zinc-800 rounded-lg max-lg:mr-8">
               Penalties cost shares. Teams with no shares are eliminated. The
               game ends when <b>one team remains</b>.
             </li>
           </ol>
         )}
       </section>
-      <section class="flex flex-col px-4 gap-2 border-white/30 border-b md:min-w-xl md:border p-4 md:text-xl md:max-w-3xl">
-        <h2 class="text-3xl md:text-5xl flex flex-row justify-between w-full mb-2">
+      <section class="flex flex-col px-4 gap-2 border-white/30 border-b lg:min-w-xl lg:border p-4 lg:text-xl lg:max-w-3xl">
+        <h2 class="text-3xl lg:text-5xl flex flex-row justify-between w-full mb-2">
           Register
         </h2>
         {registered() ? (
-          <div class="flex flex-row gap-2 items-center leading-5 md:p-4 md:gap-4">
+          <div class="flex flex-row gap-2 items-center leading-5 lg:p-4 lg:gap-4">
             <svg
               class="size-8 fill-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -238,7 +238,7 @@ export default function BusinessGame() {
         ) : (
           <>
             <form
-              class={`flex-col flex relative ${canSubmitEmail() ? "pb-20 md:pb-22" : "pb-0"} transition-all duration-300`}
+              class={`flex-col flex relative ${canSubmitEmail() ? "pb-20 lg:pb-22" : "pb-0"} transition-all duration-300`}
               onSubmit={async (e) => {
                 e.preventDefault();
                 const a = fetch("https://tarakoshka.tech/bgapi/users/reg", {
@@ -313,7 +313,7 @@ export default function BusinessGame() {
             {sentBad() ? <p>Okay, noted!</p> : <p>or say why not...</p>}
             {!sentBad() && (
               <div
-                class={`flex flex-row flex-wrap text-md md:text-xl gap-1 transition-all md:w-fit`}
+                class={`flex flex-row flex-wrap text-md lg:text-xl gap-1 transition-all lg:w-fit`}
               >
                 <button
                   type="button"
@@ -404,15 +404,15 @@ export default function BusinessGame() {
           </>
         )}
       </section>
-      <section class="flex flex-col px-4 gap-2 border-white/30 border-b md:border p-4 md:max-w-xl">
-        <h2 class="text-3xl md:text-5xl flex flex-row justify-between w-full">
+      <section class="flex flex-col px-4 gap-2 border-white/30 border-b lg:border p-4 lg:max-w-xl">
+        <h2 class="text-3xl lg:text-5xl flex flex-row justify-between w-full">
           Contacts
         </h2>
-        <p class="text-zinc-400 leading-4 md:text-xl md:leading-6 my-2">
+        <p class="text-zinc-400 leading-4 lg:text-xl lg:leading-6 my-2">
           Reach out if something is confusing or you want to cancel the
           registration
         </p>
-        <h3 class="text-xl md:text-3xl flex flex-row justify-between w-full">
+        <h3 class="text-xl lg:text-3xl flex flex-row justify-between w-full">
           Alexandra Cherezova
         </h3>
         <div class="flex flex-row gap-2">
@@ -447,7 +447,7 @@ export default function BusinessGame() {
             E-Mail
           </a>
         </div>
-        <h3 class="text-xl md:text-3xl flex flex-row justify-between w-full mt-2 md:mt-0">
+        <h3 class="text-xl lg:text-3xl flex flex-row justify-between w-full mt-2 lg:mt-0">
           Iaroslav Belozerov
         </h3>
         <div class="flex flex-row gap-2">

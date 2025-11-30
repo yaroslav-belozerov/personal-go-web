@@ -6,7 +6,7 @@ export default function Badge({ src, link }: { src: string; link?: string }) {
         src={src}
         style="image-rendering: pixelated;"
         alt=""
-        class="w-[88px] h-[31px] md:hover:scale-180 transition-all duration-200"
+        class="w-[88px] h-[31px] lg:hover:scale-180 transition-all duration-200"
       />
     );
   } else {
@@ -17,7 +17,7 @@ export default function Badge({ src, link }: { src: string; link?: string }) {
           style="image-rendering: pixelated;"
           src={src}
           alt=""
-          class="w-[88px] h-[31px] md:hover:scale-180 transition-all duration-200"
+          class="w-[88px] h-[31px] lg:hover:scale-180 transition-all duration-200"
         />
       </a>
     );

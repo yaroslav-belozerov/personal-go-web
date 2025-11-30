@@ -163,7 +163,7 @@ export default function Meta() {
                 <div class="flex font-[Overpass] flex-row justify-between pl-3 pr-3">
                   <a
                     href={useMusic()?.get()?.url}
-                    class="flex flex-row items-center gap-4 md:hover:scale-90 transition-all"
+                    class="flex flex-row items-center gap-4 lg:hover:scale-90 transition-all"
                   >
                     <img
                       src={useMusic()?.get()?.image}
@@ -181,7 +181,7 @@ export default function Meta() {
                   </a>
                   <a
                     href="https://www.last.fm/user/Lemurr4ik_"
-                    class="relative size-14 md:scale-140 md:hover:scale-120 md:me-4 transition-all"
+                    class="relative size-14 lg:scale-140 lg:hover:scale-120 lg:me-4 transition-all"
                     target="_blank"
                   >
                     <svg

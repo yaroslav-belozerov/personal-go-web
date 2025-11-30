@@ -2,7 +2,7 @@ export function BackArrow() {
   return (
     <svg
       viewBox="0 0 24 24"
-      class="md:scale-120"
+      class="lg:scale-120"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"

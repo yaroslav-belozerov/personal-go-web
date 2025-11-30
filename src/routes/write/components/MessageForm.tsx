@@ -27,7 +27,7 @@ const MessageForm: Component = () => {
       onsubmit={async (e) => {
         e.preventDefault();
       }}
-      class="flex font-[Overpass] py-4 px-8 md:flex-wrap md:flex-row gap-4 flex-col z-2 py-8"
+      class="flex font-[Overpass] px-6 lg:flex-wrap lg:flex-row gap-4 flex-col z-2 py-4"
     >
       <textarea
         value={text()}
@@ -35,7 +35,7 @@ const MessageForm: Component = () => {
         maxlength="256"
         id="message"
         onChange={(e) => setText(e.target.value)}
-        class="flex md:grow-1 md:text-xl justify-center p-3 bg-zinc-900 transition-all outline-none"
+        class="flex lg:grow-1 lg:text-xl justify-center p-3 bg-zinc-900 transition-all outline-none"
         placeholder="Message"
       />
       <input
@@ -44,7 +44,7 @@ const MessageForm: Component = () => {
         maxlength="64"
         type="text"
         onChange={(e) => setCreator(e.target.value)}
-        class="flex md:text-xl justify-center p-3 bg-zinc-900 transition-all outline-none"
+        class="flex lg:text-xl justify-center p-3 bg-zinc-900 transition-all outline-none"
         placeholder="Author (may be blank)"
       />
       {sent() ? (
@@ -54,13 +54,13 @@ const MessageForm: Component = () => {
       ) : (
         <button
           type="submit"
-          class="flex cursor-pointer md:px-6 group md:pe-8 md:hover:bg-white md:hover:text-black transition-all justify-center p-3 bg-[#0C12C9] transition-all"
+          class="flex cursor-pointer lg:px-6 group lg:pe-8 lg:hover:bg-white lg:hover:text-black transition-all justify-center p-3 bg-[#0C12C9] transition-all"
           onClick={sendMessage}
         >
           <div class="flex flex-row items-center">
             <p class="px-2 text-2xl pt-1">Send</p>
             <svg
-              class="size-8 md:group-hover:scale-125 transition-all md:group-hover:translate-x-1"
+              class="size-8 lg:group-hover:scale-125 transition-all lg:group-hover:translate-x-1"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 -960 960 960"
               fill="currentColor"

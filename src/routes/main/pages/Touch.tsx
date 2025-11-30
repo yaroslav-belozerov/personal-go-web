@@ -1,8 +1,10 @@
-import { A } from "@solidjs/router";
+import { A, useSearchParams } from "@solidjs/router";
 import { MessageProvider, useLastMessage } from "../../../lib/api/messagesHook";
 import Badge from "../components/Badge";
 import { createSignal, Show } from "solid-js";
 import { Motion, Presence } from "solid-motionone";
+import Write from "../../write/Write";
+import { Portal } from "solid-js/web";
 
 enum DetailType {
   Others = "others",
@@ -10,9 +12,22 @@ enum DetailType {
 
 export default function Touch() {
   const [openDetail, setOpenDetail] = createSignal<DetailType | null>(null);
+  const [q, setQ] = useSearchParams();
+  const openWrite = () => q.write === "true";
+  const setOpenWrite = (value: boolean) => {
+    document.body.style.overflowX = value ? "hidden" : "unset";
+    setQ({ write: value ? "true" : undefined });
+  };
 
   return (
     <section id="contacts" class="flex flex-col gap-4 bg-black pb-6">
+      <Portal>
+        <Presence>
+          <Show when={openWrite()} fallback={<div></div>}>
+            <Write onClose={() => setOpenWrite(false)} />
+          </Show>
+        </Presence>
+      </Portal>
       {openDetail() == DetailType.Others && (
         <div
           onClick={() => setOpenDetail(null)}
@@ -108,7 +123,7 @@ export default function Touch() {
               }}
             >
               <svg
-                class={`size-12 ${openDetail() == DetailType.Others ? "bg-[#0C12C9]" : "rotate-180"} transition-all`}
+                class={`size-12 ${openDetail() == DetailType.Others ? "bg-[#0C12C9] scale-120" : "rotate-180"} rounded-full transition-all`}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -125,7 +140,7 @@ export default function Touch() {
                     initial={{ opacity: 0, transform: "translateY(5%)" }}
                     animate={{ opacity: 1, transform: "translateX(0)" }}
                     exit={{ opacity: 0, transform: "translateY(5%)" }}
-                    class="bottom-full right-0 absolute bg-black outline-3 outline-[#0C12C9] px-2 py-4 mb-2"
+                    class="bottom-full right-0 rounded-full absolute bg-black outline-3 outline-[#0C12C9] px-8 py-4 mb-4"
                   >
                     <div class="flex flex-col">
                       <span class="text-3xl">Other stuff</span>
@@ -238,17 +253,17 @@ export default function Touch() {
         <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
           {useLastMessage().get() && (
             <div class="flex flex-col gap-1 mt-8 justify-between">
-              <div class="flex w-full flex-col justify-center rounded-t-3xl relative transition-all">
-                <p class="text-black text-2xl mx-8 w-fit">
-                  <span class="absolute left-28 right-29 bottom-43 p-2 top-20 break-all text-ellipsis overflow-hidden text-center text-white bg-black">
+              <div class="flex w-full flex-col justify-center items-center rounded-t-3xl relative transition-all">
+                <div class="text-black relative max-w-xl w-full flex flex-col items-center justify-center text-2xl px-8">
+                  <p class="absolute text-2xl top-[19%] bottom-[22%] left-[26%] right-[27%] p-2 break-all text-ellipsis overflow-hidden text-center align-middle text-white bg-black">
                     {useLastMessage().get()?.text}
-                  </span>
+                  </p>
                   <img
                     src="https://tarakoshka.tech/static/frame.jpg"
-                    class="rounded-xs"
+                    class="rounded-xs min-w-full"
                   ></img>
-                </p>
-                <div class="flex font-[Overpass] mx-4 flex-row justify-between items-center p-4 gap-2">
+                </div>
+                <div class="flex font-[Overpass] w-full mx-4 flex-row justify-between items-center p-4 gap-2">
                   <div class="text-lg text-white grow-1 bg-zinc-900 px-4 py-2 rounded-lg">
                     {useLastMessage().get()?.creator || "Unknown author"}
                     <br />
@@ -263,7 +278,28 @@ export default function Touch() {
                         })}
                     </span>
                   </div>
-                  <a
+                  <button
+                    class={`flex flex-row gap-2 text-white bg-[#0C12C9] p-4 rounded-full justify-center transition-all items-center transition-all`}
+                    onClick={() => {
+                      setOpenWrite(true);
+                    }}
+                  >
+                    <svg
+                      class="size-8"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  {/*<A
                     class={`flex flex-row gap-2 text-white bg-[#0C12C9] p-4 rounded-full justify-center transition-all items-center transition-all`}
                     href="/write-to-me"
                   >
@@ -281,7 +317,7 @@ export default function Touch() {
                         stroke-linejoin="round"
                       />
                     </svg>
-                  </a>
+                  </A>*/}
                 </div>
               </div>
             </div>

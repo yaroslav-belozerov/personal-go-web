@@ -13,7 +13,7 @@ export function SwitchCard(props: SwitchCardProps) {
   return (
     <button
       onClick={() => setExpanded(!isExpanded())}
-      class={`flex w-full max-md:outline-2 max-md:-outline-offset-2 max-md:outline-white max-md:text-white transition-all flex-col bg-[#2B251F] max-md:bg-black cursor-pointer outline-2 z-1 outline-transparent md:hover:outline-[#F5E9C9] md:bg-[#1A1611] rounded-4xl py-2`}
+      class={`flex w-full max-lg:outline-2 max-lg:-outline-offset-2 max-lg:outline-white max-lg:text-white transition-all flex-col bg-[#2B251F] max-lg:bg-black cursor-pointer outline-2 z-1 outline-transparent lg:hover:outline-[#F5E9C9] lg:bg-[#1A1611] rounded-4xl py-2`}
     >
       <div class="flex flex-row px-4 justify-center relative">
         <h4 class="text-lg pt-1">{props.title}</h4>

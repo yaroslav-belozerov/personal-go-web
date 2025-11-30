@@ -33,7 +33,7 @@ export default function Blogpost() {
           {useBlog().get() ? (
             <section class="p-8 flex flex-col">
               <div class="flex flex-row gap-1 items-center">
-                <A href="/blog" class="max-md:pl-0 p-2 max-md:py-4">
+                <A href="/blog" class="max-lg:pl-0 p-2 max-lg:py-4">
                   <svg
                     class="rotate-90 size-8"
                     xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ export default function Blogpost() {
                     <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
                   </svg>
                 </A>
-                <p class="text-xl font-[Overpass] pt-[5px] md:pt-2">
+                <p class="text-xl font-[Overpass] pt-[5px] lg:pt-2">
                   {" " +
                     new Date(useBlog()?.get()?.created ?? "").toLocaleString(
                       "en-US",
@@ -56,7 +56,7 @@ export default function Blogpost() {
                     )}
                 </p>
               </div>
-              <h1 class="text-white md:text-7xl text-6xl">
+              <h1 class="text-white lg:text-7xl text-6xl">
                 {useBlog()?.get()?.title}
               </h1>
               <h2 class="text-4xl">{useBlog()?.get()?.description}</h2>
