@@ -39,7 +39,7 @@ export function GalleryPage1() {
         </div>
       </div>
 
-      <div class="flex flex-row gap-4">
+      <div class="flex flex-row items-center h-full gap-4">
         <div class="w-[40%] flex flex-col gap-4">
           <div class="overflow-hidden rounded-lg">
             <img
@@ -94,9 +94,9 @@ export function GalleryPage2() {
   return (
     <div
       id="gallery-page-2"
-      class="bg-white flex flex-col text-green-900 p-8 h-screen overflow-y-hidden"
+      class="bg-white flex flex-col text-green-900 py-8 px-2 h-screen overflow-y-hidden"
     >
-      <div class="flex items-center justify-between mb-8 ms-6 gap-2">
+      <div class="flex items-center justify-between mb-8 ms-12 me-6 gap-2">
         <div class="flex flex-row gap-2">
           <Photos />
           <span class="text-xl font-[Sora]">2</span>
@@ -148,7 +148,7 @@ export function GalleryPage2() {
       </div>
 
       <div
-        class="lg:hidden relative block min-w-full rounded-4xl flex flex-row overflow-scroll"
+        class="lg:hidden relative block h-full min-w-full rounded-4xl flex flex-row overflow-scroll"
         style="scrollbar-width: none;"
       >
         <img

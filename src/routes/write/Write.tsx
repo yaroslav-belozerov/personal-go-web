@@ -11,9 +11,9 @@ export default function Write(props: { onClose: () => void }) {
   return (
     <Motion.aside
       class="fixed inset-0 z-100"
-      initial={{ opacity: 0, scale: 0, y: 600 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0, y: 600 }}
+      initial={{ opacity: 0, x: 600 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 600 }}
       transition={{ duration: 0.4 }}
     >
       <aside class="bg-black text-white min-h-dvh h-dvh overflow-y-scroll relative flex flex-col">
@@ -51,9 +51,9 @@ export default function Write(props: { onClose: () => void }) {
                 useMessages()
                   ?.get()
                   ?.map((message) => (
-                    <div class="font-[Overpass] italic text-black flex flex-col border justify-center bg-white py-6 px-8 bg-[#1A1611] transition-all">
+                    <div class="font-[Overpass] text-black flex flex-col border justify-center bg-white px-4 py-3 md:py-6 md:px-8 bg-[#1A1611] transition-all">
                       <p class="text-2xl">{message.text}</p>
-                      <p class="text-xl">
+                      <p class="text-xl italic">
                         <span>{message.creator}</span> on
                         {" " +
                           new Date(message.time ?? "").toLocaleString("en-US", {

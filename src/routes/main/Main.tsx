@@ -39,14 +39,14 @@ export default function App() {
       transition={{ duration: 0.3 }}
     >
       <main
-        class={`page ${openWrite() ? "overflow-y-hidden" : ""} overflow-x-hidden lg:hidden flex bg-[#1a1611] text-[#f5e9c9] lg:pt-0 flex-col relative`}
+        class={`page ${openWrite() ? "overflow-y-hidden" : ""} overflow-x-hidden lg:hidden flex bg-zinc-900 text-[#f5e9c9] lg:pt-0 flex-col relative`}
       >
         <Landing></Landing>
         <Touch></Touch>
         <Current></Current>
         <Meta></Meta>
       </main>
-      <main class="page lg:flex hidden flex-col p-6 bg-[#1a1611]">
+      <main class="lg:flex hidden flex-col p-6">
         <Portal>
           <Presence>
             <Show when={openWrite()} fallback={<div></div>}>
@@ -79,7 +79,7 @@ export default function App() {
                 d="m120 0 23.294 33.067L180 16.077l3.64 40.283L223.923 60l-16.99 36.706L240 120l-33.067 23.294L223.923 180l-40.283 3.64-3.64 40.283-36.706-16.99L120 240l-23.294-33.067L60 223.923l-3.64-40.283L16.077 180l16.99-36.706L0 120l33.067-23.294L16.077 60l40.283-3.64L60 16.077l36.706 16.99L120 0Z"
               />
             </svg>
-            <div class="text-[#1a1611] absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
+            <div class="text-zinc-900 absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
               <Download />
               <p class="font-[Overpass] font-bold text-xl">CV</p>
             </div>
@@ -103,24 +103,19 @@ export default function App() {
                 d="m120 0 23.294 33.067L180 16.077l3.64 40.283L223.923 60l-16.99 36.706L240 120l-33.067 23.294L223.923 180l-40.283 3.64-3.64 40.283-36.706-16.99L120 240l-23.294-33.067L60 223.923l-3.64-40.283L16.077 180l16.99-36.706L0 120l33.067-23.294L16.077 60l40.283-3.64L60 16.077l36.706 16.99L120 0Z"
               />
             </svg>
-            <div class="text-[#1a1611] absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
+            <div class="text-zinc-900 absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
               <Cat />
               <p class="font-[Overpass] font-bold text-xl">Cat</p>
             </div>
           </a>
         </nav>
-        <div class="flex flex-row gap-4 mt-4">
-          <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col h-fit w-fit gap-4">
+        <div class="flex flex-row mt-4">
+          <section class="border-l-1 border-y-1 border-white p-6 rounded-l-2xl flex flex-col h-fit w-fit gap-4">
             <div class="flex flex-col gap-4">
               <h2 class="text-5xl">Doing stuff</h2>
-              <div class="flex flex-row font-[Overpass] gap-2">
+              <div class="flex flex-row font-[Overpass]">
                 <button
-                  class="cursor-pointer outline transition-all outline-transparent lg:hover:outline-[#F5E9C9] grow-1 py-1 bg-[#1A1611] rounded-full"
-                  style={
-                    isCurrentProjects()
-                      ? "outline: #F5E9C900;"
-                      : "background: transparent;"
-                  }
+                  class={`cursor-pointer border-1 w-full transition-all border-transparent lg:hover:border-white lg:hover:scale-90 py-2 rounded-l-full ${isCurrentProjects() ? "bg-zinc-900" : ""}`}
                   onClick={() => {
                     setIsCurrentProjects(true);
                   }}
@@ -128,7 +123,7 @@ export default function App() {
                   Current
                 </button>
                 <button
-                  class="cursor-pointer outline transition-all outline-transparent lg:hover:outline-[#F5E9C9] grow-1 py-1 bg-[#1A1611] rounded-full"
+                  class={`cursor-pointer border-1 w-full transition-all border-transparent lg:hover:border-white lg:hover:scale-90 py-2 rounded-r-full ${!isCurrentProjects() ? "bg-zinc-900" : ""}`}
                   style={
                     isCurrentProjects()
                       ? "background: transparent;"
@@ -164,7 +159,7 @@ export default function App() {
                             ?.slice(0, projectsExpanded() ? 7 : 3)
                             ?.map((project) => (
                               <NewProjectCard
-                                showPreview={!projectsExpanded()}
+                                showPreview={false}
                                 project={project}
                               />
                             ))}
@@ -213,6 +208,7 @@ export default function App() {
                             ?.get()
                             ?.filter((it) => it.description != "")
                             ?.slice(0, projectsExpanded() ? 10 : 3)
+                            ?.reverse()
                             ?.map((project) => (
                               <NewProjectCard
                                 showPreview={
@@ -257,12 +253,12 @@ export default function App() {
               </Switch>
             </Presence>
           </section>
-          <div class="flex flex-col gap-4 w-full">
-            <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
+          <div class="flex flex-col w-full">
+            <section class="border-x-1 border-t-1 border-white p-6 flex flex-col w-full h-fit gap-4">
               <h2 class="text-5xl">My socials</h2>
               <div class="flex flex-row flex-wrap gap-4">
                 <A
-                  class="group relative hover:bg-[#0c12c9] flex hover:scale-110 hover:rounded-[80px] max-lg:w-full w-8 min-w-14 p-4 justify-center aspect-square  items-center rounded-2xl max-lg:bg-[#2B251F] bg-[#1A1611] transition-all"
+                  class="group relative hover:bg-[#0c12c9] flex hover:scale-110 hover:rounded-[80px] max-lg:w-full w-8 min-w-14 p-4 justify-center aspect-square  items-center rounded-3xl max-lg:bg-[#2B251F] bg-zinc-900 transition-all"
                   style="flex: 1 0 26%;"
                   href="/blog"
                 >
@@ -308,7 +304,7 @@ export default function App() {
               </div>
               <MusicProvider baseURL="https://tarakoshka.tech/api/music">
                 {useMusic().get() && (
-                  <div class="flex flex-row w-full justify-between p-6 rounded-2xl bg-[#1A1611]">
+                  <div class="flex flex-row w-full justify-between p-6 rounded-2xl bg-zinc-900">
                     <a
                       href={useMusic()?.get()?.url}
                       class="flex flex-row items-center gap-3 hover:scale-95 transition-all"
@@ -342,19 +338,19 @@ export default function App() {
                         viewBox="0 0 409 405"
                       >
                         <path
-                          fill="#2B251F"
+                          fill="currentColor"
                           d="M180.993 9.267c13.508-11.646 33.506-11.646 47.014 0l26.686 23.008a36.003 36.003 0 0 0 23.989 8.73l35.232-.47c17.834-.24 33.154 12.616 36.015 30.22l5.654 34.778a36.001 36.001 0 0 0 12.764 22.109l27.292 22.285c13.815 11.28 17.288 30.975 8.164 46.3l-18.024 30.276a36.003 36.003 0 0 0-4.433 25.141l6.582 34.615c3.332 17.521-6.667 34.84-23.507 40.715l-33.268 11.607a36.004 36.004 0 0 0-19.556 16.41l-17.208 30.747c-8.71 15.564-27.502 22.404-44.179 16.08l-32.946-12.493a36.003 36.003 0 0 0-25.528 0l-32.946 12.493c-16.677 6.324-35.469-.516-44.179-16.08l-17.208-30.747a36.004 36.004 0 0 0-19.556-16.41L44.58 326.974c-16.84-5.875-26.84-23.194-23.508-40.715l6.583-34.615a36.002 36.002 0 0 0-4.433-25.141L5.197 196.227c-9.124-15.325-5.651-35.02 8.163-46.3l27.293-22.285a36 36 0 0 0 12.764-22.109l5.654-34.778c2.861-17.604 18.181-30.46 36.015-30.22l35.232.47a36.003 36.003 0 0 0 23.989-8.73l26.686-23.008Z"
                         />
                       </svg>
                       <svg
-                        class="transition-all pr-[2px] size-8 absolute top-[50%] left-[50%] translate-[-50%]"
+                        class="transition-all text-black pr-[3px] size-10 absolute top-[50%] left-[50%] translate-[-50%]"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           d="M20.8894 5.1786V16.4786C20.8894 18.4586 19.2794 20.0686 17.2994 20.0686C15.3294 20.0686 13.7094 18.4586 13.7094 16.4786C13.7094 14.5086 15.3294 12.8986 17.2994 12.8986C18.1394 12.8986 18.8894 13.1886 19.4994 13.6686V7.7186L10.2894 10.3386V18.4086C10.2894 20.3886 8.66937 21.9986 6.69937 21.9986C4.71937 21.9986 3.10938 20.3886 3.10938 18.4086C3.10938 16.4386 4.71937 14.8286 6.69937 14.8286C7.52938 14.8286 8.27938 15.1186 8.88938 15.5886V6.7486C8.88938 5.2786 9.77938 4.1386 11.1894 3.7586L16.9694 2.1786C18.1394 1.8586 19.1294 1.9686 19.8294 2.5086C20.5394 3.0386 20.8894 3.9386 20.8894 5.1786Z"
-                          fill="#F5E9C9"
+                          fill="currentColor"
                         />
                       </svg>
                     </a>
@@ -362,7 +358,7 @@ export default function App() {
                 )}
               </MusicProvider>
             </section>
-            <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
+            <section class="border-1 border-white p-6 rounded-b-2xl flex flex-col w-full h-fit gap-4">
               <h2 class="text-5xl">Buttons</h2>
               <div class="flex flex-row flex-wrap gap-2 mb-2">
                 <Badge
@@ -475,8 +471,8 @@ export default function App() {
               </div>
             </section>
           </div>
-          <div class="flex flex-col gap-4 w-full">
-            <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
+          <div class="flex flex-col w-full">
+            <section class="border-y-1 border-r-1 border-white p-6 rounded-tr-2xl flex flex-col w-full h-fit gap-4">
               <a
                 class="flex flex-row gap-4 items-center group"
                 href="https://webring.otomir23.me/"
@@ -499,7 +495,7 @@ export default function App() {
               <WebringProvider baseURL="https://webring.otomir23.me/tarakoshka/data">
                 <nav class="items-center z-1 w-full flex gap-2 text-white font-[Overpass] flex-row gap-4">
                   <a
-                    class="flex gap-1 w-full justify-start rounded-xl bg-[#1A1611] p-3 items-center hover:rounded-none outline outline-[#FF3737] outline-0 hover:outline-7 transition-all hover:scale-90"
+                    class="flex gap-1 w-full justify-start rounded-xl bg-zinc-900 p-3 items-center hover:rounded-none outline outline-[#FF3737] outline-0 hover:outline-7 transition-all hover:scale-90"
                     href={useWebring().get()?.prev?.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -526,7 +522,7 @@ export default function App() {
                     </p>
                   </a>
                   <a
-                    class="flex gap-1 w-full justify-end rounded-xl bg-[#1A1611] p-3 items-center hover:rounded-none outline outline-[#FF3737] outline-0 hover:outline-7 transition-all hover:scale-90"
+                    class="flex gap-1 w-full justify-end rounded-xl bg-zinc-900 p-3 items-center hover:rounded-none outline outline-[#FF3737] outline-0 hover:outline-7 transition-all hover:scale-90"
                     href={useWebring().get()?.next?.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -555,11 +551,11 @@ export default function App() {
                 </nav>
               </WebringProvider>
             </section>
-            <section class="bg-[#2B251F] p-6 rounded-2xl flex flex-col w-full h-fit gap-4">
+            <section class="border-r-1 border-white p-6 flex flex-col w-full h-fit gap-4">
               <h2 class="text-5xl">Leave a message</h2>
               <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
                 {useLastMessage().get() && (
-                  <div class="font-[Overpass] flex justify-between items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md lg:rounded-b-2xl p-6 bg-[#1A1611] transition-all">
+                  <div class="font-[Overpass] flex justify-between items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md lg:rounded-b-2xl p-6 bg-zinc-900 transition-all">
                     <div class="flex flex-col shrink">
                       <p class="text-white text-2xl">
                         {useLastMessage().get()?.text}
@@ -592,26 +588,26 @@ export default function App() {
                         viewBox="0 0 409 405"
                       >
                         <path
-                          fill="#2B251F"
+                          fill="currentColor"
                           d="M180.993 9.267c13.508-11.646 33.506-11.646 47.014 0l26.686 23.008a36.003 36.003 0 0 0 23.989 8.73l35.232-.47c17.834-.24 33.154 12.616 36.015 30.22l5.654 34.778a36.001 36.001 0 0 0 12.764 22.109l27.292 22.285c13.815 11.28 17.288 30.975 8.164 46.3l-18.024 30.276a36.003 36.003 0 0 0-4.433 25.141l6.582 34.615c3.332 17.521-6.667 34.84-23.507 40.715l-33.268 11.607a36.004 36.004 0 0 0-19.556 16.41l-17.208 30.747c-8.71 15.564-27.502 22.404-44.179 16.08l-32.946-12.493a36.003 36.003 0 0 0-25.528 0l-32.946 12.493c-16.677 6.324-35.469-.516-44.179-16.08l-17.208-30.747a36.004 36.004 0 0 0-19.556-16.41L44.58 326.974c-16.84-5.875-26.84-23.194-23.508-40.715l6.583-34.615a36.002 36.002 0 0 0-4.433-25.141L5.197 196.227c-9.124-15.325-5.651-35.02 8.163-46.3l27.293-22.285a36 36 0 0 0 12.764-22.109l5.654-34.778c2.861-17.604 18.181-30.46 36.015-30.22l35.232.47a36.003 36.003 0 0 0 23.989-8.73l26.686-23.008Z"
                         />
                       </svg>
                       <svg
-                        class="transition-all size-8 absolute top-[50%] left-[50%] translate-[-50%]"
+                        class="transition-all text-black size-8 absolute top-[50%] left-[50%] translate-[-50%]"
                         xmlns="http://www.w3.org/2000/svg"
-                        height="24"
+                        height="24px"
                         viewBox="0 -960 960 960"
-                        width="24"
+                        width="24px"
                         fill="currentColor"
                       >
-                        <path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+                        <path d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm160-320h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80Z" />
                       </svg>
                     </button>
                   </div>
                 )}
               </MessageProvider>
             </section>
-            <section class="bg-[#2B251F] p-6 max-w-[800px] rounded-2xl flex flex-col w-fit h-fit gap-4">
+            <section class="border-y-1 border-r-1 border-white p-6 max-w-[800px] rounded-br-2xl flex flex-col w-fit h-fit gap-4">
               <div class="flex flex-row justify-between items-center">
                 <h2 class="text-5xl">About</h2>
                 <a href="/support">
@@ -629,7 +625,7 @@ export default function App() {
                   href="https://school.hse.ru/"
                   rel="noreferrer noopener"
                   target="_blank"
-                  class="flex hover:scale-97 transition-all flex-row gap-4 border-[#FBBA00] border-2 bg-[#382a00] rounded-xl items-center px-4 py-3"
+                  class="flex hover:scale-97 transition-all flex-row gap-4 border-[#FBBA00] border-2 bg-[#382a00] rounded-full items-center px-4 py-3"
                 >
                   <svg
                     class="size-8 pt-1"
@@ -663,36 +659,13 @@ export default function App() {
                   </svg>
                   <h4 class="text-xl pt-1">HSE Lyceum Alumni</h4>
                 </a>
-                {/*<a
-                  href="https://www.tbank.ru/"
-                  class="flex hover:scale-97 transition-all flex-row gap-4 border-[#FFDD2D] border-2 bg-[#3d3402] rounded-xl items-center px-4 py-3"
-                >
-                  <svg
-                    class="size-8 pl-1"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 4H29V17.5849C29 21.3238 27.0054 24.7789 23.7676 26.6485L14.5001 32L5.23246 26.6485C1.99457 24.7789 3.32377e-06 21.3238 3.32377e-06 17.5849L0 4Z"
-                      fill="#FFDD2D"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M8 11V15.5077C8.6164 14.8116 9.73715 14.3406 11.0186 14.3406H12.4111V19.5807C12.4111 20.9748 12.0323 22.3399 11.4703 23.0111H17.5276C16.9668 22.3392 16.5889 20.9758 16.5889 19.5834V14.3406H17.9815C19.2629 14.3406 20.3836 14.8116 21 15.5077V11H8Z"
-                      fill="#333333"
-                    />
-                  </svg>
-                  <h4 class="text-xl pt-1">T-Bank Mobile Intern</h4>
-                </a>*/}
                 <a
                   href="https://prodcontest.ru/"
                   rel="noreferrer noopener"
                   target="_blank"
                   class="hover:scale-97 transition-all"
                 >
-                  <div class="flex flex-row gap-4 border-[#03a366] border-2 bg-[#033024] rounded-xl items-center">
+                  <div class="flex flex-row gap-4 border-[#03a366] border-2 bg-[#033024] rounded-full items-center">
                     <svg
                       class="size-8 ml-4"
                       viewBox="0 0 122 34"
@@ -725,7 +698,7 @@ export default function App() {
                   target="_blank"
                   class="hover:scale-97 transition-all"
                 >
-                  <div class="flex flex-row gap-4 border-[#FF801A] border-2 bg-[#452105] rounded-xl items-center">
+                  <div class="flex flex-row pl-2 gap-4 border-[#FF801A] border-2 bg-[#452105] rounded-full items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -757,7 +730,7 @@ export default function App() {
                     <h4 class="text-xl pt-4 pb-3">SDT Student</h4>
                   </div>
                 </a>
-                <div class="flex flex-wrap flex-row">
+                <div class="flex flex-wrap flex-row gap-y-2 gap-x-1">
                   <SwitchCard title="My Setup">
                     <a
                       rel="noopener noreferrer"
@@ -938,22 +911,22 @@ export default function App() {
                       </a>
                     </div>
                   </SwitchCard>
-                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
+                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
                     <p class="mt-[2px]">18 yo</p>
                   </div>
-                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
+                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
                     <p class="mt-[2px]">ru/en</p>
                   </div>
-                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
+                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
                     <p class="mt-[2px]">he/him</p>
                   </div>
-                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
+                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
                     <p class="mt-[2px]">gmt+2</p>
                   </div>
                   <SocialTag text="mobile" />
                   <SocialTag text="web" />
                   <SocialTag text="designer" />
-                  <div class="flex w-full mb-3 relative text-sm font-[Overpass] justify-center rounded-full grow-1 px-4 py-4 bg-[#1A1611] max-sm:bg-[#2B251F] text-lg transition-all">
+                  <div class="flex w-full mb-3 relative text-sm font-[Overpass] justify-center rounded-full grow-1 px-4 py-4 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
                     This website is built by a human. <br />
                     AI training on its content or source code is prohibited.
                   </div>

@@ -11,7 +11,7 @@ export default function Banking() {
         <div class="flex flex-row justify-between items-center">
           <div class="flex flex-col">
             <p class="text-5xl text-white">Support</p>
-            <p class="text-2xl">tarakoshka.tech</p>
+            <p class="text-2xl italic">tarakoshka.tech</p>
           </div>
           <A href="/">
             <Close />
@@ -22,7 +22,7 @@ export default function Banking() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://revolut.me/iabelozerov"
-          class="flex flex-row font-[Overpass] bg-[#2B251F] gap-4 items-center py-4 px-6 rounded-3xl text-white"
+          class="flex flex-row font-[Overpass] bg-zinc-900 gap-4 items-center py-4 px-6 rounded-3xl text-white"
         >
           <svg
             class="size-8"
@@ -50,7 +50,7 @@ export default function Banking() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://buymeacoffee.com/iabelozerov"
-          class="flex flex-row font-[Overpass] bg-[#2B251F] gap-4 items-center py-4 pl-6 pr-5 rounded-3xl text-white"
+          class="flex flex-row font-[Overpass] bg-zinc-900 gap-4 items-center py-4 pl-6 pr-5 rounded-3xl text-white"
         >
           <svg
             class="size-8"
@@ -124,7 +124,7 @@ export default function Banking() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.tinkoff.ru/cf/8NtrlPk7IVM"
-          class="flex flex-row font-[Overpass] bg-[#2B251F] gap-4 items-center py-4 pl-6 pr-5 pb-5 rounded-3xl justify-between text-white"
+          class="flex flex-row font-[Overpass] bg-zinc-900 gap-4 items-center py-4 pl-6 pr-5 pb-5 rounded-3xl justify-between text-white"
         >
           <div class="flex flex-col gap-2">
             <div class="flex flex-row items-center gap-2">
@@ -166,7 +166,7 @@ export default function Banking() {
         <div class="flex flex-row gap-4">
           <a
             class="flex leading-5 flex-row font-[Overpass] grow-1 gap-2 items-center py-3 px-4 outline-white outline-2 rounded-xl text-white"
-            href="/write-to-me"
+            href="/?write=true"
           >
             Leave a cute message
             <svg

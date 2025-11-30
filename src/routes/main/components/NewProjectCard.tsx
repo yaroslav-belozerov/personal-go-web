@@ -13,7 +13,7 @@ export default function NewProjectCard(props: ProjectCardProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      class={`font-[Overpass] flex max-lg:outline-3 -outline-offset-3 max-lg:outline-black max-lg:justify-between max-lg:max-w-70 max-lg:min-w-70 cursor-pointer flex-col max-w-[250px] lg:hover:scale-95 transition-all relative flex flex-col bg-[#1A1611] max-lg:bg-black rounded-2xl max-lg:skew-x-10`}
+      class={`font-[Overpass] flex max-lg:border-3 -border-offset-3 max-lg:border-black max-lg:justify-between max-lg:max-w-70 max-lg:min-w-70 cursor-pointer flex-col max-w-[250px] lg:hover:scale-95 transition-all relative flex flex-col bg-zinc-900 max-lg:bg-black rounded-2xl max-lg:skew-x-8`}
     >
       <Show when={props.showPreview}>
         <img
@@ -22,7 +22,7 @@ export default function NewProjectCard(props: ProjectCardProps) {
           alt={title}
         />
       </Show>
-      <div class="flex flex-col py-3 px-5">
+      <div class="flex flex-col py-3 px-5 justify-between h-full">
         <h4 class="text-xl text-white">{title}</h4>
         <p class="text-sm max-lg:text-white">{description}</p>
       </div>

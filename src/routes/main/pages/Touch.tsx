@@ -31,7 +31,7 @@ export default function Touch() {
       {openDetail() == DetailType.Others && (
         <div
           onClick={() => setOpenDetail(null)}
-          class="fixed top-0 left-0 right-0 bottom-0 z-1 bg-black/50"
+          class="fixed top-0 left-0 right-0 bottom-0 z-2 bg-black/50"
         ></div>
       )}
       <h2 class="text-white text-5xl mt-6 text-center">Get in touch</h2>
@@ -140,7 +140,7 @@ export default function Touch() {
                     initial={{ opacity: 0, transform: "translateY(5%)" }}
                     animate={{ opacity: 1, transform: "translateX(0)" }}
                     exit={{ opacity: 0, transform: "translateY(5%)" }}
-                    class="bottom-full right-0 rounded-full absolute bg-black outline-3 outline-[#0C12C9] px-8 py-4 mb-4"
+                    class="bottom-full right-0 z-4 rounded-full absolute bg-black outline-3 outline-[#0C12C9] px-8 py-4 mb-4"
                   >
                     <div class="flex flex-col">
                       <span class="text-3xl">Other stuff</span>
@@ -324,7 +324,7 @@ export default function Touch() {
           )}
         </MessageProvider>
       </div>
-      <div id="badges" class="flex flex-col w-full gap-4 pt-6">
+      <div id="badges" class="flex flex-col w-full gap-4 pt-6 px-4">
         <h2 class="text-white mb-2 text-center text-5xl">Badges</h2>
         <div class="flex flex-row flex-wrap gap-2 mb-2 justify-center">
           <Badge

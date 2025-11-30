@@ -16,7 +16,10 @@ export default function Lesya() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <main id="catstart" class="flex flex-col page relative w-full">
+      <main
+        id="catstart"
+        class="flex flex-col min-h-screen relative w-full overflow-y-scroll"
+      >
         <img
           src="https://tarakoshka.tech/static/kitty/kitty3.jpg"
           style="opacity: 0;"

@@ -30,7 +30,7 @@ export default function Meta() {
               href="https://school.hse.ru/"
               rel="noreferrer noopener"
               target="_blank"
-              class="flex hover:scale-97 transition-all flex-row gap-4 border-[#FBBA00] border-2 bg-[#382a00] rounded-2xl items-center px-4 py-3"
+              class="flex hover:scale-97 transition-all flex-row gap-4 border-[#FBBA00] border-2 bg-[#382a00] rounded-full items-center px-4 py-3"
             >
               <svg
                 class="size-8 pt-1"
@@ -93,7 +93,7 @@ export default function Meta() {
               target="_blank"
               class="hover:scale-97 transition-all"
             >
-              <div class="flex flex-row gap-4 border-[#03a366] border-2 bg-[#033024] rounded-2xl items-center">
+              <div class="flex flex-row gap-4 border-[#03a366] border-2 bg-[#033024] rounded-full items-center">
                 <svg
                   class="size-8 ml-4"
                   viewBox="0 0 122 34"
@@ -126,7 +126,7 @@ export default function Meta() {
               target="_blank"
               class="hover:scale-97 transition-all"
             >
-              <div class="flex flex-row gap-4 border-[#FF801A] border-2 bg-[#452105] rounded-2xl items-center">
+              <div class="flex flex-row gap-4 border-[#FF801A] border-2 bg-[#452105] rounded-full items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
