@@ -34,7 +34,10 @@ export default function Landing() {
   const flyInEase = cubicBezier(0.76, 0, 0.24, 1);
 
   return (
-    <section class="relative min-h-svh bg-black max-h-svh max-w-screen flex items-center flex-col">
+    <section
+      id="landing"
+      class="relative min-h-svh bg-black max-h-svh max-w-screen flex items-center flex-col"
+    >
       <header class="text-6xl z-0 w-full py-4 text-white outline-white -outline-offset-2 bg-black">
         <a href="https://tarakoshka.tech" class="overflow-hidden w-full">
           <h1 class="text-7xl text-center text-nowrap animate-[marquee-content_10s_linear_infinite]">

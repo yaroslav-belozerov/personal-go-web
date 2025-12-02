@@ -5,6 +5,11 @@ import { createSignal, Show } from "solid-js";
 import { Motion, Presence } from "solid-motionone";
 import Write from "../../write/Write";
 import { Portal } from "solid-js/web";
+import {
+  LatestBlimpProvider,
+  useLatestBlimp,
+} from "../../../lib/api/blimpHook";
+import { blimp } from "./Blimps";
 
 enum DetailType {
   Others = "others",
@@ -255,7 +260,7 @@ export default function Touch() {
             <div class="flex flex-col gap-1 mt-8 justify-between">
               <div class="flex w-full flex-col justify-center items-center rounded-t-3xl relative transition-all">
                 <div class="text-black relative max-w-xl w-full flex flex-col items-center justify-center text-2xl px-8">
-                  <p class="absolute text-2xl top-[19%] bottom-[22%] left-[26%] right-[27%] p-2 break-all text-ellipsis overflow-hidden text-center align-middle text-white bg-black">
+                  <p class="absolute oveflow-clip text-2xl top-[19%] bottom-[22%] left-[26%] right-[27%] p-2 break-all text-ellipsis overflow-hidden text-center align-middle text-white bg-black">
                     {useLastMessage().get()?.text}
                   </p>
                   <img
@@ -264,7 +269,7 @@ export default function Touch() {
                   ></img>
                 </div>
                 <div class="flex font-[Overpass] w-full mx-4 flex-row justify-between items-center p-4 gap-2">
-                  <div class="text-lg text-white grow-1 bg-zinc-900 px-4 py-2 rounded-lg">
+                  <div class="text-lg overflow-clip text-white grow-1 bg-zinc-900 px-4 py-2 rounded-lg">
                     {useLastMessage().get()?.creator || "Unknown author"}
                     <br />
                     <span class="italic">
@@ -435,6 +440,21 @@ export default function Touch() {
             src="https://monomere.cc/buttons/button.gif"
           ></Badge>
         </div>
+      </div>
+      <div id="blimp" class="flex flex-col items-center w-full gap-4 py-6 px-8">
+        <div class="flex flex-row gap-4 items-center">
+          <h2 class="text-white mb-2 text-center text-5xl">Last Blimp</h2>
+          <A
+            href="/blimps"
+            class="text-3xl rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-1 text-white px-3"
+          >
+            all
+          </A>
+        </div>
+        <LatestBlimpProvider baseURL="https://tarakoshka.tech/api/blimps/latest">
+          {useLatestBlimp().get() &&
+            blimp(useLatestBlimp().get()?.content ?? "")}
+        </LatestBlimpProvider>
       </div>
     </section>
   );

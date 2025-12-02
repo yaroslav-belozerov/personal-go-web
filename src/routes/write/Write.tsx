@@ -45,13 +45,13 @@ export default function Write(props: { onClose: () => void }) {
           <ShowWhenInView index={1}>
             <div
               class="flex lg:flex-row lg:flex-wrap flex-col max-lg:h-full gap-4 mx-6 overflow-scroll relative pb-6"
-              style="scrollbar-color: #F5E9C9 transparent; scrollbar-width: none;"
+              style="scrollbar-color: white transparent; scrollbar-width: none;"
             >
               {useMessages().get() &&
                 useMessages()
                   ?.get()
                   ?.map((message) => (
-                    <div class="font-[Overpass] text-black flex flex-col border justify-center bg-white px-4 py-3 md:py-6 md:px-8 bg-[#1A1611] transition-all">
+                    <div class="font-[Overpass] overflow-clip text-black flex flex-col border justify-center bg-white px-4 py-3 md:py-6 md:px-8 transition-all">
                       <p class="text-2xl">{message.text}</p>
                       <p class="text-xl italic">
                         <span>{message.creator}</span> on

@@ -415,9 +415,7 @@ export default function Meta() {
                 </div>
                 <button
                   onClick={(e) => {
-                    document.body.scrollTop = 0;
-                    document.documentElement.scrollTop = 0;
-                    window.location.hash = "";
+                    window.location.hash = "landing";
                     history.pushState(
                       "",
                       document.title,
@@ -425,7 +423,7 @@ export default function Meta() {
                     );
                     e.preventDefault();
                   }}
-                  class="flex flex-row gap-1 items-center justify-center bg-black outline-2 outline-white -outline-offset-2 px-4 rounded-full aspect-square items-center justify-center"
+                  class="flex aspect-square flex-row gap-1 items-center justify-center bg-black outline-2 outline-white -outline-offset-2 px-4 rounded-full aspect-square items-center justify-center"
                 >
                   <div class="rotate-180">
                     <ArrowDown></ArrowDown>

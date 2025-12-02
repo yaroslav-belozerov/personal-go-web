@@ -3,6 +3,8 @@ import { Presence } from "solid-motionone";
 import { lazy } from "solid-js";
 
 const Main = lazy(() => import("./routes/main/Main"));
+const Blimps = lazy(() => import("./routes/main/pages/Blimps"));
+const BlimpTester = lazy(() => import("./routes/main/pages/BlimpTester"));
 const Banking = lazy(() => import("./routes/main/pages/Banking"));
 const Lesya = lazy(() => import("./routes/lesya/Lesya"));
 const Webring = lazy(() => import("./routes/webring/Webring"));
@@ -19,6 +21,8 @@ export default function App() {
     <Presence>
       <Router>
         <Route path="/webring" component={Webring} />
+        <Route path="/blimps" component={Blimps} />
+        <Route path="/blimps/test" component={BlimpTester} />
         <Route path="/support" component={Banking} />
         <Route path="/lesya" component={Lesya} />
         <Route path="/preview" component={PreviewHolder} />

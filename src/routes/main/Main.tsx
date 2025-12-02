@@ -20,6 +20,8 @@ import { SwitchCard } from "./components/SwitchCard";
 import { A, useSearchParams } from "@solidjs/router";
 import Badge from "./components/Badge";
 import Write from "../write/Write";
+import { LatestBlimpProvider, useLatestBlimp } from "../../lib/api/blimpHook";
+import { blimp } from "./pages/Blimps";
 
 export default function App() {
   const [projectsExpanded, setProjectsExpanded] = createSignal<boolean>(false);
@@ -39,7 +41,7 @@ export default function App() {
       transition={{ duration: 0.3 }}
     >
       <main
-        class={`page ${openWrite() ? "overflow-y-hidden" : ""} overflow-x-hidden lg:hidden flex bg-zinc-900 text-[#f5e9c9] lg:pt-0 flex-col relative`}
+        class={`page ${openWrite() ? "overflow-y-hidden" : ""} overflow-x-hidden lg:hidden flex bg-zinc-900 text-white lg:pt-0 flex-col relative`}
       >
         <Landing></Landing>
         <Touch></Touch>
@@ -110,149 +112,172 @@ export default function App() {
           </a>
         </nav>
         <div class="flex flex-row mt-4">
-          <section class="border-l-1 border-y-1 border-white p-6 rounded-l-2xl flex flex-col h-fit w-fit gap-4">
-            <div class="flex flex-col gap-4">
-              <h2 class="text-5xl">Doing stuff</h2>
-              <div class="flex flex-row font-[Overpass]">
-                <button
-                  class={`cursor-pointer border-1 w-full transition-all border-transparent lg:hover:border-white lg:hover:scale-90 py-2 rounded-l-full ${isCurrentProjects() ? "bg-zinc-900" : ""}`}
-                  onClick={() => {
-                    setIsCurrentProjects(true);
-                  }}
-                >
-                  Current
-                </button>
-                <button
-                  class={`cursor-pointer border-1 w-full transition-all border-transparent lg:hover:border-white lg:hover:scale-90 py-2 rounded-r-full ${!isCurrentProjects() ? "bg-zinc-900" : ""}`}
-                  style={
-                    isCurrentProjects()
-                      ? "background: transparent;"
-                      : "outline: #F5E9C900;"
-                  }
-                  onClick={() => {
-                    setIsCurrentProjects(false);
-                  }}
-                >
-                  Past
-                </button>
+          <div class="flex flex-col border-l-1 border-y-1 border-white rounded-l-2xl h-fit">
+            <section class="border-b-1 border-white p-6 flex flex-col h-fit w-fit gap-4">
+              <div class="flex flex-col gap-4">
+                <h2 class="text-5xl">Doing stuff</h2>
+                <div class="flex flex-row font-[Overpass]">
+                  <button
+                    class={`cursor-pointer border-1 w-full transition-all border-transparent lg:hover:border-white lg:hover:scale-90 py-2 rounded-l-full ${isCurrentProjects() ? "bg-zinc-900" : ""}`}
+                    onClick={() => {
+                      setIsCurrentProjects(true);
+                    }}
+                  >
+                    Current
+                  </button>
+                  <button
+                    class={`cursor-pointer border-1 w-full transition-all border-transparent lg:hover:border-white lg:hover:scale-90 py-2 rounded-r-full ${!isCurrentProjects() ? "bg-zinc-900" : ""}`}
+                    style={
+                      isCurrentProjects()
+                        ? "background: transparent;"
+                        : "outline: transparent;"
+                    }
+                    onClick={() => {
+                      setIsCurrentProjects(false);
+                    }}
+                  >
+                    Past
+                  </button>
+                </div>
               </div>
-            </div>
-            <Presence exitBeforeEnter>
-              <Switch>
-                <Match when={isCurrentProjects()}>
-                  <Motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  >
-                    <div
-                      class="flex flex-col gap-4 min-w-[250px]"
-                      style="scrollbar-width: none;"
+              <Presence exitBeforeEnter>
+                <Switch>
+                  <Match when={isCurrentProjects()}>
+                    <Motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                     >
-                      <ProjectsProvider
-                        baseURL={"https://tarakoshka.tech/api/projects/ongoing"}
+                      <div
+                        class="flex flex-col gap-4 min-w-[250px]"
+                        style="scrollbar-width: none;"
                       >
-                        {useProjects().get() &&
-                          useProjects()
-                            ?.get()
-                            ?.filter((it) => it.description != "")
-                            ?.slice(0, projectsExpanded() ? 7 : 3)
-                            ?.map((project) => (
-                              <NewProjectCard
-                                showPreview={false}
-                                project={project}
-                              />
-                            ))}
-                      </ProjectsProvider>
-                      <button
-                        onClick={() => setProjectsExpanded(!projectsExpanded())}
-                        class="cursor-pointer px-8"
-                        style="align-self: center;"
-                      >
-                        <svg
-                          class="scale-120 transition-all"
-                          style={
-                            "transform: rotate(" +
-                            (projectsExpanded() ? "180" : "0") +
-                            "deg);"
+                        <ProjectsProvider
+                          baseURL={
+                            "https://tarakoshka.tech/api/projects/ongoing"
                           }
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24"
-                          viewBox="0 -960 960 960"
-                          width="24"
-                          fill="currentColor"
                         >
-                          <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
-                        </svg>
-                      </button>
-                    </div>
-                  </Motion.div>
-                </Match>
-                <Match when={!isCurrentProjects()}>
-                  <Motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  >
-                    <div
-                      class="flex flex-col gap-4 min-w-[250px]"
-                      style="scrollbar-width: none;"
+                          {useProjects().get() &&
+                            useProjects()
+                              ?.get()
+                              ?.filter((it) => it.description != "")
+                              ?.slice(0, projectsExpanded() ? 7 : 3)
+                              ?.map((project) => (
+                                <NewProjectCard
+                                  showPreview={false}
+                                  project={project}
+                                />
+                              ))}
+                        </ProjectsProvider>
+                        <button
+                          onClick={() =>
+                            setProjectsExpanded(!projectsExpanded())
+                          }
+                          class="cursor-pointer px-8"
+                          style="align-self: center;"
+                        >
+                          <svg
+                            class="scale-120 transition-all"
+                            style={
+                              "transform: rotate(" +
+                              (projectsExpanded() ? "180" : "0") +
+                              "deg);"
+                            }
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            viewBox="0 -960 960 960"
+                            width="24"
+                            fill="currentColor"
+                          >
+                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </Motion.div>
+                  </Match>
+                  <Match when={!isCurrentProjects()}>
+                    <Motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                     >
-                      <ProjectsProvider
-                        baseURL={
-                          "https://tarakoshka.tech/api/projects/finished"
-                        }
+                      <div
+                        class="flex flex-col gap-4 min-w-[250px]"
+                        style="scrollbar-width: none;"
                       >
-                        {useProjects().get() &&
-                          useProjects()
-                            ?.get()
-                            ?.filter((it) => it.description != "")
-                            ?.slice(0, projectsExpanded() ? 10 : 3)
-                            ?.reverse()
-                            ?.map((project) => (
-                              <NewProjectCard
-                                showPreview={
-                                  !projectsExpanded() ||
-                                  useProjects().get.length <= 3
-                                }
-                                project={project}
-                              />
-                            ))}
+                        <ProjectsProvider
+                          baseURL={
+                            "https://tarakoshka.tech/api/projects/finished"
+                          }
+                        >
+                          {useProjects().get() &&
+                            useProjects()
+                              ?.get()
+                              ?.filter((it) => it.description != "")
+                              ?.slice(0, projectsExpanded() ? 10 : 3)
+                              ?.reverse()
+                              ?.map((project) => (
+                                <NewProjectCard
+                                  showPreview={
+                                    !projectsExpanded() ||
+                                    useProjects().get.length <= 3
+                                  }
+                                  project={project}
+                                />
+                              ))}
 
-                        {useProjects().get() && (
-                          <Show when={useProjects().get.length > 3}>
-                            <button
-                              onClick={() =>
-                                setProjectsExpanded(!projectsExpanded())
-                              }
-                              class="cursor-pointer px-8"
-                              style="align-self: center;"
-                            >
-                              <svg
-                                class="scale-120 transition-all"
-                                style={
-                                  "transform: rotate(" +
-                                  (projectsExpanded() ? "180" : "0") +
-                                  "deg);"
+                          {useProjects().get() && (
+                            <Show when={useProjects().get.length > 3}>
+                              <button
+                                onClick={() =>
+                                  setProjectsExpanded(!projectsExpanded())
                                 }
-                                xmlns="http://www.w3.org/2000/svg"
-                                height="24"
-                                viewBox="0 -960 960 960"
-                                width="24"
-                                fill="currentColor"
+                                class="cursor-pointer px-8"
+                                style="align-self: center;"
                               >
-                                <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
-                              </svg>
-                            </button>
-                          </Show>
-                        )}
-                      </ProjectsProvider>
-                    </div>
-                  </Motion.div>
-                </Match>
-              </Switch>
-            </Presence>
-          </section>
+                                <svg
+                                  class="scale-120 transition-all"
+                                  style={
+                                    "transform: rotate(" +
+                                    (projectsExpanded() ? "180" : "0") +
+                                    "deg);"
+                                  }
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  height="24"
+                                  viewBox="0 -960 960 960"
+                                  width="24"
+                                  fill="currentColor"
+                                >
+                                  <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                                </svg>
+                              </button>
+                            </Show>
+                          )}
+                        </ProjectsProvider>
+                      </div>
+                    </Motion.div>
+                  </Match>
+                </Switch>
+              </Presence>
+            </section>
+            <section id="blimp" class="p-4 flex flex-col h-fit w-fit gap-4">
+              <div class="flex flex-row gap-2 items-center">
+                <h2 class="text-white my-2 text-center text-5xl px-2">
+                  Last Blimp
+                </h2>
+                <A
+                  href="/blimps"
+                  class="text-3xl hover:bg-white hover:text-black transition-all rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-1 text-white px-3"
+                >
+                  all
+                </A>
+              </div>
+              <LatestBlimpProvider baseURL="https://tarakoshka.tech/api/blimps/latest">
+                {useLatestBlimp().get() &&
+                  blimp(useLatestBlimp().get()?.content ?? "", 16)}
+              </LatestBlimpProvider>
+            </section>
+          </div>
           <div class="flex flex-col w-full">
             <section class="border-x-1 border-t-1 border-white p-6 flex flex-col w-full h-fit gap-4">
               <h2 class="text-5xl">My socials</h2>
@@ -495,14 +520,14 @@ export default function App() {
               <WebringProvider baseURL="https://webring.otomir23.me/tarakoshka/data">
                 <nav class="items-center z-1 w-full flex gap-2 text-white font-[Overpass] flex-row gap-4">
                   <a
-                    class="flex gap-1 w-full justify-start rounded-xl bg-zinc-900 p-3 items-center hover:rounded-none outline outline-[#FF3737] outline-0 hover:outline-7 transition-all hover:scale-90"
+                    class="flex gap-1 group text-black w-full justify-start rounded-[30px] bg-[#ff3737] p-3 hover:gap-2 items-center hover:rounded-[5px] transition-all hover:scale-95 duration-300"
                     href={useWebring().get()?.prev?.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <svg
                       viewBox="0 0 24 24"
-                      class="size-8"
+                      class="size-8 group-hover:scale-90 transition-all"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -517,22 +542,22 @@ export default function App() {
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <p class="font-[Overpass]">
+                    <p class="font-[Overpass] text-xl pt-[2px] group-hover:tracking-[0.2em] transition-all">
                       {useWebring().get()?.prev?.name}
                     </p>
                   </a>
                   <a
-                    class="flex gap-1 w-full justify-end rounded-xl bg-zinc-900 p-3 items-center hover:rounded-none outline outline-[#FF3737] outline-0 hover:outline-7 transition-all hover:scale-90"
+                    class="flex gap-1 group text-black w-full justify-end rounded-[30px] bg-[#ff3737] p-3 hover:gap-2 items-center hover:rounded-[5px] transition-all hover:scale-95 duration-300"
                     href={useWebring().get()?.next?.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <p class="font-[Overpass]">
+                    <p class="font-[Overpass] text-xl pt-[2px] group-hover:tracking-[0.2em] transition-all">
                       {useWebring().get()?.next?.name}
                     </p>
                     <svg
                       viewBox="0 0 24 24"
-                      class="size-8"
+                      class="size-8 group-hover:scale-90 transition-all"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -555,7 +580,7 @@ export default function App() {
               <h2 class="text-5xl">Leave a message</h2>
               <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
                 {useLastMessage().get() && (
-                  <div class="font-[Overpass] flex justify-between items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md lg:rounded-b-2xl p-6 bg-zinc-900 transition-all">
+                  <div class="font-[Overpass] flex overflow-clip justify-between items-center w-full gap-4 flex-row items-center rounded-t-2xl rounded-b-md lg:rounded-b-2xl p-6 bg-zinc-900 transition-all">
                     <div class="flex flex-col shrink">
                       <p class="text-white text-2xl">
                         {useLastMessage().get()?.text}
