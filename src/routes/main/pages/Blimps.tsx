@@ -60,7 +60,7 @@ export const blimp = (
   return (
     <div
       style={`${customSize != undefined ? `max-width: ${customSize}em; width: ${customSize}em; max-height: ${customSize}em; height: ${customSize}em;` : ""}`}
-      class="bg-zinc-900 relative md:w-64 rounded-3xl w-[90%] max-w-[90%] overflow-clip aspect-square"
+      class="relative md:w-64 rounded-3xl w-[90%] max-w-[90%] overflow-clip aspect-square"
     >
       <a class="hidden">https://tarakoshka.tech/blimps</a>
       <div class="p-4" innerHTML={content}></div>
@@ -74,7 +74,7 @@ export const blimp = (
             },
           });
         }}
-        class="hover:cursor-pointer flex flex-row items-center justify-center z-2 gap-1 font-[Overpass] bg-zinc-900 hover:outline-white outline-transparent outline-1 rounded-full px-2 py-1 transition-all absolute bottom-4 right-4"
+        class="hover:cursor-pointer flex flex-row items-center justify-center z-2 gap-1 font-[Overpass] bg-zinc-900 hover:outline-white outline-transparent outline-1 rounded-full px-3 py-2 transition-all absolute bottom-4 right-4"
       >
         {liked() ? (
           <svg

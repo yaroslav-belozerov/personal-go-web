@@ -112,8 +112,12 @@ export default function App() {
           </a>
         </nav>
         <div class="flex flex-row mt-4">
-          <div class="flex flex-col border-l-1 border-y-1 border-white rounded-l-2xl h-fit">
-            <section class="border-b-1 border-white p-6 flex flex-col h-fit w-fit gap-4">
+          <div
+            class={`flex flex-col border-l-1 border-y-1 border-white rounded-l-2xl h-fit ${!isCurrentProjects() || projectsExpanded() ? "rounded-b-3xl" : ""} border-r-1 `}
+          >
+            <section
+              class={`border-b-1 border-white p-6 flex flex-col h-fit w-fit gap-4`}
+            >
               <div class="flex flex-col gap-4">
                 <h2 class="text-5xl">Doing stuff</h2>
                 <div class="flex flex-row font-[Overpass]">
@@ -260,7 +264,7 @@ export default function App() {
                 </Switch>
               </Presence>
             </section>
-            <section id="blimp" class="p-4 flex flex-col h-fit w-fit gap-4">
+            <section id="blimp" class={`p-4 flex flex-col h-fit w-fit gap-4`}>
               <div class="flex flex-row gap-2 items-center">
                 <h2 class="text-white my-2 text-center text-5xl px-2">
                   Last Blimp
@@ -280,7 +284,7 @@ export default function App() {
             </section>
           </div>
           <div class="flex flex-col w-full">
-            <section class="border-x-1 border-t-1 border-white p-6 flex flex-col w-full h-fit gap-4">
+            <section class="border-r-1 border-t-1 border-white p-6 flex flex-col w-full h-fit gap-4">
               <h2 class="text-5xl">My socials</h2>
               <div class="flex flex-row flex-wrap gap-4">
                 <A
@@ -384,7 +388,9 @@ export default function App() {
                 )}
               </MusicProvider>
             </section>
-            <section class="border-1 border-white p-6 rounded-b-2xl flex flex-col w-full h-fit gap-4">
+            <section
+              class={`border-1 border-white p-6 rounded-b-2xl flex flex-col w-full h-fit gap-4 ${!isCurrentProjects() || projectsExpanded() ? "border-l-0" : ""}`}
+            >
               <h2 class="text-5xl">Buttons</h2>
               <div class="flex flex-row flex-wrap gap-2 mb-2">
                 <Badge
