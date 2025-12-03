@@ -452,8 +452,9 @@ export default function Touch() {
           </A>
         </div>
         <LatestBlimpProvider baseURL="https://tarakoshka.tech/api/blimps/latest">
-          {useLatestBlimp().get() &&
-            blimp(useLatestBlimp().get()?.content ?? "")}
+          {[useLatestBlimp().get()].map(
+            (b) => b && blimp(b.id, b.content, b.likes),
+          )}
         </LatestBlimpProvider>
       </div>
     </section>

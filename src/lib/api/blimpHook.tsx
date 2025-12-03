@@ -3,6 +3,7 @@ import { createRESTApiHook } from "../createRESTApiHook";
 export type Blimp = {
   id: number;
   content: string;
+  likes: number;
 };
 
 const { Provider: LatestBlimpProvider, useRESTApi: useLatestBlimp } =

@@ -273,8 +273,9 @@ export default function App() {
                 </A>
               </div>
               <LatestBlimpProvider baseURL="https://tarakoshka.tech/api/blimps/latest">
-                {useLatestBlimp().get() &&
-                  blimp(useLatestBlimp().get()?.content ?? "", 16)}
+                {[useLatestBlimp().get()].map(
+                  (b) => b && blimp(b.id, b.content, b.likes, 16),
+                )}
               </LatestBlimpProvider>
             </section>
           </div>
