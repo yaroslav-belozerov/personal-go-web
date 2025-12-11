@@ -14,13 +14,13 @@ export default function Blog() {
       exit={{ y: 800, opacity: 0 }}
       transition={{ duration: 0.2 }}
     >
-      <main class="w-vw h-screen max-w-vw overflow-hidden">
+      <main class="h-screen w-full">
         <BlogProvider baseURL="https://tarakoshka.tech/api/posts">
-          <div class="max-lg:hidden block mb-8 mx-10 mt-6 w-full">
+          <div class="max-lg:hidden block pb-8 px-10 pt-6 w-full">
             <h1 class="flex flex-row gap-6 items-center mb-6">
               <nav class="flex flex-row items-center gap-2">
                 <A
-                  class="flex flex-col group pt-4 flex-col text-white text-7xl italic"
+                  class="flex group pt-4 flex-col text-white text-7xl italic"
                   style="text-decoration: none; !important"
                   href="/"
                 >
@@ -46,7 +46,7 @@ export default function Blog() {
                     );
                     setCopied(true);
                   }}
-                  class="text-4xl relative h-fit flex flex-row items-center gap-2 group relative cursor-pointer p-4 transition-all"
+                  class="text-4xl relative h-fit flex flex-row items-center gap-2 group cursor-pointer p-4 transition-all"
                 >
                   <span class="absolute transition-all px-2 py-1 text-center opacity-100 lg:group-hover:opacity-0 lg:group-hover:text-[#0c12c9]">
                     blog
@@ -59,7 +59,7 @@ export default function Blog() {
                 </div>
               </nav>
             </h1>
-            <section class="flex flex-col gap-6">
+            <section class="flex flex-col gap-6 lg:flex-row lg:flex-wrap">
               {useBlog().get() &&
                 useBlog()
                   ?.get()
@@ -68,7 +68,7 @@ export default function Blog() {
                       href={`/blog/${p.slug}`}
                       class="text-white hover:text-black group font-[Overpass] w-fit transition-all flex flex-col justify-center p-6 hover:bg-white"
                     >
-                      <h2 class="w-full relative font-bold transition-all bg-white w-fit px-2 pt-1 mb-2 text-[#0c12c9] hover:bg-transparent text-3xl text-center">
+                      <h2 class="w-full px-16 relative font-bold transition-all bg-white pt-1 mb-2 text-[#0c12c9] hover:bg-transparent text-3xl text-center">
                         {p.title}
                         <svg
                           viewBox="0 0 24 24"

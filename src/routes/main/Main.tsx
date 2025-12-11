@@ -389,7 +389,7 @@ export default function App() {
               </MusicProvider>
             </section>
             <section
-              class={`border-1 border-white p-6 rounded-b-2xl flex flex-col w-full h-fit gap-4 ${!isCurrentProjects() || projectsExpanded() ? "border-l-0" : ""}`}
+              class={`border-white border-1 p-6 rounded-b-2xl flex flex-col w-full h-fit gap-4 ${!isCurrentProjects() || projectsExpanded() ? "border-l-0" : ""}`}
             >
               <h2 class="text-5xl">Buttons</h2>
               <div class="flex flex-row flex-wrap gap-2 mb-2">

@@ -59,12 +59,12 @@ export default function Blogpost() {
               <h1 class="text-white lg:text-7xl text-6xl">
                 {useBlog()?.get()?.title}
               </h1>
-              <h2 class="text-4xl">{useBlog()?.get()?.description}</h2>
+              <h2 class="text-4xl pb-4">{useBlog()?.get()?.description}</h2>
               <div
                 ref={() => {
                   setTimeout(() => {
                     MathJax.typeset();
-                  }, 1000);
+                  }, 500);
                 }}
                 class="font-[Overpass]"
                 id="article-content"
