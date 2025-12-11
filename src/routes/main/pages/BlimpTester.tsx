@@ -27,7 +27,7 @@ export default function BlimpTester() {
           Submit
         </button>
       </form>
-      {blimp(render())}
+      {blimp(0, render(), 999)}
     </div>
   );
 }
