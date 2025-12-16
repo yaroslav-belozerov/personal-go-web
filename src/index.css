@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Inter";
-    src: url("/static/fonts/Inter.ttf") format("truetype");
+    src: url("/static/fonts/Inter.woff") format("truetype");
     font-weight: 100 900; /* Variable font weight range */
     font-style: normal;
     font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "Inter";
-    src: url("/static/fonts/Inter-Italic.ttf") format("truetype");
+    src: url("/static/fonts/Inter-Italic.woff") format("truetype");
     font-weight: 100 900; /* Variable font weight range */
     font-style: italic;
     font-display: swap;
@@ -18,28 +18,28 @@
 
 @font-face {
     font-family: "Instrument";
-    src: url("/static/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+    src: url("/static/fonts/InstrumentSerif-Regular.woff") format("truetype");
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Instrument";
-    src: url("/static/fonts/InstrumentSerif-Italic.ttf") format("truetype");
+    src: url("/static/fonts/InstrumentSerif-Italic.woff") format("truetype");
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Oi";
-    src: url("/static/fonts/Oi-Regular.ttf") format("truetype");
+    src: url("/static/fonts/Oi-Regular.woff") format("truetype");
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Sora";
-    src: url("/static/fonts/Sora.ttf") format("truetype-variations");
+    src: url("/static/fonts/Sora.woff") format("truetype-variations");
     font-weight: 100 900; /* Variable font weight range */
     font-style: normal;
     font-display: swap;
@@ -47,7 +47,7 @@
 
 @font-face {
     font-family: "Libre Bodoni";
-    src: url("/static/fonts/LibreBodoni.ttf") format("truetype-variations");
+    src: url("/static/fonts/LibreBodoni.woff") format("truetype-variations");
     font-weight: 100 900; /* Variable font weight range */
     font-style: normal;
     font-display: swap;
@@ -55,7 +55,7 @@
 
 @font-face {
     font-family: "Libre Bodoni";
-    src: url("/static/fonts/LibreBodoni-Italic.ttf")
+    src: url("/static/fonts/LibreBodoni-Italic.woff")
         format("truetype-variations");
     font-weight: 100 900;
     font-style: italic;
@@ -64,7 +64,7 @@
 
 @font-face {
     font-family: "Overpass";
-    src: url("/static/fonts/Overpass.ttf") format("truetype-variations");
+    src: url("/static/fonts/Overpass.woff") format("truetype-variations");
     font-weight: 100 900; /* Variable font weight range */
     font-style: normal;
     font-display: swap;
@@ -72,7 +72,7 @@
 
 @font-face {
     font-family: "Overpass";
-    src: url("/static/fonts/Overpass-Italic.ttf") format("truetype-variations");
+    src: url("/static/fonts/Overpass-Italic.woff") format("truetype-variations");
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;
@@ -80,14 +80,14 @@
 
 @font-face {
     font-family: "Oswald";
-    src: url("/static/fonts/Oswald-SemiBold.ttf");
+    src: url("/static/fonts/Oswald-SemiBold.woff");
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Figtree";
-    src: url("/static/fonts/Figtree.ttf") format("truetype-variations");
+    src: url("/static/fonts/Figtree.woff") format("truetype-variations");
     font-weight: 400 900;
     font-style: normal;
     font-display: swap;
@@ -95,7 +95,7 @@
 
 @font-face {
     font-family: "JustMe";
-    src: url("/static/fonts/JustMeAgainDownHere.ttf");
+    src: url("/static/fonts/JustMeAgainDownHere.woff");
     font-style: normal;
     font-display: swap;
 }
