@@ -124,7 +124,7 @@ export default function Landing() {
           <A href="#contacts" class="h-fit relative w-fit">
             <img
               class="h-48 -rotate-10"
-              fetchpriority=high
+              fetchpriority="high"
               src="https://tarakoshka.tech/static/old_phone.webp"
             ></img>
             <Motion.div
@@ -140,7 +140,7 @@ export default function Landing() {
           <A href="#projects" class="self-center h-fit relative w-fit">
             <img
               class="h-48 rotate-60"
-              fetchpriority=high
+              fetchpriority="high"
               src="https://tarakoshka.tech/static/scraps.png"
             ></img>
             <Motion.div
@@ -156,7 +156,7 @@ export default function Landing() {
           <A href="#badges" class="h-fit relative w-fit">
             <img
               class="w-40 rotate-30"
-              fetchpriority=high
+              fetchpriority="high"
               src="https://tarakoshka.tech/static/badges.webp"
             ></img>
             <Motion.div
@@ -173,7 +173,7 @@ export default function Landing() {
             <A href="#info" class="h-fit relative w-fit">
               <img
                 class="-rotate-10 w-40"
-                fetchpriority=high
+                fetchpriority="high"
                 src="https://tarakoshka.tech/static/login.jpg"
               ></img>
               <Motion.div
