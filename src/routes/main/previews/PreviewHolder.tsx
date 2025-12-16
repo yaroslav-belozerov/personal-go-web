@@ -6,6 +6,7 @@ export const availableProjects = ["jb-testing-cup"];
 
 export default function PreviewHolder() {
   const [q, setQ] = useSearchParams();
+  console.log(q);
   if (!availableProjects.includes(q.name)) {
     return <NotFound />;
   }

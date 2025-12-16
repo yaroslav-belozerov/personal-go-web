@@ -9,7 +9,7 @@ const Banking = lazy(() => import("./routes/main/pages/Banking"));
 const Lesya = lazy(() => import("./routes/lesya/Lesya"));
 const Webring = lazy(() => import("./routes/webring/Webring"));
 const PreviewHolder = lazy(
-  () => import("./routes/main/project_previews/PreviewHolder"),
+  () => import("./routes/main/previews/PreviewHolder"),
 );
 const Blog = lazy(() => import("./routes/blog/Blog"));
 const Blogpost = lazy(() => import("./routes/blog/Blogpost"));

@@ -14,7 +14,6 @@ import Meta from "./pages/Meta";
 import { MusicProvider, useMusic } from "../../lib/api/musicHook";
 import NewProjectCard from "./components/NewProjectCard";
 import { Portal } from "solid-js/web";
-import { BackArrow } from "../lesya/components/Icons";
 import { useWebring, WebringProvider } from "../../lib/api/webringHook";
 import { SwitchCard } from "./components/SwitchCard";
 import { A, useSearchParams } from "@solidjs/router";

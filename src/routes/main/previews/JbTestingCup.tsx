@@ -1,5 +1,3 @@
-import { A } from "@solidjs/router";
-
 export default function JbTestingCup() {
   return (
     <div class="text-xl min-h-screen font-[Inter] text-white bg-zinc-950">

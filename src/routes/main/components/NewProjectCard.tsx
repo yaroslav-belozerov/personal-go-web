@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router";
 import { Project } from "../../../lib/api/projectsHook";
 import { Show } from "solid-js";
 
@@ -9,7 +10,7 @@ interface ProjectCardProps {
 export default function NewProjectCard(props: ProjectCardProps) {
   const { title, description, preview, url, ongoing } = props.project;
   return (
-    <a
+    <A
       href={url}
       target="_blank"
       rel="noopener noreferrer"
@@ -26,6 +27,6 @@ export default function NewProjectCard(props: ProjectCardProps) {
         <h4 class="text-xl text-white">{title}</h4>
         <p class="text-sm max-lg:text-white">{description}</p>
       </div>
-    </a>
+    </A>
   );
 }
