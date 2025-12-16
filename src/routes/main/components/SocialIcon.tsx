@@ -1,6 +1,8 @@
+import { JSXElement } from "solid-js";
+
 interface SocialIconProps {
   path: string;
-  icon: string;
+  icon: JSXElement;
 }
 
 export default function SocialIcon(props: SocialIconProps) {
@@ -10,11 +12,7 @@ export default function SocialIcon(props: SocialIconProps) {
       style="flex: 1 0 26%;"
       href={props.path}
     >
-      <img
-        class="transition-all lg:group-hover:scale-125 min-w-[35px] aspect-square w-[60%]"
-        src={`/static/icons/${props.icon}`}
-        alt={props.path}
-      ></img>
+      {props.icon}
     </a>
   );
 }

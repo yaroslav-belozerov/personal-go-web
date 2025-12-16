@@ -54,15 +54,11 @@ export const blimp = (
   content: string,
   likes: number,
   showCopy: boolean = false,
-  customSize: number | undefined = undefined,
 ) => {
   const [liked, setLiked] = createSignal(false);
 
   return (
-    <div
-      style={`${customSize != undefined ? `max-width: ${customSize}em; width: ${customSize}em; max-height: ${customSize}em; height: ${customSize}em;` : ""}`}
-      class="relative md:w-64 rounded-3xl w-[90%] max-w-[90%] overflow-clip aspect-square"
-    >
+    <div class="relative md:w-64 rounded-3xl w-[90%] max-w-[90%] overflow-clip aspect-square">
       <a class="hidden">https://tarakoshka.tech/blimps</a>
       <div class="p-4" innerHTML={content}></div>
       <div class="flex flex-row absolute bottom-4 left-0 right-0 justify-between gap-1">

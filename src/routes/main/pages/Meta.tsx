@@ -197,7 +197,7 @@ export default function Meta() {
                       />
                     </svg>
                     <svg
-                      class="transition-all size-7 absolute top-[50%] left-[49%] translate-[-52%] text-white"
+                      class="transition-all size-7 absolute top-[52%] left-[49%] translate-[-52%] text-white"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >

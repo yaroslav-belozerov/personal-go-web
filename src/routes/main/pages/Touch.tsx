@@ -284,24 +284,33 @@ export default function Touch() {
                     </span>
                   </div>
                   <button
-                    class={`flex flex-row gap-2 text-white bg-[#0C12C9] p-4 rounded-full justify-center transition-all items-center transition-all`}
-                    onClick={() => {
-                      setOpenWrite(true);
-                    }}
+                    onClick={() => setOpenWrite(true)}
+                    name="open messages page"
+                    class="relative min-w-14 size-14 transition-all lg:hover:scale-90 lg:cursor-pointer"
                   >
                     <svg
-                      class="size-8"
-                      viewBox="0 0 24 24"
-                      fill="none"
+                      class="text-[#0C12C9] transition-all size-14 min-w-14 top-0 bottom-0 scale-120 absolute"
+                      style="animation: rotate-animation 20s infinite linear;"
                       xmlns="http://www.w3.org/2000/svg"
+                      width="409"
+                      height="405"
+                      fill="none"
+                      viewBox="0 0 409 405"
                     >
                       <path
-                        d="M3 7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2Z"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        fill="currentColor"
+                        d="M180.993 9.267c13.508-11.646 33.506-11.646 47.014 0l26.686 23.008a36.003 36.003 0 0 0 23.989 8.73l35.232-.47c17.834-.24 33.154 12.616 36.015 30.22l5.654 34.778a36.001 36.001 0 0 0 12.764 22.109l27.292 22.285c13.815 11.28 17.288 30.975 8.164 46.3l-18.024 30.276a36.003 36.003 0 0 0-4.433 25.141l6.582 34.615c3.332 17.521-6.667 34.84-23.507 40.715l-33.268 11.607a36.004 36.004 0 0 0-19.556 16.41l-17.208 30.747c-8.71 15.564-27.502 22.404-44.179 16.08l-32.946-12.493a36.003 36.003 0 0 0-25.528 0l-32.946 12.493c-16.677 6.324-35.469-.516-44.179-16.08l-17.208-30.747a36.004 36.004 0 0 0-19.556-16.41L44.58 326.974c-16.84-5.875-26.84-23.194-23.508-40.715l6.583-34.615a36.002 36.002 0 0 0-4.433-25.141L5.197 196.227c-9.124-15.325-5.651-35.02 8.163-46.3l27.293-22.285a36 36 0 0 0 12.764-22.109l5.654-34.778c2.861-17.604 18.181-30.46 36.015-30.22l35.232.47a36.003 36.003 0 0 0 23.989-8.73l26.686-23.008Z"
                       />
+                    </svg>
+                    <svg
+                      class="text-white transition-all size-8 absolute top-[52%] left-[52%] translate-[-50%]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="currentColor"
+                    >
+                      <path d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm160-320h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80Z" />
                     </svg>
                   </button>
                   {/*<A
