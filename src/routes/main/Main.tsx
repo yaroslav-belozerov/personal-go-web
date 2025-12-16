@@ -177,6 +177,7 @@ export default function App() {
                           onClick={() =>
                             setProjectsExpanded(!projectsExpanded())
                           }
+                          name="see more/less projects"
                           class="cursor-pointer px-8"
                           style="align-self: center;"
                         >
@@ -236,6 +237,7 @@ export default function App() {
                                 onClick={() =>
                                   setProjectsExpanded(!projectsExpanded())
                                 }
+                                name="see more/less projects"
                                 class="cursor-pointer px-8"
                                 style="align-self: center;"
                               >
@@ -474,7 +476,7 @@ export default function App() {
                 ></Badge>
                 <Badge
                   link="https://gooslime.neocities.org/"
-                  src="http://gooslime.neocities.org/gooslime_branding/gooslime.gif"
+                  src="https://gooslime.neocities.org/gooslime_branding/gooslime.gif"
                 ></Badge>
                 <Badge
                   link="https://veselcraft.ru/"
@@ -608,6 +610,7 @@ export default function App() {
                     </div>
                     <button
                       onClick={() => setOpenWrite(true)}
+                      name="open messages page"
                       class="relative min-w-14 size-14 transition-all hover:scale-90 lg:cursor-pointer"
                     >
                       <svg

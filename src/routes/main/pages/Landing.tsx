@@ -125,6 +125,7 @@ export default function Landing() {
             <img
               class="h-48 -rotate-10"
               fetchpriority="high"
+              alt="old phone"
               src="https://tarakoshka.tech/static/old_phone.webp"
             ></img>
             <Motion.div
@@ -141,6 +142,7 @@ export default function Landing() {
             <img
               class="h-48 rotate-60"
               fetchpriority="high"
+              alt="pieces of scrap paper"
               src="https://tarakoshka.tech/static/scraps.png"
             ></img>
             <Motion.div
@@ -157,6 +159,7 @@ export default function Landing() {
             <img
               class="w-40 rotate-30"
               fetchpriority="high"
+              alt="work badges"
               src="https://tarakoshka.tech/static/badges.webp"
             ></img>
             <Motion.div
@@ -174,6 +177,7 @@ export default function Landing() {
               <img
                 class="-rotate-10 w-40"
                 fetchpriority="high"
+                alt="windows xp login page"
                 src="https://tarakoshka.tech/static/login.jpg"
               ></img>
               <Motion.div
