@@ -70,7 +70,7 @@ export const blimp = (
                   content,
               );
             }}
-            class="hover:cursor-pointer -outline-offset-1 flex flex-row items-center justify-center z-2 font-[Overpass] bg-zinc-900 hover:outline-white outline-transparent outline-1 rounded-full px-3 py-2 transition-all"
+            class="hover:cursor-pointer -outline-offset-2 flex flex-row items-center justify-center z-2 font-[Overpass] bg-zinc-900 hover:outline-white outline-transparent outline-2 rounded-full px-3 py-2 transition-all"
           >
             <svg
               class="size-6"
@@ -86,6 +86,7 @@ export const blimp = (
         )}
         <button
           onClick={() => {
+            if (liked()) return;
             setLiked(true);
             fetch("https://tarakoshka.tech/api/blimps/like?id=" + id, {
               method: "POST",
@@ -94,7 +95,7 @@ export const blimp = (
               },
             });
           }}
-          class="hover:cursor-pointer -outline-offset-1 flex flex-row items-center justify-center z-2 gap-1 font-[Overpass] bg-zinc-900 hover:outline-white outline-transparent outline-1 rounded-full px-3 py-2 transition-all"
+          class="hover:cursor-pointer -outline-offset-2 flex flex-row items-center justify-center z-2 gap-1 font-[Overpass] bg-zinc-900 hover:outline-white outline-transparent outline-2 rounded-full px-3 py-2 transition-all"
         >
           {liked() ? (
             <svg

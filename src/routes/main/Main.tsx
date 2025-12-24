@@ -7,7 +7,7 @@ import SocialTag from "./components/SocialTag";
 import { ProjectsProvider, useProjects } from "../../lib/api/projectsHook";
 import { MessageProvider, useLastMessage } from "../../lib/api/messagesHook";
 import { Motion, Presence } from "solid-motionone";
-import Landing from "./pages/Landing";
+import Landing, { star } from "./pages/Landing";
 import Current from "./pages/Current";
 import Touch from "./pages/Touch";
 import Meta from "./pages/Meta";
@@ -40,14 +40,16 @@ export default function App() {
       transition={{ duration: 0.3 }}
     >
       <main
-        class={`page ${openWrite() ? "overflow-y-hidden" : ""} overflow-x-hidden lg:hidden flex bg-zinc-900 text-white lg:pt-0 flex-col relative`}
+        class={`page ${openWrite() ? "overflow-y-hidden" : "overflow-y-scroll"} overflow-x-hidden lg:hidden flex bg-zinc-900 text-white lg:pt-0 flex-col relative`}
       >
         <Landing></Landing>
         <Touch></Touch>
         <Current></Current>
         <Meta></Meta>
       </main>
-      <main class="lg:flex hidden flex-col p-6">
+      <main
+        class={`page lg:flex hidden flex-col p-6 ${openWrite() ? "overflow-y-hidden" : "overflow-y-scroll"}`}
+      >
         <Portal>
           <Presence>
             <Show when={openWrite()} fallback={<div></div>}>
@@ -112,16 +114,16 @@ export default function App() {
         </nav>
         <div class="flex flex-row mt-4">
           <div
-            class={`flex flex-col border-l-1 border-y-1 border-white rounded-l-2xl h-fit ${!isCurrentProjects() || projectsExpanded() ? "rounded-b-3xl" : ""} border-r-1 `}
+            class={`flex flex-col border-l-2 border-y-2 border-white rounded-l-2xl h-fit ${!isCurrentProjects() || projectsExpanded() ? "rounded-b-3xl" : ""} border-r-2 `}
           >
             <section
-              class={`border-b-1 border-white p-6 flex flex-col h-fit w-fit gap-4`}
+              class={`border-b-2 border-white p-6 flex flex-col h-fit w-fit gap-4`}
             >
               <div class="flex flex-col gap-4">
                 <h2 class="text-5xl">Doing stuff</h2>
                 <div class="flex flex-row font-[Overpass]">
                   <button
-                    class={`cursor-pointer border-1 w-full transition-all border-transparent lg:hover:border-white lg:hover:scale-90 py-2 rounded-l-full ${isCurrentProjects() ? "bg-zinc-900" : ""}`}
+                    class={`cursor-pointer border-2 w-full transition-all border-transparent py-2 rounded-4xl ${isCurrentProjects() ? "bg-zinc-900 rounded-r-none" : "lg:hover:border-white"}`}
                     onClick={() => {
                       setIsCurrentProjects(true);
                     }}
@@ -129,7 +131,7 @@ export default function App() {
                     Current
                   </button>
                   <button
-                    class={`cursor-pointer border-1 w-full transition-all border-transparent lg:hover:border-white lg:hover:scale-90 py-2 rounded-r-full ${!isCurrentProjects() ? "bg-zinc-900" : ""}`}
+                    class={`cursor-pointer border-2 w-full transition-all border-transparent py-2 rounded-4xl ${!isCurrentProjects() ? "bg-zinc-900 rounded-l-none" : "lg:hover:border-white"}`}
                     style={
                       isCurrentProjects()
                         ? "background: transparent;"
@@ -272,7 +274,7 @@ export default function App() {
                 </h2>
                 <A
                   href="/blimps"
-                  class="text-3xl hover:bg-white hover:text-black transition-all rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-1 text-white px-3"
+                  class="text-3xl hover:bg-white hover:text-black transition-all rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-2 text-white px-3"
                 >
                   all
                 </A>
@@ -284,27 +286,29 @@ export default function App() {
               </LatestBlimpProvider>
             </section>
           </div>
-          <div class="flex flex-col w-full">
-            <section class="border-r-1 border-t-1 border-white p-6 flex flex-col w-full h-fit gap-4">
-              <h2 class="text-5xl">My socials</h2>
-              <div class="flex flex-row flex-wrap gap-4">
+          <div class="flex flex-col w-full border-t-2 h-fit border-white">
+            <section class="p-4 flex flex-col w-full h-fit gap-4">
+              <h2 class="text-5xl pt-2 px-2">My socials</h2>
+              <div class="flex flex-row flex-wrap">
                 <A
-                  class="group relative hover:bg-[#0c12c9] flex hover:scale-110 hover:rounded-[80px] max-lg:w-full w-8 min-w-14 p-4 justify-center aspect-square  items-center rounded-3xl max-lg:bg-[#2B251F] bg-zinc-900 transition-all"
+                  class="group flex max-lg:w-full w-8 min-w-14 p-2 aspect-square"
                   style="flex: 1 0 26%;"
                   href="/blog"
                 >
-                  <span class="text-7xl italic group-hover:opacity-0 transition-all">
-                    tt
-                  </span>
-                  <div class="absolute gap-1 opacity-0 group-hover:opacity-100 transition-all rounded-full items-center flex flex-row">
-                    <p class="text-white pb-[2px]">read my blog</p>
+                  <div class="relative w-full h-full flex items-center justify-center lg:group-hover:scale-90 lg:group-hover:bg-[#0C12C9] rounded-3xl max-lg:bg-[#2B251F] bg-zinc-900 transition-all">
+                    <span class="text-7xl italic group-hover:opacity-0 transition-all">
+                      tt
+                    </span>
+                    <div class="absolute gap-1 opacity-0 group-hover:opacity-100 group-hover:scale-135 transition-all rounded-full items-center flex flex-row">
+                      <p class="text-white pb-[2px]">read my blog</p>
+                    </div>
                   </div>
                 </A>
                 <SocialIcon
                   path="https://anilist.co/user/Lemurr4ik/"
                   icon={
                     <svg
-                      class="transition-all lg:group-hover:scale-125 min-w-[35px] aspect-square w-[60%]"
+                      class="transition-all lg:group-hover:scale-135 min-w-[35px] aspect-square w-[60%]"
                       role="img"
                       fill="white"
                       viewBox="0 0 24 24"
@@ -319,7 +323,7 @@ export default function App() {
                   path="https://mastodon.social/@yaabelozerov"
                   icon={
                     <svg
-                      class="transition-all lg:group-hover:scale-125 min-w-[35px] aspect-square w-[60%]"
+                      class="transition-all lg:group-hover:scale-135 min-w-[35px] aspect-square w-[60%]"
                       fill="white"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -332,7 +336,7 @@ export default function App() {
                   path="https://open.spotify.com/user/31ztrvjmvnvjcf4m6fhkv4gmys3i"
                   icon={
                     <svg
-                      class="transition-all lg:group-hover:scale-125 min-w-[35px] aspect-square w-[60%]"
+                      class="transition-all lg:group-hover:scale-135 min-w-[35px] aspect-square w-[60%]"
                       viewBox="0 0 20 20"
                       version="1.1"
                       xmlns="http://www.w3.org/2000/svg"
@@ -368,7 +372,7 @@ export default function App() {
                   path="https://x.com/yaabelozerov"
                   icon={
                     <svg
-                      class="transition-all lg:group-hover:scale-125 min-w-[35px] aspect-square w-[60%]"
+                      class="transition-all lg:group-hover:scale-135 min-w-[35px] aspect-square w-[60%]"
                       viewBox="0 -2 20 20"
                       version="1.1"
                       xmlns="http://www.w3.org/2000/svg"
@@ -404,7 +408,7 @@ export default function App() {
                   path="mailto:me@tarakoshka.tech"
                   icon={
                     <svg
-                      class="transition-all lg:group-hover:scale-125 min-w-[35px] aspect-square w-[60%]"
+                      class="transition-all lg:group-hover:scale-135 min-w-[35px] aspect-square w-[60%]"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -424,7 +428,7 @@ export default function App() {
                   icon={
                     <svg
                       viewBox="0 0 512 512"
-                      class="transition-all lg:group-hover:scale-125 min-w-[35px] aspect-square w-[60%]"
+                      class="transition-all lg:group-hover:scale-135 min-w-[35px] aspect-square w-[60%]"
                       fill="white"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -436,7 +440,7 @@ export default function App() {
                   path="https://github.com/yaroslav-belozerov"
                   icon={
                     <svg
-                      class="transition-all lg:group-hover:scale-125 min-w-[35px] aspect-square w-[60%]"
+                      class="transition-all lg:group-hover:scale-135 min-w-[35px] aspect-square w-[60%]"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -511,7 +515,7 @@ export default function App() {
               </MusicProvider>
             </section>
             <section
-              class={`border-white border-1 p-6 rounded-b-2xl flex flex-col w-full h-fit gap-4 ${!isCurrentProjects() || projectsExpanded() ? "border-l-0" : ""}`}
+              class={`outline-white outline-2 p-6 rounded-b-2xl flex flex-col w-full h-fit gap-4 ${!isCurrentProjects() || projectsExpanded() ? "border-l-0" : ""}`}
             >
               <h2 class="text-5xl">Buttons</h2>
               <div class="flex flex-row flex-wrap gap-2 mb-2">
@@ -625,8 +629,8 @@ export default function App() {
               </div>
             </section>
           </div>
-          <div class="flex flex-col w-full">
-            <section class="border-y-1 border-r-1 border-white p-6 rounded-tr-2xl flex flex-col w-full h-fit gap-4">
+          <div class="flex flex-col w-full border-2 border-white overflow-clip h-fit rounded-r-2xl rounded-b-2xl ">
+            <section class="bg-[#ff3737] text-black p-6 flex flex-col w-full h-fit gap-4 border-white border-b-2">
               <a
                 class="flex flex-row gap-4 items-center group"
                 href="https://webring.otomir23.me/"
@@ -641,15 +645,15 @@ export default function App() {
                   height="24px"
                   viewBox="0 -960 960 960"
                   width="24px"
-                  fill="#EFEFEF"
+                  fill="black"
                 >
                   <path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z" />
                 </svg>
               </a>
               <WebringProvider baseURL="https://webring.otomir23.me/tarakoshka/data">
-                <nav class="items-center z-1 w-full flex gap-2 text-white font-[Overpass] flex-row gap-4">
+                <nav class="items-center z-1 w-full flex text-white font-[Overpass] flex-row gap-2">
                   <a
-                    class="flex gap-1 group text-black w-full justify-start rounded-[30px] bg-[#ff3737] p-3 hover:gap-2 items-center hover:rounded-[5px] transition-all hover:scale-95 duration-300"
+                    class="flex gap-1 group text-[#FF3737] w-full justify-start rounded-[30px] bg-black p-3 hover:gap-2 items-center hover:rounded-r-[0px] transition-all duration-400"
                     href={useWebring().get()?.prev?.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -676,7 +680,7 @@ export default function App() {
                     </p>
                   </a>
                   <a
-                    class="flex gap-1 group text-black w-full justify-end rounded-[30px] bg-[#ff3737] p-3 hover:gap-2 items-center hover:rounded-[5px] transition-all hover:scale-95 duration-300"
+                    class="flex gap-1 group text-[#FF3737] w-full justify-end rounded-[30px] bg-black p-3 hover:gap-2 items-center hover:rounded-l-[0px] transition-all duration-400"
                     href={useWebring().get()?.next?.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -705,7 +709,7 @@ export default function App() {
                 </nav>
               </WebringProvider>
             </section>
-            <section class="border-r-1 border-white p-6 flex flex-col w-full h-fit gap-4">
+            <section class="p-6 flex flex-col w-full h-fit gap-4 border-white border-b-2">
               <h2 class="text-5xl">Leave a message</h2>
               <MessageProvider baseURL="https://tarakoshka.tech/api/messages/first">
                 {useLastMessage().get() && (
@@ -762,18 +766,10 @@ export default function App() {
                 )}
               </MessageProvider>
             </section>
-            <section class="border-y-1 border-r-1 border-white p-6 max-w-[800px] rounded-br-2xl flex flex-col w-fit h-fit gap-4">
+            <section class="p-6 max-w-[800px] flex flex-col w-fit h-fit gap-4">
               <div class="flex flex-row justify-between items-center">
                 <h2 class="text-5xl">About</h2>
-                <a href="/support">
-                  <svg
-                    class="size-10 fill-yellow-300 animate-[landing_10s_ease-in-out_infinite]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 -960 960 960"
-                  >
-                    <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
-                  </svg>
-                </a>
+                <a href="/support">{star(0)}</a>
               </div>
               <div class="flex flex-col gap-3 font-[Overpass] text-white">
                 <a

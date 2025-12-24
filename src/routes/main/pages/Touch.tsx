@@ -455,7 +455,7 @@ export default function Touch() {
           <h2 class="text-white mb-2 text-center text-5xl">Last Blimp</h2>
           <A
             href="/blimps"
-            class="text-3xl rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-1 text-white px-3"
+            class="text-3xl rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-2 text-white px-3"
           >
             all
           </A>

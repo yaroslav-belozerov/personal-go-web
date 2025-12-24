@@ -12,7 +12,7 @@ import LandingLink from "../components/LandingLink";
 import { Motion } from "solid-motionone";
 import { cubicBezier, easeInOut } from "motion";
 
-function star(delay: number) {
+export function star(delay: number) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -121,7 +121,7 @@ export default function Landing() {
           </Motion.a>
         </div>
         <div class="grid grid-cols-2 grid-rows-2 grow-1 mt-4 grid-rows-2 flex-col px-4">
-          <A href="#contacts" class="h-fit relative w-fit">
+          <A href="#contacts" class="h-fit relative w-full">
             <img
               class="h-48 -rotate-10"
               fetchpriority="high"
@@ -138,7 +138,7 @@ export default function Landing() {
               </div>
             </Motion.div>
           </A>
-          <A href="#projects" class="self-center h-fit relative w-fit">
+          <A href="#projects" class="self-center h-fit relative w-full">
             <img
               class="h-48 rotate-60"
               fetchpriority="high"
@@ -155,7 +155,7 @@ export default function Landing() {
               </div>
             </Motion.div>
           </A>
-          <A href="#badges" class="h-fit relative w-fit">
+          <A href="#badges" class="h-fit relative w-full">
             <img
               class="w-40 rotate-30"
               fetchpriority="high"
@@ -173,7 +173,7 @@ export default function Landing() {
             </Motion.div>
           </A>
           <div class="flex flex-col h-full justify-between pb-8 items-center">
-            <A href="#info" class="h-fit relative w-fit">
+            <A href="#info" class="h-fit relative w-full">
               <img
                 class="-rotate-10 w-40"
                 fetchpriority="high"
