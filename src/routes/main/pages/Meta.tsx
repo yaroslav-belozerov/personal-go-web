@@ -63,31 +63,8 @@ export default function Meta() {
                   </g>
                 </g>
               </svg>
-              <h4 class="text-xl pt-1">HSE Lyceum Alumni</h4>
+              <p class="text-xl pt-1">HSE Lyceum Alumni</p>
             </a>
-            {/*<a
-              href="https://www.tbank.ru/"
-              class="flex hover:scale-97 transition-all flex-row gap-4 border-[#FFDD2D] border-2 bg-[#3d3402] rounded-xl items-center px-4 py-3"
-            >
-              <svg
-                class="size-8 pl-1"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 4H29V17.5849C29 21.3238 27.0054 24.7789 23.7676 26.6485L14.5001 32L5.23246 26.6485C1.99457 24.7789 3.32377e-06 21.3238 3.32377e-06 17.5849L0 4Z"
-                  fill="#FFDD2D"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M8 11V15.5077C8.6164 14.8116 9.73715 14.3406 11.0186 14.3406H12.4111V19.5807C12.4111 20.9748 12.0323 22.3399 11.4703 23.0111H17.5276C16.9668 22.3392 16.5889 20.9758 16.5889 19.5834V14.3406H17.9815C19.2629 14.3406 20.3836 14.8116 21 15.5077V11H8Z"
-                  fill="#333333"
-                />
-              </svg>
-              <h4 class="text-xl pt-1">T-Bank Mobile Intern</h4>
-            </a>*/}
             <a
               href="https://prodcontest.ru/"
               rel="noreferrer noopener"
@@ -118,7 +95,7 @@ export default function Meta() {
                     </clipPath>
                   </defs>
                 </svg>
-                <h4 class="text-xl pt-4 pb-3">PROD 2025 Winner</h4>
+                <p class="text-xl pt-4 pb-3">PROD 2025 Winner</p>
               </div>
             </a>
             <a
@@ -156,7 +133,7 @@ export default function Meta() {
                   <path fill="#fff" d="M30 47H13v4h17v-4Z" />
                 </svg>
 
-                <h4 class="text-xl pt-4 pb-3">SDT Student</h4>
+                <p class="text-xl pt-4 pb-3">SDT Student</p>
               </div>
             </a>
             <MusicProvider baseURL="https://tarakoshka.tech/api/music">
@@ -415,6 +392,7 @@ export default function Meta() {
                   AI training on its content or source code is prohibited.
                 </div>
                 <button
+                  aria-label="Go to top"
                   onClick={(e) => {
                     window.location.hash = "landing";
                     history.pushState(

@@ -260,6 +260,7 @@ export default function Touch() {
                     {useLastMessage().get()?.text}
                   </p>
                   <img
+                    alt="Pompous painting frame"
                     src="https://tarakoshka.tech/static/frame.jpg"
                     class="rounded-xs min-w-full"
                   ></img>

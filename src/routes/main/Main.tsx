@@ -855,7 +855,7 @@ export default function App() {
                       </g>
                     </g>
                   </svg>
-                  <h5 class="text-xl pt-1">HSE Lyceum Alumni</h5>
+                  <p class="text-xl pt-1">HSE Lyceum Alumni</p>
                 </a>
                 <a
                   aria-label="PROD programming contest"
@@ -888,7 +888,7 @@ export default function App() {
                         </clipPath>
                       </defs>
                     </svg>
-                    <h5 class="text-xl pt-4 pb-3">PROD 2025 Winner</h5>
+                    <p class="text-xl pt-4 pb-3">PROD 2025 Winner</p>
                   </div>
                 </a>
                 <a
@@ -927,7 +927,7 @@ export default function App() {
                       <path fill="#fff" d="M30 47H13v4h17v-4Z" />
                     </svg>
 
-                    <h5 class="text-xl pt-4 pb-3">SDT Student</h5>
+                    <p class="text-xl pt-4 pb-3">SDT Student</p>
                   </div>
                 </a>
                 <div class="flex flex-wrap flex-row gap-y-2 gap-x-1">

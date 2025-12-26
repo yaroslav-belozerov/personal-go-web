@@ -11,6 +11,7 @@ export default function NewProjectCard(props: ProjectCardProps) {
   const { title, description, preview, url, ongoing } = props.project;
   return (
     <A
+      aria-label={title}
       href={url}
       target="_blank"
       rel="noopener noreferrer"
@@ -24,7 +25,7 @@ export default function NewProjectCard(props: ProjectCardProps) {
         />
       </Show>
       <div class="flex flex-col py-3 px-5 justify-between h-full">
-        <h4 class="text-xl text-white">{title}</h4>
+        <p class="text-xl text-white">{title}</p>
         <p class="text-sm max-lg:text-white">{description}</p>
       </div>
     </A>
