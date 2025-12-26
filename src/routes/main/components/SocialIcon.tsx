@@ -1,6 +1,7 @@
 import { JSXElement } from "solid-js";
 
 interface SocialIconProps {
+  label: string;
   path: string;
   icon: JSXElement;
 }
@@ -8,6 +9,7 @@ interface SocialIconProps {
 export default function SocialIcon(props: SocialIconProps) {
   return (
     <a
+      aria-label={props.label}
       class="group flex max-lg:w-full w-8 min-w-14 p-2 aspect-square"
       style="flex: 1 0 26%;"
       href={props.path}

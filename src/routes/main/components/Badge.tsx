@@ -1,4 +1,12 @@
-export default function Badge({ src, link }: { src: string; link?: string }) {
+export default function Badge({
+  label,
+  src,
+  link,
+}: {
+  label: string;
+  src: string;
+  link?: string;
+}) {
   if (link == null) {
     return (
       <img

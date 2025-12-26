@@ -143,7 +143,7 @@ export default function Landing() {
               class="h-48 rotate-60"
               fetchpriority="high"
               alt="pieces of scrap paper"
-              src="https://tarakoshka.tech/static/scraps.png"
+              src="https://tarakoshka.tech/static/scraps.webp"
             ></img>
             <Motion.div
               initial={{ transform: "translateX(10%)", opacity: 0 }}

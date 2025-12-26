@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <Motion.main
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
@@ -179,6 +179,7 @@ export default function App() {
                             setProjectsExpanded(!projectsExpanded())
                           }
                           name="see more/less projects"
+                          aria-label="see more/less projects"
                           class="cursor-pointer px-8"
                           style="align-self: center;"
                         >
@@ -239,6 +240,7 @@ export default function App() {
                                   setProjectsExpanded(!projectsExpanded())
                                 }
                                 name="see more/less projects"
+                                aria-label="see more/less projects"
                                 class="cursor-pointer px-8"
                                 style="align-self: center;"
                               >
@@ -305,6 +307,7 @@ export default function App() {
                   </div>
                 </A>
                 <SocialIcon
+                  label="AniList"
                   path="https://anilist.co/user/Lemurr4ik/"
                   icon={
                     <svg
@@ -320,6 +323,7 @@ export default function App() {
                   }
                 ></SocialIcon>
                 <SocialIcon
+                  label="Mastodon"
                   path="https://mastodon.social/@yaabelozerov"
                   icon={
                     <svg
@@ -333,6 +337,7 @@ export default function App() {
                   }
                 ></SocialIcon>
                 <SocialIcon
+                  label="Spotify"
                   path="https://open.spotify.com/user/31ztrvjmvnvjcf4m6fhkv4gmys3i"
                   icon={
                     <svg
@@ -369,6 +374,7 @@ export default function App() {
                   }
                 ></SocialIcon>
                 <SocialIcon
+                  label="Twitter (X)"
                   path="https://x.com/yaabelozerov"
                   icon={
                     <svg
@@ -405,6 +411,7 @@ export default function App() {
                   }
                 ></SocialIcon>
                 <SocialIcon
+                  label="E-Mail"
                   path="mailto:me@tarakoshka.tech"
                   icon={
                     <svg
@@ -424,6 +431,7 @@ export default function App() {
                   }
                 ></SocialIcon>
                 <SocialIcon
+                  label="Telegram"
                   path="https://t.me/yaabelozerov"
                   icon={
                     <svg
@@ -437,6 +445,7 @@ export default function App() {
                   }
                 ></SocialIcon>
                 <SocialIcon
+                  label="GitHub"
                   path="https://github.com/yaroslav-belozerov"
                   icon={
                     <svg
@@ -480,6 +489,7 @@ export default function App() {
                       </div>
                     </a>
                     <a
+                      aria-label="My LastFM account"
                       href="https://www.last.fm/user/Lemurr4ik_"
                       class="relative size-14 transition-all hover:scale-90"
                       target="_blank"
@@ -520,109 +530,129 @@ export default function App() {
               <h2 class="text-5xl">Buttons</h2>
               <div class="flex flex-row flex-wrap gap-2 mb-2">
                 <Badge
+                  label="My 88x31 button"
                   link="https://tarakoshka.tech/"
                   src="https://tarakoshka.tech/static/88x31.gif"
                 ></Badge>
                 <Badge
+                  label="HSE button"
                   link="https://hse.ru/"
                   src="https://tarakoshka.tech/static/buttons/hse.gif"
                 ></Badge>
                 <Badge
+                  label="OMORI button"
                   link="https://store.steampowered.com/app/1150690/OMORI/"
                   src="https://tarakoshka.tech/static/buttons/omori.gif"
                 ></Badge>
                 <Badge
+                  label="Katana ZERO button"
                   link="https://store.steampowered.com/app/460950/Katana_ZERO/"
                   src="https://tarakoshka.tech/static/buttons/katana.gif"
                 ></Badge>
               </div>
               <div class="flex flex-row flex-wrap gap-2">
                 <Badge
+                  label="This page uses JavaScript button"
                   link="https://ecma-international.org/publications-and-standards/standards/ecma-262/"
                   src="https://tarakoshka.tech/static/buttons/js.png"
                 ></Badge>
                 <Badge
+                  label="Made by a human button"
                   link="https://cadence.moe/blog/2024-10-05-created-by-a-human-badges"
-                  src="https://tarakoshka.tech/static/buttons/created-by-human.png"
+                  src="https://tarakoshka.tech/static/buttons/created-by-human.webp"
                 ></Badge>
-                <Badge src="https://tarakoshka.tech/static/buttons/made-with-pride.gif"></Badge>
                 <Badge
+                  label="Get Firefox button"
                   link="https://www.firefox.com/"
                   src="https://tarakoshka.tech/static/buttons/get-firefox.gif"
                 ></Badge>
                 <Badge
-                  link="https://fedoraproject.org/"
-                  src="https://tarakoshka.tech/static/buttons/fedora.gif"
-                ></Badge>
-                <Badge
+                  label="uBlock Origin NOW button"
                   link="https://ublockorigin.com/"
-                  src="https://tarakoshka.tech/static/buttons/ublock.png"
+                  src="https://tarakoshka.tech/static/buttons/ublock.webp"
                 ></Badge>
                 <Badge
+                  label="Made on GNU/Linux button"
                   link="https://www.gnu.org/"
                   src="https://tarakoshka.tech/static/buttons/made-on-linux.png"
                 ></Badge>
                 <Badge
+                  label="otomir23 button"
                   link="https://otomir23.me/"
                   src="https://otomir23.me/88x31.png"
                 ></Badge>
                 <Badge
+                  label="entitybtw button"
                   link="https://entitybtw.ru/"
                   src="https://entitybtw.ru/images/entitybtw.gif"
                 ></Badge>
                 <Badge
+                  label="milkcool button"
                   link="https://milkcool.ru/"
                   src="https://milkcool.ru/buttons/mybutton.gif"
                 ></Badge>
                 <Badge
+                  label="asyasocute button"
                   link="https://asyasocute.online/"
                   src="https://asyasocute.online/badges/cowl.png"
                 ></Badge>
                 <Badge
+                  label="okt button"
                   link="https://okt.nekoweb.org"
                   src="https://okt.nekoweb.org/assets/pics/okt_button.gif"
                 ></Badge>
-                {/*<Badge
+                <Badge
+                  label="timofei302 button"
                   link="https://timofei302.su"
                   src="https://timofei302.su/res/88x31.png"
                 ></Badge>
                 <Badge
+                  label="myslivets button"
                   link="https://myslivets.com/"
                   src="https://timofei302.su/img/banners/myslivets-banner.png"
-                ></Badge>*/}
+                ></Badge>
                 <Badge
+                  label="edwardcode button"
                   link="https://edwardcode.net/"
                   src="https://edwardcode.net/www/button.gif"
                 ></Badge>
                 <Badge
+                  label="c1oudy button"
                   link="https://c1oudy.otlegacy.com/"
                   src="https://c1oudy.otlegacy.com//_astro/c1oudy.DQjxxEhY.png"
                 ></Badge>
                 <Badge
+                  label="gooslime button"
                   link="https://gooslime.neocities.org/"
                   src="https://gooslime.neocities.org/gooslime_branding/gooslime.gif"
                 ></Badge>
                 <Badge
+                  label="veselcraft button"
                   link="https://veselcraft.ru/"
                   src="https://veselcraft.ru/images/vc.gif"
                 ></Badge>
                 <Badge
+                  label="jsopn button"
                   link="https://jsopn.com/?glunging=true"
                   src="https://jsopn.com/images/88x31/button.gif"
                 ></Badge>
                 <Badge
+                  label="senkodev button"
                   link="https://senko.dev/"
                   src="https://senko.dev/banners/senko.gif"
                 ></Badge>
                 <Badge
+                  label="teidesu button"
                   link="https://tei.su/"
                   src="https://tei.su/88x31/teidesu.png"
                 ></Badge>
                 <Badge
+                  label="sanspie button"
                   link="https://about.akarpov.ru/"
                   src="https://otomir23.me/_astro/sanspie.BIFJ1uLz.gif"
                 ></Badge>
                 <Badge
+                  label="monomere button"
                   link="https://monomere.cc/"
                   src="https://monomere.cc/buttons/button.gif"
                 ></Badge>
@@ -734,7 +764,8 @@ export default function App() {
                     </div>
                     <button
                       onClick={() => setOpenWrite(true)}
-                      name="open messages page"
+                      name="open messages dialog"
+                      aria-label="open messages dialog"
                       class="relative min-w-14 size-14 transition-all hover:scale-90 lg:cursor-pointer"
                     >
                       <svg
@@ -769,10 +800,13 @@ export default function App() {
             <section class="p-6 max-w-[800px] flex flex-col w-fit h-fit gap-4">
               <div class="flex flex-row justify-between items-center">
                 <h2 class="text-5xl">About</h2>
-                <a href="/support">{star(0)}</a>
+                <a aria-label="Support me" href="/support">
+                  {star(0)}
+                </a>
               </div>
               <div class="flex flex-col gap-3 font-[Overpass] text-white">
                 <a
+                  aria-label="HSE Lyceum"
                   href="https://school.hse.ru/"
                   rel="noreferrer noopener"
                   target="_blank"
@@ -808,9 +842,10 @@ export default function App() {
                       </g>
                     </g>
                   </svg>
-                  <h4 class="text-xl pt-1">HSE Lyceum Alumni</h4>
+                  <h5 class="text-xl pt-1">HSE Lyceum Alumni</h5>
                 </a>
                 <a
+                  aria-label="PROD programming contest"
                   href="https://prodcontest.ru/"
                   rel="noreferrer noopener"
                   target="_blank"
@@ -840,10 +875,11 @@ export default function App() {
                         </clipPath>
                       </defs>
                     </svg>
-                    <h4 class="text-xl pt-4 pb-3">PROD 2025 Winner</h4>
+                    <h5 class="text-xl pt-4 pb-3">PROD 2025 Winner</h5>
                   </div>
                 </a>
                 <a
+                  aria-label="JetBrains SDT Program"
                   href="https://lp.jetbrains.com/software-data-and-technology-constructor-university/"
                   rel="noreferrer noopener"
                   target="_blank"
@@ -878,12 +914,13 @@ export default function App() {
                       <path fill="#fff" d="M30 47H13v4h17v-4Z" />
                     </svg>
 
-                    <h4 class="text-xl pt-4 pb-3">SDT Student</h4>
+                    <h5 class="text-xl pt-4 pb-3">SDT Student</h5>
                   </div>
                 </a>
                 <div class="flex flex-wrap flex-row gap-y-2 gap-x-1">
                   <SwitchCard title="My Setup">
                     <a
+                      aria-label="NeoVim"
                       rel="noopener noreferrer"
                       target="_blank"
                       href="https://neovim.io/"
@@ -982,32 +1019,323 @@ export default function App() {
                       <p>Neovim</p>
                     </a>
                     <a
+                      aria-label="CachyOS"
                       rel="noopener noreferrer"
                       target="_blank"
-                      href="https://fedoraproject.org/"
+                      href="https://cachyos.org/"
                       class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
                     >
                       <svg
                         class="size-6"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 135.47752 132.93699"
                         version="1.1"
+                        viewBox="0 0 17.921 17.921"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
                       >
-                        <g>
-                          <path
-                            fill="#51A2DA"
-                            d="M 67.77483,0 C 30.36665,0 0.07878,29.732002 0.0126,66.438752 H 0 v 51.430478 h 0.0126 c 0.0174,8.3247 6.90194,15.06782 15.39209,15.06782 h 52.37676 c 37.41481,-0.0238 67.69606,-29.75187 67.69606,-66.438739 5e-5,-36.70675 -30.32095,-66.438755 -67.76224,-66.438755 z"
+                        <defs>
+                          <linearGradient
+                            id="linearGradient939"
+                            x1="237.19"
+                            x2="237.07"
+                            y1="296.2"
+                            y2="304.08"
+                            gradientTransform="matrix(.04476 0 0 .044679 -8.5923 -4.6302)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient937"
                           />
-                          <path
-                            fill="#FFFFFF"
-                            d="m 81.54629,27.337877 c -10.56799,0 -19.90324,7.801562 -21.19561,18.038694 -0.0868,0.856948 -0.11179,1.474652 -0.11679,2.25154 l 0.0124,41.854812 c 0,8.0289 -6.12782,13.493227 -13.78418,13.493227 -7.66691,0 -13.8436,-6.008637 -13.8436,-13.506147 0.12574,-8.230728 6.84267,-13.450867 14.67766,-13.678237 h 0.0419 l 7.95404,-0.07183 V 64.668931 l -7.95404,0.05891 c -14.2605,-0.12574 -25.57978,10.82588 -25.99324,24.748872 0,13.539207 11.34236,24.576797 25.11319,24.576797 12.98996,0 23.80035,-9.95243 24.9809,-22.406387 0.1702,-4.239107 0.0873,-9.833503 0.0873,-9.833503 0.0238,-2.303511 -0.0365,-1.476328 -0.0124,-6.050278 l 9.86659,-0.07183 c 7.6344,0.05295 7.54863,-11.225802 -0.0879,-11.070643 l -9.7808,0.07131 c 0,-5.677739 0.0911,-11.320375 0,-17.006713 0.007,-4.918056 4.7563,-9.264033 10.02574,-9.264033 5.27077,0 10.84585,2.580457 10.84585,9.264033 0,0.954889 -0.0195,1.510723 -0.0734,1.864484 -0.58829,3.099594 1.57066,6.061962 4.75165,6.509166 3.18098,0.442039 6.10201,-1.811142 6.41718,-4.94647 0.18261,-1.239441 0.1757,-2.332945 0.1757,-3.426148 0,-11.785592 -10.74013,-20.32899 -22.11545,-20.32899 z"
+                          <linearGradient id="linearGradient937">
+                            <stop stop-color="#001313" offset="0" />
+                            <stop
+                              stop-color="#001313"
+                              stop-opacity="0"
+                              offset="1"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="linearGradient5185"
+                            x1="994.81"
+                            x2="982.34"
+                            y1="1533.3"
+                            y2="1556.8"
+                            gradientTransform="matrix(.084141 0 0 .083989 -76.331 -126.67)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient4353"
+                          />
+                          <linearGradient id="linearGradient4353">
+                            <stop stop-color="#020202" offset="0" />
+                            <stop
+                              stop-color="#020202"
+                              stop-opacity="0"
+                              offset="1"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="linearGradient9102"
+                            x1="1022.5"
+                            x2="1018.6"
+                            y1="1582.4"
+                            y2="1575.6"
+                            gradientTransform="matrix(.086381 0 0 .081808 -79.192 -124.97)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient4353"
+                          />
+                          <linearGradient
+                            id="linearGradient11890"
+                            x1="940.43"
+                            x2="930.59"
+                            y1="1612.5"
+                            y2="1594.5"
+                            gradientTransform="matrix(.084141 0 0 .083989 -76.331 -126.67)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient4353"
+                          />
+                          <linearGradient
+                            id="linearGradient11670"
+                            x1="965.6"
+                            x2="951.66"
+                            y1="1571.4"
+                            y2="1571.3"
+                            gradientTransform="matrix(.084141 0 0 .083989 -76.331 -126.67)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient4353"
+                          />
+                          <linearGradient
+                            id="linearGradient13770"
+                            x1="946.23"
+                            x2="961.37"
+                            y1="1655.9"
+                            y2="1655.8"
+                            gradientTransform="matrix(.084141 0 0 .083989 -76.331 -126.67)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient4353"
+                          />
+                          <linearGradient
+                            id="linearGradient2816"
+                            x1="366.15"
+                            x2="350.92"
+                            y1="427.32"
+                            y2="419.64"
+                            gradientTransform="matrix(.04476 0 0 .044679 -10.921 -4.4349)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient937"
+                          />
+                          <linearGradient
+                            id="linearGradient12421"
+                            x1="936.34"
+                            x2="933.38"
+                            y1="1628.8"
+                            y2="1623"
+                            gradientTransform="matrix(.084141 0 0 .083989 -76.331 -126.67)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient4353"
+                          />
+                          <linearGradient
+                            id="linearGradient13391"
+                            x1="950.33"
+                            x2="941.97"
+                            y1="1618.6"
+                            y2="1645.8"
+                            gradientTransform="matrix(.084141 0 0 .083989 -76.331 -126.67)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient4353"
+                          />
+                          <linearGradient
+                            id="linearGradient13599"
+                            x1="1008.2"
+                            x2="1015.7"
+                            y1="1681.3"
+                            y2="1668.4"
+                            gradientTransform="matrix(.084141 0 0 .083989 -76.331 -126.67)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient4353"
+                          />
+                          <linearGradient
+                            id="linearGradient18175"
+                            x1="1148.3"
+                            x2="1145.4"
+                            y1="1585.5"
+                            y2="1630"
+                            gradientTransform="matrix(.34992 0 0 .34992 -282.87 -491.67)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient18299"
+                          />
+                          <linearGradient id="linearGradient18299">
+                            <stop
+                              stop-color="#008066"
+                              stop-opacity="0"
+                              offset="0"
+                            />
+                            <stop stop-color="#0fc" offset="1" />
+                          </linearGradient>
+                          <linearGradient
+                            id="linearGradient18632"
+                            x1="1148.3"
+                            x2="1145.4"
+                            y1="1585.5"
+                            y2="1630"
+                            gradientTransform="matrix(.26565 0 0 .26565 -211.15 -375.49)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient18299"
+                          />
+                          <linearGradient
+                            id="linearGradient18659"
+                            x1="1148.3"
+                            x2="1145.4"
+                            y1="1585.5"
+                            y2="1630"
+                            gradientTransform="matrix(.13679 0 0 .13679 -53.624 -195.03)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient18299"
+                          />
+                          <linearGradient
+                            id="linearGradient3254"
+                            x1="348.05"
+                            x2="361.21"
+                            y1="194.78"
+                            y2="187.24"
+                            gradientTransform="matrix(.04476 0 0 .044679 -10.921 -4.4349)"
+                            gradientUnits="userSpaceOnUse"
+                            xlink:href="#linearGradient937"
+                          />
+                        </defs>
+                        <circle
+                          cx="64.51"
+                          cy="62.02"
+                          r="87.45"
+                          opacity="0"
+                          stroke-width=".27971"
+                        />
+                        <path
+                          d="m4.3286 1.9244h8.3458l-2.1127 3.6528h-4.526l-1.8859 3.2605 1.9121 3.306h8.8286l-2.1664 3.7456h-8.5747l-4.1369-7.1525 3.9605-6.8475z"
+                          fill="#fff"
+                        />
+                        <path
+                          d="m3.973 1.8893 6.5887 3.6879 2.1127-3.6528z"
+                          fill="#0a8"
+                        />
+                        <path
+                          d="m6.0619 12.144-1.9125 3.7456h8.5747l2.1664-3.7456z"
+                          fill="#0a8"
+                        />
+                        <path
+                          d="m3.973 1.8893 6.5887 3.6879h-4.526l-1.8859 3.2605 1.9121 3.306-1.9125 3.7456-4.1369-7.1525 3.9605-6.8475"
+                          fill="#0cf"
+                        />
+                        <path
+                          d="m0.0125 8.7368 4.1373 0.10091 0.11568 0.19788-4.123-0.082887z"
+                          fill="url(#linearGradient939)"
+                        />
+                        <path
+                          d="m10.562 5.5772-6.5887-3.6879-0.50106 0.9021 4.9947 2.7648z"
+                          fill="url(#linearGradient5185)"
+                        />
+                        <path
+                          d="m6.0029 5.5427 6.7111-3.7832-2.169 3.5579z"
+                          fill="url(#linearGradient9102)"
+                        />
+                        <path
+                          d="m6.0356 5.5772 6.6388-3.6528-2.1127 3.6528z"
+                          fill="#0a8"
+                        />
+                        <path
+                          d="m0.0125 8.7368 6.0231-3.1596-1.8859 3.2605z"
+                          fill="#0a8"
+                        />
+                        <path
+                          d="m0.0125 8.7368 6.0231-3.1596-0.4069-0.6354-5.1908 3.0036z"
+                          fill="url(#linearGradient11890)"
+                        />
+                        <path
+                          d="m6.0356 5.5772-2.0626-3.6879 0.17673 6.9484z"
+                          fill="#0a8"
+                        />
+                        <path
+                          d="m6.0619 12.144 6.6622 3.7456 2.1664-3.7456z"
+                          fill="#0cf"
+                        />
+                        <path
+                          d="m3.973 1.8893-0.50106 0.9021 0.048066 6.0168 0.62973 0.029556z"
+                          fill="url(#linearGradient11670)"
+                        />
+                        <path
+                          d="m4.1498 8.8377-3.1586 1.5811 3.1583 5.4705z"
+                          fill="#0a8"
+                        />
+                        <path
+                          d="m4.1498 8.8377v7.0516l0.77392-1.5077 0.059767-4.1337z"
+                          fill="url(#linearGradient13770)"
+                        />
+                        <path
+                          d="m4.1494 15.889-0.29801-0.53544 1.9191-3.6995 0.29137 0.48935z"
+                          fill="url(#linearGradient2816)"
+                        />
+                        <path
+                          d="m0.99115 10.419 3.1586-1.5811-0.62972-0.029556-2.7405 1.307z"
+                          fill="url(#linearGradient12421)"
+                        />
+                        <path
+                          d="m0.99115 10.419 5.0708 1.7248-1.9121-3.306z"
+                          fill="#0a8"
+                        />
+                        <path
+                          d="m6.0619 12.144-5.0708-1.7248 0.55061 0.94903 4.1672 1.5109z"
+                          fill="url(#linearGradient13391)"
+                        />
+                        <path
+                          d="m6.0619 12.144 6.6622 3.7456 0.79849-1.4187-4.2878-2.3635z"
+                          fill="url(#linearGradient13599)"
+                        />
+                        <g transform="matrix(.14699 0 0 .14672 -.84757 -.42617)">
+                          <circle
+                            cx="117.95"
+                            cy="75.441"
+                            r="9.6894"
+                            fill="#0cf"
+                          />
+                          <circle
+                            cx="118.08"
+                            cy="75.341"
+                            r="9.6894"
+                            fill="url(#linearGradient18175)"
                           />
                         </g>
+                        <g transform="matrix(.14699 0 0 .14672 -.20056 -.74963)">
+                          <circle
+                            cx="93.138"
+                            cy="55.045"
+                            r="7.3559"
+                            fill="#0cf"
+                          />
+                          <circle
+                            cx="93.239"
+                            cy="54.969"
+                            r="7.3559"
+                            fill="url(#linearGradient18632)"
+                          />
+                        </g>
+                        <g transform="matrix(.14699 0 0 .14672 -.17051 -.32616)">
+                          <circle
+                            cx="103.06"
+                            cy="26.657"
+                            r="3.7877"
+                            fill="#0cf"
+                          />
+                          <circle
+                            cx="103.11"
+                            cy="26.618"
+                            r="3.7877"
+                            fill="url(#linearGradient18659)"
+                          />
+                        </g>
+                        <path
+                          d="m6.0356 5.5772-2.0626-3.6879 0.52544-0.0074221 1.9387 3.4465z"
+                          fill="url(#linearGradient3254)"
+                        />
                       </svg>
-
-                      <p>Fedora</p>
+                      <p>CachyOS</p>
                     </a>
                     <a
+                      aria-label="Hyprland"
                       rel="noopener noreferrer"
                       target="_blank"
                       href="https://hyprland.org/"

@@ -360,91 +360,127 @@ export default function Touch() {
         </div>
         <div class="flex flex-row flex-wrap gap-2 justify-center">
           <Badge
+            label="My 88x31 button"
+            link="https://tarakoshka.tech/"
+            src="https://tarakoshka.tech/static/88x31.gif"
+          ></Badge>
+          <Badge
+            label="HSE button"
+            link="https://hse.ru/"
+            src="https://tarakoshka.tech/static/buttons/hse.gif"
+          ></Badge>
+          <Badge
+            label="OMORI button"
+            link="https://store.steampowered.com/app/1150690/OMORI/"
+            src="https://tarakoshka.tech/static/buttons/omori.gif"
+          ></Badge>
+          <Badge
+            label="Katana ZERO button"
+            link="https://store.steampowered.com/app/460950/Katana_ZERO/"
+            src="https://tarakoshka.tech/static/buttons/katana.gif"
+          ></Badge>
+          <Badge
+            label="This page uses JavaScript button"
             link="https://ecma-international.org/publications-and-standards/standards/ecma-262/"
             src="https://tarakoshka.tech/static/buttons/js.png"
           ></Badge>
           <Badge
+            label="Made by a human button"
             link="https://cadence.moe/blog/2024-10-05-created-by-a-human-badges"
-            src="https://tarakoshka.tech/static/buttons/created-by-human.png"
+            src="https://tarakoshka.tech/static/buttons/created-by-human.webp"
           ></Badge>
-          <Badge src="https://tarakoshka.tech/static/buttons/made-with-pride.gif"></Badge>
           <Badge
+            label="Get Firefox button"
             link="https://www.firefox.com/"
             src="https://tarakoshka.tech/static/buttons/get-firefox.gif"
           ></Badge>
           <Badge
-            link="https://fedoraproject.org/"
-            src="https://tarakoshka.tech/static/buttons/fedora.gif"
-          ></Badge>
-          <Badge
+            label="uBlock Origin NOW button"
             link="https://ublockorigin.com/"
-            src="https://tarakoshka.tech/static/buttons/ublock.png"
+            src="https://tarakoshka.tech/static/buttons/ublock.webp"
           ></Badge>
           <Badge
+            label="Made on GNU/Linux button"
             link="https://www.gnu.org/"
             src="https://tarakoshka.tech/static/buttons/made-on-linux.png"
           ></Badge>
           <Badge
+            label="otomir23 button"
             link="https://otomir23.me/"
             src="https://otomir23.me/88x31.png"
           ></Badge>
           <Badge
+            label="entitybtw button"
             link="https://entitybtw.ru/"
             src="https://entitybtw.ru/images/entitybtw.gif"
           ></Badge>
           <Badge
+            label="milkcool button"
             link="https://milkcool.ru/"
             src="https://milkcool.ru/buttons/mybutton.gif"
           ></Badge>
           <Badge
+            label="asyasocute button"
             link="https://asyasocute.online/"
             src="https://asyasocute.online/badges/cowl.png"
           ></Badge>
           <Badge
+            label="okt button"
             link="https://okt.nekoweb.org"
             src="https://okt.nekoweb.org/assets/pics/okt_button.gif"
           ></Badge>
-          {/*<Badge
+          <Badge
+            label="timofei302 button"
             link="https://timofei302.su"
             src="https://timofei302.su/res/88x31.png"
           ></Badge>
           <Badge
+            label="myslivets button"
             link="https://myslivets.com/"
             src="https://timofei302.su/img/banners/myslivets-banner.png"
-          ></Badge>*/}
+          ></Badge>
           <Badge
+            label="edwardcode button"
             link="https://edwardcode.net/"
             src="https://edwardcode.net/www/button.gif"
           ></Badge>
           <Badge
+            label="c1oudy button"
             link="https://c1oudy.otlegacy.com/"
             src="https://c1oudy.otlegacy.com//_astro/c1oudy.DQjxxEhY.png"
           ></Badge>
           <Badge
+            label="gooslime button"
             link="https://gooslime.neocities.org/"
             src="https://gooslime.neocities.org/gooslime_branding/gooslime.gif"
           ></Badge>
           <Badge
+            label="veselcraft button"
             link="https://veselcraft.ru/"
             src="https://veselcraft.ru/images/vc.gif"
           ></Badge>
           <Badge
+            label="jsopn button"
             link="https://jsopn.com/?glunging=true"
             src="https://jsopn.com/images/88x31/button.gif"
           ></Badge>
           <Badge
+            label="senkodev button"
             link="https://senko.dev/"
             src="https://senko.dev/banners/senko.gif"
           ></Badge>
           <Badge
+            label="teidesu button"
             link="https://tei.su/"
             src="https://tei.su/88x31/teidesu.png"
           ></Badge>
           <Badge
+            label="sanspie button"
             link="https://about.akarpov.ru/"
             src="https://otomir23.me/_astro/sanspie.BIFJ1uLz.gif"
           ></Badge>
           <Badge
+            label="monomere button"
             link="https://monomere.cc/"
             src="https://monomere.cc/buttons/button.gif"
           ></Badge>
