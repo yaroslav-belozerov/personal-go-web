@@ -422,7 +422,7 @@ export default function Touch() {
           ></Badge>
           <Badge
             link="https://gooslime.neocities.org/"
-            src="http://gooslime.neocities.org/gooslime_branding/gooslime.gif"
+            src="https://gooslime.neocities.org/gooslime_branding/gooslime.gif"
           ></Badge>
           <Badge
             link="https://veselcraft.ru/"
