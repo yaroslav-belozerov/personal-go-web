@@ -43,6 +43,7 @@ export default function Touch() {
       <div class="flex flex-col gap-2">
         <div class="flex flex-row">
           <A
+            aria-label="See Blog"
             class="group text-white relative flex flex-col gap-2 py-4 px-8 justify-center aspect-square items-center rounded-r-full bg-[#0c12c9] transition-all"
             href="/blog"
           >
@@ -53,6 +54,7 @@ export default function Touch() {
           </A>
           <div class="grid grid-cols-2 px-8 gap-2 grow-1 relative">
             <a
+              aria-label="Telegram"
               class="p-4 rounded-3xl transition-all h-fit flex items-center justify-center"
               href="https://t.me/yaabelozerov"
             >
@@ -65,6 +67,7 @@ export default function Touch() {
               </svg>
             </a>
             <a
+              aria-label="GitHub"
               class="p-4 rounded-3xl transition-all h-fit flex items-center justify-center"
               href="https://github.com/yaroslav-belozerov"
             >
@@ -86,23 +89,10 @@ export default function Touch() {
               </svg>
             </a>
             <a
+              aria-label="E-Mail"
               class="p-4 rounded-3xl transition-all h-fit flex items-center justify-center"
               href="mailto:me@tarakoshka.tech"
             >
-              {/*<svg
-                class="size-12 text-white fill-white"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="24" height="24" fill="none" />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M5.96802 4H18.032C18.4706 3.99999 18.8491 3.99998 19.1624 4.02135C19.4922 4.04386 19.8221 4.09336 20.1481 4.22836C20.8831 4.53284 21.4672 5.11687 21.7716 5.85195C21.9066 6.17788 21.9561 6.50779 21.9787 6.83762C22 7.15088 22 7.52936 22 7.96801V16.032C22 16.4706 22 16.8491 21.9787 17.1624C21.9561 17.4922 21.9066 17.8221 21.7716 18.1481C21.4672 18.8831 20.8831 19.4672 20.1481 19.7716C19.8221 19.9066 19.4922 19.9561 19.1624 19.9787C18.8491 20 18.4706 20 18.032 20H5.96801C5.52936 20 5.15088 20 4.83762 19.9787C4.50779 19.9561 4.17788 19.9066 3.85195 19.7716C3.11687 19.4672 2.53284 18.8831 2.22836 18.1481C2.09336 17.8221 2.04386 17.4922 2.02135 17.1624C1.99998 16.8491 1.99999 16.4706 2 16.032V7.96802C1.99999 7.52937 1.99998 7.15088 2.02135 6.83762C2.04386 6.50779 2.09336 6.17788 2.22836 5.85195C2.53284 5.11687 3.11687 4.53284 3.85195 4.22836C4.17788 4.09336 4.50779 4.04386 4.83762 4.02135C5.15088 3.99998 5.52937 3.99999 5.96802 4ZM4.31745 6.27777C4.68114 5.86214 5.3129 5.82002 5.72854 6.1837L11.3415 11.095C11.7185 11.4249 12.2815 11.4249 12.6585 11.095L18.2715 6.1837C18.6871 5.82002 19.3189 5.86214 19.6825 6.27777C20.0462 6.69341 20.0041 7.32517 19.5885 7.68885L13.9755 12.6002C12.8444 13.5899 11.1556 13.5899 10.0245 12.6002L4.41153 7.68885C3.99589 7.32517 3.95377 6.69341 4.31745 6.27777Z"
-                  fill="currentColor"
-                />
-              </svg>*/}
               <svg
                 class="size-12 text-white fill-white"
                 viewBox="0 -2.5 20 20"
@@ -120,6 +110,8 @@ export default function Touch() {
               </svg>
             </a>
             <button
+              name="More contacts"
+              aria-label="See more contacts"
               class="relative z-2 h-fit p-4 flex items-center justify-center text-white"
               onClick={() => {
                 setOpenDetail(
@@ -151,6 +143,7 @@ export default function Touch() {
                       <span class="text-3xl">Other stuff</span>
                       <div class="flex flex-row">
                         <a
+                          aria-label="AniList"
                           class="p-4 rounded-3xl transition-all"
                           href="https://anilist.co/user/Lemurr4ik/"
                         >
@@ -164,6 +157,7 @@ export default function Touch() {
                           </svg>
                         </a>
                         <a
+                          aria-label="Mastodon"
                           class="p-4 rounded-3xl transition-all"
                           href="https://mastodon.social/@yaabelozerov"
                         >
@@ -176,6 +170,7 @@ export default function Touch() {
                           </svg>
                         </a>
                         <a
+                          aria-label="Spotify"
                           class="p-4 rounded-3xl transition-all"
                           href="https://open.spotify.com/user/31ztrvjmvnvjcf4m6fhkv4gmys3i"
                         >
@@ -212,6 +207,7 @@ export default function Touch() {
                           </svg>
                         </a>
                         <a
+                          aria-label="Twitter (X)"
                           class="p-4 rounded-3xl transition-all"
                           href="https://x.com/yaabelozerov"
                         >
@@ -285,7 +281,8 @@ export default function Touch() {
                   </div>
                   <button
                     onClick={() => setOpenWrite(true)}
-                    name="open messages page"
+                    name="Messages"
+                    aria-label="Open messages"
                     class="relative min-w-14 size-14 transition-all lg:hover:scale-90 lg:cursor-pointer"
                   >
                     <svg
@@ -313,25 +310,6 @@ export default function Touch() {
                       <path d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm160-320h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80Z" />
                     </svg>
                   </button>
-                  {/*<A
-                    class={`flex flex-row gap-2 text-white bg-[#0C12C9] p-4 rounded-full justify-center transition-all items-center transition-all`}
-                    href="/write-to-me"
-                  >
-                    <svg
-                      class="size-8"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3 7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2Z"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </A>*/}
                 </div>
               </div>
             </div>
@@ -341,24 +319,6 @@ export default function Touch() {
       <div id="badges" class="flex flex-col w-full gap-4 pt-6 px-4">
         <h2 class="text-white mb-2 text-center text-5xl">Badges</h2>
         <div class="flex flex-row flex-wrap gap-2 mb-2 justify-center">
-          <Badge
-            link="https://tarakoshka.tech/"
-            src="https://tarakoshka.tech/static/88x31.gif"
-          ></Badge>
-          <Badge
-            link="https://hse.ru/"
-            src="https://tarakoshka.tech/static/buttons/hse.gif"
-          ></Badge>
-          <Badge
-            link="https://store.steampowered.com/app/1150690/OMORI/"
-            src="https://tarakoshka.tech/static/buttons/omori.gif"
-          ></Badge>
-          <Badge
-            link="https://store.steampowered.com/app/460950/Katana_ZERO/"
-            src="https://tarakoshka.tech/static/buttons/katana.gif"
-          ></Badge>
-        </div>
-        <div class="flex flex-row flex-wrap gap-2 justify-center">
           <Badge
             label="My 88x31 button"
             link="https://tarakoshka.tech/"
@@ -379,6 +339,8 @@ export default function Touch() {
             link="https://store.steampowered.com/app/460950/Katana_ZERO/"
             src="https://tarakoshka.tech/static/buttons/katana.gif"
           ></Badge>
+        </div>
+        <div class="flex flex-row flex-wrap gap-2 justify-center">
           <Badge
             label="This page uses JavaScript button"
             link="https://ecma-international.org/publications-and-standards/standards/ecma-262/"
@@ -490,6 +452,7 @@ export default function Touch() {
         <div class="flex flex-row gap-4 items-center">
           <h2 class="text-white mb-2 text-center text-5xl">Last Blimp</h2>
           <A
+            aria-label="See Blimps"
             href="/blimps"
             class="text-3xl rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-2 text-white px-3"
           >

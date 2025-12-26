@@ -12,6 +12,7 @@ export default function Meta() {
           <div class="flex flex-col items-center">
             <h2 class="text-white text-5xl text-center">About me and site</h2>
             <a
+              aria-label="Support me"
               href="/support"
               class="text-3xl italic w-fit justify-center text-yellow-300 flex flex-row items-center gap-1"
             >

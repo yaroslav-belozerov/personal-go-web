@@ -39,7 +39,11 @@ export default function Landing() {
       class="relative min-h-svh bg-black max-h-svh max-w-screen flex items-center flex-col"
     >
       <header class="text-6xl z-0 w-full py-4 text-white outline-white -outline-offset-2 bg-black">
-        <a href="https://tarakoshka.tech" class="overflow-hidden w-full">
+        <a
+          aria-label="Main page - tarakoshka.tech"
+          href="https://tarakoshka.tech"
+          class="overflow-hidden w-full"
+        >
           <h1 class="text-7xl text-center text-nowrap animate-[marquee-content_10s_linear_infinite]">
             {star(0)}
             <span class="mx-3">tarakoshka.tech</span>
@@ -57,6 +61,7 @@ export default function Landing() {
               class="grow-1 overflow-hidden"
             >
               <a
+                aria-label="PDF of my CV"
                 class="relative z-0 transition-all outline-white -outline-offset-2 bg-[#FFE942] grow-1 py-4 animate-[round_4s_ease-in-out_infinite_2s] flex flex-col justify-center"
                 href="https://tarakoshka.tech/static/cv.pdf"
                 target="_blank"
@@ -80,6 +85,7 @@ export default function Landing() {
               class="grow-1 overflow-hidden"
             >
               <a
+                aria-label="My cat"
                 href="/lesya"
                 class="relative z-0 transition-all outline-white -outline-offset-2 bg-[#00FF7B] grow-1 py-4 animate-[round_4s_ease-in-out_infinite_2s] flex flex-col justify-center"
               >
@@ -102,6 +108,7 @@ export default function Landing() {
             class="w-full"
           >
             <A
+              aria-label="Open webring navigation"
               href="/webring"
               class={`bg-linear-to-r from-[#FF3737] to-[#FF3737]/0 w-full gap-2 text-white pl-4 py-4 flex items-center transition-all animate-[round-other_4s_ease-in-out_infinite]`}
             >
@@ -121,7 +128,11 @@ export default function Landing() {
           </Motion.a>
         </div>
         <div class="grid grid-cols-2 grid-rows-2 grow-1 mt-4 grid-rows-2 flex-col px-4">
-          <A href="#contacts" class="h-fit relative w-full">
+          <A
+            aria-label="Go to contacts"
+            href="#contacts"
+            class="h-fit relative w-full"
+          >
             <img
               class="h-48 -rotate-10"
               fetchpriority="high"
@@ -138,7 +149,11 @@ export default function Landing() {
               </div>
             </Motion.div>
           </A>
-          <A href="#projects" class="self-center h-fit relative w-full">
+          <A
+            aria-label="Go to projects"
+            href="#projects"
+            class="self-center h-fit relative w-full"
+          >
             <img
               class="h-48 rotate-60"
               fetchpriority="high"
@@ -155,7 +170,11 @@ export default function Landing() {
               </div>
             </Motion.div>
           </A>
-          <A href="#badges" class="h-fit relative w-full">
+          <A
+            aria-label="Go to 88x31 buttons"
+            href="#badges"
+            class="h-fit relative w-full"
+          >
             <img
               class="w-40 rotate-30"
               fetchpriority="high"
@@ -173,7 +192,11 @@ export default function Landing() {
             </Motion.div>
           </A>
           <div class="flex flex-col h-full justify-between pb-8 items-center">
-            <A href="#info" class="h-fit relative w-full">
+            <A
+              aria-label="Go to more info"
+              href="#info"
+              class="h-fit relative w-full"
+            >
               <img
                 class="-rotate-10 w-40"
                 fetchpriority="high"

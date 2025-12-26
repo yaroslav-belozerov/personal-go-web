@@ -59,9 +59,15 @@ export default function App() {
         </Portal>
         <nav class="flex flex-row items-center gap-4">
           <h1 class="italic text-white text-7xl me-4">
-            <a href="https://tarakoshka.tech">tarakoshka.tech</a>
+            <a
+              aria-label="Main website - tarakoshka.tech"
+              href="https://tarakoshka.tech"
+            >
+              tarakoshka.tech
+            </a>
           </h1>
           <a
+            aria-label="PDF of my CV"
             class="relative z-2 lg:hover:scale-90 transition-all"
             href="https://tarakoshka.tech/static/cv.pdf"
             target="_blank"
@@ -88,6 +94,7 @@ export default function App() {
             </div>
           </a>
           <a
+            aria-label="My cat"
             href="/lesya"
             class="relative z-2 lg:hover:scale-90 transition-all"
           >
@@ -275,6 +282,7 @@ export default function App() {
                   Last Blimp
                 </h2>
                 <A
+                  aria-label="See Blimps"
                   href="/blimps"
                   class="text-3xl hover:bg-white hover:text-black transition-all rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-2 text-white px-3"
                 >
@@ -293,6 +301,7 @@ export default function App() {
               <h2 class="text-5xl pt-2 px-2">My socials</h2>
               <div class="flex flex-row flex-wrap">
                 <A
+                  aria-label="Go to Blog"
                   class="group flex max-lg:w-full w-8 min-w-14 p-2 aspect-square"
                   style="flex: 1 0 26%;"
                   href="/blog"
@@ -471,6 +480,7 @@ export default function App() {
                 {useMusic().get() && (
                   <div class="flex flex-row w-full justify-between p-6 rounded-2xl bg-zinc-900">
                     <a
+                      aria-label={useMusic()?.get()?.title}
                       href={useMusic()?.get()?.url}
                       class="flex flex-row items-center gap-3 hover:scale-95 transition-all"
                     >
@@ -662,6 +672,7 @@ export default function App() {
           <div class="flex flex-col w-full border-2 border-white overflow-clip h-fit rounded-r-2xl rounded-b-2xl ">
             <section class="bg-[#ff3737] text-black p-6 flex flex-col w-full h-fit gap-4 border-white border-b-2">
               <a
+                aria-label="otomir23 webring"
                 class="flex flex-row gap-4 items-center group"
                 href="https://webring.otomir23.me/"
                 target="_blank"
@@ -683,6 +694,7 @@ export default function App() {
               <WebringProvider baseURL="https://webring.otomir23.me/tarakoshka/data">
                 <nav class="items-center z-1 w-full flex text-white font-[Overpass] flex-row gap-2">
                   <a
+                    aria-label="Previous webring listing"
                     class="flex gap-1 group text-[#FF3737] w-full justify-start rounded-[30px] bg-black p-3 hover:gap-2 items-center hover:rounded-r-[0px] transition-all duration-400"
                     href={useWebring().get()?.prev?.url}
                     target="_blank"
@@ -710,6 +722,7 @@ export default function App() {
                     </p>
                   </a>
                   <a
+                    aria-label="Next webring listing"
                     class="flex gap-1 group text-[#FF3737] w-full justify-end rounded-[30px] bg-black p-3 hover:gap-2 items-center hover:rounded-l-[0px] transition-all duration-400"
                     href={useWebring().get()?.next?.url}
                     target="_blank"
@@ -1349,6 +1362,7 @@ export default function App() {
                     </a>
                     <div class="flex flex-row flex-wrap gap-2 text-[#50E2FF] text-sm my-2">
                       <a
+                        aria-label="SolidJS"
                         rel="noopener noreferrer"
                         target="_blank"
                         class="text-lg pt-0.5 flex items-center justify-center px-4 rounded-full border-2"
@@ -1357,6 +1371,7 @@ export default function App() {
                         SolidJS
                       </a>
                       <a
+                        aria-label="TailwindCSS"
                         rel="noopener noreferrer"
                         target="_blank"
                         class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
@@ -1365,6 +1380,7 @@ export default function App() {
                         Tailwind
                       </a>
                       <a
+                        aria-label="Go language"
                         rel="noopener noreferrer"
                         target="_blank"
                         class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
@@ -1373,6 +1389,7 @@ export default function App() {
                         Go
                       </a>
                       <a
+                        aria-label="Echo HTTP framework"
                         rel="noopener noreferrer"
                         target="_blank"
                         class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
@@ -1381,6 +1398,7 @@ export default function App() {
                         Echo
                       </a>
                       <a
+                        aria-label="senko.digital hosting provider"
                         rel="noopener noreferrer"
                         target="_blank"
                         class="px-5 pt-0.5 text-lg items-center justify-center flex rounded-full w-fit bg-linear-to-r from-[#6335E1] to-[#FC7F42] text-white"
