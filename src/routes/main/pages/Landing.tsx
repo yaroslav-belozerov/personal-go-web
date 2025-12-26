@@ -201,7 +201,7 @@ export default function Landing() {
                 class="-rotate-10 w-40"
                 fetchpriority="high"
                 alt="windows xp login page"
-                src="https://tarakoshka.tech/static/login.jpg"
+                src="https://tarakoshka.tech/static/login.webp"
               ></img>
               <Motion.div
                 initial={{ transform: "translateX(10%)", opacity: 0 }}

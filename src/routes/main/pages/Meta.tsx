@@ -140,6 +140,7 @@ export default function Meta() {
               {useMusic().get() && (
                 <div class="flex font-[Overpass] flex-row justify-between pl-3 pr-3">
                   <a
+                    aria-label={useMusic()?.get()?.title}
                     href={useMusic()?.get()?.url}
                     class="flex flex-row items-center gap-4 lg:hover:scale-90 transition-all"
                   >
@@ -158,6 +159,7 @@ export default function Meta() {
                     </div>
                   </a>
                   <a
+                    aria-label="My LastFM account"
                     href="https://www.last.fm/user/Lemurr4ik_"
                     class="relative size-14 lg:scale-140 lg:hover:scale-120 lg:me-4 transition-all"
                     target="_blank"

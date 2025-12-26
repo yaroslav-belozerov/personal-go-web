@@ -4,7 +4,6 @@ import { Router, Route, useLocation } from "@solidjs/router";
 import { Transition } from "solid-transition-group";
 import { createEffect } from "solid-js";
 
-import "./index.css";
 import App from "./App";
 
 const wrapper = document.getElementById("root");
