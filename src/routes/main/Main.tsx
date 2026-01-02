@@ -67,9 +67,9 @@ export default function App() {
             </a>
           </h1>
           <a
-            aria-label="PDF of my CV"
+            aria-label="Plain version of my CV"
             class="relative z-2 lg:hover:scale-90 transition-all"
-            href="https://tarakoshka.tech/static/cv.pdf"
+            href="https://cv.tarakoshka.tech"
             target="_blank"
             rel="noopener noreferrer"
           >

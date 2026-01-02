@@ -1,6 +1,6 @@
 export default function JbTestingCup() {
   return (
-    <div class="text-xl min-h-screen font-[Inter] text-white bg-zinc-950">
+    <div class="text-xl min-h-screen font-[Overpass] text-white bg-zinc-950">
       <div class="flex flex-row gap-5 pt-6 pb-8 bg-zinc-900 items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -60,9 +60,9 @@ export default function Landing() {
               class="grow-1 overflow-hidden"
             >
               <a
-                aria-label="PDF of my CV"
+                aria-label="Plain version of my CV"
                 class="relative z-0 transition-all outline-white -outline-offset-2 bg-[#FFE942] grow-1 py-4 animate-[round_4s_ease-in-out_infinite_2s] flex flex-col justify-center"
-                href="https://tarakoshka.tech/static/cv.pdf"
+                href="https://cv.tarakoshka.tech"
                 target="_blank"
                 rel="noopener noreferrer"
               >
