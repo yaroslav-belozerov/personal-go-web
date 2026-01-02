@@ -666,6 +666,11 @@ export default function App() {
                   link="https://monomere.cc/"
                   src="https://monomere.cc/buttons/button.gif"
                 ></Badge>
+                <Badge
+                  label="glutesha button"
+                  link="https://glutesha.ru"
+                  src="https://glutesha.ru/badges/interactive/glutesha.png"
+                ></Badge>
               </div>
             </section>
           </div>
@@ -1431,6 +1436,38 @@ export default function App() {
               </div>
             </section>
           </div>
+        </div>
+        <div class="flex justify-center flex-row font-[Overpass] gap-1 pt-8 pb-4 opacity-60">
+          <a class="underline" href="https://tarakoshka.tech">
+            tarakoshka.tech
+          </a>{" "}
+          © 2025 by Iaroslav Belozerov is licensed under{" "}
+          <a
+            class="underline"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+          >
+            CC BY-NC-SA 4.0
+          </a>
+          <img
+            src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+            alt=""
+            style="max-width: 1em;max-height:1em;margin-left: .2em;"
+          />
+          <img
+            src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+            alt=""
+            style="max-width: 1em;max-height:1em;margin-left: .2em;"
+          />
+          <img
+            src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+            alt=""
+            style="max-width: 1em;max-height:1em;margin-left: .2em;"
+          />
+          <img
+            src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
+            alt=""
+            style="max-width: 1em;max-height:1em;margin-left: .2em;"
+          />
         </div>
       </main>
     </Motion.main>

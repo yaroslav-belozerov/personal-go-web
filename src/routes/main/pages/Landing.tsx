@@ -47,7 +47,6 @@ export default function Landing() {
           <h1 class="text-7xl text-center text-nowrap animate-[marquee-content_10s_linear_infinite]">
             {star(0)}
             <span class="mx-3">tarakoshka.tech</span>
-            {star(0)}
           </h1>
         </a>
       </header>

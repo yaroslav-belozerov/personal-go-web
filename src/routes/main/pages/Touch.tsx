@@ -447,6 +447,11 @@ export default function Touch() {
             link="https://monomere.cc/"
             src="https://monomere.cc/buttons/button.gif"
           ></Badge>
+          <Badge
+            label="glutesha button"
+            link="https://glutesha.ru"
+            src="https://glutesha.ru/badges/interactive/glutesha.png"
+          ></Badge>
         </div>
       </div>
       <div id="blimp" class="flex flex-col items-center w-full gap-4 py-6 px-8">
