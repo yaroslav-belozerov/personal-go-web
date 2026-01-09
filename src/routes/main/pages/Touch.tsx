@@ -368,6 +368,11 @@ export default function Touch() {
             src="https://tarakoshka.tech/static/buttons/made-on-linux.png"
           ></Badge>
           <Badge
+            label="Godot game engine button"
+            link="https://godotengine.org/"
+            src="https://tarakoshka.tech/static/buttons/godot.png"
+          ></Badge>
+          <Badge
             label="otomir23 button"
             link="https://otomir23.me/"
             src="https://otomir23.me/88x31.png"
