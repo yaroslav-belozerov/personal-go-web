@@ -1,12 +1,10 @@
 import { ProjectsProvider, useProjects } from "../../../lib/api/projectsHook";
 import NewProjectCard from "../components/NewProjectCard";
+import { EXCLUDE_PROJECTS } from "../Main";
 
 export default function Current() {
   return (
-    <section
-      id="projects"
-      class="flex flex-col py-6 gap-4 bg-white text-black"
-    >
+    <section id="projects" class="flex flex-col py-6 gap-4 bg-white text-black">
       <h2 class="text-black text-5xl text-center mb-2">What are you doing?</h2>
       <div class="flex flex-row">
         <div class="-rotate-90 text-nowrap text-2xl rounded-full bg-white self-center">
@@ -22,7 +20,9 @@ export default function Current() {
               useProjects()
                 ?.get()
                 ?.filter((it) => {
-                  return it.description != "";
+                  return (
+                    !EXCLUDE_PROJECTS.includes(it.url) && it.description != ""
+                  );
                 })
                 ?.map((project) => (
                   <NewProjectCard showPreview={false} project={project} />

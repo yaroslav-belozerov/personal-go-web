@@ -21,7 +21,7 @@ export default function Lesya() {
         class="flex flex-col min-h-screen relative w-full overflow-y-scroll"
       >
         <img
-          src="https://tarakoshka.tech/static/kitty/kitty3.jpg"
+          src="https://tarakoshka.tech/static/kitty/kitty3.webp"
           style="opacity: 0;"
           alt="Cat"
           class="w-full min-h-screen max-h-screen object-cover transition-all"

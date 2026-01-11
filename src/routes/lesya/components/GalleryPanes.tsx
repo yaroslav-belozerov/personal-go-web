@@ -6,11 +6,10 @@ import ShowWhenInView from "./ShowWhenInView";
 
 // Component for Photo Gallery Page 1
 export function GalleryPage1() {
-  // Replace these URLs with your own cat images
   const images = [
-    "https://tarakoshka.tech/static/kitty/kitty6.jpg",
-    "https://tarakoshka.tech/static/kitty/kitty2.jpg",
-    "https://tarakoshka.tech/static/kitty/kitty4.jpg",
+    "https://tarakoshka.tech/static/kitty/kitty6.webp",
+    "https://tarakoshka.tech/static/kitty/kitty2.webp",
+    "https://tarakoshka.tech/static/kitty/kitty4.webp",
   ];
 
   return (
@@ -84,11 +83,10 @@ export function GalleryPage1() {
 
 // Component for Photo Gallery Page 2
 export function GalleryPage2() {
-  // Replace these URLs with your own cat images
   const images = [
-    "https://tarakoshka.tech/static/kitty/kitty1.jpg",
-    "https://tarakoshka.tech/static/kitty/kitty7.jpg",
-    "https://tarakoshka.tech/static/kitty/kitty5.jpg",
+    "https://tarakoshka.tech/static/kitty/kitty1.webp",
+    "https://tarakoshka.tech/static/kitty/kitty7.webp",
+    "https://tarakoshka.tech/static/kitty/kitty5.webp",
   ];
 
   return (
@@ -211,7 +209,7 @@ export function HappyPane() {
         <div class="relative w-full mb-4">
           <img
             draggable="false"
-            src="https://tarakoshka.tech/static/kitty/kitty8.jpg"
+            src="https://tarakoshka.tech/static/kitty/kitty8.webp"
             alt="Cat"
             class="w-full h-full rounded-full aspect-[5/4] object-cover"
           />
@@ -265,7 +263,7 @@ export function HappyPane() {
           <div class="relative max-w-60">
             <img
               draggable="false"
-              src="https://tarakoshka.tech/static/kitty/kitty8.jpg"
+              src="https://tarakoshka.tech/static/kitty/kitty8.webp"
               alt="Cat"
               class="w-full h-full -cover rounded-full"
             />

@@ -22,6 +22,11 @@ import Write from "../write/Write";
 import { LatestBlimpProvider, useLatestBlimp } from "../../lib/api/blimpHook";
 import { blimp } from "./pages/Blimps";
 
+export const EXCLUDE_PROJECTS = [
+  "https://github.com/yaroslav-belozerov/personal-go-web",
+  "https://github.com/yaroslav-belozerov/plain-cv",
+];
+
 export default function App() {
   const [projectsExpanded, setProjectsExpanded] = createSignal<boolean>(false);
   const [isCurrentProjects, setIsCurrentProjects] = createSignal<boolean>(true);
@@ -48,7 +53,7 @@ export default function App() {
         <Meta></Meta>
       </main>
       <main
-        class={`page lg:flex hidden flex-col p-6 ${openWrite() ? "overflow-y-hidden" : "overflow-y-scroll"}`}
+        class={`page lg:flex hidden flex-col p-6 pt-4 ${openWrite() ? "overflow-y-hidden" : "overflow-y-scroll"}`}
       >
         <Portal>
           <Presence>
@@ -57,66 +62,53 @@ export default function App() {
             </Show>
           </Presence>
         </Portal>
-        <nav class="flex flex-row items-center gap-4">
-          <h1 class="italic text-white text-7xl me-4">
+        <nav class="flex flex-row items-center gap-4 justify-between">
+          <div class="flex flex-row items-center gap-4">
+            <h1 class="italic text-white text-7xl me-4">
+              <a
+                aria-label="Main website - tarakoshka.tech"
+                href="https://tarakoshka.tech"
+              >
+                tarakoshka.tech
+              </a>
+            </h1>
             <a
-              aria-label="Main website - tarakoshka.tech"
-              href="https://tarakoshka.tech"
+              aria-label="Plain version of my CV"
+              class="relative z-2 lg:hover:scale-90 transition-all"
+              href="https://tarakoshka.tech/static/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              tarakoshka.tech
+              <svg
+                class="w-24"
+                style="
+                animation: rotate-animation-back 20s infinite linear;
+                background-size: cover;
+                object-fit: fill;"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 240 240"
+              >
+                <path
+                  fill="#FFE942"
+                  d="m120 0 23.294 33.067L180 16.077l3.64 40.283L223.923 60l-16.99 36.706L240 120l-33.067 23.294L223.923 180l-40.283 3.64-3.64 40.283-36.706-16.99L120 240l-23.294-33.067L60 223.923l-3.64-40.283L16.077 180l16.99-36.706L0 120l33.067-23.294L16.077 60l40.283-3.64L60 16.077l36.706 16.99L120 0Z"
+                />
+              </svg>
+              <div class="text-zinc-900 absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
+                <Download />
+                <p class="font-[Overpass] font-bold text-xl">CV</p>
+              </div>
             </a>
-          </h1>
-          <a
-            aria-label="Plain version of my CV"
-            class="relative z-2 lg:hover:scale-90 transition-all"
-            href="https://cv.tarakoshka.tech"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg
-              class="w-24"
-              style="
-              animation: rotate-animation-back 20s infinite linear;
-              background-size: cover;
-              object-fit: fill;"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 240 240"
-            >
-              <path
-                fill="#FFE942"
-                d="m120 0 23.294 33.067L180 16.077l3.64 40.283L223.923 60l-16.99 36.706L240 120l-33.067 23.294L223.923 180l-40.283 3.64-3.64 40.283-36.706-16.99L120 240l-23.294-33.067L60 223.923l-3.64-40.283L16.077 180l16.99-36.706L0 120l33.067-23.294L16.077 60l40.283-3.64L60 16.077l36.706 16.99L120 0Z"
-              />
-            </svg>
-            <div class="text-zinc-900 absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
-              <Download />
-              <p class="font-[Overpass] font-bold text-xl">CV</p>
-            </div>
-          </a>
+          </div>
           <a
             aria-label="My cat"
             href="/lesya"
-            class="relative z-2 lg:hover:scale-90 transition-all"
+            class="relative z-2 group transition-all"
           >
-            <svg
-              class="w-24"
-              style="
-              animation: rotate-animation 20s infinite linear;
-              background-size: cover;
-              object-fit: fill;"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 240 240"
-            >
-              <path
-                fill="#00FF7B"
-                d="m120 0 23.294 33.067L180 16.077l3.64 40.283L223.923 60l-16.99 36.706L240 120l-33.067 23.294L223.923 180l-40.283 3.64-3.64 40.283-36.706-16.99L120 240l-23.294-33.067L60 223.923l-3.64-40.283L16.077 180l16.99-36.706L0 120l33.067-23.294L16.077 60l40.283-3.64L60 16.077l36.706 16.99L120 0Z"
-              />
-            </svg>
-            <div class="text-zinc-900 absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
-              <Cat />
-              <p class="font-[Overpass] font-bold text-xl">Cat</p>
-            </div>
+            <img
+              src="https://tarakoshka.tech/static/scary_kitty.webp"
+              class="size-22 -scale-x-100 lg:group-hover:rotate-5"
+            ></img>
           </a>
         </nav>
         <div class="flex flex-row mt-4">
@@ -130,15 +122,18 @@ export default function App() {
                 <h2 class="text-5xl">Doing stuff</h2>
                 <div class="flex flex-row font-[Overpass]">
                   <button
-                    class={`cursor-pointer border-2 w-full transition-all border-transparent py-2 rounded-4xl ${isCurrentProjects() ? "bg-zinc-900 rounded-r-none" : "lg:hover:border-white"}`}
+                    class={`flex flex-row gap-2 items-center justify-center border-2 w-full transition-all border-transparent py-2 rounded-4xl ${isCurrentProjects() ? "bg-zinc-900" : "lg:hover:border-white cursor-pointer"}`}
                     onClick={() => {
                       setIsCurrentProjects(true);
                     }}
                   >
                     Current
+                    <svg class="size-2 animate-pulse" viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="40" fill="#08FF2F" />
+                    </svg>
                   </button>
                   <button
-                    class={`cursor-pointer border-2 w-full transition-all border-transparent py-2 rounded-4xl ${!isCurrentProjects() ? "bg-zinc-900 rounded-l-none" : "lg:hover:border-white"}`}
+                    class={`border-2 w-full transition-all border-transparent py-2 rounded-4xl ${!isCurrentProjects() ? "bg-zinc-900" : "lg:hover:border-white cursor-pointer"}`}
                     style={
                       isCurrentProjects()
                         ? "background: transparent;"
@@ -161,7 +156,7 @@ export default function App() {
                       exit={{ opacity: 0 }}
                     >
                       <div
-                        class="flex flex-col gap-4 min-w-[250px]"
+                        class="flex flex-col gap-2 min-w-[250px]"
                         style="scrollbar-width: none;"
                       >
                         <ProjectsProvider
@@ -172,40 +167,24 @@ export default function App() {
                           {useProjects().get() &&
                             useProjects()
                               ?.get()
-                              ?.filter((it) => it.description != "")
-                              ?.slice(0, projectsExpanded() ? 7 : 3)
+                              ?.filter(
+                                (it) =>
+                                  it.description != "" &&
+                                  !EXCLUDE_PROJECTS.includes(it.url),
+                              )
+                              ?.slice(0, 3)
                               ?.map((project) => (
-                                <NewProjectCard
-                                  showPreview={false}
-                                  project={project}
-                                />
+                                <A
+                                  aria-label={project.title}
+                                  href={project.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  class={`font-[Overpass] flex px-4 py-2 hover:bg-zinc-900 rounded-lg transition-all`}
+                                >
+                                  {project.description}
+                                </A>
                               ))}
                         </ProjectsProvider>
-                        <button
-                          onClick={() =>
-                            setProjectsExpanded(!projectsExpanded())
-                          }
-                          name="see more/less projects"
-                          aria-label="see more/less projects"
-                          class="cursor-pointer px-8"
-                          style="align-self: center;"
-                        >
-                          <svg
-                            class="scale-120 transition-all"
-                            style={
-                              "transform: rotate(" +
-                              (projectsExpanded() ? "180" : "0") +
-                              "deg);"
-                            }
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="24"
-                            viewBox="0 -960 960 960"
-                            width="24"
-                            fill="currentColor"
-                          >
-                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
-                          </svg>
-                        </button>
                       </div>
                     </Motion.div>
                   </Match>
@@ -297,19 +276,24 @@ export default function App() {
             </section>
           </div>
           <div class="flex flex-col w-full border-t-2 h-fit border-white">
-            <section class="p-4 flex flex-col w-full h-fit gap-4">
-              <h2 class="text-5xl pt-2 px-2">Right now</h2>
-              <div class="flex flex-row flex-wrap justify-between">
+            <section class="flex flex-col w-full h-fit gap-4">
+              <h2 class="text-5xl pt-6 px-6">Right now</h2>
+              <div class="flex flex-row flex-wrap justify-between pl-4 pr-6">
                 <a
                   target="_blank"
-                  class="w-48 group"
+                  class="w-48 group relative block aspect-[1.3] pl-2"
                   href="mailto:me@tarakoshka.tech"
                   aria-label="E-Mail"
                 >
                   <img
-                    class="-rotate-4 skew-2 lg:group-hover:skew-0 lg:group-hover:rotate-4 transition-all"
+                    class="absolute visible lg:group-hover:invisible -rotate-2"
                     alt="envelope"
                     src="https://tarakoshka.tech/static/envelope.webp"
+                  ></img>
+                  <img
+                    class="absolute invisible lg:group-hover:visible rotate-10"
+                    alt="open envelope"
+                    src="https://tarakoshka.tech/static/envelope_open.webp"
                   ></img>
                 </a>
                 <a
@@ -385,8 +369,8 @@ export default function App() {
               </div>
               <MusicProvider baseURL="https://tarakoshka.tech/api/music">
                 {useMusic().get() && (
-                  <div class="flex flex-col w-full items-end bg-[#1DB954] rounded-xl outline-black outline-2">
-                    <div class="flex flex-row w-full justify-between p-6 rounded-xl bg-zinc-800">
+                  <div class="flex flex-col w-full items-end bg-[#1DB954]">
+                    <div class="flex flex-row w-full justify-between p-6 bg-zinc-900">
                       <a
                         aria-label={useMusic()?.get()?.title}
                         href={useMusic()?.get()?.url}
@@ -441,7 +425,7 @@ export default function App() {
                     </div>
                     <a
                       target="_black"
-                      class="font-[Overpass] px-3 pt-1"
+                      class="font-[Overpass] px-3 py-1"
                       href="https://open.spotify.com/user/31ztrvjmvnvjcf4m6fhkv4gmys3i"
                       aria-label="Spotify"
                     >
@@ -625,7 +609,7 @@ export default function App() {
                 <nav class="items-center z-1 w-full flex text-white font-[Overpass] flex-row gap-2">
                   <a
                     aria-label="Previous webring listing"
-                    class="flex gap-3 group text-[#FF3737] w-full justify-start rounded-[30px] bg-black p-3 hover:gap-2 items-center hover:rounded-r-[0px] transition-all duration-400"
+                    class="flex gap-3 group text-[#FF3737] w-full justify-start rounded-[45px] bg-black p-3 hover:px-6 hover:gap-8 items-center hover:rounded-r-[0px] transition-all duration-400"
                     href={useWebring().get()?.prev?.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -651,18 +635,18 @@ export default function App() {
                         />
                       </g>
                     </svg>
-                    <p class="font-[Overpass] text-xl pt-[2px] group-hover:tracking-[0.2em] transition-all">
+                    <p class="font-[Overpass] text-xl pt-[2px] transition-all">
                       {useWebring().get()?.prev?.name}
                     </p>
                   </a>
                   <a
                     aria-label="Next webring listing"
-                    class="flex gap-3 group text-[#FF3737] w-full justify-end rounded-[30px] bg-black p-3 hover:gap-2 items-center hover:rounded-l-[0px] transition-all duration-400"
+                    class="flex gap-3 group text-[#FF3737] w-full justify-end rounded-[45px] bg-black p-3 hover:px-6 hover:gap-8 items-center hover:rounded-l-[0px] transition-all duration-400"
                     href={useWebring().get()?.next?.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <p class="font-[Overpass] text-xl pt-[2px] group-hover:tracking-[0.2em] transition-all">
+                    <p class="font-[Overpass] text-xl pt-[2px] transition-all">
                       {useWebring().get()?.next?.name}
                     </p>
                     <svg
