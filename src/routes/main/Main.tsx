@@ -64,7 +64,7 @@ export default function App() {
         </Portal>
         <nav class="flex flex-row items-center gap-4 justify-between">
           <div class="flex flex-row items-center gap-4">
-            <h1 class="italic text-white text-7xl me-4">
+            <h1 class="italic text-white text-7xl">
               <a
                 aria-label="Main website - tarakoshka.tech"
                 href="https://tarakoshka.tech"
@@ -73,30 +73,14 @@ export default function App() {
               </a>
             </h1>
             <a
-              aria-label="Plain version of my CV"
-              class="relative z-2 lg:hover:scale-90 transition-all"
+              aria-label="PDF version of my CV"
+              class="relative flex flex-row group justify-center min-w-48"
               href="https://tarakoshka.tech/static/cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg
-                class="w-24"
-                style="
-                animation: rotate-animation-back 20s infinite linear;
-                background-size: cover;
-                object-fit: fill;"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 240 240"
-              >
-                <path
-                  fill="#FFE942"
-                  d="m120 0 23.294 33.067L180 16.077l3.64 40.283L223.923 60l-16.99 36.706L240 120l-33.067 23.294L223.923 180l-40.283 3.64-3.64 40.283-36.706-16.99L120 240l-23.294-33.067L60 223.923l-3.64-40.283L16.077 180l16.99-36.706L0 120l33.067-23.294L16.077 60l40.283-3.64L60 16.077l36.706 16.99L120 0Z"
-                />
-              </svg>
-              <div class="text-zinc-900 absolute top-[50%] left-[50%] translate-y-[-40%] translate-x-[-50%] flex flex-col justify-center items-center">
-                <Download />
-                <p class="font-[Overpass] font-bold text-xl">CV</p>
+              <div class="font-[Overpass] bg-[#FFE942] font-light text-xl text-black px-8 py-4 group-hover:italic group-hover:py-6 group-hover:px-6 group-hover:underline">
+                resume.pdf
               </div>
             </a>
           </div>
@@ -257,13 +241,11 @@ export default function App() {
             </section>
             <section id="blimp" class={`p-4 flex flex-col h-fit w-fit gap-4`}>
               <div class="flex flex-row gap-2 items-center">
-                <h2 class="text-white my-2 text-center text-5xl px-2">
-                  Last Blimp
-                </h2>
+                <h2 class="text-white my-2 text-center text-5xl px-2">Blimp</h2>
                 <A
                   aria-label="See Blimps"
                   href="/blimps"
-                  class="text-3xl hover:bg-white hover:text-black transition-all rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-2 text-white px-3"
+                  class="text-3xl hover:bg-white hover:text-black hover:rotate-360 hover:scale-95 transition-all rounded-full flex flex-col items-center justify-center aspect-square outline-white outline-2 text-white px-3"
                 >
                   all
                 </A>
@@ -442,27 +424,36 @@ export default function App() {
               class={`outline-white outline-2 p-6 rounded-b-2xl flex flex-col w-full h-fit gap-4 ${!isCurrentProjects() || projectsExpanded() ? "border-l-0" : ""}`}
             >
               <h2 class="text-5xl">Buttons</h2>
-              <div class="flex flex-row flex-wrap gap-2 mb-2">
-                <Badge
-                  label="My 88x31 button"
-                  link="https://tarakoshka.tech/"
-                  src="https://tarakoshka.tech/static/88x31.gif"
-                ></Badge>
-                <Badge
-                  label="HSE button"
-                  link="https://hse.ru/"
-                  src="https://tarakoshka.tech/static/buttons/hse.gif"
-                ></Badge>
-                <Badge
-                  label="OMORI button"
-                  link="https://store.steampowered.com/app/1150690/OMORI/"
-                  src="https://tarakoshka.tech/static/buttons/omori.gif"
-                ></Badge>
-                <Badge
-                  label="Katana ZERO button"
-                  link="https://store.steampowered.com/app/460950/Katana_ZERO/"
-                  src="https://tarakoshka.tech/static/buttons/katana.gif"
-                ></Badge>
+              <div class="flex flex-col">
+                <div class="flex flex-row flex-wrap gap-2 mb-2">
+                  <Badge
+                    label="My 88x31 button"
+                    src="https://tarakoshka.tech/static/88x31.gif"
+                  ></Badge>
+                  <Badge
+                    label="HSE button"
+                    src="https://tarakoshka.tech/static/buttons/hse.gif"
+                  ></Badge>
+                  <Badge
+                    label="OMORI button"
+                    src="https://tarakoshka.tech/static/buttons/omori.gif"
+                  ></Badge>
+                  <Badge
+                    label="Katana ZERO button"
+                    src="https://tarakoshka.tech/static/buttons/katana.gif"
+                  ></Badge>
+                </div>
+                <div class="font-[Overpass] text-center flex flex-row justify-center items-center gap-2 pt-3">
+                  <img
+                    class="-rotate-90 size-8"
+                    src="https://tarakoshka.tech/static/arrow.gif"
+                  ></img>
+                  these are mine, <i>click to copy!</i>
+                  <img
+                    class="-rotate-90 size-8"
+                    src="https://tarakoshka.tech/static/arrow.gif"
+                  ></img>
+                </div>
               </div>
               <div class="flex flex-row flex-wrap gap-2">
                 <Badge
@@ -740,129 +731,125 @@ export default function App() {
                 </a>
               </div>
               <div class="flex flex-col gap-3 font-[Overpass] text-white">
-                <a
-                  aria-label="HSE Lyceum"
-                  href="https://school.hse.ru/"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  class="flex hover:scale-97 transition-all flex-row gap-4 border-[#FBBA00] border-2 bg-[#382a00] rounded-full items-center px-4 py-3"
-                >
-                  <svg
-                    class="size-8 pt-1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 105.37 105.48"
-                  >
-                    <g id="Layer_2" data-name="Layer 2">
-                      <g id="Layer_1-2" data-name="Layer 1">
-                        <path
-                          fill="#FBBA00"
-                          class="cls-1"
-                          d="M105.33,74.77A15.17,15.17,0,0,1,90.41,90.15H70.26C62,90.15,54.11,97,54.11,105.48h-2.6c0-8.47-8.13-15.37-16.36-15.37H14.93A15.14,15.14,0,0,1,0,74.77V0H105.37Z"
-                        />
-                        <path
-                          fill="#1D1D1B"
-                          class="cls-2"
-                          d="M69.5,70h6.66c-.64,2.44-2.75,3.41-5,3.41a6.23,6.23,0,0,1-3.91-1.37l-1.61,3.2A8.91,8.91,0,0,0,71.28,77c5.43,0,8.86-3.25,8.86-8.58,0-5.17-3.56-8.58-8.37-8.58a9.12,9.12,0,0,0-6,1.92l1.45,2.84a6.09,6.09,0,0,1,3.6-1.21c2.51,0,4.43,1.07,5.17,3.08H69.5ZM43.17,76.71H62.61V60.11H58.81v13h-4v-13H51v13H47v-13H43.17ZM33,63.57c.92,0,1.83.5,1.83,1.49,0,1.21-.78,1.61-1.75,1.61H31.86v-3A9.34,9.34,0,0,1,33,63.57M33.33,70c1.23,0,2,.45,2,1.49s-.73,1.75-2.2,1.75a4.31,4.31,0,0,1-1.28-.14V70Zm-5.26,6.66c1,.09,3.18.14,4.76.14,3.6,0,6.3-1.63,6.3-5.12a3.79,3.79,0,0,0-2.37-3.79v0a4.07,4.07,0,0,0,1.9-3.7c0-2.3-1.61-4.12-5.57-4.12-1.8,0-4.1.09-5,.14Z"
-                        />
-                        <path
-                          fill="#1D1D1B"
-                          class="cls-2"
-                          d="M80.37,37.89H76.55L73.19,46l-4.67-8.11H64.23l7.13,11.87-.21.5a1.18,1.18,0,0,1-1.23.66,1.74,1.74,0,0,1-1.16-.4l-1.33,3.22a4.71,4.71,0,0,0,2.51.74c2.3,0,3.72-1.4,4.86-3.94ZM50.25,54.48l7.35-10.31V54.48h3.79V37.89H58.07L50.72,48.2V37.89H46.93V54.48Zm-11.85,0h3.79V37.89H38.39v6.35h-6V37.89H28.56V54.48h3.79V47.8h6Z"
-                        />
-                        <path
-                          fill="#1D1D1B"
-                          class="cls-2"
-                          d="M83.77,11.4c0,2.28,1.82,3.79,5,3.79,3,0,5-1.49,4.93-3.79H90.17c0,1-.47,1.18-1.37,1.18s-1.47-.28-1.47-1.18Zm.71,20.86,7.35-10.31V32.25h3.79V15.66H92.3L85,26V15.66H81.16V32.25Zm-17.42,0H77.14V28.7H70.85v-3h5.33V22.13H70.85V19.22h6V15.66H67.06Zm-18.61,0h12V35.1H64V28.7H61.73v-13H57.94v13H52.25v-13H48.46Zm-15.88,0,7.35-10.31V32.25h3.79V15.66H40.4L33,26V15.66H29.26V32.25Zm-11.85,0h3.79V15.66h-11L13.28,19c-.66,9.2-2.09,9.72-3.46,9.48l-.07,3.79c3.89.64,6-1.16,7-9.91l.36-3.13h3.65Z"
-                        />
-                      </g>
-                    </g>
-                  </svg>
-                  <p class="text-xl pt-1">HSE Lyceum Alumni</p>
-                </a>
-                <a
-                  aria-label="PROD programming contest"
-                  href="https://prodcontest.ru/"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  class="hover:scale-97 transition-all"
-                >
-                  <div class="flex flex-row gap-4 border-[#03a366] border-2 bg-[#033024] rounded-full items-center">
-                    <svg
-                      class="size-8 ml-4"
-                      viewBox="0 0 122 34"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                <div class="flex flex-row justify-between">
+                  <div class="flex flex-row gap-2 items-center">
+                    <a
+                      aria-label="HSE Lyceum"
+                      href="https://school.hse.ru/"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                      class="hover:scale-110 transition-all"
                     >
-                      <g clip-path="url(#clip0_107_666)">
-                        <path
-                          d="M83.1991 3H69.7677C65.3871 3 61.8361 6.5154 61.8361 10.8521V24.1487C61.8361 28.4854 65.3871 32.0008 69.7677 32.0008H83.1991C87.5797 32.0008 91.1307 28.4854 91.1307 24.1487V10.8521C91.1307 6.5154 87.5797 3 83.1991 3ZM88.0084 28.9323H64.9585V6.11361H88.0084V28.9323ZM114.068 3H92.7054V32H114.068C118.449 32 122 28.4846 122 24.1479V10.8521C122 6.5154 118.449 3 114.068 3ZM118.878 28.9323H95.8277V6.11361H118.878V28.9323ZM21.363 3H7.93163C3.55101 3 0 6.5154 0 10.8521V32.0008H3.12239V21.7638H21.363C25.7436 21.7638 29.2946 18.2484 29.2946 13.9117V10.8521C29.2946 6.5154 25.7436 3 21.363 3ZM26.1723 18.6727H3.12239V6.13696H26.1723V18.6727ZM60.2127 17.0833V10.8521C60.2127 6.5154 56.6617 3 52.2811 3H38.8497C34.4691 3 30.9181 6.5154 30.9181 10.8521V32.0008H34.0404V21.7413H57.0903V32.0008H60.2127V23.2864C60.2127 21.5794 58.8146 20.213 57.0903 20.213V20.1591C58.826 20.1591 60.2127 18.8032 60.2127 17.0841V17.0833ZM57.0903 18.6494H34.0404V6.11361H57.0903V18.6494Z"
-                          fill="white"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_107_666">
-                          <rect
-                            width="122"
-                            height="29"
-                            fill="white"
-                            transform="translate(0 3)"
-                          />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <p class="text-xl pt-4 pb-3">PROD 2025 Winner</p>
-                  </div>
-                </a>
-                <a
-                  aria-label="JetBrains SDT Program"
-                  href="https://lp.jetbrains.com/software-data-and-technology-constructor-university/"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  class="hover:scale-97 transition-all"
-                >
-                  <div class="flex flex-row pl-2 gap-4 border-[#FF801A] border-2 bg-[#452105] rounded-full items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      class="size-7 ml-4"
-                      viewBox="0 0 64 64"
+                      <svg
+                        class="size-8"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 105.37 105.48"
+                      >
+                        <g id="Layer_2" data-name="Layer 2">
+                          <g id="Layer_1-2" data-name="Layer 1">
+                            <path
+                              fill="#FBBA00"
+                              class="cls-1"
+                              d="M105.33,74.77A15.17,15.17,0,0,1,90.41,90.15H70.26C62,90.15,54.11,97,54.11,105.48h-2.6c0-8.47-8.13-15.37-16.36-15.37H14.93A15.14,15.14,0,0,1,0,74.77V0H105.37Z"
+                            />
+                            <path
+                              fill="#1D1D1B"
+                              class="cls-2"
+                              d="M69.5,70h6.66c-.64,2.44-2.75,3.41-5,3.41a6.23,6.23,0,0,1-3.91-1.37l-1.61,3.2A8.91,8.91,0,0,0,71.28,77c5.43,0,8.86-3.25,8.86-8.58,0-5.17-3.56-8.58-8.37-8.58a9.12,9.12,0,0,0-6,1.92l1.45,2.84a6.09,6.09,0,0,1,3.6-1.21c2.51,0,4.43,1.07,5.17,3.08H69.5ZM43.17,76.71H62.61V60.11H58.81v13h-4v-13H51v13H47v-13H43.17ZM33,63.57c.92,0,1.83.5,1.83,1.49,0,1.21-.78,1.61-1.75,1.61H31.86v-3A9.34,9.34,0,0,1,33,63.57M33.33,70c1.23,0,2,.45,2,1.49s-.73,1.75-2.2,1.75a4.31,4.31,0,0,1-1.28-.14V70Zm-5.26,6.66c1,.09,3.18.14,4.76.14,3.6,0,6.3-1.63,6.3-5.12a3.79,3.79,0,0,0-2.37-3.79v0a4.07,4.07,0,0,0,1.9-3.7c0-2.3-1.61-4.12-5.57-4.12-1.8,0-4.1.09-5,.14Z"
+                            />
+                            <path
+                              fill="#1D1D1B"
+                              class="cls-2"
+                              d="M80.37,37.89H76.55L73.19,46l-4.67-8.11H64.23l7.13,11.87-.21.5a1.18,1.18,0,0,1-1.23.66,1.74,1.74,0,0,1-1.16-.4l-1.33,3.22a4.71,4.71,0,0,0,2.51.74c2.3,0,3.72-1.4,4.86-3.94ZM50.25,54.48l7.35-10.31V54.48h3.79V37.89H58.07L50.72,48.2V37.89H46.93V54.48Zm-11.85,0h3.79V37.89H38.39v6.35h-6V37.89H28.56V54.48h3.79V47.8h6Z"
+                            />
+                            <path
+                              fill="#1D1D1B"
+                              class="cls-2"
+                              d="M83.77,11.4c0,2.28,1.82,3.79,5,3.79,3,0,5-1.49,4.93-3.79H90.17c0,1-.47,1.18-1.37,1.18s-1.47-.28-1.47-1.18Zm.71,20.86,7.35-10.31V32.25h3.79V15.66H92.3L85,26V15.66H81.16V32.25Zm-17.42,0H77.14V28.7H70.85v-3h5.33V22.13H70.85V19.22h6V15.66H67.06Zm-18.61,0h12V35.1H64V28.7H61.73v-13H57.94v13H52.25v-13H48.46Zm-15.88,0,7.35-10.31V32.25h3.79V15.66H40.4L33,26V15.66H29.26V32.25Zm-11.85,0h3.79V15.66h-11L13.28,19c-.66,9.2-2.09,9.72-3.46,9.48l-.07,3.79c3.89.64,6-1.16,7-9.91l.36-3.13h3.65Z"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </a>
+                    <a
+                      aria-label="PROD programming contest"
+                      href="https://prodcontest.ru/"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                      class="hover:scale-110 transition-all"
                     >
-                      <defs>
-                        <linearGradient
-                          id="supergrad"
-                          x1=".850001"
-                          x2="62.62"
-                          y1="62.72"
-                          y2="1.81"
-                          gradientUnits="userSpaceOnUse"
+                      <div class="flex flex-row gap-4 bg-[#033024] rounded-full items-center p-1">
+                        <svg
+                          class="size-8"
+                          viewBox="0 0 122 34"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <stop stop-color="#FF9419" />
-                          <stop offset=".43" stop-color="#FF021D" />
-                          <stop offset=".99" stop-color="#E600FF" />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        fill="url(#supergrad)"
-                        d="M20.34 3.66 3.66 20.34C1.32 22.68 0 25.86 0 29.18V59c0 2.76 2.24 5 5 5h29.82c3.32 0 6.49-1.32 8.84-3.66l16.68-16.68c2.34-2.34 3.66-5.52 3.66-8.84V5c0-2.76-2.24-5-5-5H29.18c-3.32 0-6.49 1.32-8.84 3.66Z"
-                      />
-                      <path fill="#000" d="M48 16H8v40h40V16Z" />
-                      <path fill="#fff" d="M30 47H13v4h17v-4Z" />
-                    </svg>
-
-                    <p class="text-xl pt-4 pb-3">SDT Student</p>
+                          <g clip-path="url(#clip0_107_666)">
+                            <path
+                              d="M83.1991 3H69.7677C65.3871 3 61.8361 6.5154 61.8361 10.8521V24.1487C61.8361 28.4854 65.3871 32.0008 69.7677 32.0008H83.1991C87.5797 32.0008 91.1307 28.4854 91.1307 24.1487V10.8521C91.1307 6.5154 87.5797 3 83.1991 3ZM88.0084 28.9323H64.9585V6.11361H88.0084V28.9323ZM114.068 3H92.7054V32H114.068C118.449 32 122 28.4846 122 24.1479V10.8521C122 6.5154 118.449 3 114.068 3ZM118.878 28.9323H95.8277V6.11361H118.878V28.9323ZM21.363 3H7.93163C3.55101 3 0 6.5154 0 10.8521V32.0008H3.12239V21.7638H21.363C25.7436 21.7638 29.2946 18.2484 29.2946 13.9117V10.8521C29.2946 6.5154 25.7436 3 21.363 3ZM26.1723 18.6727H3.12239V6.13696H26.1723V18.6727ZM60.2127 17.0833V10.8521C60.2127 6.5154 56.6617 3 52.2811 3H38.8497C34.4691 3 30.9181 6.5154 30.9181 10.8521V32.0008H34.0404V21.7413H57.0903V32.0008H60.2127V23.2864C60.2127 21.5794 58.8146 20.213 57.0903 20.213V20.1591C58.826 20.1591 60.2127 18.8032 60.2127 17.0841V17.0833ZM57.0903 18.6494H34.0404V6.11361H57.0903V18.6494Z"
+                              fill="white"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_107_666">
+                              <rect
+                                width="122"
+                                height="29"
+                                fill="white"
+                                transform="translate(0 3)"
+                              />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                    </a>
+                    <a
+                      aria-label="JetBrains SDT Program"
+                      href="https://lp.jetbrains.com/software-data-and-technology-constructor-university/"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                      class="hover:scale-110 transition-all"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        class="size-7"
+                        viewBox="0 0 64 64"
+                      >
+                        <defs>
+                          <linearGradient
+                            id="supergrad"
+                            x1=".850001"
+                            x2="62.62"
+                            y1="62.72"
+                            y2="1.81"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#FF9419" />
+                            <stop offset=".43" stop-color="#FF021D" />
+                            <stop offset=".99" stop-color="#E600FF" />
+                          </linearGradient>
+                        </defs>
+                        <path
+                          fill="url(#supergrad)"
+                          d="M20.34 3.66 3.66 20.34C1.32 22.68 0 25.86 0 29.18V59c0 2.76 2.24 5 5 5h29.82c3.32 0 6.49-1.32 8.84-3.66l16.68-16.68c2.34-2.34 3.66-5.52 3.66-8.84V5c0-2.76-2.24-5-5-5H29.18c-3.32 0-6.49 1.32-8.84 3.66Z"
+                        />
+                        <path fill="#000" d="M48 16H8v40h40V16Z" />
+                        <path fill="#fff" d="M30 47H13v4h17v-4Z" />
+                      </svg>
+                    </a>
                   </div>
-                </a>
-                <div class="flex flex-wrap flex-row gap-y-2 gap-x-1">
-                  <SwitchCard title="My Setup">
+                  <div class="flex flex-row gap-2 items-center">
                     <a
                       aria-label="NeoVim"
                       rel="noopener noreferrer"
                       target="_blank"
                       href="https://neovim.io/"
-                      class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+                      class="hover:scale-110 transition-all"
                     >
                       <svg
-                        class="size-6"
+                        class="size-8"
                         viewBox="0 0 602 734"
                         version="1.1"
                         xmlns="http://www.w3.org/2000/svg"
@@ -951,17 +938,16 @@ export default function App() {
                           </g>
                         </g>
                       </svg>
-                      <p>Neovim</p>
                     </a>
                     <a
                       aria-label="CachyOS"
                       rel="noopener noreferrer"
                       target="_blank"
                       href="https://cachyos.org/"
-                      class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+                      class="hover:scale-110 transition-all"
                     >
                       <svg
-                        class="size-6"
+                        class="size-8"
                         version="1.1"
                         viewBox="0 0 17.921 17.921"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1267,85 +1253,66 @@ export default function App() {
                           fill="url(#linearGradient3254)"
                         />
                       </svg>
-                      <p>CachyOS</p>
                     </a>
                     <a
                       aria-label="Hyprland"
                       rel="noopener noreferrer"
                       target="_blank"
                       href="https://hyprland.org/"
-                      class="flex p-2 flex-row gap-2 hover:scale-95 transition-all w-fit"
+                      class="hover:scale-110 transition-all"
                     >
                       <img
-                        class="size-6 rounded-full scale-110"
+                        class="size-10 rounded-full"
                         src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Hyprland_logo.png"
                       ></img>
-                      <p>Hyprland</p>
                     </a>
-                    <div class="flex flex-row flex-wrap gap-2 text-[#50E2FF] text-sm my-2">
-                      <a
-                        aria-label="SolidJS"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        class="text-lg pt-0.5 flex items-center justify-center px-4 rounded-full border-2"
-                        href="https://www.solidjs.com/"
-                      >
-                        SolidJS
-                      </a>
-                      <a
-                        aria-label="TailwindCSS"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
-                        href="https://tailwindcss.com/"
-                      >
-                        Tailwind
-                      </a>
-                      <a
-                        aria-label="Go language"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
-                        href="https://go.dev/"
-                      >
-                        Go
-                      </a>
-                      <a
-                        aria-label="Echo HTTP framework"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2"
-                        href="https://echo.labstack.com/"
-                      >
-                        Echo
-                      </a>
-                      <a
-                        aria-label="senko.digital hosting provider"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        class="px-5 pt-0.5 text-lg items-center justify-center flex rounded-full w-fit bg-linear-to-r from-[#6335E1] to-[#FC7F42] text-white"
-                        href="https://senko.digital/"
-                      >
-                        senko.digital
-                      </a>
+                  </div>
+                </div>
+                <div class="flex flex-wrap flex-row gap-2">
+                  <div class="flex flex-row flex-wrap gap-2 text-[#50E2FF] text-sm w-full">
+                    <a
+                      aria-label="SolidJS"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="text-lg pt-0.5 flex items-center justify-center px-4 rounded-full border-2 outline-2 outline-transparent -outline-offset-2 hover:outline-white hover:text-white"
+                      href="https://www.solidjs.com/"
+                    >
+                      SolidJS
+                    </a>
+                    <a
+                      aria-label="Echo HTTP framework"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="text-lg pt-0.5 items-center justify-center flex px-4 rounded-full border-2 outline-2 outline-transparent -outline-offset-2 hover:outline-white hover:text-white"
+                      href="https://echo.labstack.com/"
+                    >
+                      Echo
+                    </a>
+                    <a
+                      aria-label="senko.digital hosting provider"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="px-5 pt-0.5 text-lg items-center justify-center flex rounded-full w-fit bg-linear-to-r from-[#6335E1] to-[#FC7F42] text-white bold font-bold flex-1 outline-2 outline-transparent -outline-offset-2 hover:outline-white"
+                      href="https://senko.digital/"
+                    >
+                      senko.digital
+                    </a>
+                  </div>
+                  <div class="flex text-lg font-[Overpass] justify-center rounded-full px-6 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
+                    <p class="mt-[2px]">🇷🇺 🇬🇧 🇩🇪</p>
+                  </div>
+                  <div class="flex overflow-clip text-lg relative font-[Overpass] gap-3 justify-between rounded-full pl-6 pr-4 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
+                    <p class="mt-[2px] w-fit py-2">he/him</p>
+                    <div class="flex flex-row right-4 top-0 bottom-0">
+                      <div class="bg-[#FF218C] w-1 h-full"></div>
+                      <div class="bg-[#FFD800] w-1 h-full"></div>
+                      <div class="bg-[#21B1FF] w-1 h-full"></div>
                     </div>
-                  </SwitchCard>
-                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
-                    <p class="mt-[2px]">18 yo</p>
                   </div>
-                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
-                    <p class="mt-[2px]">ru/en</p>
-                  </div>
-                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
-                    <p class="mt-[2px]">he/him</p>
-                  </div>
-                  <div class="flex text-lg font-[Overpass] grow-1 justify-center rounded-full px-4 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
+                  <div class="flex text-lg font-[Overpass] justify-center rounded-full px-6 py-2 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
                     <p class="mt-[2px]">gmt+2</p>
                   </div>
-                  <SocialTag text="mobile" />
-                  <SocialTag text="web" />
-                  <SocialTag text="designer" />
-                  <div class="flex w-full mb-3 relative text-sm font-[Overpass] justify-center rounded-full grow-1 px-4 py-4 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
+                  <div class="flex px-6 mb-3 relative text-sm font-[Overpass] justify-center rounded-full px-4 py-4 bg-zinc-900 max-sm:bg-[#2B251F] text-lg transition-all">
                     This website is built by a human. <br />
                     AI training on its content or source code is prohibited.
                   </div>

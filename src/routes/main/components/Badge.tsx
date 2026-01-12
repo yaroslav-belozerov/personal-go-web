@@ -10,11 +10,14 @@ export default function Badge({
   if (link == null) {
     return (
       <img
+        onClick={(e) => {
+          navigator.clipboard.writeText(e.target.outerHTML);
+        }}
         loading="lazy"
         src={src}
-        style="image-rendering: pixelated;"
+        style="image-rendering: pixelated; width: 88px; height: 31px;"
         alt={label}
-        class="w-[88px] h-[31px] lg:hover:scale-180 transition-all duration-200"
+        class="hover:scale-180 transition-transform"
       />
     );
   } else {
