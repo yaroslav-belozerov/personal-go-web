@@ -1,3 +1,6 @@
+> [!WARNING]
+> moved to [forgejo](https://fj.tarakoshka.tech/tarakoshka/tarakoshka-tech-webserver)
+---
 # tarakoshka.tech
 > my personal webpage
 
